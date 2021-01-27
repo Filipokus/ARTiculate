@@ -4,8 +4,10 @@ using System.Text;
 
 namespace ARTiculateDataAccessLibrary.Models
 {
-    class Test
+    public class Tag
     {
-        //Snälla gud fungera!
+        public int Id { get; set; }
+        public string TagName { get; set; }
+
     }
 }
