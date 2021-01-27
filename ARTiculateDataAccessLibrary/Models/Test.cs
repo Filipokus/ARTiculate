@@ -6,6 +6,6 @@ namespace ARTiculateDataAccessLibrary.Models
 {
     class Test
     {
-        //Snälla gud fungera!
+        //Snälla gud fungera!!
     }
 }
