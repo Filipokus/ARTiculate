@@ -1,0 +1,82 @@
+﻿/* || GENERAL || */
+
+body {
+    background: #F89A1E;
+}
+
+h1, h2, h3, h4, p {
+    color: #242424;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Comfortaa', cursive;
+}
+
+/* || HEADER || */
+header {
+    background: #242424;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+    header img {
+        width: 30vw;
+        margin: 1vh -4vw;
+    }
+
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
+.searchTerm {
+    width: 20vw;
+    height: 3vh;
+    padding: 1vh 2vw 1vh;
+    margin: auto;
+}
+
+.searchButton {
+    width: 5vw;
+    margin: 1vh 1vw 1vh;
+    background: transparent;
+    border: none;
+}
+
+.searchIcon {
+    width: 5vw;
+}
+
+nav {
+    width: 7vw;
+    padding: 1vh 2vw;
+}
+
+    nav img {
+        display: block;
+        width: 6vw;
+        margin: 1.5vh 1vw 1vh;
+    }
+
+.hidden {
+    font-size: 0;
+    display: none;
+}
+
+
+/* || VERNISSAGES || */
+
+.live-btn {
+    width: 100vw;
+    margin-top: 3vh;
+}
+
+.live-picture {
+    width: 20vw;
+}
+/*live-container{
+    width: 100vw;
+}*/
