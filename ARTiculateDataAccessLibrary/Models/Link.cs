@@ -9,13 +9,21 @@ namespace ARTiculateDataAccessLibrary.Models
     {
         [Key]
         public int ArtistId { get; set; }
+        [MaxLength(500)]
         public string Instagram { get; set; }
+        [MaxLength(500)]
         public string Pinterest { get; set; }
+        [MaxLength(500)]
         public string Patreon { get; set; }
+        [MaxLength(500)]
         public string Facebook { get; set; }
+        [MaxLength(500)]
         public string FlickR { get; set; }
+        [MaxLength(500)]
         public string Linkedin { get; set; }
+        [MaxLength(500)]
         public string Website { get; set; }
+        [MaxLength(500)]
         public string Optional { get; set; }
     }
 }
