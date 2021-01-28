@@ -10,6 +10,7 @@ namespace ARTiculateDataAccessLibrary.Models
         public int Id { get; set; }
         public int ArtistId { get; set; }
         public DateTime DateTime { get; set; }
+        [Required]
         [MaxLength(100)]
         public string Title { get; set; }
         [MaxLength(1024)]
