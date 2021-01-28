@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ARTiculateDataAccessLibrary.Models
@@ -8,12 +9,24 @@ namespace ARTiculateDataAccessLibrary.Models
     {
         public int Id { get; set; }
         public int ArtistId { get; set; }
+
+        [MaxLength(100)]
         public string Picture { get; set; }
+
+        [Required]
+        [MaxLength(100)]
         public string Name { get; set; }
-        public string Summary { get; set; }
-        public string Height { get; set; }
-        public string Width { get; set; }
-        public string Depth { get; set; }
+
+        [MaxLength(1000)]
+        public string Description { get; set; }
+
+        [Required]
+        public int Height { get; set; }
+
+        [Required]
+        public int Width { get; set; }
+
+        public int Depth { get; set; }
         public bool Open { get; set; }
         public List<ArtItem_Tag> ArtItem_Tags { get; set; } = new List<ArtItem_Tag>();
 
