@@ -2,54 +2,63 @@
     <h1>Vernissages</h1>
     <button class="live-btn" visibility="hidden">
         <div class="live-container">
-            <img class="live-picture" src="Assets/Images/PlaceholderIMG.jpg">
             <img class="live-btn-img" src="Assets/Images/Livebutton.png">
-            <h2>Live Vernissage title</h2>
-            <h3>Live Vernissage Artist/s</h3>
-        </div>
-    </button>
-    <h2>Next 4 Vernissages</h2>
-    <button class="next-4">
-        <img src="Assets/Images/PlaceholderIMG.jpg">
-        <div class="next4-container">
-            <h3>Vernissage Titel</h3>
-            <p>28th January 11PM</p>
-            <p>Artist Name</p>
-        </div>
-    </button>
-    <button class="next-4">
-        <img src="Assets/Images/PlaceholderIMG.jpg">
-        <div class="next4-container">
-            <h3>Vernissage Titel</h3>
-            <p>28th January 11PM</p>
-            <p>Artist Name</p>
-        </div>
-    </button>
-    <button class="next-4">
-        <img src="Assets/Images/PlaceholderIMG.jpg">
-        <div class="next4-container">
-            <h3>Vernissage Titel</h3>
-            <p>28th January 11PM</p>
-            <p>Artist Name</p>
-        </div>
-    </button>
-    <button class="next-4">
-        <img src="Assets/Images/PlaceholderIMG.jpg">
-        <div class="next4-container">
-            <h3>Vernissage Titel</h3>
-            <p>28th January 11PM</p>
-            <p>Artist Name</p>
+            <div class="live-txt">
+                <h2>Live Vernissage title</h2>
+                <h3>Live Vernissage Artist/s</h3>
+            </div>
         </div>
     </button>
 
-    <h2>Upcoming Vernissages</h2>
+    <h2 class="diagonal-h2">Next 4 Vernissages</h2>
+    <div class="diagonal-box">
+        <div class="next-4-content">
+            <div class="left4">
+                <button class="next-4">
+                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>Vernissage Titel</h3>
+                        <p>28th January 11PM</p>
+                        <p>Artist Name</p>
+                    </div>
+                </button>
+                <button class="next-4">
+                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>Vernissage Titel</h3>
+                        <p>28th January 11PM</p>
+                        <p>Artist Name</p>
+                    </div>
+                </button>
+            </div>
+            <div class="right4">
+                <button class="next-4">
+                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>Vernissage Titel</h3>
+                        <p>28th January 11PM</p>
+                        <p>Artist Name</p>
+                    </div>
+                </button>
+                <button class="next-4">
+                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>Vernissage Titel</h3>
+                        <p>28th January 11PM</p>
+                        <p>Artist Name</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
 
+    <h2 class="upcoming-h2">Upcoming Vernissages</h2>
     <button class="upcoming">
         <div class="upcoming-date">
             <p>28</p>
             <p>Jan</p>
         </div>
-        <div class="upcoming-vernissage">
+        <div class="upcoming-txt">
             <p>Vernissage name</p>
             <p>Vernissage Artist/s</p>
         </div>
@@ -59,7 +68,7 @@
             <p>28</p>
             <p>Jan</p>
         </div>
-        <div class="upcoming-vernissage">
+        <div class="upcoming-txt">
             <p>Vernissage name</p>
             <p>Vernissage Artist/s</p>
         </div>
@@ -69,7 +78,7 @@
             <p>28</p>
             <p>Jan</p>
         </div>
-        <div class="upcoming-vernissage">
+        <div class="upcoming-txt">
             <p>Vernissage name</p>
             <p>Vernissage Artist/s</p>
         </div>

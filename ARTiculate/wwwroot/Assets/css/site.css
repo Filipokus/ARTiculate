@@ -1,32 +1,57 @@
 ﻿/* || GENERAL || */
 
+@font-face {
+    font-family: 'HeyAugust';
+    src: url('/Assets/Fonts/HeyAugust.otf');
+}
+
 body {
     background: #F89A1E;
 }
 
 h1, h2, h3, h4, p {
     color: #242424;
+    font-family: 'Comfortaa', cursive;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Comfortaa', cursive;
+h1, h2 {
+    font-family: 'HeyAugust';
+    text-align: center;
+   
+}
+
+h1 {
+    font-size: 8vw;
+}
+
+h2{
+    font-size: 6vw;
+}
+
+p{
+    font-size: 3vw;
 }
 
 /* || HEADER || */
 header {
     background: #242424;
-    width: 102vw;
+    width: 100%;
     position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: -1vh;
-    margin-left: -2vw;
+    z-index: 1;
+    box-shadow: 0 0 3vw 1vw #362D26;
 }
 
-    header img {
-        width: 30vw;
-        margin: 1vh 3vw;
+header img {
+    width: 30vw;
+    margin: 1vh 3vw;
+}
+    header img:hover {
+        cursor: pointer;
     }
 
 .search {
@@ -57,13 +82,16 @@ header {
     background: transparent;
     border: none;
     outline: none;
-    margin-right: -2vw;
+    margin-right: 1vw;
 }
 
-    .searchButton:hover ~ .searchTerm {
-        visibility: visible;
-        width: 30vw;
-        transition: 0.3s;
+.searchButton:hover ~ .searchTerm {
+    visibility: visible;
+    width: 30vw;
+    transition: 0.3s;
+}
+    .searchButton:hover {
+        cursor: pointer;
     }
 
 .searchIcon {
@@ -92,20 +120,216 @@ nav img {
     font-size: 0;
     display: none;
 }
+
 .container{
-    display: none;
+    margin-top: 15%;
 }
+
 
 /* || VERNISSAGES || */
 
+
+/* LIVE BANNER */
 .live-btn {
-    width: 100vw;
+    width: 100%;
     margin-top: 3vh;
+    background-image: url(../Images/PlaceholderIMG.jpg);
+    background-position: center;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0 0 3vw 1vw #362D26;
 }
 
-.live-picture {
-    width: 20vw;
+.live-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0,0,0, 0.3);
 }
-/*live-container{
-    width: 100vw;
-}*/
+
+    .live-container:hover {
+        background-color: rgb(213, 0, 94, 0.3);
+        cursor: pointer;
+    }
+
+.live-btn-img{
+    height: 7vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vw;
+}
+
+.live-txt h2 {
+    font-size: 4vw;
+}
+
+.live-txt h3{
+    font-size: 2vw;
+}
+
+.live-txt {
+    background: rgb(255,255,255, 0.7);
+    border-radius: 10px;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+.live-txt h2{
+    font-family: 'Comfortaa';
+}
+
+/* NEXT 4 */
+
+.diagonal-h2 {
+    font-family: 'HeyAugust';
+    font-size: 6vw;
+    text-align: center;
+    margin: 1vh;
+    transform: skewY(-11deg);
+    margin-top: 9vh;
+    margin-bottom: 3vh;
+}
+
+.diagonal-box {
+    background-color: #242424;
+    transform: skewY(-11deg);
+    box-shadow: 0 0.3vw 3vw 2vw #362D26;
+}
+
+.next-4-content {
+    transform: skewY(11deg);
+    max-width: 100vw;
+    margin: 3vh auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.next-4 {
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+}
+
+.next4-container {
+    background-color: rgb(255,255,255, 0.7);
+    margin-top: -20vw;
+    position: relative;
+    z-index: 10;
+    padding: 1vw;
+}
+
+.next-4 img {
+    width: 40vw;
+    border-radius: 8px;
+    margin-bottom: 3.5vh;
+    box-shadow: 0 0 3vw 2vw #0c0c0c;
+}
+
+.left4 {
+    width: 40vw;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate3d(-11%, 10%, 0);
+}
+
+.right4 {
+    width: 40vw;
+    flex-direction: column;
+    transform: translate3d(3%, -8%, 0);
+    justify-content: center;
+}
+
+.next4-container h3{
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+.next4-container p {
+    font-size: 2.6vw;
+}
+
+/* UPCOMING */
+.upcoming-h2 {
+    font-family: 'HeyAugust';
+    font-size: 6vw;
+    text-align: center;
+    margin-top: 9vh;
+    margin-bottom: 2vh;
+}
+
+.upcoming {
+    width: 95%;
+    border: none;
+    margin-top: 0.5vh;
+    margin-bottom: 1vh;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+    background: transparent;
+    padding: 0;
+    outline:none;
+}
+
+.upcoming-date {
+    height: 10vw;
+    width: 12vw;
+    background-color: #4BFFFF;
+    border-radius: 2vw 0vw 0vw 2vw;
+}
+
+.upcoming-date p {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.upcoming-txt {
+    background-color: rgb(255,255,255, 0.5);
+    height: 10vw;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+.upcoming-txt p{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 2vw;
+}
+
+.upcoming:hover {
+    box-shadow: 3vw 0 3vw 0.06vw #362D26;
+    cursor: pointer;
+}
+.upcoming:hover p{
+    font-weight:bolder;
+}
+
+
+    /* || FOOTER || */
+.footer {
+    width: 100%;
+    height: 10vh;
+    background-color: #242424;
+    margin-top: 11vh;
+    box-shadow: 0 0 3vw 1vw #362D26;
+}
+
+.footer-container {
+    font-size: 3vw;
+    color: #DFDDE4;
+    font-family: 'Comfortaa', cursive;
+    text-align: right;
+    padding: 5vw 2vw 0 0;
+}
+
+.footer-container a, .footer-container p {
+    color: #DFDDE4;
+    font-family: 'Comfortaa', cursive;
+    font-size: 3vw;
+}

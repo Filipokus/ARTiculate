@@ -6,12 +6,15 @@
     <title>@ViewData["Title"] - ARTiculate</title>
     <link href="~/Assets/css/reset.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Assets/css/site.css?v={random string}" />
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1 class="hidden">ARTiculate</h1>
-        <img src="~/Assets/Images/ARTiculate-LOGO.png" />
+        <a asp-area="" asp-controller="Vernissages" asp-action="Index">
+            <img src="~/Assets/Images/ARTiculate-LOGO.png" />
+        </a>
         <div class="search-container-main">
             <form class="search-container" asp-controller="SearchResult" asp-action="Index" method="post" autocomplete="off">
                 <div class="search">
@@ -32,13 +35,13 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="footer">
+        <div class="footer-container">
             &copy; 2021 - ARTiculate - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
-    <script src="~/Assets/js/site.js" asp-append-version="true"></script>
+    <script src="~/Assets/js/site.js?v={random string}" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

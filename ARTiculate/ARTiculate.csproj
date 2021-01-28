@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Resource Include="wwwroot\Assets\Fonts\HeyAugust.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Assets\Fonts\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,14 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+function artworkHoverIn(ev) {
+    let btn = ev.parentNode
+    let img = btn.firstChild.nextSibling
+    img.style.boxShadow = '0vw 0vw 3vw 1vw rgb(223, 221, 228, 0.5)';
+    btn.style.cursor = "pointer";
+}
 
-// Write your JavaScript code.
+function artworkHoverOut(ev) {
+    let btn = ev.parentNode
+    let img = btn.firstChild.nextSibling
+    img.style.boxShadow = '0 0 3vw 2vw #0c0c0c';
+    btn.style.cursor = "default";
+}
