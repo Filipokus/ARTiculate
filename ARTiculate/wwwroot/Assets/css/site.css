@@ -15,39 +15,65 @@ h1, h2, h3, h4 {
 /* || HEADER || */
 header {
     background: #242424;
-    width: 100vw;
+    width: 102vw;
     position: fixed;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: -1vh;
+    margin-left: -2vw;
 }
 
     header img {
         width: 30vw;
-        margin: 1vh -4vw;
+        margin: 1vh 3vw;
     }
 
 .search {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    margin-right: -25vw;
 }
 
 .searchTerm {
-    width: 20vw;
-    height: 3vh;
+    width: 0vw;
+    height: 1.5vh;
     padding: 1vh 2vw 1vh;
-    margin: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+    margin-left: -50vw;
+    background: #DFDDE4;
+    visibility: hidden;
+    border: hidden;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.3s 3s;
 }
 
 .searchButton {
     width: 5vw;
-    margin: 1vh 1vw 1vh;
+    padding: 1.3vh 1vw 1vh;
     background: transparent;
     border: none;
+    outline: none;
+    margin-right: -2vw;
 }
+
+    .searchButton:hover ~ .searchTerm {
+        visibility: visible;
+        width: 30vw;
+        transition: 0.3s;
+    }
 
 .searchIcon {
     width: 5vw;
+    margin-left: -1vw;
+}
+
+.searchTerm:focus-within {
+    visibility: visible;
+    width: 30vw;
 }
 
 nav {
@@ -55,17 +81,20 @@ nav {
     padding: 1vh 2vw;
 }
 
-    nav img {
-        display: block;
-        width: 6vw;
-        margin: 1.5vh 1vw 1vh;
-    }
+nav img {
+    display: block;
+    width: 6vw;
+    margin: 1vh 1vw;
+    margin-top: 1.5vh;
+}
 
 .hidden {
     font-size: 0;
     display: none;
 }
-
+.container{
+    display: none;
+}
 
 /* || VERNISSAGES || */
 
