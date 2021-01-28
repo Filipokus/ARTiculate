@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ARTiculateDataAccessLibrary.DataAccess
 {
-    class ArtistContext : DbContext
+    public class ArtistContext : DbContext
     {
         public ArtistContext(DbContextOptions options) : base(options) { }
 
@@ -17,5 +17,10 @@ namespace ARTiculateDataAccessLibrary.DataAccess
         public DbSet<Studio> Studio { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Vernisage> Vernisages { get; set; }
+        public DbSet<Vernisage_Tag> Vernisage_Tags { get; set; }
+        public DbSet<Exhibition_Tag> Exhibition_Tags { get; set; }
+        public DbSet<ArtItem_Tag> ArtItem_Tags { get; set; }
+        public DbSet<Artist_Tag> Artist_Tags { get; set; }
+        public DbSet<Studio_Tag> Studio_Tags { get; set; }
     }
 }
