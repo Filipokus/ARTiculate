@@ -8,7 +8,7 @@ namespace ARTiculateDataAccessLibrary.Models
     {
         public int TagId { get; set; }
         public int ArtItemId { get; set; }
-        public List<Tag> Tags { get; set; } = new List<Tag>();
-        public List<ArtItem> ArtItems { get; set; } = new List<ArtItem>();
+        public Tag Tag { get; set; }
+        public ArtItem ArtItem { get; set; }
 }
 }
