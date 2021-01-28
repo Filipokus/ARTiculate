@@ -12,8 +12,8 @@ namespace ARTiculateDataAccessLibrary.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public bool Open { get; set; }
-        public List<Artist> Artists { get; set; } = new List<Artist>();
-        public List<Tag> Tags { get; set; } = new List<Tag>();
+        public List<Artist_Exhibition> Artist_Exhibitions { get; set; } = new List<Artist_Exhibition>();
+        public List<Exhibition_Tag> Exhibition_Tags { get; set; } = new List<Exhibition_Tag>();
     
     }
 }

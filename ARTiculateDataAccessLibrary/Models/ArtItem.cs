@@ -15,7 +15,7 @@ namespace ARTiculateDataAccessLibrary.Models
         public string Width { get; set; }
         public string Depth { get; set; }
         public bool Open { get; set; }
-        public List<Tag> Tags { get; set; } = new List<Tag>();
+        public List<ArtItem_Tag> ArtItem_Tags { get; set; } = new List<ArtItem_Tag>();
 
 
     }

@@ -14,8 +14,8 @@ namespace ARTiculateDataAccessLibrary.Models
         public string ProfilePicture { get; set; }
         public Link Link { get; set; }
         public List<ArtItem> ArtItems { get; set; } = new List<ArtItem>();
-        public List<Vernisage> Vernisages { get; set; } = new List<Vernisage>();
-        public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
-        public List<Tag> Tags { get; set; } = new List<Tag>();
+        public List<Artist_Vernisage> Artist_Vernisages { get; set; } = new List<Artist_Vernisage>();
+        public List<Artist_Exhibition> Artist_Exhibitions { get; set; } = new List<Artist_Exhibition>();
+        public List<Artist_Tag> Artist_Tags { get; set; } = new List<Artist_Tag>();
     }
 }
