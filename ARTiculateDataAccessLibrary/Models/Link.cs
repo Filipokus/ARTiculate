@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace ARTiculateDataAccessLibrary.Models
 {
     public class Link
     {
+        [Key]
         public int ArtistId { get; set; }
         public string Instagram { get; set; }
         public string Pinterest { get; set; }
