@@ -5,10 +5,8 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Data
 {
-    public class ARTiculateRepository : IARTiculateRepository
+    public interface IARTiculateRepository
     {
-
-
 
     }
 }
