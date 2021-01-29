@@ -22,6 +22,9 @@ namespace ARTiculateDataAccessLibrary.Models
         [MaxLength(1024)]
         [Column(TypeName = "varchar(1024)")]
         public string Description { get; set; }
+        [MaxLength(1000)]
+        [Column(TypeName = "varchar(1000)")]
+        public string Link { get; set; }
 
         public bool Open { get; set; }
 
