@@ -32,6 +32,25 @@ p{
     font-size: 3vw;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: 0;
+    border-radius: 0;
+    opacity: 1;
+    background: #242424;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #F89A1E;
+    border-radius: 5px;
+    height: 10px;
+}
+
 /* || HEADER || */
 header {
     background: #242424;

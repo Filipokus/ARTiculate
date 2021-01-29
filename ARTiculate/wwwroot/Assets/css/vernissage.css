@@ -13,46 +13,95 @@
     height: 100%;
 }
 
-#testar {
+#chat-textbox {
     display: flex;
     flex-direction: column;
     width: 85%;
-    border: 5px solid #8C7848;
+    border: 1px solid #242424;
     border-radius: 10px;
-    background-image: linear-gradient(black, rgb(41, 40, 40));
+    background-color: none;
     color: white;
-    box-shadow: 0px 5px 15px -5px black;
-    height: 70%;
+    height: 40%;
     position: absolute;
     overflow-x: hidden;
     overflow-y: auto;
     transform: skewY(11deg);
-}
-
-.message-container {
-    transform: skewY(11deg);
+    margin-top: 10vw;
+    font-family: 'Comfortaa';
 }
 
 .diagonal-box {
     background-color: #242424;
     transform: skewY(-11deg);
     box-shadow: 0 0.3vw 3vw 2vw #362D26;
-    height:
+    margin-top: 3vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
+.diagonal-h2 {
+    font-family: 'HeyAugust';
+    font-size: 6vw;
+    text-align: center;
+    margin: 1vh;
+    transform: skewY(-12deg);
+    margin-top: 2vh;
+    margin-bottom: 1vh;
 }
 
-
-::-webkit-scrollbar-track {
-    box-shadow: 0;
-    border-radius: 5px;
+.live-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 6vh;
+    margin-top: -1vh;
+    text-align: center;
 }
 
+.live-title h1 {
+    font-size: 7vw;
+    text-align: center;
+    align-self: center;
+}
 
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(to top, #8a6326, #8C7848);
-    border-radius: 5px;
-    height: 10px;
+.live-title img {
+    align-self: center;
+    height: 3vh;
+    margin-left:1vh;
+}
+
+.message-container {
+    transform: skewY(11deg);
+    margin-top: 30vh;
+    display: flex;
+}
+
+#sendButton {
+    border-radius: 2vw;
+    font-size: 70%;
+    border: 0.5vw solid #F89A1E;
+    background-color: #242424;
+    padding: 1%;
+    box-shadow: 0px 4px 10px 0px black;
+    color: #F89A1E;
+    cursor: pointer;
+    width: 20vw;
+    font-family: 'Comfortaa';
+}
+
+#userInput {
+    width: 20vw;
+    border-radius: 2vw;
+    border: none;
+    font-family: 'Comfortaa';
+}
+
+#messageInput {
+    width: 40vw;
+    border-radius: 2vw;
+    border: none;
+    margin: 0vw 1.5vw;
+    font-family: 'Comfortaa';
 }

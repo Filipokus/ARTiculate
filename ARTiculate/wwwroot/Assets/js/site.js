@@ -39,3 +39,10 @@ function menuHoverOut(node) {
     }
     link.style.color = '#DFDDE4';
 }
+
+//----------Scrollbar bottom--------------
+
+var chatHistory = document.getElementById("chat-textbox");
+chatHistory.scrollTop = chatHistory.scrollHeight;
+
+
