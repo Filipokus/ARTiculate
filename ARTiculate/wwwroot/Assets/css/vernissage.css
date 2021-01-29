@@ -12,3 +12,47 @@
     width: 100%;
     height: 100%;
 }
+
+#testar {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    border: 5px solid #8C7848;
+    border-radius: 10px;
+    background-image: linear-gradient(black, rgb(41, 40, 40));
+    color: white;
+    box-shadow: 0px 5px 15px -5px black;
+    height: 70%;
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: skewY(11deg);
+}
+
+.message-container {
+    transform: skewY(11deg);
+}
+
+.diagonal-box {
+    background-color: #242424;
+    transform: skewY(-11deg);
+    box-shadow: 0 0.3vw 3vw 2vw #362D26;
+    height:
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    box-shadow: 0;
+    border-radius: 5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to top, #8a6326, #8C7848);
+    border-radius: 5px;
+    height: 10px;
+}
