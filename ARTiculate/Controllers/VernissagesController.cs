@@ -12,5 +12,9 @@ namespace ARTiculate.Controllers
         {
             return View();
         }
+        public IActionResult Vernissage(/*int id*/)
+        {
+            return View(/*id*/);
+        }
     }
 }

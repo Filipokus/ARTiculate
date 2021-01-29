@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Assets\css\NewFile.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="wwwroot\Assets\Fonts\HeyAugust.otf" />
   </ItemGroup>
 
