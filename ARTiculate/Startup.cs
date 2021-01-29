@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using SignalRChat.Hubs;
+
 namespace ARTiculate
 {
     public class Startup
@@ -24,6 +26,7 @@ namespace ARTiculate
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +55,7 @@ namespace ARTiculate
                     name: "default",
                     //pattern: "{controller=Home}/{action=Index}/{id?}");
                     pattern: "{controller=Vernissages}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chathub");
 
             });
         }
