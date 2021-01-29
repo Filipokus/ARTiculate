@@ -9,6 +9,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using ARTiculate.Mock;
+using ARTiculate.Data;
 
 namespace ARTiculate.Controllers
 {
@@ -16,21 +18,21 @@ namespace ARTiculate.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ArtistContext _db;
+        private IARTiculateRepository aRTiculateRepository;
 
 
-        public HomeController(ILogger<HomeController> logger, ArtistContext db)
+        public HomeController(ILogger<HomeController> logger, ArtistContext db, IARTiculateRepository aRTiculateRepository)
         {
             _logger = logger;
             _db = db;
+            this.aRTiculateRepository = aRTiculateRepository;
         }
 
         public IActionResult Index()
         {
-            //if (_db.Artists.Count() == 0)
-            //{
-            //    var file = System.IO.File.ReadAllText("ArtItemMock.json");
-            //    var result = JsonConvert.DeserializeObject<IEnumerable<ArtItem>>(file);
-            //}
+           
+            aRTiculateRepository.GetMockData(_db);
+
             return View();
         }
 

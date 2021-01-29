@@ -1,10 +1,52 @@
-[{"id":1,"ArtistId":1,"Open":false},
-{"id":2,"ArtistId":2,"Open":true},
-{"id":3,"ArtistId":3,"Open":true},
-{"id":4,"ArtistId":4,"Open":false},
-{"id":5,"ArtistId":5,"Open":false},
-{"id":6,"ArtistId":6,"Open":false},
-{"id":7,"ArtistId":7,"Open":true},
-{"id":8,"ArtistId":8,"Open":false},
-{"id":9,"ArtistId":9,"Open":true},
-{"id":10,"ArtistId":10,"Open":false}]
+[
+  {
+    "Artistidbla": 1,
+    "idbla": 1,
+    "Open": false
+  },
+  {
+    "idbla": 2,
+    "Artistidbla": 2,
+    "Open": true
+  },
+  {
+    "idbla": 3,
+    "Artistidbla": 3,
+    "Open": true
+  },
+  {
+    "idbla": 4,
+    "Artistidbla": 4,
+    "Open": false
+  },
+  {
+    "idbla": 5,
+    "Artistidbla": 5,
+    "Open": false
+  },
+  {
+    "idbla": 6,
+    "Artistidbla": 6,
+    "Open": false
+  },
+  {
+    "idbla": 7,
+    "Artistidbla": 7,
+    "Open": true
+  },
+  {
+    "idbla": 8,
+    "Artistidbla": 8,
+    "Open": false
+  },
+  {
+    "idbla": 9,
+    "Artistidbla": 9,
+    "Open": true
+  },
+  {
+    "idbla": 10,
+    "Artistidbla": 10,
+    "Open": false
+  }
+]
