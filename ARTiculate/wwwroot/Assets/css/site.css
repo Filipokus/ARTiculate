@@ -104,22 +104,55 @@ header img {
     width: 30vw;
 }
 
-nav {
-    width: 7vw;
-    padding: 1vh 2vw;
+nav{
+    flex-direction: column-reverse;
+    justify-content: left;
 }
 
 nav img {
-    display: block;
     width: 6vw;
     margin: 1vh 1vw;
+    padding: 1vh 2vw;
     margin-top: 1.5vh;
+    
 }
 
-.hidden {
-    font-size: 0;
+#menu {
     display: none;
+    width: 102%;
+    background-color: #242424;
+    position: fixed;
+    z-index: 1;
+    margin-top: -5%;
 }
+
+    #menu li a, #menu li {
+        font-family: 'Comfortaa';
+        text-align: center;
+        line-height: 6vh;
+        margin-right: 2vw;
+        color: #DFDDE4;
+        text-decoration: none;
+    }
+
+        #menu li:hover{
+            color: #F89A1E;
+            box-shadow: 0 0 3vw 1vw #362D26;
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+/*        #menu li:hover ~ a {
+            color: #F89A1E;
+            box-shadow: 0 0 3vw 1vw #362D26;
+            cursor: pointer;
+            font-weight: bolder;
+        }*/
+
+    .hidden {
+        font-size: 0;
+        display: none;
+    }
 
 .container{
     margin-top: 15%;

@@ -12,7 +12,7 @@
 <body>
     <header>
         <h1 class="hidden">ARTiculate</h1>
-        <a asp-area="" asp-controller="Vernissages" asp-action="Index">
+        <a asp-area="" asp-controller="Home" asp-action="Index">
             <img src="~/Assets/Images/ARTiculate-LOGO.png" />
         </a>
         <div class="search-container-main">
@@ -26,9 +26,29 @@
             </form>
         </div>
         <nav>
-            <img src="~/Assets/Images/Hamburger.png" />
+            <img src="~/Assets/Images/Hamburger.png" onclick="hideOrShowMenu()" />
         </nav>
     </header>
+    <ul id="menu">
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Home</a>
+        </li>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Vernissages" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Vernissages</a>
+        </li>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Exhibitions</a>
+        </li>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artists</a>
+        </li>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
+        </li>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Login</a>
+        </li>
+    </ul>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

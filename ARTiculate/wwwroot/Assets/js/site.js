@@ -12,3 +12,30 @@ function artworkHoverOut(ev) {
     img.style.boxShadow = '0 0 3vw 2vw #0c0c0c';
     btn.style.cursor = "default";
 }
+
+function hideOrShowMenu() {
+    let menuOptions = document.getElementById('menu');
+    if (menuOptions.style.display !== 'block') {
+        menuOptions.style.display = 'block';
+        menuOptions.style.animation = 'slide - down .3s ease - out';
+    }
+    else {
+        menuOptions.style.display = 'none';
+    }
+}
+
+function menuHoverIn(node) {
+    let link = node;
+    if (link.tagName !== 'A' ) {
+        link = node.firstChild.nextSibling
+    }
+    link.style.color = '#F89A1E';
+}
+
+function menuHoverOut(node) {
+    let link = node;
+    if (link.tagName !== 'A') {
+        link = node.firstChild.nextSibling
+    }
+    link.style.color = '#DFDDE4';
+}
