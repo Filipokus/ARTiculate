@@ -30,8 +30,10 @@ namespace ARTiculate.Controllers
 
         public IActionResult Index()
         {
-           
-            aRTiculateRepository.GetMockData(_db);
+            if (_db.Artists.Count() == 0)
+            {
+                aRTiculateRepository.GetMockData(_db);
+            }
 
             return View();
         }
