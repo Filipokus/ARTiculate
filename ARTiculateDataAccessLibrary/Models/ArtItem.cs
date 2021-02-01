@@ -12,6 +12,8 @@ namespace ARTiculateDataAccessLibrary.Models
 
         public int ArtistId { get; set; }
 
+        public Artist Artist { get; set; }
+
         [MaxLength(100)]
         public string Picture { get; set; }
 

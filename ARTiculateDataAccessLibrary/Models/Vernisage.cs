@@ -10,8 +10,6 @@ namespace ARTiculateDataAccessLibrary.Models
     {
         public int Id { get; set; }
 
-        public int ArtistId { get; set; }
-
         public DateTime DateTime { get; set; }
 
         [Required]

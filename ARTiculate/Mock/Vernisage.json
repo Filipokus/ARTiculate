@@ -1,6 +1,5 @@
 [
   {
-    "ArtistId": 3,
     "DateTime": "2020-07-04",
     "Description": "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
     //"Id": 1,
@@ -10,7 +9,6 @@
   },
   {
     //"Id": 2,
-    "ArtistId": 4,
     "DateTime": "2020-09-12",
     "Title": "Gross Anatomy (a.k.a. A Cut Above)",
     "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
@@ -19,7 +17,6 @@
   },
   {
     //"Id": 3,
-    "ArtistId": 6,
     "DateTime": "2020-03-19",
     "Title": "Stella Street",
     "Description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
@@ -28,7 +25,6 @@
   },
   {
     //"Id": 4,
-    "ArtistId": 9,
     "DateTime": "2020-08-28",
     "Title": "Pretty Baby",
     "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
@@ -37,7 +33,6 @@
   },
   {
     // "Id": 5,
-    "ArtistId": 2,
     "DateTime": "2021-01-20",
     "Title": "Great McGinty, The",
     "Description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
@@ -46,7 +41,6 @@
   },
   {
     // "Id": 6,
-    "ArtistId": 8,
     "DateTime": "2020-12-28",
     "Title": "My Favorite Martian",
     "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
@@ -55,7 +49,6 @@
   },
   {
     //"Id": 7,
-    "ArtistId": 2,
     "DateTime": "2020-09-20",
     "Title": "Mansfield Park",
     "Description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
@@ -64,7 +57,6 @@
   },
   {
     //"Id": 8,
-    "ArtistId": 9,
     "DateTime": "2020-11-19",
     "Title": "Side Street",
     "Description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
@@ -73,7 +65,6 @@
   },
   {
     //"Id": 9,
-    "ArtistId": 9,
     "DateTime": "2020-08-25",
     "Title": "Wyoming Renegades",
     "Description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
@@ -82,7 +73,6 @@
   },
   {
     //"Id": 10,
-    "ArtistId": 3,
     "DateTime": "2020-05-28",
     "Title": "Girl with a Pearl Earring",
     "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",

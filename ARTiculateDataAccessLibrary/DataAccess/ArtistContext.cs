@@ -47,6 +47,19 @@ namespace ARTiculateDataAccessLibrary.DataAccess
 
             modelBuilder.Entity<Vernisage_Tag>()
                .HasKey(vt => new { vt.VernisageId, vt.TagId });
+
+            modelBuilder.Entity<ArtItem>()
+              .HasOne(a => a.Artist)
+              .WithMany(a => a.ArtItems)
+              .HasForeignKey(a => a.ArtistId);
+
+            modelBuilder.Entity<Link>(entity =>
+            {
+                entity.HasKey(z => z.ArtistId);
+                entity.HasOne(p => p.Artist)
+                     .WithOne(a => a.Link)
+                     .HasForeignKey<Link>(a => a.ArtistId);
+            });
         }
     }
 }

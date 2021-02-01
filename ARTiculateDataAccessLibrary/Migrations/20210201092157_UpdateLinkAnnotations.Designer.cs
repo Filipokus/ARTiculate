@@ -4,14 +4,16 @@ using ARTiculateDataAccessLibrary.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ARTiculateDataAccessLibrary.Migrations
 {
     [DbContext(typeof(ArtistContext))]
-    partial class ArtistContextModelSnapshot : ModelSnapshot
+    [Migration("20210201092157_UpdateLinkAnnotations")]
+    partial class UpdateLinkAnnotations
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -160,6 +162,9 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
@@ -295,6 +300,9 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ArtistId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("datetime2");
 
@@ -336,7 +344,7 @@ namespace ARTiculateDataAccessLibrary.Migrations
 
             modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.ArtItem", b =>
                 {
-                    b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", "Artist")
+                    b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", null)
                         .WithMany("ArtItems")
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -420,7 +428,7 @@ namespace ARTiculateDataAccessLibrary.Migrations
 
             modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Link", b =>
                 {
-                    b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", "Artist")
+                    b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", null)
                         .WithOne("Link")
                         .HasForeignKey("ARTiculateDataAccessLibrary.Models.Link", "ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)

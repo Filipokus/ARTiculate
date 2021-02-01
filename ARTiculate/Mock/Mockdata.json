@@ -1,0 +1,656 @@
+[
+  {
+    "Firstname": "Phelia",
+    "Lastname": "Rawdall",
+    "Phonenumber": "568-663-1645",
+    "Emailadress": "prawdall0@php.net",
+    "ProfilePicture": "http://dummyimage.com/196x166.png/ff4444/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-01-29",
+        "Title": "Monuments Men, The",
+        "Description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.",
+        "Open": true,
+        "LiveLink": "https://hp.com/convallis/nulla/neque/libero/convallis/eget/eleifend.aspx?posuere=cubilia&cubilia=curae&curae=duis&nulla=faucibus&dapibus=accumsan&dolor=odio&vel=curabitur&est=convallis&donec=duis&odio=consequat&justo=dui&sollicitudin=nec&ut=nisi&suscipit=volutpat&a=eleifend&feugiat=donec&et=ut&eros=dolor&vestibulum=morbi&ac=vel&est=lectus&lacinia=in&nisi=quam&venenatis=fringilla&tristique=rhoncus&fusce=mauris&congue=enim&diam=leo&id=rhoncus&ornare=sed"
+      },
+      {
+        "DateTime": "2020-09-23",
+        "Title": "La Soufrière - Warten auf eine unausweichliche Katastrophe",
+        "Description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+        "Open": false,
+        "LiveLink": "http://pagesperso-orange.fr/nisi/eu.jpg?orci=vestibulum&nullam=quam&molestie=sapien&nibh=varius&in=ut&lectus=blandit&pellentesque=non&at=interdum&nulla=in&suspendisse=ante&potenti=vestibulum&cras=ante&in=ipsum&purus=primis&eu=in&magna=faucibus&vulputate=orci&luctus=luctus&cum=et&sociis=ultrices&natoque=posuere&penatibus=cubilia&et=curae&magnis=duis&dis=faucibus&parturient=accumsan&montes=odio&nascetur=curabitur&ridiculus=convallis&mus=duis&vivamus=consequat&vestibulum=dui&sagittis=nec&sapien=nisi&cum=volutpat&sociis=eleifend&natoque=donec&penatibus=ut&et=dolor&magnis=morbi&dis=vel&parturient=lectus"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-04-02",
+        "Title": "Return of Swamp Thing, The",
+        "Description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/224x174.bmp/dddddd/000000",
+        "Name": "Mackenna's Gold",
+        "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+        "Height": 20,
+        "Width": 87,
+        "Depth": 50,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/197x194.bmp/ff4444/ffffff",
+        "Name": "Reluctant Debutante, The",
+        "Description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
+        "Height": 8,
+        "Width": 60,
+        "Depth": 11,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/206x182.jpg/ff4444/ffffff",
+        "Name": "En på miljonen",
+        "Description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
+        "Height": 87,
+        "Width": 74,
+        "Depth": 46,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/234x128.jpg/5fa2dd/ffffff",
+        "Name": "Dedication",
+        "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+        "Height": 90,
+        "Width": 86,
+        "Depth": 50,
+        "Open": false
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Comedy|Romance" },
+      { "TagName": "Documentary" },
+      { "TagName": "Crime|Drama|Film-Noir|Thriller" }
+    ]
+  },
+  {
+    "Firstname": "Adeline",
+    "Lastname": "Burton",
+    "Phonenumber": "400-148-1066",
+    "Emailadress": "aburton1@ucoz.com",
+    "ProfilePicture": "http://dummyimage.com/202x159.jpg/5fa2dd/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-06-18",
+        "Title": "Division III: Football's Finest",
+        "Description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
+        "Open": true,
+        "LiveLink": "http://geocities.com/pede/justo.jsp?in=in&faucibus=sapien&orci=iaculis&luctus=congue&et=vivamus&ultrices=metus&posuere=arcu&cubilia=adipiscing&curae=molestie&nulla=hendrerit&dapibus=at&dolor=vulputate&vel=vitae&est=nisl&donec=aenean&odio=lectus&justo=pellentesque&sollicitudin=eget&ut=nunc&suscipit=donec&a=quis&feugiat=orci&et=eget&eros=orci&vestibulum=vehicula&ac=condimentum&est=curabitur&lacinia=in&nisi=libero&venenatis=ut&tristique=massa&fusce=volutpat&congue=convallis&diam=morbi&id=odio&ornare=odio&imperdiet=elementum&sapien=eu&urna=interdum&pretium=eu&nisl=tincidunt&ut=in&volutpat=leo&sapien=maecenas&arcu=pulvinar&sed=lobortis&augue=est&aliquam=phasellus&erat=sit&volutpat=amet&in=erat&congue=nulla&etiam=tempus&justo=vivamus&etiam=in&pretium=felis&iaculis=eu&justo=sapien&in=cursus&hac=vestibulum&habitasse=proin&platea=eu&dictumst=mi&etiam=nulla&faucibus=ac&cursus=enim&urna=in&ut=tempor&tellus=turpis&nulla=nec&ut=euismod"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-11-02",
+        "Title": "Little Nikita",
+        "Description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/219x196.jpg/cc0000/ffffff",
+        "Name": "Wages of Fear, The (Salaire de la peur, Le)",
+        "Description": "Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+        "Height": 34,
+        "Width": 99,
+        "Depth": 1,
+        "Open": false
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Action|Crime|Drama|Thriller" },
+      { "TagName": "Action|Animation|Film-Noir|Sci-Fi|Thriller" },
+      { "TagName": "Animation|Children|Comedy" }
+    ]
+  },
+  {
+    "Firstname": "Tomas",
+    "Lastname": "Dallemore",
+    "Phonenumber": "195-120-6158",
+    "Emailadress": "tdallemore2@cmu.edu",
+    "ProfilePicture": "http://dummyimage.com/219x158.jpg/cc0000/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-10-17",
+        "Title": "Statement, The",
+        "Description": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+        "Open": false,
+        "LiveLink": "http://plala.or.jp/interdum/venenatis/turpis/enim/blandit.html?condimentum=sollicitudin&neque=mi&sapien=sit&placerat=amet&ante=lobortis&nulla=sapien&justo=sapien&aliquam=non&quis=mi&turpis=integer&eget=ac&elit=neque&sodales=duis&scelerisque=bibendum&mauris=morbi&sit=non&amet=quam&eros=nec&suspendisse=dui&accumsan=luctus&tortor=rutrum&quis=nulla&turpis=tellus&sed=in&ante=sagittis&vivamus=dui&tortor=vel&duis=nisl&mattis=duis&egestas=ac&metus=nibh&aenean=fusce&fermentum=lacus&donec=purus&ut=aliquet&mauris=at&eget=feugiat&massa=non&tempor=pretium&convallis=quis&nulla=lectus&neque=suspendisse&libero=potenti&convallis=in&eget=eleifend&eleifend=quam&luctus=a&ultricies=odio&eu=in&nibh=hac&quisque=habitasse&id=platea&justo=dictumst&sit=maecenas&amet=ut&sapien=massa&dignissim=quis&vestibulum=augue&vestibulum=luctus&ante=tincidunt&ipsum=nulla&primis=mollis&in=molestie&faucibus=lorem&orci=quisque"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-06-09",
+        "Title": "Pippi in the South Seas (Pippi Långstrump på de sju haven)",
+        "Description": "Proin risus. Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+        "Open": false
+      },
+      {
+        "DateTime": "2020-07-26",
+        "Title": "Jet Lag (Décalage horaire)",
+        "Description": "Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/109x138.png/5fa2dd/ffffff",
+        "Name": "Boat People (Tau ban no hoi)",
+        "Description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
+        "Height": 35,
+        "Width": 70,
+        "Depth": 47,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/147x191.bmp/ff4444/ffffff",
+        "Name": "Wake",
+        "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
+        "Height": 81,
+        "Width": 6,
+        "Depth": 42,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/143x157.bmp/ff4444/ffffff",
+        "Name": "My Louisiana Sky",
+        "Description": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla.",
+        "Height": 72,
+        "Width": 46,
+        "Depth": 22,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [ { "TagName": "Drama" } ]
+  },
+  {
+    "Firstname": "Diandra",
+    "Lastname": "Winchcombe",
+    "Phonenumber": "969-261-6913",
+    "Emailadress": "dwinchcombe3@is.gd",
+    "ProfilePicture": "http://dummyimage.com/114x219.png/dddddd/000000",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-02-11",
+        "Title": "Morocco",
+        "Description": "Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.",
+        "Open": false,
+        "LiveLink": "http://about.me/montes/nascetur/ridiculus/mus.xml?tellus=suscipit&nisi=a&eu=feugiat&orci=et&mauris=eros&lacinia=vestibulum&sapien=ac&quis=est&libero=lacinia&nullam=nisi&sit=venenatis&amet=tristique&turpis=fusce&elementum=congue&ligula=diam&vehicula=id&consequat=ornare&morbi=imperdiet&a=sapien&ipsum=urna&integer=pretium&a=nisl&nibh=ut&in=volutpat&quis=sapien&justo=arcu&maecenas=sed&rhoncus=augue&aliquam=aliquam&lacus=erat&morbi=volutpat&quis=in&tortor=congue&id=etiam"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-02-16",
+        "Title": "I'm All Right Jack",
+        "Description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+        "Open": true
+      },
+      {
+        "DateTime": "2020-06-17",
+        "Title": "Living Daylights, The",
+        "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/113x157.png/cc0000/ffffff",
+        "Name": "Hunchback of Notre Dame, The (Notre Dame de Paris)",
+        "Description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+        "Height": 56,
+        "Width": 94,
+        "Depth": 48,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/172x103.jpg/5fa2dd/ffffff",
+        "Name": "Ski Patrol",
+        "Description": "Suspendisse potenti. Nullam porttitor lacus at turpis.",
+        "Height": 83,
+        "Width": 25,
+        "Depth": 43,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/191x133.jpg/ff4444/ffffff",
+        "Name": "I Became a Criminal (They Made Me a Fugitive)",
+        "Description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio.",
+        "Height": 88,
+        "Width": 99,
+        "Depth": 15,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/189x238.bmp/5fa2dd/ffffff",
+        "Name": "Las Vegas Story, The",
+        "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
+        "Height": 50,
+        "Width": 12,
+        "Depth": 11,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/219x114.bmp/ff4444/ffffff",
+        "Name": "Offside",
+        "Description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
+        "Height": 38,
+        "Width": 70,
+        "Depth": 5,
+        "Open": false
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Comedy|Drama|Horror|Sci-Fi" },
+      { "TagName": "Drama|Thriller" },
+      { "TagName": "Drama" },
+      { "TagName": "Comedy|Drama" }
+    ]
+  },
+  {
+    "Firstname": "Lari",
+    "Lastname": "Cridlan",
+    "Phonenumber": "489-604-7896",
+    "Emailadress": "lcridlan4@smugmug.com",
+    "ProfilePicture": "http://dummyimage.com/191x218.jpg/cc0000/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-05-17",
+        "Title": "Romantic Comedy",
+        "Description": "Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+        "Open": false,
+        "LiveLink": "https://github.io/ut/suscipit/a/feugiat/et/eros/vestibulum.xml?vulputate=lectus&elementum=vestibulum&nullam=quam&varius=sapien&nulla=varius&facilisi=ut&cras=blandit&non=non&velit=interdum&nec=in&nisi=ante&vulputate=vestibulum&nonummy=ante&maecenas=ipsum&tincidunt=primis&lacus=in&at=faucibus&velit=orci&vivamus=luctus&vel=et&nulla=ultrices&eget=posuere&eros=cubilia&elementum=curae&pellentesque=duis"
+      },
+      {
+        "DateTime": "2020-08-18",
+        "Title": "Spanish Prisoner, The",
+        "Description": "In congue. Etiam justo.",
+        "Open": false,
+        "LiveLink": "http://networkadvertising.org/nec/molestie/sed.aspx?dictumst=magna&aliquam=vulputate&augue=luctus"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-05-12",
+        "Title": "Get the Gringo",
+        "Description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+        "Open": true
+      },
+      {
+        "DateTime": "2020-11-27",
+        "Title": "Bad Santa",
+        "Description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti.",
+        "Open": true
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/196x130.png/cc0000/ffffff",
+        "Name": "Off and Running ",
+        "Description": "Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
+        "Height": 82,
+        "Width": 91,
+        "Depth": 46,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/241x237.png/ff4444/ffffff",
+        "Name": "Tai Chi Master (Twin Warriors) (Tai ji: Zhang San Feng)",
+        "Description": "Morbi quis tortor id nulla ultrices aliquet. Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui. Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.",
+        "Height": 20,
+        "Width": 68,
+        "Depth": 35,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/227x164.jpg/5fa2dd/ffffff",
+        "Name": "Lorna's Silence (Le silence de Lorna)",
+        "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
+        "Height": 16,
+        "Width": 84,
+        "Depth": 37,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/130x206.png/ff4444/ffffff",
+        "Name": "Wedlock",
+        "Description": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+        "Height": 80,
+        "Width": 81,
+        "Depth": 1,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/180x179.png/dddddd/000000",
+        "Name": "Rose Seller, The (La vendedora de rosas)",
+        "Description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+        "Height": 91,
+        "Width": 91,
+        "Depth": 3,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Comedy|Drama|Romance" },
+      { "TagName": "Comedy|Drama|Romance" },
+      { "TagName": "Comedy|Fantasy" },
+      { "TagName": "Action|Comedy|Crime" }
+    ]
+  },
+  {
+    "Firstname": "Hendrick",
+    "Lastname": "Moynham",
+    "Phonenumber": "197-165-9758",
+    "Emailadress": "hmoynham5@csmonitor.com",
+    "ProfilePicture": "http://dummyimage.com/182x139.bmp/cc0000/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2021-01-21",
+        "Title": "Abbott and Costello Meet the Keystone Kops",
+        "Description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus.",
+        "Open": true,
+        "LiveLink": "https://scribd.com/in/eleifend/quam/a.html?orci=felis&eget=ut&orci=at&vehicula=dolor&condimentum=quis&curabitur=odio&in=consequat&libero=varius&ut=integer&massa=ac&volutpat=leo&convallis=pellentesque&morbi=ultrices&odio=mattis&odio=odio&elementum=donec&eu=vitae&interdum=nisi&eu=nam&tincidunt=ultrices&in=libero&leo=non&maecenas=mattis&pulvinar=pulvinar&lobortis=nulla&est=pede&phasellus=ullamcorper&sit=augue&amet=a"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-07-29",
+        "Title": "Invisible War, The",
+        "Description": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam. Nam tristique tortor eu pede.",
+        "Open": true
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/209x242.bmp/cc0000/ffffff",
+        "Name": "Manhunter",
+        "Description": "Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "Height": 41,
+        "Width": 59,
+        "Depth": 50,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/177x221.png/ff4444/ffffff",
+        "Name": "SSSSSSS",
+        "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+        "Height": 10,
+        "Width": 98,
+        "Depth": 1,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/226x108.bmp/ff4444/ffffff",
+        "Name": "Don't Look Back (Ne te retourne pas)",
+        "Description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero.",
+        "Height": 68,
+        "Width": 90,
+        "Depth": 16,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [ { "TagName": "Comedy|Romance" } ]
+  },
+  {
+    "Firstname": "Netti",
+    "Lastname": "Findlow",
+    "Phonenumber": "279-425-0493",
+    "Emailadress": "nfindlow6@businessinsider.com",
+    "ProfilePicture": "http://dummyimage.com/103x214.bmp/ff4444/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-06-18",
+        "Title": "Basic",
+        "Description": "Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
+        "Open": false,
+        "LiveLink": "https://netvibes.com/justo/maecenas/rhoncus/aliquam/lacus.aspx?fermentum=vitae&donec=nisl&ut=aenean&mauris=lectus&eget=pellentesque&massa=eget&tempor=nunc&convallis=donec&nulla=quis&neque=orci&libero=eget&convallis=orci&eget=vehicula&eleifend=condimentum&luctus=curabitur&ultricies=in&eu=libero&nibh=ut&quisque=massa&id=volutpat&justo=convallis&sit=morbi&amet=odio&sapien=odio&dignissim=elementum&vestibulum=eu&vestibulum=interdum&ante=eu&ipsum=tincidunt&primis=in&in=leo&faucibus=maecenas&orci=pulvinar&luctus=lobortis&et=est&ultrices=phasellus&posuere=sit&cubilia=amet&curae=erat&nulla=nulla&dapibus=tempus&dolor=vivamus&vel=in&est=felis&donec=eu&odio=sapien&justo=cursus&sollicitudin=vestibulum&ut=proin&suscipit=eu&a=mi&feugiat=nulla&et=ac&eros=enim&vestibulum=in&ac=tempor&est=turpis&lacinia=nec&nisi=euismod&venenatis=scelerisque&tristique=quam&fusce=turpis&congue=adipiscing&diam=lorem&id=vitae&ornare=mattis&imperdiet=nibh&sapien=ligula&urna=nec&pretium=sem&nisl=duis&ut=aliquam&volutpat=convallis&sapien=nunc&arcu=proin"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-11-25",
+        "Title": "World according to Ion B., The (Lumea vazuta de Ion B)",
+        "Description": "Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus. Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "Open": false
+      },
+      {
+        "DateTime": "2020-11-26",
+        "Title": "Empire of Passion (a.k.a. In the Realm of Passion) (a.k.a. Phantom Love) (Ai No Borei)",
+        "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/117x112.png/cc0000/ffffff",
+        "Name": "Idlewild",
+        "Description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus.",
+        "Height": 64,
+        "Width": 52,
+        "Depth": 24,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/124x109.jpg/cc0000/ffffff",
+        "Name": "Sympathy for Mr. Vengeance (Boksuneun naui geot)",
+        "Description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl.",
+        "Height": 38,
+        "Width": 60,
+        "Depth": 4,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Drama" },
+      { "TagName": "Drama|Romance" },
+      { "TagName": "Drama" },
+      { "TagName": "Horror" }
+    ]
+  },
+  {
+    "Firstname": "Margeaux",
+    "Lastname": "Jellyman",
+    "Phonenumber": "361-420-9150",
+    "Emailadress": "mjellyman7@fc2.com",
+    "ProfilePicture": "http://dummyimage.com/218x245.jpg/cc0000/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-02-02",
+        "Title": "Patton Oswalt: My Weakness Is Strong",
+        "Description": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+        "Open": true,
+        "LiveLink": "http://scribd.com/sodales/sed/tincidunt/eu.jsp?non=vel&mauris=est&morbi=donec&non=odio&lectus=justo&aliquam=sollicitudin&sit=ut&amet=suscipit&diam=a&in=feugiat&magna=et&bibendum=eros&imperdiet=vestibulum&nullam=ac&orci=est&pede=lacinia&venenatis=nisi&non=venenatis&sodales=tristique&sed=fusce&tincidunt=congue&eu=diam&felis=id&fusce=ornare&posuere=imperdiet&felis=sapien&sed=urna&lacus=pretium&morbi=nisl&sem=ut&mauris=volutpat&laoreet=sapien&ut=arcu&rhoncus=sed&aliquet=augue&pulvinar=aliquam&sed=erat&nisl=volutpat&nunc=in&rhoncus=congue&dui=etiam"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-12-04",
+        "Title": "Gigantic",
+        "Description": "Praesent lectus. Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+        "Open": true
+      },
+      {
+        "DateTime": "2020-04-11",
+        "Title": "Kid Millions",
+        "Description": "Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci.",
+        "Open": false
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/243x132.png/cc0000/ffffff",
+        "Name": "2 Fast 2 Furious (Fast and the Furious 2, The)",
+        "Description": "Etiam faucibus cursus urna. Ut tellus.",
+        "Height": 39,
+        "Width": 92,
+        "Depth": 34,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/200x240.jpg/ff4444/ffffff",
+        "Name": "Tempest, The",
+        "Description": "Donec semper sapien a libero. Nam dui.",
+        "Height": 68,
+        "Width": 30,
+        "Depth": 39,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/238x207.bmp/ff4444/ffffff",
+        "Name": "Wishing Stairs (Yeogo goedam 3: Yeowoo gyedan)",
+        "Description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+        "Height": 52,
+        "Width": 70,
+        "Depth": 4,
+        "Open": true
+      },
+      {
+        "Picture": "http://dummyimage.com/206x186.jpg/cc0000/ffffff",
+        "Name": "Death Becomes Her",
+        "Description": "Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.",
+        "Height": 55,
+        "Width": 15,
+        "Depth": 33,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Action|Adventure" },
+      { "TagName": "Adventure|Documentary" }
+    ]
+  },
+  {
+    "Firstname": "Harvey",
+    "Lastname": "Luce",
+    "Phonenumber": "437-368-4031",
+    "Emailadress": "hluce8@infoseek.co.jp",
+    "ProfilePicture": "http://dummyimage.com/211x153.jpg/5fa2dd/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-03-24",
+        "Title": "loudQUIETloud: A Film About the Pixies",
+        "Description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+        "Open": true,
+        "LiveLink": "http://patch.com/enim/blandit/mi/in/porttitor.jsp?id=id&ligula=nisl&suspendisse=venenatis&ornare=lacinia&consequat=aenean&lectus=sit&in=amet&est=justo&risus=morbi&auctor=ut&sed=odio&tristique=cras&in=mi&tempus=pede&sit=malesuada&amet=in&sem=imperdiet&fusce=et&consequat=commodo&nulla=vulputate&nisl=justo&nunc=in&nisl=blandit&duis=ultrices&bibendum=enim&felis=lorem&sed=ipsum&interdum=dolor&venenatis=sit&turpis=amet&enim=consectetuer&blandit=adipiscing&mi=elit&in=proin&porttitor=interdum&pede=mauris&justo=non&eu=ligula&massa=pellentesque&donec=ultrices&dapibus=phasellus&duis=id&at=sapien&velit=in"
+      },
+      {
+        "DateTime": "2020-02-27",
+        "Title": "Doctor at Large",
+        "Description": "Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum.",
+        "Open": true,
+        "LiveLink": "https://skyrock.com/etiam/justo/etiam.jsp?etiam=in&justo=imperdiet&etiam=et&pretium=commodo&iaculis=vulputate&justo=justo&in=in&hac=blandit&habitasse=ultrices&platea=enim&dictumst=lorem&etiam=ipsum&faucibus=dolor&cursus=sit&urna=amet&ut=consectetuer&tellus=adipiscing&nulla=elit&ut=proin&erat=interdum&id=mauris&mauris=non&vulputate=ligula&elementum=pellentesque&nullam=ultrices&varius=phasellus&nulla=id&facilisi=sapien&cras=in&non=sapien&velit=iaculis&nec=congue&nisi=vivamus&vulputate=metus&nonummy=arcu&maecenas=adipiscing&tincidunt=molestie&lacus=hendrerit&at=at&velit=vulputate&vivamus=vitae&vel=nisl&nulla=aenean&eget=lectus&eros=pellentesque&elementum=eget&pellentesque=nunc&quisque=donec&porta=quis&volutpat=orci&erat=eget&quisque=orci&erat=vehicula&eros=condimentum&viverra=curabitur&eget=in&congue=libero&eget=ut&semper=massa&rutrum=volutpat&nulla=convallis&nunc=morbi&purus=odio&phasellus=odio&in=elementum&felis=eu&donec=interdum&semper=eu&sapien=tincidunt&a=in&libero=leo&nam=maecenas&dui=pulvinar&proin=lobortis&leo=est&odio=phasellus&porttitor=sit&id=amet&consequat=erat&in=nulla&consequat=tempus&ut=vivamus&nulla=in&sed=felis&accumsan=eu&felis=sapien"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-09-26",
+        "Title": "Pretty Village, Pretty Flame (Lepa sela lepo gore)",
+        "Description": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla.",
+        "Open": false
+      },
+      {
+        "DateTime": "2020-02-10",
+        "Title": "Deewaar",
+        "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque.",
+        "Open": true
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/129x146.bmp/ff4444/ffffff",
+        "Name": "There's No Business Like Show Business",
+        "Description": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus.",
+        "Height": 47,
+        "Width": 56,
+        "Depth": 9,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/197x107.png/5fa2dd/ffffff",
+        "Name": "Secrets, The (Sodot, Ha-)",
+        "Description": "In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.",
+        "Height": 54,
+        "Width": 35,
+        "Depth": 7,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/229x118.bmp/cc0000/ffffff",
+        "Name": "Bamboozled",
+        "Description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
+        "Height": 40,
+        "Width": 94,
+        "Depth": 35,
+        "Open": false
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Animation|Children" },
+      { "TagName": "Drama" },
+      { "TagName": "Drama" }
+    ]
+  },
+  {
+    "Firstname": "Odelinda",
+    "Lastname": "Helleckas",
+    "Phonenumber": "564-481-6315",
+    "Emailadress": "ohelleckas9@netscape.com",
+    "ProfilePicture": "http://dummyimage.com/142x226.jpg/ff4444/ffffff",
+    "Artist_Vernisages": [
+      {
+        "DateTime": "2020-11-18",
+        "Title": "Malibu High",
+        "Description": "Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+        "Open": false,
+        "LiveLink": "http://dailymotion.com/orci/pede/venenatis.jsp?congue=luctus&diam=et&id=ultrices&ornare=posuere&imperdiet=cubilia&sapien=curae&urna=mauris&pretium=viverra&nisl=diam&ut=vitae&volutpat=quam&sapien=suspendisse&arcu=potenti&sed=nullam&augue=porttitor&aliquam=lacus&erat=at&volutpat=turpis&in=donec&congue=posuere&etiam=metus&justo=vitae&etiam=ipsum&pretium=aliquam&iaculis=non&justo=mauris&in=morbi&hac=non&habitasse=lectus&platea=aliquam&dictumst=sit&etiam=amet&faucibus=diam&cursus=in&urna=magna&ut=bibendum&tellus=imperdiet&nulla=nullam&ut=orci&erat=pede&id=venenatis&mauris=non&vulputate=sodales&elementum=sed&nullam=tincidunt&varius=eu&nulla=felis&facilisi=fusce&cras=posuere&non=felis&velit=sed&nec=lacus&nisi=morbi&vulputate=sem&nonummy=mauris&maecenas=laoreet&tincidunt=ut&lacus=rhoncus&at=aliquet&velit=pulvinar&vivamus=sed&vel=nisl&nulla=nunc&eget=rhoncus&eros=dui&elementum=vel&pellentesque=sem&quisque=sed&porta=sagittis&volutpat=nam&erat=congue&quisque=risus&erat=semper"
+      }
+    ],
+    "Artist_Exhibitions": [
+      {
+        "DateTime": "2020-11-22",
+        "Title": "Antiviral",
+        "Description": "Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+        "Open": false
+      },
+      {
+        "DateTime": "2021-01-09",
+        "Title": "Mystery Men",
+        "Description": "Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+        "Open": true
+      }
+    ],
+    "ArtItems": [
+      {
+        "Picture": "http://dummyimage.com/160x153.bmp/5fa2dd/ffffff",
+        "Name": "Ship of Fools",
+        "Description": "Phasellus sit amet erat. Nulla tempus.",
+        "Height": 28,
+        "Width": 73,
+        "Depth": 18,
+        "Open": false
+      },
+      {
+        "Picture": "http://dummyimage.com/125x188.bmp/ff4444/ffffff",
+        "Name": "Pitch Black",
+        "Description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
+        "Height": 47,
+        "Width": 5,
+        "Depth": 44,
+        "Open": true
+      }
+    ],
+    "Artist_Tags": [
+      { "TagName": "Comedy|Drama|Mystery" },
+      { "TagName": "Action|Adventure|Comedy|Romance" }
+    ]
+  }
+]

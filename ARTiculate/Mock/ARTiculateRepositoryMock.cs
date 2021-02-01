@@ -14,12 +14,14 @@ namespace ARTiculate.Mock
     {
         public void GetMockData(ArtistContext db)
         {
-            //DONE
+            var fileMockdata = File.ReadAllText("Mock/Mockdata.json");
+            var resultMockdata = JsonConvert.DeserializeObject<IEnumerable<Artist>>(fileMockdata);
+            db.AddRange(resultMockdata);
+
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
             //var resultArtist = JsonConvert.DeserializeObject<IEnumerable<Artist>>(fileArtist);
             //db.AddRange(resultArtist);
 
-            //DONE
             //var fileArtItem = File.ReadAllText("Mock/ArtItem.json");
             //var resultArtItem = JsonConvert.DeserializeObject<IEnumerable<ArtItem>>(fileArtItem);
             //db.AddRange(resultArtItem);
@@ -40,7 +42,6 @@ namespace ARTiculate.Mock
             //var resultStudio = JsonConvert.DeserializeObject<IEnumerable<Studio>>(fileStudio);
             //db.AddRange(resultStudio);
 
-            //DONE
             //var fileTag = File.ReadAllText("Mock/Tag.json");
             //var resultTag = JsonConvert.DeserializeObject<IEnumerable<Tag>>(fileTag);
             //db.AddRange(resultTag);
@@ -52,6 +53,10 @@ namespace ARTiculate.Mock
 
             db.SaveChanges();
 
+
+
         }
+
+       
     }
 }

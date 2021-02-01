@@ -8,39 +8,41 @@ namespace ARTiculateDataAccessLibrary.Models
 {
     public class Link
     {
-        [Key]
+        [Key, ForeignKey("Artist.Id")]
         public int ArtistId { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        public Artist Artist { get; set; }
+
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Instagram { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Pinterest { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Patreon { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Facebook { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string FlickR { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Linkedin { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Website { get; set; }
 
-        [MaxLength(500)]
-        [Column(TypeName = "varchar(500)")]
+        [MaxLength(1500)]
+        [Column(TypeName = "varchar(1500)")]
         public string Optional { get; set; }
     }
 }
