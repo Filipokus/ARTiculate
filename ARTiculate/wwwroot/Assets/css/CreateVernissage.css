@@ -1,0 +1,55 @@
+﻿h3 {
+    color: white;
+}
+
+.diagonal-box {
+    background-color: #242424;
+    transform: skewY(-11deg);
+    box-shadow: 0 0.1vw 1.5vw 1.5vw #362D26;
+    margin: 3vw 0 15vW 0;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5vw;  
+}
+
+#bend-back {
+    transform: skewY(11deg);   
+}
+#create-form {
+    padding-left: 4vw;
+}
+
+    #create-form input {
+        font-size: 4vw;
+        font-family: Comfortaa;
+    }
+
+
+.input-item {
+    padding: 2vw;
+}
+
+.diagonal-h2 {
+    font-family: 'HeyAugust';
+    font-size: 6vw;
+    text-align: center;
+    margin: 1vh;
+    transform: skewY(-12deg);
+    margin-top: 3vh;
+    margin-bottom: 1vh;
+}
+
+#submit-btn {
+    border-radius: 2vw;
+    font-size: 70%;
+    border: 0.5vw solid #F89A1E;
+    background-color: #242424;
+    padding: 1%;
+    box-shadow: 0px 4px 10px 0px black;
+    color: #F89A1E;
+    cursor: pointer;
+    width: 40vw;
+    font-family: 'Comfortaa';
+}

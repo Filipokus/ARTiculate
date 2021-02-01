@@ -16,5 +16,10 @@ namespace ARTiculate.Controllers
         {
             return View(/*id*/);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
     }
 }
