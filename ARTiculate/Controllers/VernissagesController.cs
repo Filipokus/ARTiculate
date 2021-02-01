@@ -16,5 +16,9 @@ namespace ARTiculate.Controllers
         {
             return View(/*id*/);
         }
+        public IActionResult About(/*int id*/)
+        {
+            return View(/*id*/);
+        }
     }
 }

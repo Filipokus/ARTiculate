@@ -1,4 +1,35 @@
-﻿
+﻿//-------General--------
+
+//--------Menu---------
+function hideOrShowMenu() {
+    let menuOptions = document.getElementById('menu');
+    if (menuOptions.style.display !== 'block') {
+        menuOptions.style.display = 'block';
+        menuOptions.style.animation = 'slide - down .3s ease - out';
+    }
+    else {
+        menuOptions.style.display = 'none';
+    }
+}
+
+function menuHoverIn(node) {
+    let link = node;
+    if (link.tagName !== 'A') {
+        link = node.firstChild.nextSibling
+    }
+    link.style.color = '#F89A1E';
+}
+
+function menuHoverOut(node) {
+    let link = node;
+    if (link.tagName !== 'A') {
+        link = node.firstChild.nextSibling
+    }
+    link.style.color = '#DFDDE4';
+}
+
+//---------Vernissages Overview page-----------
+
 function artworkHoverIn(ev) {
     let btn = ev.parentNode
     let img = btn.firstChild.nextSibling
@@ -13,36 +44,20 @@ function artworkHoverOut(ev) {
     btn.style.cursor = "default";
 }
 
-function hideOrShowMenu() {
-    let menuOptions = document.getElementById('menu');
-    if (menuOptions.style.display !== 'block') {
-        menuOptions.style.display = 'block';
-        menuOptions.style.animation = 'slide - down .3s ease - out';
-    }
-    else {
-        menuOptions.style.display = 'none';
-    }
+
+//---------About Vernissage when live------
+
+function makeVernissageLive(node) {
+    let dateLive = node;
+    dateLive.style.backgroundColor = '#D5005E';
+    let dateText = document.getElementById('live-date');
+    dateText.style.color = '#DFDDE4';
+    dateText.innerHTML = 'LIVE NOW 🠮';
+    let liveImg = document.getElementById('live-btn-img');
+    liveImg.style.visibility = 'visible';
+
+
 }
 
-function menuHoverIn(node) {
-    let link = node;
-    if (link.tagName !== 'A' ) {
-        link = node.firstChild.nextSibling
-    }
-    link.style.color = '#F89A1E';
-}
-
-function menuHoverOut(node) {
-    let link = node;
-    if (link.tagName !== 'A') {
-        link = node.firstChild.nextSibling
-    }
-    link.style.color = '#DFDDE4';
-}
-
-//----------Scrollbar bottom--------------
-
-var chatHistory = document.getElementById("chat-textbox");
-chatHistory.scrollTop = chatHistory.scrollHeight;
 
 
