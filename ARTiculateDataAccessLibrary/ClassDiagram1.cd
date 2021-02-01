@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="ARTiculateDataAccessLibrary.Models.Artist">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAJCAEAAAQAAAAAIAAAAQBAAABAAAAAABAAAQAAAAAA=</HashCode>
+      <FileName>Models\Artist.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Artist_Exhibition">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAEAAAAIAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Artist_Exhibition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Artist_Tag">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAEAAAAIAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\Artist_Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Artist_Vernisage">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAEAAAAIIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Artist_Vernisage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.ArtItem">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgQAABAAgIAAAAAAAEEQAAIAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ArtItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.ArtItem_Tag">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAADAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\ArtItem_Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Exhibition">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCAAABAAAgIEAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Exhibition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Exhibition_Tag">
+    <Position X="9.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\Exhibition_Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Link">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAJAAABAgAQAAAAAEAAAQIAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Models\Link.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Studio">
+    <Position X="4.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIAAAIAAAEAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Studio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Studio_Tag">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAE=</HashCode>
+      <FileName>Models\Studio_Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Tag">
+    <Position X="9.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Vernisage">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgIEAAAAAAABAAAAAAAAQCAIAAAAAAAAA=</HashCode>
+      <FileName>Models\Vernisage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ARTiculateDataAccessLibrary.Models.Vernisage_Tag">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAABAAAAAAAAAIAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\Vernisage_Tag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
