@@ -116,7 +116,7 @@ namespace ARTiculate.Data
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
-              .Include(y => y.Vernisage_Tags)
+              .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
               .Where(x => x.Id == id)
 
               .FirstOrDefault();
@@ -153,25 +153,6 @@ namespace ARTiculate.Data
 
 
 
-              .FirstOrDefault();
-            return vernisage;
-        }
-        /// <summary>
-        /// Method for create artist, input firstname and lastname. Returns an artist. 
-        /// </summary>
-        /// <param name="fristname"></param>
-        /// <param name="lastname"></param>
-        /// <returns></returns>
-        public async Task<Artist> CreateArtist(string fristname, string lastname)
-        {
-            var artist = new Artist
-            {
-                Firstname = fristname,
-                Lastname = lastname,
-            };
-            await db.AddAsync(artist);
-            db.SaveChanges();
-            return artist;
-        }
+        
     }
 }
