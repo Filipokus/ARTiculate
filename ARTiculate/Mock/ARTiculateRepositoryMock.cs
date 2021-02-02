@@ -12,6 +12,11 @@ namespace ARTiculate.Mock
 {
     public class ARTiculateRepositoryMock : IARTiculateRepository
     {
+        public Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
+        }
+
 
 
         public void GetMockData(ArtistContext db)

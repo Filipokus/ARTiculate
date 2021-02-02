@@ -18,6 +18,50 @@ namespace ARTiculate.Data
         }
 
         /// <summary>
+        /// Adds a object of type Vernisage to db
+        /// </summary>
+        /// <param name="vernisage"></param>
+        /// <returns></returns>
+        public async Task AddVernisageAsync(Vernisage vernisage)
+        {
+            await db.Vernisages.AddAsync(vernisage);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// Returns a list with name and id of all the tags that the slected vernisage holds
+        /// </summary>
+        /// <param name="vernisage"></param>
+        /// <returns></returns>
+        public async Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
+        {
+            List<Tag> tags = new List<Tag>();
+
+            foreach (var item in vernisage.Vernisage_Tags)
+            {
+                tags.Add(item.Tag);
+            }
+
+            await Task.Delay(0);
+
+            return tags;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /// <summary>
         /// Returns an artist from the db by taking the id (int) as input.
         /// </summary>
         /// <param name="id"></param>
@@ -53,9 +97,54 @@ namespace ARTiculate.Data
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         public void GetMockData(ArtistContext db)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Method "Get" vernissage, input id and returns a vernissage. 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Vernisage GetVernisage(int id)
+        {
+            var vernisage = db.Vernisages
+              .Include(x => x.Artist_Vernisages)
+              .Include(y => y.Vernisage_Tags)
+              .Where(x => x.Id == id)
+
+              .FirstOrDefault();
+            return vernisage;
+        }
+        /// <summary>
+        /// Method for create artist, input firstname and lastname. Returns an artist. 
+        /// </summary>
+        /// <param name="fristname"></param>
+        /// <param name="lastname"></param>
+        /// <returns></returns>
+        public async Task<Artist> CreateArtist(string fristname, string lastname)
+        {
+            var artist = new Artist
+            {
+                Firstname = fristname,
+                Lastname = lastname,
+            };
+            await db.AddAsync(artist);
+            db.SaveChanges();
+            return artist;
         }
     }
 }
