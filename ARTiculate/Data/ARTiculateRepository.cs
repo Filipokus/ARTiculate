@@ -120,14 +120,15 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Vernisage GetVernisage(int id)
+        public async Task<Vernisage> GetVernisage(int id)
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
               .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
               .Where(x => x.Id == id)
-
               .FirstOrDefault();
+
+            await Task.Delay(0);
             return vernisage;
         }
         #endregion
