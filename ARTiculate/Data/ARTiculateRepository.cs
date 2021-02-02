@@ -48,6 +48,21 @@ namespace ARTiculate.Data
             db.SaveChanges();
             return artist;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tagname"></param>
+        /// <returns></returns>
+        public async Task<Tag> CreateTag(string tagname)
+        {
+            var tag = new Tag
+            {
+                TagName = tagname,
+            };
+            await db.AddAsync(tag);
+            db.SaveChanges();
+            return tag;
+        }
 
         public void GetMockData(ArtistContext db)
         {

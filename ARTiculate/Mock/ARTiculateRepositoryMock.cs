@@ -17,6 +17,10 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
+       public Task<Tag> CreateTag(string tagname)
+        {
+            throw new NotImplementedException();
+        }
         public Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
         {
             throw new NotImplementedException();

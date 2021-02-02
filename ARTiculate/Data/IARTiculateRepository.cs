@@ -15,6 +15,7 @@ namespace ARTiculate.Data
         Task<Vernisage> GetVernisage(int id);
         Task<Artist> GetArtist(int id);
         Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
+        Task<Tag> CreateTag(string tagname);
 
     }
 }
