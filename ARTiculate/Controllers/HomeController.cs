@@ -30,6 +30,17 @@ namespace ARTiculate.Controllers
 
         public IActionResult Index()
         {
+            Vernisage vernisage = new Vernisage
+            {
+                Id = 1,
+                Title = "MyFirstVernisage",
+                Description = "fdsfsdfsdgfdgklnmfdhkölndfölhn fdbfd",
+                LiveLink = "https://www.youtube.com",
+                Open = true,
+            };
+
+            aRTiculateRepository.GetListOfTagsForSelectedVernisage(vernisage);
+
             if (_db.Artists.Count() == 0)
             {
                 aRTiculateRepository.GetMockData(_db);
