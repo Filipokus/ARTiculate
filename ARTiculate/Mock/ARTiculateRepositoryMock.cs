@@ -102,7 +102,7 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public List<Vernisage> GetAllVernisagesOrderedByDate()
+        public Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
             throw new NotImplementedException();
         }

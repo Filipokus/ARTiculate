@@ -98,15 +98,19 @@ namespace ARTiculate.Data
         /// Returns a List containing all vernissages in db, sorted by date.
         /// </summary>
         /// <returns></returns>
-        public List<Vernisage> GetAllVernisagesOrderedByDate()
+        public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
             List<Vernisage> vernisages = new List<Vernisage>();
 
-            foreach (var item in db.Vernisages)
-                vernisages.Add(item);
-            
+            foreach (var vernisage in db.Vernisages)
+            {
+                vernisages.Add(vernisage);
+            }
+
             vernisages
                 .OrderBy(x => x.DateTime);
+
+            await Task.Delay(0);
 
             return vernisages;
         }

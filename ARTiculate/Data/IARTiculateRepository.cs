@@ -14,7 +14,7 @@ namespace ARTiculate.Data
         void GetMockData(ArtistContext db);
         Vernisage GetVernisage(int id);
         Task<Artist> GetArtist(int id);
-        List<Vernisage> GetAllVernisagesOrderedByDate();
+        Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
 
     }
 }
