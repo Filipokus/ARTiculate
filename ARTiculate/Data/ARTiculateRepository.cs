@@ -120,7 +120,7 @@ namespace ARTiculate.Data
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
-              .Include(y => y.Vernisage_Tags)
+              .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
               .Where(x => x.Id == id)
 
               .FirstOrDefault();
@@ -135,5 +135,8 @@ namespace ARTiculate.Data
         #region DELETE
 
         #endregion
+
+          
+      
     }
 }
