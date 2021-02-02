@@ -22,6 +22,8 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
+
+
         public void GetMockData(ArtistContext db)
         {
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
@@ -91,6 +93,16 @@ namespace ARTiculate.Mock
         }
 
         public Vernisage GetVernisage(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Artist GetArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vernisage> GetAllVernisagesOrderedByDate()
         {
             throw new NotImplementedException();
         }

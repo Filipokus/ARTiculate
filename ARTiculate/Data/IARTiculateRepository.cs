@@ -13,5 +13,8 @@ namespace ARTiculate.Data
         Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         void GetMockData(ArtistContext db);
         Vernisage GetVernisage(int id);
+        Artist GetArtist(int id);
+        List<Vernisage> GetAllVernisagesOrderedByDate();
+
     }
 }
