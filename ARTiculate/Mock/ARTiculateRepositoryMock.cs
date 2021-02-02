@@ -97,7 +97,7 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public Artist GetArtist(int id)
+        public Task<Artist> GetArtist(int id)
         {
             throw new NotImplementedException();
         }
