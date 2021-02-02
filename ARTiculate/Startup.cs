@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ARTiculate.Data;
 
 using SignalRChat.Hubs;
 
@@ -27,6 +28,8 @@ namespace ARTiculate
         {
             services.AddControllersWithViews();
             services.AddSignalR();
+
+            services.AddScoped<IARTiulateServerRepository, ARTiulateServerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
