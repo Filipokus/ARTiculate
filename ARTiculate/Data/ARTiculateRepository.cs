@@ -48,6 +48,21 @@ namespace ARTiculate.Data
             db.SaveChanges();
             return artist;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tagname"></param>
+        /// <returns></returns>
+        public async Task<Tag> CreateTag(string tagname)
+        {
+            var tag = new Tag
+            {
+                TagName = tagname,
+            };
+            await db.AddAsync(tag);
+            db.SaveChanges();
+            return tag;
+        }
 
         public void GetMockData(ArtistContext db)
         {
@@ -98,15 +113,19 @@ namespace ARTiculate.Data
         /// Returns a List containing all vernissages in db, sorted by date.
         /// </summary>
         /// <returns></returns>
-        public List<Vernisage> GetAllVernisagesOrderedByDate()
+        public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
             List<Vernisage> vernisages = new List<Vernisage>();
 
-            foreach (var item in db.Vernisages)
-                vernisages.Add(item);
-            
+            foreach (var vernisage in db.Vernisages)
+            {
+                vernisages.Add(vernisage);
+            }
+
             vernisages
                 .OrderBy(x => x.DateTime);
+
+            await Task.Delay(0);
 
             return vernisages;
         }
@@ -116,14 +135,15 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Vernisage GetVernisage(int id)
+        public async Task<Vernisage> GetVernisage(int id)
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
               .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
               .Where(x => x.Id == id)
-
               .FirstOrDefault();
+
+            await Task.Delay(0);
             return vernisage;
         }
         #endregion

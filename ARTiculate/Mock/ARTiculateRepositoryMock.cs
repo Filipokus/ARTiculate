@@ -17,6 +17,10 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
+       public Task<Tag> CreateTag(string tagname)
+        {
+            throw new NotImplementedException();
+        }
         public Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
         {
             throw new NotImplementedException();
@@ -92,7 +96,7 @@ namespace ARTiculate.Mock
             //db.SaveChanges();
         }
 
-        public Vernisage GetVernisage(int id)
+        public Task<Vernisage> GetVernisage(int id)
         {
             throw new NotImplementedException();
         }
@@ -102,7 +106,7 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public List<Vernisage> GetAllVernisagesOrderedByDate()
+        public Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
             throw new NotImplementedException();
         }
