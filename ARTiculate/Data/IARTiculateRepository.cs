@@ -1,4 +1,5 @@
 ﻿using ARTiculateDataAccessLibrary.DataAccess;
+using ARTiculateDataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,8 @@ namespace ARTiculate.Data
     public interface IARTiculateRepository
     {
         void GetMockData(ArtistContext db);
+        Artist GetArtist(int id);
+        List<Vernisage> GetAllVernisagesOrderedByDate();
+
     }
 }

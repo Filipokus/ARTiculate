@@ -12,6 +12,8 @@ namespace ARTiculate.Mock
 {
     public class ARTiculateRepositoryMock : IARTiculateRepository
     {
+
+
         public void GetMockData(ArtistContext db)
         {
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
@@ -78,6 +80,16 @@ namespace ARTiculate.Mock
             //var resultVernisage_Tag = JsonConvert.DeserializeObject<IEnumerable<Vernisage_Tag>>(fileVernisage_Tag);
             //db.AddRange(resultVernisage_Tag);
             //db.SaveChanges();
+        }
+
+        public Artist GetArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vernisage> GetAllVernisagesOrderedByDate()
+        {
+            throw new NotImplementedException();
         }
     }
 }
