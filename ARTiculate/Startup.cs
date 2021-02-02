@@ -32,8 +32,8 @@ namespace ARTiculate
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
             services.AddControllersWithViews();
-            //services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
-            services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
+            services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
+            //services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
 
         }
 

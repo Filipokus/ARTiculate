@@ -47,41 +47,6 @@ namespace ARTiculate.Data
             return tags;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public void GetMockData(ArtistContext db)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Method "Get" vernissage, input id and returns a vernissage. 
         /// </summary>
@@ -91,7 +56,7 @@ namespace ARTiculate.Data
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
-              .Include(y => y.Vernisage_Tags)
+              .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
               .Where(x => x.Id == id)
 
               .FirstOrDefault();
@@ -113,6 +78,10 @@ namespace ARTiculate.Data
             await db.AddAsync(artist);
             db.SaveChanges();
             return artist;
+        }
+        public void GetMockData(ArtistContext db)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -28,15 +28,15 @@ namespace ARTiculate.Controllers
             this.aRTiculateRepository = aRTiculateRepository;
         }
 
-        //public IActionResult Index()
-        //{
-        //    if (_db.Artists.Count() == 0)
-        //    {
-        //        aRTiculateRepository.GetMockData(_db);
-        //    }
+        public IActionResult Index()
+        {
+            if (_db.Artists.Count() == 0)
+            {
+                aRTiculateRepository.GetMockData(_db);
+            }
 
-        //    return View();
-        //}
+            return View();
+        }
 
         public IActionResult Privacy()
         {

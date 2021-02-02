@@ -12,6 +12,11 @@ namespace ARTiculate.Mock
 {
     public class ARTiculateRepositoryMock : IARTiculateRepository
     {
+        public Task<Artist> CreateArtist(string fristname, string lastname)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
         {
             throw new NotImplementedException();
@@ -83,6 +88,11 @@ namespace ARTiculate.Mock
             //var resultVernisage_Tag = JsonConvert.DeserializeObject<IEnumerable<Vernisage_Tag>>(fileVernisage_Tag);
             //db.AddRange(resultVernisage_Tag);
             //db.SaveChanges();
+        }
+
+        public Vernisage GetVernisage(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
