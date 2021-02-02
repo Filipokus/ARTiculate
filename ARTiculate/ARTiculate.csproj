@@ -14,7 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ARTiculateDataAccessLibrary\ARTiculateDataAccessLibrary.csproj" />
-    <ProjectReference Include="..\ARTiculateTest\ARTiculateTest.csproj" />
   </ItemGroup>
 
 </Project>
