@@ -12,11 +12,14 @@ namespace ARTiculate.Data
     {
         ArtistContext db;
 
+        #region CONSTRUCT
         public ARTiculateRepository(ArtistContext context)
         {
             db = context;
         }
+        #endregion
 
+        #region CREATE
         /// <summary>
         /// Adds a object of type Vernisage to db
         /// </summary>
@@ -28,6 +31,31 @@ namespace ARTiculate.Data
             db.SaveChanges();
         }
 
+        /// <summary>
+        /// Method for create artist, input firstname and lastname. Returns an artist. 
+        /// </summary>
+        /// <param name="fristname"></param>
+        /// <param name="lastname"></param>
+        /// <returns></returns>
+        public async Task<Artist> CreateArtist(string fristname, string lastname)
+        {
+            var artist = new Artist
+            {
+                Firstname = fristname,
+                Lastname = lastname,
+            };
+            await db.AddAsync(artist);
+            db.SaveChanges();
+            return artist;
+        }
+
+        public void GetMockData(ArtistContext db)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
+        #region READ
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
@@ -47,20 +75,6 @@ namespace ARTiculate.Data
             return tags;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /// <summary>
         /// Returns an artist from the db by taking the id (int) as input.
         /// </summary>
@@ -75,7 +89,6 @@ namespace ARTiculate.Data
 
             return artist;
         }
-
 
         /// <summary>
         /// Returns a List containing all vernissages in db, sorted by date.
@@ -94,26 +107,6 @@ namespace ARTiculate.Data
             return vernisages;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public void GetMockData(ArtistContext db)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Method "Get" vernissage, input id and returns a vernissage. 
         /// </summary>
@@ -129,22 +122,36 @@ namespace ARTiculate.Data
               .FirstOrDefault();
             return vernisage;
         }
-        /// <summary>
-        /// Method for create artist, input firstname and lastname. Returns an artist. 
-        /// </summary>
-        /// <param name="fristname"></param>
-        /// <param name="lastname"></param>
-        /// <returns></returns>
-        public async Task<Artist> CreateArtist(string fristname, string lastname)
-        {
-            var artist = new Artist
-            {
-                Firstname = fristname,
-                Lastname = lastname,
-            };
-            await db.AddAsync(artist);
-            db.SaveChanges();
-            return artist;
-        }
+        #endregion
+
+        #region UPDATE
+
+        #endregion
+
+        #region DELETE
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
