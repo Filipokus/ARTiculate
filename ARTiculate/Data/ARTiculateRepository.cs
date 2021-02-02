@@ -101,6 +101,7 @@ namespace ARTiculate.Data
                 .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
                 .Include(x => x.Artist_Vernisages)
                 .Include(x => x.Artist_Exhibitions)
+                .Include(x => x.Artist_Tags)
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
 
@@ -115,15 +116,17 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
+            var vernisagesDetails = db.Vernisages
+                .Include(x => x.Artist_Vernisages)
+                .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+                .OrderBy(x => x.DateTime);
+
             List<Vernisage> vernisages = new List<Vernisage>();
 
-            foreach (var vernisage in db.Vernisages)
+            foreach (var vernisage in vernisagesDetails)
             {
                 vernisages.Add(vernisage);
             }
-
-            vernisages
-                .OrderBy(x => x.DateTime);
 
             await Task.Delay(0);
 
