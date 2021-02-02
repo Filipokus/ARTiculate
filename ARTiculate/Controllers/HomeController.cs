@@ -28,26 +28,15 @@ namespace ARTiculate.Controllers
             this.aRTiculateRepository = aRTiculateRepository;
         }
 
-        public IActionResult Index()
-        {
-            Vernisage vernisage = new Vernisage
-            {
-                Id = 1,
-                Title = "MyFirstVernisage",
-                Description = "fdsfsdfsdgfdgklnmfdhkölndfölhn fdbfd",
-                LiveLink = "https://www.youtube.com",
-                Open = true,
-            };
+        //public IActionResult Index()
+        //{
+        //    if (_db.Artists.Count() == 0)
+        //    {
+        //        aRTiculateRepository.GetMockData(_db);
+        //    }
 
-            aRTiculateRepository.GetListOfTagsForSelectedVernisage(vernisage);
-
-            if (_db.Artists.Count() == 0)
-            {
-                aRTiculateRepository.GetMockData(_db);
-            }
-
-            return View();
-        }
+        //    return View();
+        //}
 
         public IActionResult Privacy()
         {
