@@ -92,7 +92,7 @@ namespace ARTiculate.Mock
             //db.SaveChanges();
         }
 
-        public Vernisage GetVernisage(int id)
+        public Task<Vernisage> GetVernisage(int id)
         {
             throw new NotImplementedException();
         }
