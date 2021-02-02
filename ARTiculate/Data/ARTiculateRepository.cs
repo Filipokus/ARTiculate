@@ -132,27 +132,6 @@ namespace ARTiculate.Data
 
         #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
     }
 }
