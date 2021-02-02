@@ -80,12 +80,16 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Artist GetArtist(int id)
+        public async Task<Artist> GetArtist(int id)
         {
             var artist = db.Artists
                 .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+                .Include(x => x.Artist_Vernisages)
+                .Include(x => x.Artist_Exhibitions)
                 .Where(x => x.Id == id)
                 .FirstOrDefault();
+
+            await Task.Delay(0);
 
             return artist;
         }
@@ -116,7 +120,7 @@ namespace ARTiculate.Data
         {
             var vernisage = db.Vernisages
               .Include(x => x.Artist_Vernisages)
-              .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
+              .Include(y => y.Vernisage_Tags)
               .Where(x => x.Id == id)
 
               .FirstOrDefault();
@@ -131,7 +135,5 @@ namespace ARTiculate.Data
         #region DELETE
 
         #endregion
-
-        
     }
 }
