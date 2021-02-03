@@ -16,4 +16,17 @@
     <ProjectReference Include="..\ARTiculateDataAccessLibrary\ARTiculateDataAccessLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\Assets\css\NewFile.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\Assets\Fonts\HeyAugust.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UploadedImages\" />
+    <Folder Include="wwwroot\Assets\Fonts\" />
+  </ItemGroup>
+
 </Project>

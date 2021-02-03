@@ -12,6 +12,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ARTiculate.Data;
+
+using SignalRChat.Hubs;
 
 namespace ARTiculate
 {
@@ -35,6 +38,9 @@ namespace ARTiculate
             services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
             //services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
 
+            services.AddSignalR();
+
+            services.AddScoped<IARTiulateServerRepository, ARTiulateServerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +67,10 @@ namespace ARTiculate
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Vernissages}/{action=Index}/{id?}");
+                endpoints.MapHub<ChatHub>("/chathub");
+
             });
         }
     }

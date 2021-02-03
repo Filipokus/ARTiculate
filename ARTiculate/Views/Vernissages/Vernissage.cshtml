@@ -1,0 +1,25 @@
+﻿<link rel="stylesheet" href="~/Assets/css/vernissage.css?v={random string}" />
+<div class="live-title">
+    <h1>Vernissage Title</h1>
+    <img class="live-btn-img" src="../Assets/Images/Livebutton.png">
+</div>
+<div class="streamcontainer">
+    <iframe class="videostream" src="https://www.youtube.com/embed/0c8HvHcaBws" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<h2 class="diagonal-h2">Live Chat</h2>
+<div class="diagonal-box">
+    <div id="chat-textbox" class="row">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+    <div class="message-container">        
+            <input type="text" id="userInput" placeholder="User" />      
+            <input type="text" id="messageInput" placeholder="Write here.." />
+            <input type="button" id="sendButton" value="Send Message" />     
+   </div>
+</div>
+
+<script src="~/Assets/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/Assets/js/chat.js"></script>
+
