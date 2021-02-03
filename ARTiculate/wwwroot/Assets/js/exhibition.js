@@ -1,20 +1,39 @@
 ﻿function viewImageCloseUp(ev) {
-    let veil = document.getElementById("veil");
+    //skapar kopia av bilden
     let image = document.createElement("img");
-    let imagebox = document.getElementById("imageCloseUp-container");
     image.src = ev.src;
+
+    let veil = document.getElementById("veil");
+    let imagebox = document.getElementById("imageCloseUp-container");
+    let artInfo = document.getElementById("artworkInfo");
+
+    //lägger in bilden i veil
     image.classList.add('shownImage');
+    imagebox.prepend(image);
+
+    //Visar veil
     veil.classList.remove('veilHidden');
     veil.classList.add('veilShowing');
-    imagebox.appendChild(image);
-    console.log(imagebox);
+
+    //Visar info
+    artInfo.classList.remove('hideInfo');
+    artInfo.classList.add('showInfo');
 }
 
 function hideImageCloseUp() {
     let veil = document.getElementById("veil");
     let imagebox = document.getElementById("imageCloseUp-container");
+    let artInfo = document.getElementById("artworkInfo");
+
+    //Tar bort bilden
     imagebox.removeChild(imagebox.childNodes[0]);
+
+    //Gömmer veil
     veil.classList.remove('veilShowing');
     veil.classList.add('veilHidden');
+
+    //Gömmer Info
+    artInfo.classList.remove('showInfo');
+    artInfo.classList.add('hideInfo');
 }
 
