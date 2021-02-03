@@ -1,7 +1,12 @@
-﻿<link rel="stylesheet" href="~/Assets/css/aboutVernissage.css?v={random string}" />
+﻿@model ARTiculate.Models.VernisageViewModel
+
+@{
+    ViewData["Title"] = "Vernissage";
+}
+<link rel="stylesheet" href="~/Assets/css/aboutVernissage.css?v={random string}" />
 
 <div class="live-title">
-    <h1>Vernissage Title</h1>
+    <h1>@Model.Vernisage.Title</h1>
     <img id="live-btn-img" src="../Assets/Images/Livebutton.png">
 </div>
 
@@ -10,12 +15,11 @@
 <div class="diagonal-box">
     <div id="description-box">
         <h2>About this Vernissage</h2>
-        <p>eafja ijei jfie jifje iji fieji jfiej fijei jiej ieji jfiej ifjeie jfiej ijfie jifjei fjiejf iej ijei jfiejf ei fjie jfiej ifejifjie if jiej ijfie 
-        jifj iejij fiejijf iej fiej ifjiej ijfeij fji jfiejij fiej fiej ifej iji jei jfiej if fjei jfiej ie i f5555.</p>
+        <p>@Model.Vernisage.Description</p>
     </div>
     <img id="poster" src="~/Assets/Images/PlaceholderIMG.jpg" />
 </div>
 
-<button id="date-btn" onclick="makeVernissageLive(this)">
+<button id="date-btn" onclick="">
     <p id="live-date">29th january 11PM</p>
 </button>

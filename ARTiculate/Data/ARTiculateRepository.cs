@@ -32,10 +32,11 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task AddVernisageAsync(Vernisage vernisage)
+        public async Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
         {
             await db.Vernisages.AddAsync(vernisage);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
+            return vernisage;
         }
 
         /// <summary>
@@ -44,12 +45,16 @@ namespace ARTiculate.Data
         /// <param name="fristname"></param>
         /// <param name="lastname"></param>
         /// <returns></returns>
-        public async Task<Artist> CreateArtist(string fristname, string lastname)
+        public async Task<Artist> CreateArtist(string firstname, string lastname)
         {
             var artist = new Artist
             {
-                Firstname = fristname,
+                Firstname = firstname,
                 Lastname = lastname,
+                Phonenumber = "",
+                Emailadress = "",
+                ProfilePicture = ""
+
                 //TODO Behöver lite mer properties för att skapa ett Artist-objekt?
             };
             await db.AddAsync(artist);

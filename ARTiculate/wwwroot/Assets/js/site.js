@@ -55,7 +55,8 @@ function makeVernissageLive(node) {
     dateText.innerHTML = 'LIVE NOW 🠮';
     let liveImg = document.getElementById('live-btn-img');
     liveImg.style.visibility = 'visible';
-
+    dateLive.onclick = '"location.href=' + '@Url.Action("Vernissage", "Vernissages", new { id = @Model.Vernisage.Id })' + '"';
+    
 
 }
 

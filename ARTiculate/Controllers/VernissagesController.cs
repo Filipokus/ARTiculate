@@ -3,22 +3,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ARTiculate.Data;
+using ARTiculateDataAccessLibrary.Models;
+using ARTiculate.Models;
 
 namespace ARTiculate.Controllers
 {
     public class VernissagesController : Controller
     {
+        
+        private IARTiculateRepository ARTiculateRepository;
+
+        public VernissagesController(IARTiculateRepository ARTiculateRepository)
+        {
+            this.ARTiculateRepository = ARTiculateRepository;
+        }
+
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult Vernissage(/*int id*/)
+
+        public async Task<IActionResult> Vernissage(int ID)
         {
-            return View(/*id*/);
+            
+            Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
+
+            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
+            
+            return View(viewModel);
         }
-        public IActionResult About(/*int id*/)
+        
+        public async Task<IActionResult> About(int ID)
         {
-            return View(/*id*/);
+            Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
+            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
+
+            return View(viewModel);
         }
 
         public IActionResult Create()

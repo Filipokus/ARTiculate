@@ -15,14 +15,16 @@ namespace ARTiculateTest
         [Fact]
         public void UploadPictureToServer_ShouldReturnString()
         {
-            ////Arrange
-            //ImageModel imageModel = new ImageModel();
-            //imageModel.ImageName = "TEST";
-            //imageModel.Title = "TEST";
-            //imageModel.ImageFile = File.OpenRead(@"ARTiculate1);
-            ////Act
-            //var actual = repo.UploadPictureToServer(imageModel);
-            ////Assert
+            //Arrange
+            ImageModel imageModel = new ImageModel();
+            imageModel.ImageName = "TEST";
+            imageModel.Title = "TEST";
+            imageModel.ImageFile = (Microsoft.AspNetCore.Http.IFormFile)File.OpenRead(@"ARTiculate1");
+
+            //Act
+            var actual = repo.UploadPictureToServer(imageModel);
+
+            //Assert
         }
 
     }
