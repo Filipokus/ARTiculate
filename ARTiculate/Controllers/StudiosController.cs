@@ -43,11 +43,9 @@ namespace ARTiculate.Controllers
         {
             if (ModelState.IsValid)
             {
-                ImageModel model = new ImageModel();
-                model.ImageName = title;
-                model.Title = title;
-                model.ImageFile = imageFile;
-                string URL = await ARTiulateServerRepository.UploadPictureToServer(model);
+                ImageModel model = new ImageModel(title, imageFile);              
+                                   
+               string URL = await ARTiulateServerRepository.UploadPictureToServer(model);
 
             }
             return (IActionResult)View();
