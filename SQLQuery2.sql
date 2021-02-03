@@ -1,0 +1,1 @@
+﻿DBCC CHECKIDENT('Studio', RESEED,0)
