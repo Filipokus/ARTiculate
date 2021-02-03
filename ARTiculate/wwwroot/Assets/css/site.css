@@ -145,26 +145,26 @@ nav img {
     margin-top: -5%;
 }
 
-    #menu li a, #menu li {
-        font-family: 'Comfortaa';
-        text-align: center;
-        line-height: 6vh;
-        margin-right: 2vw;
-        color: #DFDDE4;
-        text-decoration: none;
-    }
+#menu li a, #menu li {
+    font-family: 'Comfortaa';
+    text-align: center;
+    line-height: 6vh;
+    margin-right: 2vw;
+    color: #DFDDE4;
+    text-decoration: none;
+}
 
-        #menu li:hover{
-            color: #F89A1E;
-            box-shadow: 0 0 3vw 1vw #362D26;
-            cursor: pointer;
-            font-weight: bolder;
-        }
+#menu li:hover{
+    color: #F89A1E;
+    box-shadow: 0 0 3vw 1vw #362D26;
+    cursor: pointer;
+    font-weight: bolder;
+}
 
-    .hidden {
-        font-size: 0;
-        display: none;
-    }
+.hidden {
+    font-size: 0;
+    display: none;
+}
 
 .container{
     margin-top: 15%;
