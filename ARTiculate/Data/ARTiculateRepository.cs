@@ -18,6 +18,12 @@ namespace ARTiculate.Data
         {
             db = context;
         }
+        /// <summary>
+        /// Ctor for test class to avoid an empty ctor
+        /// </summary>
+        /// <param name="test"></param>
+        public ARTiculateRepository(string test) { }
+
         #endregion
 
         #region CREATE
