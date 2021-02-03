@@ -103,13 +103,13 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public async Task<Artist> GetArtist(int id)
         {
-                var artist = await db.Artists
-           .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-           .Include(x => x.Artist_Vernisages)
-           .Include(x => x.Artist_Exhibitions)
-           .Include(x => x.Artist_Tags)
-           .Where(x => x.Id == id)
-           .FirstOrDefaultAsync();
+            var artist = await db.Artists
+               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+               .Include(x => x.Artist_Vernisages)
+               .Include(x => x.Artist_Exhibitions)
+               .Include(x => x.Artist_Tags)
+               .Where(x => x.Id == id)
+               .FirstOrDefaultAsync();
 
                 return artist;
         }

@@ -4,14 +4,16 @@ using ARTiculateDataAccessLibrary.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ARTiculateDataAccessLibrary.Migrations
 {
     [DbContext(typeof(ArtistContext))]
-    partial class ArtistContextModelSnapshot : ModelSnapshot
+    [Migration("20210203150645_AddedExhibiton_ArtItemTableAndRemovedStudioAndStudio_Tag")]
+    partial class AddedExhibiton_ArtItemTableAndRemovedStudioAndStudio_Tag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
