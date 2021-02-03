@@ -11,6 +11,13 @@
     image.classList.add('shownImage');
     imagebox.prepend(image);
 
+    //skapar stäng-knapp
+    let close = document.createElement("img");
+    close.src = "/Assets/Images/close.png";
+    close.setAttribute("onclick", "hideImageCloseUp();");
+    close.classList.add('close');
+    imagebox.prepend(close);
+
     //Visar veil
     veil.classList.remove('veilHidden');
     veil.classList.add('veilShowing');
@@ -26,6 +33,7 @@ function hideImageCloseUp() {
     let artInfo = document.getElementById("artworkInfo");
 
     //Tar bort bilden
+    imagebox.removeChild(imagebox.childNodes[0]);
     imagebox.removeChild(imagebox.childNodes[0]);
 
     //Gömmer veil

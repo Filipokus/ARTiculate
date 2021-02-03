@@ -49,11 +49,13 @@ h1{
     }
 
 /*IMAGE CLOSE UP*/
-.shownImage{
+.shownImage {
     width: 80vw;
     z-index: 2000;
     display: block;
     margin: auto;
+    box-shadow: 0 0 3vw 2vw #0c0c0c;
+    border: 1px solid #0c0c0c;
 }
 
 .veilHidden {
@@ -83,10 +85,7 @@ h1{
     width: 100%;
 }
 
-#imageCloseUp-container img {
-    box-shadow: 0 0 3vw 2vw #0c0c0c;
-    border: 1px solid #0c0c0c;
-}
+
 
 .hideInfo{
     display: none;
@@ -104,9 +103,19 @@ h1{
     margin-top: 4vw;
     margin-left: 8vw;
     margin-right: 8vw;
-
-    /*Ska vi ha kvar denna ruta bakom texten?*/
     background-color: rgba(228, 223, 221, 0.7);
     padding: 15px;
     border-radius: 15px;
 }
+
+/*CLOSE BUTTON*/
+
+.close{
+    max-width: 6vw;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 6vw;
+}
+
+ 
