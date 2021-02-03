@@ -10,7 +10,7 @@ namespace ARTiculate.Data
     public interface IARTiculateRepository
     {
         Task<Artist> CreateArtist(string fristname, string lastname);
-        Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
+        List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         void GetMockData(ArtistContext db);
         Task<Vernisage> GetVernisage(int id);
         Task<Artist> GetArtist(int id);

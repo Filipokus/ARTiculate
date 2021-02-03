@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ARTiculate.Data
@@ -43,13 +44,14 @@ namespace ARTiculate.Data
             {
                 Firstname = fristname,
                 Lastname = lastname,
+                //TODO Behöver lite mer properties för att skapa ett Artist-objekt?
             };
             await db.AddAsync(artist);
             db.SaveChanges();
             return artist;
         }
         /// <summary>
-        /// 
+        /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
         /// </summary>
         /// <param name="tagname"></param>
         /// <returns></returns>
@@ -76,7 +78,7 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
+        public List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
         {
             List<Tag> tags = new List<Tag>();
 
@@ -84,8 +86,6 @@ namespace ARTiculate.Data
             {
                 tags.Add(item.Tag);
             }
-
-            await Task.Delay(0);
 
             return tags;
         }
@@ -97,17 +97,15 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public async Task<Artist> GetArtist(int id)
         {
-            var artist = db.Artists
-                .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-                .Include(x => x.Artist_Vernisages)
-                .Include(x => x.Artist_Exhibitions)
-                .Include(x => x.Artist_Tags)
-                .Where(x => x.Id == id)
-                .FirstOrDefault();
+                var artist = await db.Artists
+           .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+           .Include(x => x.Artist_Vernisages)
+           .Include(x => x.Artist_Exhibitions)
+           .Include(x => x.Artist_Tags)
+           .Where(x => x.Id == id)
+           .FirstOrDefaultAsync();
 
-            await Task.Delay(0);
-
-            return artist;
+                return artist;
         }
 
         /// <summary>
@@ -116,10 +114,10 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
-            var vernisagesDetails = db.Vernisages
+            var vernisagesDetails = await db.Vernisages
                 .Include(x => x.Artist_Vernisages)
                 .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
-                .OrderBy(x => x.DateTime);
+                .OrderBy(x => x.DateTime).ToListAsync();
 
             List<Vernisage> vernisages = new List<Vernisage>();
 
@@ -127,8 +125,6 @@ namespace ARTiculate.Data
             {
                 vernisages.Add(vernisage);
             }
-
-            await Task.Delay(0);
 
             return vernisages;
         }
@@ -140,13 +136,12 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public async Task<Vernisage> GetVernisage(int id)
         {
-            var vernisage = db.Vernisages
+            var vernisage = await db.Vernisages
               .Include(x => x.Artist_Vernisages)
-              .Include(y => y.Vernisage_Tags).ThenInclude(x => x.Tag)
+              .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
               .Where(x => x.Id == id)
-              .FirstOrDefault();
+              .FirstOrDefaultAsync();
 
-            await Task.Delay(0);
             return vernisage;
         }
         #endregion

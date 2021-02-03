@@ -21,7 +21,7 @@ namespace ARTiculate.Mock
         {
             throw new NotImplementedException();
         }
-        public Task<List<Tag>> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
+        public List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
         {
             throw new NotImplementedException();
         }

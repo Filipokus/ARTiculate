@@ -28,12 +28,13 @@ namespace ARTiculate.Controllers
             this.aRTiculateRepository = aRTiculateRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            if (_db.Artists.Count() == 0)
-            {
-                aRTiculateRepository.GetMockData(_db);
-            }
+
+            //if (_db.Artists.Count() == 0)
+            //{
+            //    aRTiculateRepository.GetMockData(_db);
+            //}
 
             return View();
         }
