@@ -40,40 +40,38 @@ namespace ARTiculate.Data
         }
 
         /// <summary>
-        /// Method for create artist, input firstname and lastname. Returns an artist. 
+        /// Adds an object of type Exhibition to db 
         /// </summary>
-        /// <param name="fristname"></param>
-        /// <param name="lastname"></param>
+        /// <param name="exhibition"></param>
         /// <returns></returns>
-        public async Task<Artist> CreateArtist(string firstname, string lastname)
+        public async Task<Exhibition> AddExhibitionAsync(Exhibition exhibition)
         {
-            var artist = new Artist
-            {
-                Firstname = firstname,
-                Lastname = lastname,
-                Phonenumber = "",
-                Emailadress = "",
-                ProfilePicture = ""
+            await db.Exhibitions.AddAsync(exhibition);
+            await db.SaveChangesAsync();
+            return exhibition;
+        }
 
-                //TODO Behöver lite mer properties för att skapa ett Artist-objekt?
-            };
-            await db.AddAsync(artist);
-            db.SaveChanges();
+        /// <summary>
+        /// Adds an object of type Artist to db 
+        /// </summary>
+        /// <param name="artist"></param>
+        /// <returns></returns>
+        public async Task<Artist> AddArtistAsync(Artist artist)
+        {
+            await db.Artists.AddAsync(artist);
+            await db.SaveChangesAsync();
             return artist;
         }
+
         /// <summary>
         /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
         /// </summary>
         /// <param name="tagname"></param>
         /// <returns></returns>
-        public async Task<Tag> CreateTag(string tagname)
+        public async Task<Tag> AddTagAsync(Tag tag)
         {
-            var tag = new Tag
-            {
-                TagName = tagname,
-            };
-            await db.AddAsync(tag);
-            db.SaveChanges();
+            await db.Tags.AddAsync(tag);
+            await db.SaveChangesAsync();
             return tag;
         }
 
@@ -118,6 +116,10 @@ namespace ARTiculate.Data
 
                 return artist;
         }
+        
+
+        
+
 
         /// <summary>
         /// Returns a List containing all vernissages in db, sorted by date.

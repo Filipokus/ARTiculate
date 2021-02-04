@@ -2,14 +2,16 @@
 <div class="create-title">
    <h1>Create vernissage</h1>
 </div>
-
+@model ARTiculateDataAccessLibrary.Models.Vernisage
 <h2 class="diagonal-h2">Fill in</h2>
 <div class="diagonal-box">
     <div id="bend-back">
-        <div id="create-form">
+        @using (Html.BeginForm("Vernissages","Vernissage", FormMethod.Post)) 
+        { 
+        <form id="create-form">
             <div class="input-item" id="title">
                 <h3>Vernissage title</h3>
-                <input type="text" name="input-title" />
+                @Html.TextBoxFor(m => m.Title)
             </div>
             <div class="input-item" id="description">
                 <h3>Description</h3>
@@ -27,12 +29,13 @@
             </div>
             <div class="input-item" id="youtube-link">
                 <h3>Youtube link</h3>
-                <input type="text" name="input-youtube" />
+                @Html.TextBoxFor(m => m.LiveLink)
             </div>
             <div class="input-item" id="submit">
                 <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage"/>
             </div>
 
-        </div>
+        </form>
+        }
     </div>
 </div>

@@ -9,13 +9,13 @@ namespace ARTiculate.Data
 {
     public interface IARTiculateRepository
     {
-        Task<Artist> CreateArtist(string fristname, string lastname);
         List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         void GetMockData(ArtistContext db);
         Task<Vernisage> GetVernisage(int id);
         Task<Artist> GetArtist(int id);
         Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
-        Task<Tag> CreateTag(string tagname);
-
+        Task<Tag> AddTagAsync(Tag tag);
+        Task<Artist> AddArtistAsync(Artist artist);
+        Task<Vernisage> AddVernisageAsync(Vernisage vernisage);
     }
 }

@@ -110,5 +110,20 @@ namespace ARTiculate.Mock
         {
             throw new NotImplementedException();
         }
+
+        public Task<Tag> AddTagAsync(Tag tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Artist> AddArtistAsync(Artist artist)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
