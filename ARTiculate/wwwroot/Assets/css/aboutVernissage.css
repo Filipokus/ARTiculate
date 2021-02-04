@@ -1,17 +1,7 @@
 ﻿.live-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     height: 6vh;
     margin-top: -1vh;
-    text-align: center;
 }
-
-    .live-title h1 {
-        font-size: 7vw;
-        text-align: center;
-        align-self: center;
-    }
 
 #live-btn-img {
     align-self: center;
@@ -21,22 +11,10 @@
 }
 
 .diagonal-h2 {
-    font-family: 'HeyAugust';
-    font-size: 6vw;
-    text-align: center;
-    margin: 1vw;
-    transform: skewY(-12deg);
     margin-top: 7vw;
-    margin-bottom: 1vw;
 }
 
 .diagonal-box {
-    background-color: #242424;
-    transform: skewY(-11deg);
-    box-shadow: 0 0.3vw 3vw 2vw #362D26;
-    margin-top: 3vw;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -49,19 +27,18 @@
     height: 35vw;
     width: 50vw;
     padding: 1vw;
-    border-radius: 8px;
 }
 
-    #description-box h2 {
-        line-height: 8vw;
-        font-size: 5vw;
-        color: #DFDDE4;
-    }
+#description-box h2 {
+    line-height: 8vw;
+    font-size: 5vw;
+    color: #DFDDE4;
+}
 
-    #description-box p {
-        color: #DFDDE4;
-        line-height: 3.7vw;
-    }
+#description-box p {
+    color: #DFDDE4;
+    line-height: 3.7vw;
+}
 
 #poster {
     width: 35vw;
@@ -72,15 +49,13 @@
 }
 
 #date-btn {
-    margin-top: 7vw;
+    margin: 8vw auto auto auto;
     background-color: rgb(255,255,255, 0.7);
     padding: 3vw;
     text-align: center;
     border-radius: 4vw;
     width: 40vw;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
     cursor: pointer;
     border-color: rgb(255,255,255, 0.7);
 }
