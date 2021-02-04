@@ -1,0 +1,121 @@
+﻿.diagonal-box {
+    background-color: #242424;
+    transform: skewY(-11deg);
+    box-shadow: 0 0.3vw 3vw 2vw #362D26;
+    margin-top: 10vw;
+    padding: 4vw;
+    padding-top: 8vw;
+    padding-bottom: 22vw;
+    margin-bottom: 15vw;
+}
+h1{
+    margin-top: 20vw;
+}
+
+/*IMAGE GALLERY*/
+.wrapper {
+    position: relative;
+    flex-grow: 1;
+    margin: auto;
+    max-width: 1200px;
+    max-height: 1200px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+    transform: skewY(11deg);
+    filter: drop-shadow(5px 5px 7px #0c0c0c)
+}
+
+.romb {
+    z-index: 1;
+    grid-column: span 2;
+    margin-bottom: -52%;
+    transform: scale(1);
+    transition: all 0.25s;
+    max-width: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    
+}
+
+.romb:nth-child(5n+1) {
+    grid-column: 2/span 2;
+}
+
+    .romb:hover {
+        z-index: 2;
+        transform: scale(1.25)
+    }
+
+/*IMAGE CLOSE UP*/
+.shownImage {
+    width: 80vw;
+    z-index: 2000;
+    display: block;
+    margin: auto;
+    box-shadow: 0 0 3vw 2vw #0c0c0c;
+    border: 1px solid #0c0c0c;
+}
+
+.veilHidden {
+    opacity: 0.0;
+    background-color: #DFDDE4;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index:0;
+}
+.veilShowing {
+    opacity: 0.90;
+    background-color: #DFDDE4;
+    position: fixed;
+    width: 100vw;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+}
+#imageCloseUp-container {
+    opacity: 1;
+    z-index: 111111;
+    position: absolute;
+    width: 100%;
+}
+
+
+
+.hideInfo{
+    display: none;
+}
+.showInfo{
+    display: initial;
+}
+
+.artTitle{
+    margin-top: 6vw;
+}
+
+.artDescription {
+    text-align: center;
+    margin-top: 4vw;
+    margin-left: 8vw;
+    margin-right: 8vw;
+    background-color: rgba(228, 223, 221, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+}
+
+/*CLOSE BUTTON*/
+
+.close{
+    max-width: 6vw;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 6vw;
+}
+
+ 
