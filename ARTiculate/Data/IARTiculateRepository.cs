@@ -23,9 +23,6 @@ namespace ARTiculate.Data
         Task<List<Exhibition>> GetAllExhibitionsOrderedByDate();
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
         Task<Artist> GetArtist(int id);
-        Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
-        Task<Tag> AddTagAsync(Tag tag);
-        Task<Artist> AddArtistAsync(Artist artist);
-        Task<Vernisage> AddVernisageAsync(Vernisage vernisage);
+        
     }
 }
