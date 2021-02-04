@@ -10,13 +10,13 @@
     <div id="section_divs">
 
         <div class="section_div">
-            <button class="section_btn" id="btn_vernissages"> Vernissages </button>
+            <button class="section_btn" id="btn_vernissages" onclick="location.href='@Url.Action("Index", "Vernissages")'"> Vernissages </button>
             <p class="section_info">Meet the Artists and chat in realtime</p>
         </div>
 
         <div class="section_div">
             <p class="section_info">Enjoy well put together exhibitions during a limited time.</p>
-            <button class="section_btn" id="btn_exhibitions"> Exhibitions </button>
+            <button class="section_btn" id="btn_exhibitions" onclick="location.href='@Url.Action("Index", "Exhibitions")'"> Exhibitions </button>
         </div>
 
         <div class="section_div">
@@ -24,7 +24,7 @@
             <p class="section_info">A community for Artists - let the creative juices flow!</p>
         </div>
 
-        <button id="surprise_btn"> Surprise me! </button>
+        <button id="surprise_btn" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'"> Surprise me! </button>
 
     </div>
 </div>
@@ -75,37 +75,37 @@
 <div class="diagonal-box">
     <div class="next-4-content">
         <div class="left4">
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+            <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
+                    <h3>Exhibition Titel</h3>
+                    <p>28th January - 7th February</p>
                     <p>Artist Name</p>
                 </div>
             </button>
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+            <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
                 <img src="~/Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
+                    <h3>Exhibition Titel</h3>
+                    <p>28th January - 7th February</p>
                     <p>Artist Name</p>
                 </div>
             </button>
         </div>
         <div class="right4">
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+            <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
+                    <h3>Exhibition Titel</h3>
+                    <p>28th January - 7th February</p>
                     <p>Artist Name</p>
                 </div>
             </button>
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+            <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
+                    <h3>Exhibition Titel</h3>
+                    <p>28th January - 7th February</p>
                     <p>Artist Name</p>
                 </div>
             </button>
@@ -120,17 +120,17 @@
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
+                    <h3>Artist Name</h3>
+                    <p>3 active exhibitions</p>
+                    <p>1 upcoming vernissage</p>
                 </div>
             </button>
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
+                    <h3>Artist Name</h3>
+                    <p>3 active exhibitions</p>
+                    <p>1 upcoming vernissage</p>
                 </div>
             </button>
         </div>
@@ -138,17 +138,17 @@
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
+                    <h3>Artist Name</h3>
+                    <p>3 active exhibitions</p>
+                    <p>1 upcoming vernissage</p>
                 </div>
             </button>
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
                 <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
+                    <h3>Artist Name</h3>
+                    <p>3 active exhibitions</p>
+                    <p>1 upcoming vernissage</p>
                 </div>
             </button>
         </div>
