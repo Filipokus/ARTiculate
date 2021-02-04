@@ -82,6 +82,30 @@ namespace ARTiculate.Data
         #endregion
 
         #region READ
+
+        /// <summary>
+        /// Method "Get" exhibition, input id and returns a exhibition.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Exhibition> GetExhibition(int id)
+        {
+            var vernisage = await db.Exhibitions
+              .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
+              .Where(x => x.Id == id)
+              .FirstOrDefaultAsync();
+
+            return vernisage;
+        }
+
+
+
+
+
+
+
+
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
