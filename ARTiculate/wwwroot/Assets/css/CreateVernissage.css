@@ -1,11 +1,8 @@
 ﻿h3 {
-    color: white;
+    color: #DFDDE4;
 }
 
 .diagonal-box {
-    background-color: #242424;
-    transform: skewY(-11deg);
-    box-shadow: 0 0.1vw 1.5vw 1.5vw #362D26;
     margin: 3vw 0 15vW 0;
     height: 50vh;
     display: flex;
@@ -21,21 +18,16 @@
     padding-left: 4vw;
 }
 
-    #create-form input {
-        font-size: 4vw;
-        font-family: Comfortaa;
-    }
-
+#create-form input {
+    font-size: 4vw;
+    font-family: Comfortaa;
+}
 
 .input-item {
     padding: 2vw;
 }
 
 .diagonal-h2 {
-    font-family: 'HeyAugust';
-    font-size: 6vw;
-    text-align: center;
-    margin: 1vh;
     transform: skewY(-12deg);
     margin-top: 3vh;
     margin-bottom: 1vh;
