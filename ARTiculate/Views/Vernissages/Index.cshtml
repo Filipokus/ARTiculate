@@ -1,4 +1,5 @@
-﻿
+﻿@model AllVernisagesViewModel
+
 <link rel="stylesheet" href="~/Assets/css/vernissages.css?v={random string}" />
 <h1>Vernissages</h1>
 
@@ -18,7 +19,7 @@
 
 <h2 class="diagonal-h2">Next 4 Vernissages</h2>
 <div class="diagonal-box">
-    <div class="next-4-content">
+    <div class="next-4-content">     
         <div class="left4">
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { id = 2 })'">
                 <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
@@ -59,33 +60,24 @@
 </div>
 
 <h2 class="upcoming-h2">Upcoming Vernissages</h2>
-<button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { id = 6 })'">
-    <div class="upcoming-date">
-        <p>28</p>
-        <p>Jan</p>
-    </div>
-    <div class="upcoming-txt">
-        <p>Vernissage name</p>
-        <p>Vernissage Artist/s</p>
-    </div>
-</button>
-<button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { id = 7 })'">
-    <div class="upcoming-date">
-        <p>28</p>
-        <p>Jan</p>
-    </div>
-    <div class="upcoming-txt">
-        <p>Vernissage name</p>
-        <p>Vernissage Artist/s</p>
-    </div>
-</button>
-<button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { id = 8 })'">
-    <div class="upcoming-date">
-        <p>28</p>
-        <p>Jan</p>
-    </div>
-    <div class="upcoming-txt">
-        <p>Vernissage name</p>
-        <p>Vernissage Artist/s</p>
-    </div>
-</button>
+@foreach (var item in Model.ArtistVernisageDTOs)
+{
+    <button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { item.Id })'">
+        <div class="upcoming-date">
+            <p>@item.DateTime</p>
+            <p>Månad</p>
+        </div>
+        <div class="upcoming-txt">
+            <p>Titel: @item.Title</p>
+            <p>
+                Artist:
+
+                @foreach (var artist in item.FullName)
+                {
+                    @artist
+                }
+
+            <p />
+        </div>
+    </button>
+}

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ARTiculate.Data;
 using ARTiculateDataAccessLibrary.Models;
 using ARTiculate.Models;
+using ARTiculateDataAccessLibrary.Models.DTO;
 
 namespace ARTiculate.Controllers
 {
@@ -19,9 +20,18 @@ namespace ARTiculate.Controllers
             this.ARTiculateRepository = ARTiculateRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
+            List<Vernisage> vernisages = await ARTiculateRepository.GetAllVernisagesOrderedByDate();
+
+            foreach (var vernisage in vernisages)
+            {
+                VernisageOverviewDTO vernisageSummary = new VernisageOverviewDTO(vernisage);
+                allVernisagesViewModel.ArtistVernisageDTOs.Add(vernisageSummary);
+            }
+
+            return View(allVernisagesViewModel);
         }
 
         public async Task<IActionResult> Vernissage(int ID)

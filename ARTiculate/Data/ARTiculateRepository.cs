@@ -109,7 +109,7 @@ namespace ARTiculate.Data
         public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
             var vernisagesDetails = await db.Vernisages
-                .Include(x => x.Artist_Vernisages)
+                .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
                 .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
                 .OrderBy(x => x.DateTime).ToListAsync();
 
