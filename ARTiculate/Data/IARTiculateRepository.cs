@@ -16,6 +16,6 @@ namespace ARTiculate.Data
         Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
         Task<Tag> AddTagAsync(Tag tag);
         Task<Artist> AddArtistAsync(Artist artist);
-        Task<Vernisage> AddVernisageAsync(Vernisage vernisage);
+        Task<int> AddVernisageAsync(Vernisage vernisage);
     }
 }

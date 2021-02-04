@@ -34,14 +34,13 @@ namespace ARTiculate.Controllers
             return View(viewModel);
         }
 
-        public async void Vernissage(Vernisage x)
+        public async Task<IActionResult> CreateVernissage(Vernisage x)
         {
+          
             x.Open = true;
-            x.DateTime = new DateTime(2020 - 02 - 04);
-            Vernisage vernisage = await ARTiculateRepository.AddVernisageAsync(x);
-
-
-            Vernissage(vernisage.Id);
+          
+            int id = await ARTiculateRepository.AddVernisageAsync(x);
+            return RedirectToAction("Vernissage", "Vernissages", new { id = id });
 
 
         }

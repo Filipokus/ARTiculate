@@ -32,11 +32,13 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
+        public async Task<int> AddVernisageAsync(Vernisage vernisage)
         {
             await db.Vernisages.AddAsync(vernisage);
-            await db.SaveChangesAsync();
-            return vernisage;
+            db.SaveChanges();
+
+            int id;
+            return id = vernisage.Id;
         }
 
         /// <summary>

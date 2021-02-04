@@ -121,7 +121,7 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
+        public Task<int> AddVernisageAsync(Vernisage vernisage)
         {
             throw new NotImplementedException();
         }
