@@ -1,11 +1,161 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿<link rel="stylesheet" href="~/Assets/css/home.css?v={random string}" />
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+<div class="diagonal-box" id="hero_div">
+    <div id="hero_header">
+        <h1>WELCOME TO <br /> ARTiculate</h1>
+    </div>
+    <h2 class="diagonal-h2" id="slogan">Where artists and visitors meet</h2>
+    <div id="section_divs">
+
+        <div class="section_div">
+            <button class="section_btn" id="btn_vernissages"> Vernissages </button>
+            <p class="section_info">Meet the Artists and chat in realtime</p>
+        </div>
+
+        <div class="section_div">
+            <p class="section_info">Enjoy well put together exhibitions during a limited time.</p>
+            <button class="section_btn" id="btn_exhibitions"> Exhibitions </button>
+        </div>
+
+        <div class="section_div">
+            <button class="section_btn" id="btn_artists"> Artists </button>
+            <p class="section_info">A community for Artists - let the creative juices flow!</p>
+        </div>
+
+        <button id="surprise_btn"> Surprise me! </button>
+
+    </div>
 </div>
+
+<h2 class="diagonal-h2">Vernissages</h2>
+<div class="diagonal-box">
+    <div class="next-4-content">
+        <div class="left4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+        <div class="right4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<h2 class="diagonal-h2"> Exhibitions </h2>
+<div class="diagonal-box">
+    <div class="next-4-content">
+        <div class="left4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="~/Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+        <div class="right4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+<h2 class="diagonal-h2"> Artists </h2>
+<div class="diagonal-box">
+    <div class="next-4-content">
+        <div class="left4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+        <div class="right4">
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages")'">
+                <img src="Assets/Images/exempelbild.png" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <h3>Vernissage Titel</h3>
+                    <p>28th January 11PM</p>
+                    <p>Artist Name</p>
+                </div>
+            </button>
+        </div>
+    </div>
+</div>
+
+
 
 
 
