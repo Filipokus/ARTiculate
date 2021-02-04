@@ -12,12 +12,10 @@ namespace ARTiculate.Mock
 {
     public class ARTiculateRepositoryMock : IARTiculateRepository
     {
-        public Task<Artist> CreateArtist(string fristname, string lastname)
-        {
-            throw new NotImplementedException();
-        }
 
-       public Task<Tag> CreateTag(string tagname)
+        
+       
+        public Task<Exhibition> GetExhibition(int id)
         {
             throw new NotImplementedException();
         }
@@ -122,6 +120,21 @@ namespace ARTiculate.Mock
         }
 
         public Task<int> AddVernisageAsync(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Exhibition> AddExhibitionAsync(Exhibition exhibition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Exhibition>> GetAllExhibitionsOrderedByDate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
         {
             throw new NotImplementedException();
         }
