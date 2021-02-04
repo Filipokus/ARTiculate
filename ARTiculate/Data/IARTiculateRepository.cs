@@ -12,6 +12,7 @@ namespace ARTiculate.Data
         List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         void GetMockData(ArtistContext db);
         Task<Vernisage> GetVernisage(int id);
+        Task<Exhibition> GetExhibition(int id);
         Task<Artist> GetArtist(int id);
         Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
         Task<Tag> AddTagAsync(Tag tag);
