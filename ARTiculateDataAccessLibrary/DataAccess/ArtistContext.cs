@@ -14,14 +14,13 @@ namespace ARTiculateDataAccessLibrary.DataAccess
         public DbSet<ArtItem> ArtItems { get; set; }
         public DbSet<Exhibition> Exhibitions { get; set; }
         public DbSet<Link> Link { get; set; }
-        public DbSet<Studio> Studio { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Vernisage> Vernisages { get; set; }
         public DbSet<Vernisage_Tag> Vernisage_Tags { get; set; }
+        public DbSet<Exhibition_ArtItem> Exhibition_ArtItems { get; set; }
         public DbSet<Exhibition_Tag> Exhibition_Tags { get; set; }
         public DbSet<ArtItem_Tag> ArtItem_Tags { get; set; }
         public DbSet<Artist_Tag> Artist_Tags { get; set; }
-        public DbSet<Studio_Tag> Studio_Tags { get; set; }
         public DbSet<Artist_Exhibition> Artist_Exhibitions { get; set; }
         public DbSet<Artist_Vernisage> Artist_Vernisages { get; set; }
 
@@ -42,8 +41,8 @@ namespace ARTiculateDataAccessLibrary.DataAccess
             modelBuilder.Entity<Exhibition_Tag>()
                 .HasKey(et => new { et.ExhibitionId, et.TagId });
 
-            modelBuilder.Entity<Studio_Tag>()
-                .HasKey(st => new { st.StudioId, st.TagId });
+            modelBuilder.Entity<Exhibition_ArtItem>()
+                .HasKey(ea => new { ea.ExhibitionId, ea.ArtItemId });
 
             modelBuilder.Entity<Vernisage_Tag>()
                .HasKey(vt => new { vt.VernisageId, vt.TagId });

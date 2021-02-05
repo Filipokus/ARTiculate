@@ -14,11 +14,21 @@ namespace ARTiculate.Data
         
         private IWebHostEnvironment hostEnvironment;
 
+        #region CONSTRUCT
         public ARTiulateServerRepository(IWebHostEnvironment hostEnvironment)
         {
             this.hostEnvironment = hostEnvironment;
         }
-      
+        /// <summary>
+        /// Ctor for test class to avoid an empty ctor
+        /// </summary>
+        /// <param name="test"></param>
+        public ARTiulateServerRepository(string test) 
+        {
+            
+        }
+        #endregion
+
         public async Task <string> UploadPictureToServer(ImageModel imageModel)
         {
             string serverPath = hostEnvironment.ContentRootPath;
@@ -31,7 +41,7 @@ namespace ARTiculate.Data
                 await imageModel.ImageFile.CopyToAsync(fileStream);
             }
 
-            return "";
+            return path;
         }
     }
 }

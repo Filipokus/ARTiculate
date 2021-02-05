@@ -55,8 +55,9 @@ function makeVernissageLive(node) {
     dateText.innerHTML = 'LIVE NOW 🠮';
     let liveImg = document.getElementById('live-btn-img');
     liveImg.style.visibility = 'visible';
-
-
+    const urlAction2 = document.getElementById("link-to-live").getAttribute("onClick")
+    console.log(urlAction2)
+    dateLive.setAttribute("onClick", urlAction2);
 }
 
 

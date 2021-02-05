@@ -2,18 +2,21 @@
 <div class="create-title">
    <h1>Create vernissage</h1>
 </div>
-
+@model ARTiculateDataAccessLibrary.Models.Vernisage
 <h2 class="diagonal-h2">Fill in</h2>
 <div class="diagonal-box">
     <div id="bend-back">
-        <div id="create-form">
+        @using (Html.BeginForm("CreateVernissage", "Vernissages", FormMethod.Post))
+        {
+        <form id="create-form">
             <div class="input-item" id="title">
                 <h3>Vernissage title</h3>
-                <input type="text" name="input-title" />
+                @Html.TextBoxFor(m => m.Title)
             </div>
             <div class="input-item" id="description">
                 <h3>Description</h3>
-                <textarea rows="3" style="font-size:4vw; font-family:Comfortaa" name="input-description" id="input-description" placeholder="Type here..."></textarea>
+                @*<textarea rows="3" style="font-size:4vw; font-family:Comfortaa" name="input-description" id="input-description" placeholder="Type here..."></textarea>*@
+                @Html.TextAreaFor(m => m.Description)
             </div>
             <div class="input-item" id="poster">
                 <h3>Poster</h3>
@@ -22,17 +25,19 @@
             </div>
             <div class="input-item" id="date-time">
                 <h3>Date and time</h3>
-                <input type="date" name="date" value="2021-02-01" min="2021-02-01" max="2030-02-01"/>
-                <input type="time" name="time" value="00:00"/>
+                @*<input type="date" name="date" value="2021-02-01" min="2021-02-01" max="2030-02-01"/>
+                <input type="time" name="time" value="00:00"/>*@
+                @Html.EditorFor(m => m.DateTime)
             </div>
             <div class="input-item" id="youtube-link">
                 <h3>Youtube link</h3>
-                <input type="text" name="input-youtube" />
+                @Html.TextBoxFor(m => m.LiveLink)
             </div>
             <div class="input-item" id="submit">
                 <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage"/>
             </div>
 
-        </div>
+        </form>
+        }
     </div>
 </div>
