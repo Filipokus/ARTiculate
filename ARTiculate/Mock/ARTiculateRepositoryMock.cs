@@ -58,10 +58,10 @@ namespace ARTiculate.Mock
             //db.AddRange(resultTag);
             //db.SaveChanges();
 
-            var fileVernisage = File.ReadAllText("Mock/Vernisage.json");
-            var resultVernisage = JsonConvert.DeserializeObject<IEnumerable<Vernisage>>(fileVernisage);
-            db.AddRange(resultVernisage);
-            db.SaveChanges();
+            //var fileVernisage = File.ReadAllText("Mock/Vernisage.json");
+            //var resultVernisage = JsonConvert.DeserializeObject<IEnumerable<Vernisage>>(fileVernisage);
+            //db.AddRange(resultVernisage);
+            //db.SaveChanges();
 
             //var fileArtItem_Tag = File.ReadAllText("Mock/ArtItem_Tag.json");
             //var resultArtItem_Tag = JsonConvert.DeserializeObject<IEnumerable<ArtItem_Tag>>(fileArtItem_Tag);
@@ -140,6 +140,11 @@ namespace ARTiculate.Mock
         }
 
         public Task<List<Vernisage>> VernisagesToCome()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetActiveVernisages()
         {
             throw new NotImplementedException();
         }
