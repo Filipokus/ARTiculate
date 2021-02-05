@@ -1,0 +1,52 @@
+[
+  {
+    "ArtistId": 1,
+    "idbla": 1,
+    "Open": false
+  },
+  {
+    "idbla": 2,
+    "ArtistId": 2,
+    "Open": true
+  },
+  {
+    "idbla": 3,
+    "ArtistId": 3,
+    "Open": true
+  },
+  {
+    "idbla": 4,
+    "ArtistId": 4,
+    "Open": false
+  },
+  {
+    "idbla": 5,
+    "ArtistId": 5,
+    "Open": false
+  },
+  {
+    "idbla": 6,
+    "ArtistId": 6,
+    "Open": false
+  },
+  {
+    "idbla": 7,
+    "ArtistId": 7,
+    "Open": true
+  },
+  {
+    "idbla": 8,
+    "ArtistId": 8,
+    "Open": false
+  },
+  {
+    "idbla": 9,
+    "ArtistId": 9,
+    "Open": true
+  },
+  {
+    "idbla": 10,
+    "ArtistId": 10,
+    "Open": false
+  }
+]

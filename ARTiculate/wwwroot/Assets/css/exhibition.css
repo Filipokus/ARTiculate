@@ -2,14 +2,10 @@
     background-color: #242424;
     transform: skewY(-11deg);
     box-shadow: 0 0.3vw 3vw 2vw #362D26;
-    margin-top: 10vw;
     padding: 4vw;
     padding-top: 8vw;
     padding-bottom: 22vw;
     margin-bottom: 15vw;
-}
-h1{
-    margin-top: 20vw;
 }
 
 /*IMAGE GALLERY*/

@@ -1,0 +1,1002 @@
+[
+  {
+    "artistId": 4,
+    "depth": 62,
+    "height": 87,
+    "idabla": 1,
+    "name": "Nest, The (Nid de Guêpes)",
+    "open": false,
+    "picture": "https://robohash.org/consequunturomniseum.jpg?size=50x50&set=set1",
+    "width": 33
+  },
+  {
+    "idabla": 2,
+    "name": "Araya",
+    "picture": "https://robohash.org/cumqueminimaducimus.jpg?size=50x50&set=set1",
+    "height": 96,
+    "width": 100,
+    "depth": 33,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 3,
+    "name": "Finder's Fee",
+    "picture": "https://robohash.org/remasperioresvoluptatem.png?size=50x50&set=set1",
+    "height": 74,
+    "width": 29,
+    "depth": 35,
+    "open": true,
+    "artistId": 4
+  },
+  {
+    "idabla": 4,
+    "name": "Witches' Hammer (Kladivo na carodejnice) ",
+    "picture": "https://robohash.org/mollitiaeteum.png?size=50x50&set=set1",
+    "height": 37,
+    "width": 27,
+    "depth": 47,
+    "open": false,
+    "artistId": 1
+  },
+  {
+    "idabla": 5,
+    "name": "Virginia City",
+    "picture": "https://robohash.org/eumharumut.jpg?size=50x50&set=set1",
+    "height": 63,
+    "width": 55,
+    "depth": 82,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 6,
+    "name": "All the Colors of the Dark",
+    "picture": "https://robohash.org/velittemporibusquae.jpg?size=50x50&set=set1",
+    "height": 85,
+    "width": 57,
+    "depth": 36,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 7,
+    "name": "Breakdown",
+    "picture": "https://robohash.org/apraesentiumconsequatur.jpg?size=50x50&set=set1",
+    "height": 26,
+    "width": 40,
+    "depth": 90,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 8,
+    "name": "Goofy Movies Number One",
+    "picture": "https://robohash.org/aututodio.png?size=50x50&set=set1",
+    "height": 13,
+    "width": 8,
+    "depth": 23,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 9,
+    "name": "Under the Roofs of Paris (Sous les toits de Paris)",
+    "picture": "https://robohash.org/dignissimossinteius.png?size=50x50&set=set1",
+    "height": 34,
+    "width": 24,
+    "depth": 27,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 10,
+    "name": "Devil's Playground",
+    "picture": "https://robohash.org/quiacupiditateaut.bmp?size=50x50&set=set1",
+    "height": 52,
+    "width": 9,
+    "depth": 85,
+    "open": true,
+    "artistId": 4
+  },
+  {
+    "idabla": 11,
+    "name": "Pelle Svanslös",
+    "picture": "https://robohash.org/deseruntofficiaaliquam.bmp?size=50x50&set=set1",
+    "height": 84,
+    "width": 89,
+    "depth": 24,
+    "open": false,
+    "artistId": 4
+  },
+  {
+    "idabla": 12,
+    "name": "Unknown, The (a.k.a. Alonzo the Armless)",
+    "picture": "https://robohash.org/voluptasnamcorrupti.bmp?size=50x50&set=set1",
+    "height": 97,
+    "width": 4,
+    "depth": 85,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 13,
+    "name": "Chernobyl Diaries",
+    "picture": "https://robohash.org/uteximpedit.png?size=50x50&set=set1",
+    "height": 51,
+    "width": 10,
+    "depth": 51,
+    "open": false,
+    "artistId": 2
+  },
+  {
+    "idabla": 14,
+    "name": "The Face of Marble",
+    "picture": "https://robohash.org/animievenietdeleniti.png?size=50x50&set=set1",
+    "height": 88,
+    "width": 11,
+    "depth": 95,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 15,
+    "name": "Child Bride",
+    "picture": "https://robohash.org/quieiusplaceat.bmp?size=50x50&set=set1",
+    "height": 68,
+    "width": 6,
+    "depth": 71,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 16,
+    "name": "Gods Must Be Crazy III, The (a.k.a. Crazy Safari) (Fei zhou he shang)",
+    "picture": "https://robohash.org/asperioresanimimodi.bmp?size=50x50&set=set1",
+    "height": 80,
+    "width": 9,
+    "depth": 91,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 17,
+    "name": "Thousand Clouds of Peace, A (Mil nubes de paz cercan el cielo, amor, jamás acabarás de ser amor)",
+    "picture": "https://robohash.org/sitsitdolorum.png?size=50x50&set=set1",
+    "height": 82,
+    "width": 82,
+    "depth": 18,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 18,
+    "name": "Made of Honor",
+    "picture": "https://robohash.org/eaqueilloeius.bmp?size=50x50&set=set1",
+    "height": 14,
+    "width": 16,
+    "depth": 52,
+    "open": false,
+    "artistId": 10
+  },
+  {
+    "idabla": 19,
+    "name": "Terror, The",
+    "picture": "https://robohash.org/quiaidnemo.png?size=50x50&set=set1",
+    "height": 68,
+    "width": 95,
+    "depth": 78,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 20,
+    "name": "The Vexxer",
+    "picture": "https://robohash.org/molestiaecommodiet.jpg?size=50x50&set=set1",
+    "height": 53,
+    "width": 38,
+    "depth": 72,
+    "open": false,
+    "artistId": 5
+  },
+  {
+    "idabla": 21,
+    "name": "The Gift of Love",
+    "picture": "https://robohash.org/etinventoremagnam.png?size=50x50&set=set1",
+    "height": 81,
+    "width": 19,
+    "depth": 12,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 22,
+    "name": "Cry of the Owl, The",
+    "picture": "https://robohash.org/eaprovidentlaboriosam.jpg?size=50x50&set=set1",
+    "height": 28,
+    "width": 6,
+    "depth": 45,
+    "open": true,
+    "artistId": 1
+  },
+  {
+    "idabla": 23,
+    "name": "American Loser (Trainwreck: My Life as an Idiot)",
+    "picture": "https://robohash.org/doloremodiodignissimos.bmp?size=50x50&set=set1",
+    "height": 47,
+    "width": 27,
+    "depth": 13,
+    "open": false,
+    "artistId": 10
+  },
+  {
+    "idabla": 24,
+    "name": "Jekyll + Hyde",
+    "picture": "https://robohash.org/etestreprehenderit.bmp?size=50x50&set=set1",
+    "height": 13,
+    "width": 47,
+    "depth": 58,
+    "open": false,
+    "artistId": 2
+  },
+  {
+    "idabla": 25,
+    "name": "Too Many Husbands",
+    "picture": "https://robohash.org/veniamutpossimus.bmp?size=50x50&set=set1",
+    "height": 15,
+    "width": 70,
+    "depth": 8,
+    "open": false,
+    "artistId": 5
+  },
+  {
+    "idabla": 26,
+    "name": "Azumi 2: Death or Love",
+    "picture": "https://robohash.org/autevenietqui.bmp?size=50x50&set=set1",
+    "height": 65,
+    "width": 83,
+    "depth": 69,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 27,
+    "name": "10 Things I Hate About You",
+    "picture": "https://robohash.org/providentmodidicta.jpg?size=50x50&set=set1",
+    "height": 96,
+    "width": 17,
+    "depth": 74,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 28,
+    "name": "Evil Dead II (Dead by Dawn)",
+    "picture": "https://robohash.org/officiaquosveniam.bmp?size=50x50&set=set1",
+    "height": 91,
+    "width": 63,
+    "depth": 36,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 29,
+    "name": "The Flower in His Mouth",
+    "picture": "https://robohash.org/remquisuscipit.bmp?size=50x50&set=set1",
+    "height": 43,
+    "width": 63,
+    "depth": 51,
+    "open": false,
+    "artistId": 8
+  },
+  {
+    "idabla": 30,
+    "name": "Jerusalema (Gangster's Paradise: Jerusalema)",
+    "picture": "https://robohash.org/doloremvoluptatibusquaerat.png?size=50x50&set=set1",
+    "height": 13,
+    "width": 22,
+    "depth": 54,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 31,
+    "name": "Field in England, A",
+    "picture": "https://robohash.org/inventoreautdeleniti.bmp?size=50x50&set=set1",
+    "height": 30,
+    "width": 49,
+    "depth": 76,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 32,
+    "name": "Jug Face",
+    "picture": "https://robohash.org/quiasedperferendis.bmp?size=50x50&set=set1",
+    "height": 25,
+    "width": 41,
+    "depth": 88,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 33,
+    "name": "Monster That Challenged the World, The",
+    "picture": "https://robohash.org/quiidquidem.bmp?size=50x50&set=set1",
+    "height": 41,
+    "width": 36,
+    "depth": 5,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 34,
+    "name": "First Daughter",
+    "picture": "https://robohash.org/omnisexplicabodelectus.bmp?size=50x50&set=set1",
+    "height": 24,
+    "width": 37,
+    "depth": 10,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 35,
+    "name": "Ali G Indahouse",
+    "picture": "https://robohash.org/molestiaesedmaxime.bmp?size=50x50&set=set1",
+    "height": 90,
+    "width": 7,
+    "depth": 16,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 36,
+    "name": "Cast Away",
+    "picture": "https://robohash.org/laboreautitaque.bmp?size=50x50&set=set1",
+    "height": 26,
+    "width": 63,
+    "depth": 57,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 37,
+    "name": "Virunga",
+    "picture": "https://robohash.org/vitaevoluptatumvel.jpg?size=50x50&set=set1",
+    "height": 73,
+    "width": 99,
+    "depth": 60,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 38,
+    "name": "Bride Flight",
+    "picture": "https://robohash.org/eaqueomniseligendi.png?size=50x50&set=set1",
+    "height": 86,
+    "width": 4,
+    "depth": 89,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 39,
+    "name": "Initial D (Tau man ji D)",
+    "picture": "https://robohash.org/suntutet.png?size=50x50&set=set1",
+    "height": 21,
+    "width": 11,
+    "depth": 25,
+    "open": false,
+    "artistId": 4
+  },
+  {
+    "idabla": 40,
+    "name": "Shepard & Dark",
+    "picture": "https://robohash.org/liberoetnostrum.png?size=50x50&set=set1",
+    "height": 71,
+    "width": 60,
+    "depth": 47,
+    "open": true,
+    "artistId": 3
+  },
+  {
+    "idabla": 41,
+    "name": "Conserva Acabada",
+    "picture": "https://robohash.org/autfugaquam.jpg?size=50x50&set=set1",
+    "height": 54,
+    "width": 56,
+    "depth": 9,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 42,
+    "name": "Big Country, The",
+    "picture": "https://robohash.org/natusdolorumculpa.png?size=50x50&set=set1",
+    "height": 36,
+    "width": 64,
+    "depth": 53,
+    "open": true,
+    "artistId": 9
+  },
+  {
+    "idabla": 43,
+    "name": "The Mad Magician",
+    "picture": "https://robohash.org/sapientedolorumvitae.png?size=50x50&set=set1",
+    "height": 39,
+    "width": 81,
+    "depth": 79,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 44,
+    "name": "Monsoon Wedding",
+    "picture": "https://robohash.org/vitaeharumet.jpg?size=50x50&set=set1",
+    "height": 74,
+    "width": 11,
+    "depth": 4,
+    "open": false,
+    "artistId": 7
+  },
+  {
+    "idabla": 45,
+    "name": "2081",
+    "picture": "https://robohash.org/omniseaqueearum.png?size=50x50&set=set1",
+    "height": 33,
+    "width": 56,
+    "depth": 41,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 46,
+    "name": "Little Boy Blue",
+    "picture": "https://robohash.org/namlaboreaut.jpg?size=50x50&set=set1",
+    "height": 89,
+    "width": 36,
+    "depth": 18,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 47,
+    "name": "Mask of Zorro, The",
+    "picture": "https://robohash.org/providentcorruptiab.bmp?size=50x50&set=set1",
+    "height": 43,
+    "width": 21,
+    "depth": 58,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 48,
+    "name": "Silver Bears",
+    "picture": "https://robohash.org/suntcorporisab.jpg?size=50x50&set=set1",
+    "height": 53,
+    "width": 25,
+    "depth": 86,
+    "open": true,
+    "artistId": 4
+  },
+  {
+    "idabla": 49,
+    "name": "Trapped Ashes",
+    "picture": "https://robohash.org/auteumut.jpg?size=50x50&set=set1",
+    "height": 25,
+    "width": 99,
+    "depth": 43,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 50,
+    "name": "Story of Yonosuke, A (Yokomichi Yonosuke)",
+    "picture": "https://robohash.org/suntlaudantiumqui.png?size=50x50&set=set1",
+    "height": 69,
+    "width": 55,
+    "depth": 2,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 51,
+    "name": "Carnal Knowledge",
+    "picture": "https://robohash.org/praesentiumquisvero.bmp?size=50x50&set=set1",
+    "height": 34,
+    "width": 4,
+    "depth": 87,
+    "open": false,
+    "artistId": 1
+  },
+  {
+    "idabla": 52,
+    "name": "Fire in Castilla (Tactilvision from the Moor of the Fright)",
+    "picture": "https://robohash.org/vitaeinenim.jpg?size=50x50&set=set1",
+    "height": 66,
+    "width": 26,
+    "depth": 96,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 53,
+    "name": "Cobra",
+    "picture": "https://robohash.org/ipsadoloribusqui.bmp?size=50x50&set=set1",
+    "height": 44,
+    "width": 59,
+    "depth": 29,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 54,
+    "name": "Stille nacht",
+    "picture": "https://robohash.org/etvoluptatemvoluptatum.png?size=50x50&set=set1",
+    "height": 38,
+    "width": 23,
+    "depth": 39,
+    "open": false,
+    "artistId": 1
+  },
+  {
+    "idabla": 55,
+    "name": "Hit, The",
+    "picture": "https://robohash.org/voluptatibusmagnamnemo.png?size=50x50&set=set1",
+    "height": 96,
+    "width": 100,
+    "depth": 9,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 56,
+    "name": "Escape Fire: The Fight to Rescue American Healthcare",
+    "picture": "https://robohash.org/etsintet.jpg?size=50x50&set=set1",
+    "height": 84,
+    "width": 62,
+    "depth": 32,
+    "open": false,
+    "artistId": 2
+  },
+  {
+    "idabla": 57,
+    "name": "I Saw the Devil (Akmareul boatda)",
+    "picture": "https://robohash.org/utautmollitia.png?size=50x50&set=set1",
+    "height": 41,
+    "width": 57,
+    "depth": 7,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 58,
+    "name": "71 Fragments of a Chronology of Chance (71 Fragmente einer Chronologie des Zufalls)",
+    "picture": "https://robohash.org/distinctiomagnamdebitis.jpg?size=50x50&set=set1",
+    "height": 26,
+    "width": 49,
+    "depth": 18,
+    "open": false,
+    "artistId": 4
+  },
+  {
+    "idabla": 59,
+    "name": "Last Lovecraft: Relic of Cthulhu, The",
+    "picture": "https://robohash.org/quidemsitest.bmp?size=50x50&set=set1",
+    "height": 62,
+    "width": 18,
+    "depth": 67,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 60,
+    "name": "Dylan Moran: Like, Totally",
+    "picture": "https://robohash.org/assumendaexplicabodolorum.bmp?size=50x50&set=set1",
+    "height": 42,
+    "width": 72,
+    "depth": 93,
+    "open": true,
+    "artistId": 9
+  },
+  {
+    "idabla": 61,
+    "name": "Enid Is Sleeping",
+    "picture": "https://robohash.org/architectofugitperspiciatis.png?size=50x50&set=set1",
+    "height": 45,
+    "width": 24,
+    "depth": 60,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 62,
+    "name": "Guy X",
+    "picture": "https://robohash.org/cupiditateadipiscitempora.bmp?size=50x50&set=set1",
+    "height": 43,
+    "width": 55,
+    "depth": 69,
+    "open": false,
+    "artistId": 4
+  },
+  {
+    "idabla": 63,
+    "name": "Disaster L.A.",
+    "picture": "https://robohash.org/officiisestrerum.bmp?size=50x50&set=set1",
+    "height": 96,
+    "width": 67,
+    "depth": 36,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 64,
+    "name": "Where Do We Go Now?",
+    "picture": "https://robohash.org/autnecessitatibuset.png?size=50x50&set=set1",
+    "height": 11,
+    "width": 18,
+    "depth": 22,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 65,
+    "name": "Frenzy",
+    "picture": "https://robohash.org/voluptasdoloribusdolorem.jpg?size=50x50&set=set1",
+    "height": 46,
+    "width": 93,
+    "depth": 42,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 66,
+    "name": "Mr. Robinson Crusoe",
+    "picture": "https://robohash.org/etiustosuscipit.png?size=50x50&set=set1",
+    "height": 41,
+    "width": 10,
+    "depth": 60,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 67,
+    "name": "Snow Creature, The",
+    "picture": "https://robohash.org/etblanditiiseius.bmp?size=50x50&set=set1",
+    "height": 85,
+    "width": 72,
+    "depth": 47,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 68,
+    "name": "Champagne",
+    "picture": "https://robohash.org/autharumincidunt.jpg?size=50x50&set=set1",
+    "height": 86,
+    "width": 68,
+    "depth": 45,
+    "open": false,
+    "artistId": 1
+  },
+  {
+    "idabla": 69,
+    "name": "Cocoanuts, The",
+    "picture": "https://robohash.org/quianonmodi.png?size=50x50&set=set1",
+    "height": 74,
+    "width": 43,
+    "depth": 11,
+    "open": false,
+    "artistId": 3
+  },
+  {
+    "idabla": 70,
+    "name": "Nightwatching",
+    "picture": "https://robohash.org/dictalaboremagni.jpg?size=50x50&set=set1",
+    "height": 33,
+    "width": 71,
+    "depth": 86,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 71,
+    "name": "Mystery Road",
+    "picture": "https://robohash.org/remquiest.png?size=50x50&set=set1",
+    "height": 86,
+    "width": 84,
+    "depth": 41,
+    "open": false,
+    "artistId": 8
+  },
+  {
+    "idabla": 72,
+    "name": "Unloved, The",
+    "picture": "https://robohash.org/voluptasutvoluptatem.bmp?size=50x50&set=set1",
+    "height": 49,
+    "width": 53,
+    "depth": 85,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 73,
+    "name": "Fearless Hyena II (Long teng hu yue)",
+    "picture": "https://robohash.org/remveritatisofficiis.png?size=50x50&set=set1",
+    "height": 46,
+    "width": 36,
+    "depth": 88,
+    "open": false,
+    "artistId": 2
+  },
+  {
+    "idabla": 74,
+    "name": "Desert Flower",
+    "picture": "https://robohash.org/ducimussequiincidunt.jpg?size=50x50&set=set1",
+    "height": 82,
+    "width": 54,
+    "depth": 40,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 75,
+    "name": "Samurai II: Duel at Ichijoji Temple (Zoku Miyamoto Musashi: Ichijôji no kettô)",
+    "picture": "https://robohash.org/providentcorruptiet.bmp?size=50x50&set=set1",
+    "height": 39,
+    "width": 12,
+    "depth": 97,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 76,
+    "name": "Adjust Your Tracking",
+    "picture": "https://robohash.org/facilisipsumfugiat.bmp?size=50x50&set=set1",
+    "height": 53,
+    "width": 84,
+    "depth": 7,
+    "open": true,
+    "artistId": 4
+  },
+  {
+    "idabla": 77,
+    "name": "Hansel & Gretel",
+    "picture": "https://robohash.org/aliasnoncumque.png?size=50x50&set=set1",
+    "height": 13,
+    "width": 61,
+    "depth": 63,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 78,
+    "name": "Lulu on the Bridge",
+    "picture": "https://robohash.org/nesciuntasperioresvoluptatem.jpg?size=50x50&set=set1",
+    "height": 79,
+    "width": 7,
+    "depth": 60,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 79,
+    "name": "Sugar & Spice",
+    "picture": "https://robohash.org/doloripsamaut.jpg?size=50x50&set=set1",
+    "height": 13,
+    "width": 83,
+    "depth": 36,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 80,
+    "name": "Mortel transfert",
+    "picture": "https://robohash.org/optioutest.jpg?size=50x50&set=set1",
+    "height": 53,
+    "width": 25,
+    "depth": 64,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 81,
+    "name": "Austin Powers: International Man of Mystery",
+    "picture": "https://robohash.org/consequunturistenihil.png?size=50x50&set=set1",
+    "height": 49,
+    "width": 91,
+    "depth": 70,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 82,
+    "name": "Good Copy Bad Copy",
+    "picture": "https://robohash.org/quaeratanimiimpedit.bmp?size=50x50&set=set1",
+    "height": 74,
+    "width": 56,
+    "depth": 12,
+    "open": true,
+    "artistId": 9
+  },
+  {
+    "idabla": 83,
+    "name": "Legends of the Canyon",
+    "picture": "https://robohash.org/veritatisducimusaut.bmp?size=50x50&set=set1",
+    "height": 94,
+    "width": 84,
+    "depth": 80,
+    "open": false,
+    "artistId": 8
+  },
+  {
+    "idabla": 84,
+    "name": "Kicking & Screaming",
+    "picture": "https://robohash.org/quametrecusandae.png?size=50x50&set=set1",
+    "height": 28,
+    "width": 6,
+    "depth": 4,
+    "open": true,
+    "artistId": 2
+  },
+  {
+    "idabla": 85,
+    "name": "Story of Science, The",
+    "picture": "https://robohash.org/voluptatesnonmolestias.jpg?size=50x50&set=set1",
+    "height": 72,
+    "width": 63,
+    "depth": 44,
+    "open": false,
+    "artistId": 9
+  },
+  {
+    "idabla": 86,
+    "name": "Klown: The Movie (Klovn)",
+    "picture": "https://robohash.org/occaecatiquialiquam.bmp?size=50x50&set=set1",
+    "height": 63,
+    "width": 53,
+    "depth": 37,
+    "open": true,
+    "artistId": 3
+  },
+  {
+    "idabla": 87,
+    "name": "Long Goodbye, The",
+    "picture": "https://robohash.org/culpainqui.jpg?size=50x50&set=set1",
+    "height": 13,
+    "width": 18,
+    "depth": 5,
+    "open": true,
+    "artistId": 4
+  },
+  {
+    "idabla": 88,
+    "name": "Stoning of Soraya M., The",
+    "picture": "https://robohash.org/atquiomnis.png?size=50x50&set=set1",
+    "height": 36,
+    "width": 14,
+    "depth": 100,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 89,
+    "name": "The Big Flame",
+    "picture": "https://robohash.org/voluptatemadomnis.bmp?size=50x50&set=set1",
+    "height": 63,
+    "width": 66,
+    "depth": 71,
+    "open": true,
+    "artistId": 9
+  },
+  {
+    "idabla": 90,
+    "name": "Further Gesture, A",
+    "picture": "https://robohash.org/sapientelaboriosamtempore.bmp?size=50x50&set=set1",
+    "height": 54,
+    "width": 68,
+    "depth": 14,
+    "open": false,
+    "artistId": 7
+  },
+  {
+    "idabla": 91,
+    "name": "Are We There Yet?",
+    "picture": "https://robohash.org/quiaametdolor.jpg?size=50x50&set=set1",
+    "height": 69,
+    "width": 78,
+    "depth": 32,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 92,
+    "name": "All the Little Animals",
+    "picture": "https://robohash.org/porrofugadolorum.bmp?size=50x50&set=set1",
+    "height": 26,
+    "width": 52,
+    "depth": 2,
+    "open": true,
+    "artistId": 6
+  },
+  {
+    "idabla": 93,
+    "name": "33 Postcards",
+    "picture": "https://robohash.org/voluptatibusveritatisinventore.png?size=50x50&set=set1",
+    "height": 69,
+    "width": 22,
+    "depth": 7,
+    "open": true,
+    "artistId": 10
+  },
+  {
+    "idabla": 94,
+    "name": "Operation Homecoming: Writing the Wartime Experience",
+    "picture": "https://robohash.org/nisiveniamlibero.png?size=50x50&set=set1",
+    "height": 63,
+    "width": 23,
+    "depth": 91,
+    "open": true,
+    "artistId": 5
+  },
+  {
+    "idabla": 95,
+    "name": "Admission",
+    "picture": "https://robohash.org/vitaesapienteautem.jpg?size=50x50&set=set1",
+    "height": 60,
+    "width": 62,
+    "depth": 72,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 96,
+    "name": "Superman vs. The Elite",
+    "picture": "https://robohash.org/officiispariaturasperiores.png?size=50x50&set=set1",
+    "height": 97,
+    "width": 54,
+    "depth": 95,
+    "open": true,
+    "artistId": 8
+  },
+  {
+    "idabla": 97,
+    "name": "Dirty Money (Un flic)",
+    "picture": "https://robohash.org/molestiasquibusdamreprehenderit.jpg?size=50x50&set=set1",
+    "height": 27,
+    "width": 61,
+    "depth": 50,
+    "open": false,
+    "artistId": 6
+  },
+  {
+    "idabla": 98,
+    "name": "Murder, He Says",
+    "picture": "https://robohash.org/advoluptastenetur.jpg?size=50x50&set=set1",
+    "height": 31,
+    "width": 61,
+    "depth": 34,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 99,
+    "name": "How to Be",
+    "picture": "https://robohash.org/officiissuntrepudiandae.jpg?size=50x50&set=set1",
+    "height": 55,
+    "width": 83,
+    "depth": 1,
+    "open": true,
+    "artistId": 7
+  },
+  {
+    "idabla": 100,
+    "name": "Bloodsucking Pharaohs in Pittsburgh",
+    "picture": "https://robohash.org/quaeratnonarchitecto.bmp?size=50x50&set=set1",
+    "height": 64,
+    "width": 33,
+    "depth": 10,
+    "open": true,
+    "artistId": 7
+  }
+]

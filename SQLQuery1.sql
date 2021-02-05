@@ -1,0 +1,1 @@
+﻿DELETE FROM Tags WHERE Id >= 0 AND ID <= 12
