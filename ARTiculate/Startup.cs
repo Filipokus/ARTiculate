@@ -68,7 +68,7 @@ namespace ARTiculate
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-        //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
+                //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
                 endpoints.MapHub<ChatHub>("/chathub");
 
             });
