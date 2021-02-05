@@ -11,7 +11,7 @@ namespace ARTiculate.Data
     {
         void GetMockData(ArtistContext db);
 
-        Task<int> AddVernisageAsync(Vernisage vernisage);
+        Task<int> AddVernisageAsync(Vernisage vernisage, int artistId);
         Task<Exhibition> AddExhibitionAsync(Exhibition exhibition);
         Task<Artist> AddArtistAsync(Artist artist);
         Task<Tag> AddTagAsync(Tag tag);

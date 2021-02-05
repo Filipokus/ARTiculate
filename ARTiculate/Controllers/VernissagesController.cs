@@ -49,7 +49,7 @@ namespace ARTiculate.Controllers
           
             x.Open = true;
           
-            int id = await ARTiculateRepository.AddVernisageAsync(x);
+            int id = await ARTiculateRepository.AddVernisageAsync(x,1);
             return RedirectToAction("Vernissage", "Vernissages", new { id = id });
 
 

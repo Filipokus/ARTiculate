@@ -32,13 +32,21 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task<int> AddVernisageAsync(Vernisage vernisage)
+        public async Task<int> AddVernisageAsync(Vernisage vernisage, int artistID)
         {
             await db.Vernisages.AddAsync(vernisage);
             db.SaveChanges();
 
-            int id;
-            return id = vernisage.Id;
+            Artist_Vernisage artist_Vernisage = new Artist_Vernisage
+            {
+                ArtistId = 1,
+                VernisageId = vernisage.Id
+            };
+
+            await db.Artist_Vernisages.AddAsync(artist_Vernisage);
+            db.SaveChanges();
+
+            return vernisage.Id;
         }
 
         /// <summary>
@@ -94,7 +102,7 @@ namespace ARTiculate.Data
         public async Task<Vernisage> GetVernisage(int id)
         {
             var vernisage = await db.Vernisages
-              .Include(x => x.Artist_Vernisages)
+              .Include(x => x.Artist_Vernisages).ThenInclude(y => y.Artist)
               .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();
