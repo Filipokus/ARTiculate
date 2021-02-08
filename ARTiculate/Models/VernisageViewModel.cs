@@ -12,15 +12,11 @@ namespace ARTiculate.Models
         {
             this.Vernisage = vernisage;
             PopulateListOfArtists(vernisage);
-
-            
         }
         
         public Vernisage Vernisage { get; set; }
 
         public List<Artist> ListOfArtists { get; set; }  = new List<Artist>();
-
-
 
         private void PopulateListOfArtists(Vernisage vernisage)
         {            
