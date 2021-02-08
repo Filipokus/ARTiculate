@@ -156,10 +156,10 @@ header img {
     width: 30vw;
 }
 
-nav{
+/*nav{
     flex-direction: column-reverse;
     justify-content: left;
-}
+}*/
 
 nav img {
     width: 6vw;
@@ -173,9 +173,9 @@ nav img {
     display: none;
     width: 102%;
     background-color: #242424;
-    position: fixed;
+    position: absolute;
+    left: 0;
     z-index: 1;
-    margin-top: 10%;
 }
 
 #menu li a, #menu li {
@@ -185,6 +185,10 @@ nav img {
     margin-right: 2vw;
     color: #DFDDE4;
     text-decoration: none;
+}
+
+#menu li:last-child{
+    margin-bottom: 2vw;
 }
 
 #menu li:hover{
