@@ -38,6 +38,8 @@ namespace ARTiculateDataAccessLibrary.Models
 
         public List<ArtItem_Tag> ArtItem_Tags { get; set; } = new List<ArtItem_Tag>();
 
+        public List<Exhibition_ArtItem> Exhibition_ArtItems { get; set; } = new List<Exhibition_ArtItem>();
+
 
     }
 }

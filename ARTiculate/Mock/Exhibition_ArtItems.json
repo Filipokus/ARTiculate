@@ -1,0 +1,63 @@
+[
+  
+  {
+    "ArtItemId": 100,
+    "ExhibitionId": 8
+  },
+  {
+    "ArtItemId": 98,
+    "ExhibitionId": 3
+  },
+  {
+    "ArtItemId": 64,
+    "ExhibitionId": 2
+  },
+  {
+    "ArtItemId": 11,
+    "ExhibitionId": 8
+  },
+  {
+    "ArtItemId": 37,
+    "ExhibitionId": 6
+  },
+  {
+    "ArtItemId": 83,
+    "ExhibitionId": 6
+  },
+  {
+    "ArtItemId": 39,
+    "ExhibitionId": 6
+  },
+  {
+    "ArtItemId": 31,
+    "ExhibitionId": 1
+  },
+  {
+    "ArtItemId": 59,
+    "ExhibitionId": 8
+  },
+  {
+    "ArtItemId": 19,
+    "ExhibitionId": 2
+  },
+  {
+    "ArtItemId": 68,
+    "ExhibitionId": 6
+  },
+  {
+    "ArtItemId": 46,
+    "ExhibitionId": 7
+  },
+  {
+    "ArtItemId": 78,
+    "ExhibitionId": 5
+  },
+  {
+    "ArtItemId": 34,
+    "ExhibitionId": 8
+  },
+  {
+    "ArtItemId": 45,
+    "ExhibitionId": 3
+  }
+]

@@ -110,7 +110,7 @@ namespace ARTiculate.Data
         {
             var vernisagesDetails = await db.Vernisages
                 .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
-                .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+                //.Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
                 .OrderBy(x => x.DateTime).ToListAsync();
 
             List<Vernisage> vernisages = new List<Vernisage>();
@@ -127,7 +127,7 @@ namespace ARTiculate.Data
         /// Returns a List containing all vernissages that is still to come
         /// </summary>
         /// <returns></returns>
-        public async Task<List<Vernisage>> VernisagesToCome()
+        public async Task<List<Vernisage>> GetAllVernisagesToCome()
         {
             List<Vernisage> allVernisages = await GetAllVernisagesOrderedByDate();
             List<Vernisage> commingVernisages = new List<Vernisage>();
@@ -166,6 +166,8 @@ namespace ARTiculate.Data
             return activeVernisages;
         }
 
+
+        //TODO Ta bort den här metoden??
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
@@ -185,20 +187,24 @@ namespace ARTiculate.Data
 
         //EXHIBITIONS
         /// <summary>
-        /// Method "Get" exhibition, input id and returns a exhibition.
+        /// Method "Get" exhibition, input id and returns a exhibition with all information.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         public async Task<Exhibition> GetExhibition(int id)
         {
             var exhibition = await db.Exhibitions
-              .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Artist_Exhibitions).ThenInclude(a => a.Artist)
+              .Include(ea => ea.Exhibition_ArtItem).ThenInclude(a => a.ArtItems)
               .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();
 
             return exhibition;
         }
+
+      
+
 
         /// <summary>
         /// Returns a List containing all exhibitions in db, sorted by date.
@@ -208,7 +214,8 @@ namespace ARTiculate.Data
         {
             var exhibitionDetails = await db.Exhibitions
                 .Include(x => x.Artist_Exhibitions)
-                .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
+                .ThenInclude(a => a.Artist)
+                //.Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
                 .OrderBy(x => x.DateTime).ToListAsync();
 
             List<Exhibition> exhibitions = new List<Exhibition>();
@@ -221,6 +228,8 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
+
+        //TODO ta bort den här metoden??
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected exhibition holds
         /// </summary>

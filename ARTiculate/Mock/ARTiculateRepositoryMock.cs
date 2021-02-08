@@ -43,15 +43,17 @@ namespace ARTiculate.Mock
             //db.AddRange(resultExhibition);
             //db.SaveChanges();
 
+            //var fileExhibition_ArtItems = File.ReadAllText("Mock/Exhibition_ArtItems.json");
+            //var resultExhibition_ArtItems = JsonConvert.DeserializeObject<IEnumerable<Exhibition_ArtItem>>(fileExhibition_ArtItems);
+            //db.AddRange(resultExhibition_ArtItems);
+            //db.SaveChanges();
+
             //var fileLink = File.ReadAllText("Mock/Link.json");
             //var resultLink = JsonConvert.DeserializeObject<IEnumerable<Link>>(fileLink);
             //db.AddRange(resultLink);
             //db.SaveChanges();
 
-            //var fileStudio = File.ReadAllText("Mock/Studio.json");
-            //var resultStudio = JsonConvert.DeserializeObject<IEnumerable<Studio>>(fileStudio);
-            //db.AddRange(resultStudio);
-            //db.SaveChanges();
+
 
             //var fileTag = File.ReadAllText("Mock/Tag.json");
             //var resultTag = JsonConvert.DeserializeObject<IEnumerable<Tag>>(fileTag);
@@ -139,12 +141,17 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public Task<List<Vernisage>> VernisagesToCome()
+        public Task<List<Vernisage>> GetAllVernisagesToCome()
         {
             throw new NotImplementedException();
         }
 
         public Task<List<Vernisage>> GetActiveVernisages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Exhibition_ArtItem>> GetArtItemsInExhibition(int id)
         {
             throw new NotImplementedException();
         }

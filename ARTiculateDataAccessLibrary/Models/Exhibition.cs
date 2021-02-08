@@ -27,6 +27,7 @@ namespace ARTiculateDataAccessLibrary.Models
         public List<Artist_Exhibition> Artist_Exhibitions { get; set; } = new List<Artist_Exhibition>();
 
         public List<Exhibition_Tag> Exhibition_Tags { get; set; } = new List<Exhibition_Tag>();
-    
+        public List<Exhibition_ArtItem> Exhibition_ArtItem { get; set; } = new List<Exhibition_ArtItem>();
+
     }
 }
