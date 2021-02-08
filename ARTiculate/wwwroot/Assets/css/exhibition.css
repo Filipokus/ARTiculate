@@ -32,17 +32,16 @@
     transition: all 0.25s;
     max-width: 100%;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    
 }
 
 .romb:nth-child(5n+1) {
     grid-column: 2/span 2;
 }
 
-    .romb:hover {
-        z-index: 2;
-        transform: scale(1.25)
-    }
+.romb:hover {
+    z-index: 2;
+    transform: scale(1.25)
+}
 
 /*IMAGE CLOSE UP*/
 .shownImage {
