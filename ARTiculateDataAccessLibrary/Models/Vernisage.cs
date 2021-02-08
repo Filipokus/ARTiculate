@@ -29,7 +29,7 @@ namespace ARTiculateDataAccessLibrary.Models
 
         public int ExhibitionId { get; set; }
 
-        public Exhibition exhibition { get; set; }
+        public Exhibition Exhibition { get; set; }
 
         public List<Artist_Vernisage> Artist_Vernisages { get; set; } = new List<Artist_Vernisage>();
 
