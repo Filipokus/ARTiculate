@@ -112,6 +112,7 @@ namespace ARTiculate.Data
             var vernisagesDetails = await db.Vernisages
                 .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
                 .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+                .Include(x => x.Exhibition)
                 .OrderBy(x => x.DateTime).ToListAsync();
 
             List<Vernisage> vernisages = new List<Vernisage>();
