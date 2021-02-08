@@ -24,7 +24,7 @@ namespace ARTiculate.Controllers
         {
 
             AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
-            List<Vernisage> vernisagesToCome = await ARTiculateRepository.GetAllVernisagesOrderedByDate();
+            List<Vernisage> vernisagesToCome = await ARTiculateRepository.VernisagesToCome();
 
             foreach (var vernisage in vernisagesToCome)
             {
