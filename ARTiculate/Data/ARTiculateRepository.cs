@@ -238,10 +238,6 @@ namespace ARTiculate.Data
             return tags;
         }
 
-
-
-
-
         /// <summary>
         /// Returns an artist from the db by taking the id (int) as input.
         /// </summary>
@@ -259,12 +255,6 @@ namespace ARTiculate.Data
 
             return artist;
         }
-        
-
-        
-
-
-
 
         #endregion
 
