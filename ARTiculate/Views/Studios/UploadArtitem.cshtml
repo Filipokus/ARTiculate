@@ -1,4 +1,4 @@
-﻿@model ARTiculate.Models.ImageModel
+﻿@model ARTiculate.Models.ArtItemViewModel
 
 @{
     ViewData["Title"] = "UploadArtitem";
@@ -11,23 +11,27 @@
 <h2 class="diagonal-h2">Fill in</h2>
 <div class="diagonal-box">
     <div id="bend-back">
-        <form asp-action="UploadArtitem" enctype="multipart/form-data">
-            <div id="create-form">
-                <div class="form-group">
-                    <label asp-for="Title" class="control-label"></label>
-                    <input asp-for="Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageFile" class="control-label"></label>
-                    <input asp-for="ImageFile" accept="image/*" />
-                    <span asp-validation-for="ImageFile" class="text-danger"></span>
-                </div>
-                <div class="input-item" id="submit">
-                    <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage" />
-                </div>
 
+        @using (Html.BeginForm("UploadArtitem", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+        <form id="create-form">
+            <div class="input-item" id="youtube-link">
+                <h3>Name of Artwork</h3>
+                @Html.TextBoxFor(m => m.ArtItem.Name)
             </div>
+            <div class="input-item" id="youtube-link">
+                <h3>Image File</h3>
+                @Html.EditorFor(m => m.ImageFile)
+            </div>
+            <div class="input-item" id="youtube-link">
+                <h3>Description</h3>
+                @Html.TextBoxFor(m => m.ArtItem.Description)
+            </div>
+            <div class="input-item" id="submit">
+                <input type="submit" id="submit-btn" name="input-submit" value="Upload artwork" />
+            </div>
+
         </form>
+        }
     </div>
 </div>

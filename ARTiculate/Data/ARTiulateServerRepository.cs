@@ -29,19 +29,22 @@ namespace ARTiculate.Data
         }
         #endregion
 
-        public async Task <string> UploadPictureToServer(ImageModel imageModel)
+        public async Task <string> UploadPictureToServer(ArtItemViewModel imageModel)
         {
-            string serverPath = hostEnvironment.ContentRootPath;
-            string fileName = Path.GetFileNameWithoutExtension(imageModel.ImageFile.FileName);
+            string serverPath = hostEnvironment.WebRootPath;
+            string fileName = Path.GetFileNameWithoutExtension(imageModel.FileName);
             string extension = Path.GetExtension(imageModel.ImageFile.FileName);
-            imageModel.ImageName = fileName = fileName + DateTime.Now.ToString("yyMMddhhmmssffff") + extension;
+            imageModel.FileName = fileName = imageModel.ArtItem.Name + DateTime.Now.ToString("yyMMddhhmmssffff") + extension;
             string path = Path.Combine(serverPath + "/UploadedImages", fileName);
             using (var fileStream = new FileStream(path, FileMode.Create))
             {
                 await imageModel.ImageFile.CopyToAsync(fileStream);
             }
-
-            return path;
+            int skippableURL = serverPath.Length;
+            string newURL = path.Substring(skippableURL);
+            return "~" + newURL;
         }
+
+
     }
 }

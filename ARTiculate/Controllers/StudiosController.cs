@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ARTiculate.Data;
 using Microsoft.AspNetCore.Http;
 using ARTiculate.Models;
+using ARTiculateDataAccessLibrary.Models;
 
 namespace ARTiculate.Controllers
 {
@@ -14,11 +15,13 @@ namespace ARTiculate.Controllers
     {
 
         private IARTiulateServerRepository ARTiulateServerRepository;
-        
+        private IARTiculateRepository ARTiculateRepository;
 
-        public StudiosController(IARTiulateServerRepository ARTiculateServerRepository)
+
+        public StudiosController(IARTiulateServerRepository ARTiculateServerRepository, IARTiculateRepository ARTiculateRepository)
         {
             this.ARTiulateServerRepository = ARTiculateServerRepository;
+            this.ARTiculateRepository = ARTiculateRepository;
         }
 
         public IActionResult Index()
@@ -39,17 +42,25 @@ namespace ARTiculate.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UploadArtitem(string title, IFormFile imageFile)
+        public async Task<IActionResult> UploadArtitem(ArtItemViewModel model)
+        {            
+            string URL = await ARTiulateServerRepository.UploadPictureToServer(model);
+            model.ArtItem.Picture = URL;
+
+            //TODO: Set this value from Identity / identifiering av studio
+            model.ArtItem.ArtistId = 1;
+            
+            await ARTiculateRepository.AddArtItem(model.ArtItem);
+            return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
+        }
+
+        public async Task<IActionResult> ArtItem(int id)
         {
-            if (ModelState.IsValid)
-            {
-                ImageModel model = new ImageModel(title, imageFile);              
-                                   
-               string URL = await ARTiulateServerRepository.UploadPictureToServer(model);
+            ArtItem artItem = await ARTiculateRepository.GetArtItem(id);
 
-            }
-            return (IActionResult)View();
+            ArtItemViewModel model = new ArtItemViewModel(artItem, null);
 
+            return View(model);
         }
     }
 }

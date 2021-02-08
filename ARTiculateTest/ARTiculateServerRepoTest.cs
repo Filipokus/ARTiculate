@@ -5,6 +5,7 @@ using ARTiculate.Data;
 using Xunit;
 using ARTiculate.Models;
 using System.IO;
+using ARTiculateDataAccessLibrary.Models;
 
 namespace ARTiculateTest
 {
@@ -13,18 +14,35 @@ namespace ARTiculateTest
        ARTiulateServerRepository repo = new ARTiulateServerRepository("test");
 
         [Fact]
-        public void UploadPictureToServer_ShouldReturnString()
+        public async void UploadPictureToServer_ShouldReturnString()
         {
             //Arrange
-            ImageModel imageModel = new ImageModel();
-            imageModel.ImageName = "TEST";
-            imageModel.Title = "TEST";
-            imageModel.ImageFile = (Microsoft.AspNetCore.Http.IFormFile)File.OpenRead(@"ARTiculate1");
+
+            ArtItem artItem = new ArtItem()
+            {
+                Name = "Test",
+                ArtistId = 1,
+                Description = "hej mer test"
+            };
+
+            string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "\\ARTiculate\\wwwroot\\UploadedImages\\GustavFalk2102020505502649.jpg");
+
+            ArtItemViewModel imageModel = new ArtItemViewModel()
+            {
+                FileName = "TEST",
+                ImageFile = (Microsoft.AspNetCore.Http.IFormFile)File.OpenRead(@imgPath),
+                ArtItem = artItem
+            };
+
+            string expected = "~/UploadedImages/Test";
+
 
             //Act
-            var actual = repo.UploadPictureToServer(imageModel);
+            string actual = await repo.UploadPictureToServer(imageModel);
+            string now = DateTime.Now.ToString("yyMMddhhmmssffff");
 
             //Assert
+            Assert.Equal(actual, expected+now+"jpg");
         }
 
     }
