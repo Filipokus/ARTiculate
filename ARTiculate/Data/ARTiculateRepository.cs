@@ -122,7 +122,50 @@ namespace ARTiculate.Data
 
             return vernisages;
         }
-        
+
+        /// <summary>
+        /// Returns a List containing all vernissages that is still to come
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Vernisage>> VernisagesToCome()
+        {
+            List<Vernisage> allVernisages = await GetAllVernisagesOrderedByDate();
+            List<Vernisage> commingVernisages = new List<Vernisage>();
+
+
+                var rightNow = DateTime.Now;
+            foreach (var vernisage in allVernisages)
+            {
+                if (rightNow < vernisage.DateTime)
+                {
+                    commingVernisages.Add(vernisage);
+                }
+            }
+
+            return commingVernisages;
+        }
+
+        /// <summary>
+        /// Returns a List containing all active vernisages
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Vernisage>> GetActiveVernisages()
+        {
+            var vernisagesDetails = await db.Vernisages
+               .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
+               .Where(v => v.Open == true)
+               .OrderBy(x => x.DateTime).ToListAsync();
+
+            List<Vernisage> activeVernisages = new List<Vernisage>();
+
+            foreach (var vernisage in vernisagesDetails)
+            {
+                activeVernisages.Add(vernisage);
+            }
+
+            return activeVernisages;
+        }
+
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
@@ -216,9 +259,9 @@ namespace ARTiculate.Data
 
             return artist;
         }
-        
 
-        
+
+
 
 
 
@@ -226,14 +269,14 @@ namespace ARTiculate.Data
         #endregion
 
         #region UPDATE
-
+       
         #endregion
 
         #region DELETE
 
         #endregion
 
-          
-      
+
+
     }
 }

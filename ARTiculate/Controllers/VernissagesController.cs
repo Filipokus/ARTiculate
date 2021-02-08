@@ -22,16 +22,29 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Index()
         {
-            AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
-            List<Vernisage> vernisages = await ARTiculateRepository.GetAllVernisagesOrderedByDate();
 
-            foreach (var vernisage in vernisages)
+            AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
+            List<Vernisage> vernisagesToCome = await ARTiculateRepository.GetAllVernisagesOrderedByDate();
+
+            foreach (var vernisage in vernisagesToCome)
             {
                 VernisageOverviewDTO vernisageSummary = new VernisageOverviewDTO(vernisage);
                 allVernisagesViewModel.ArtistVernisageDTOs.Add(vernisageSummary);
             }
 
             return View(allVernisagesViewModel);
+
+
+            //AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
+            //List<Vernisage> vernisagesToCome = await ARTiculateRepository.VernisagesToCome();
+
+            //foreach (var vernisage in vernisagesToCome)
+            //{
+            //    VernisageOverviewDTO vernisageSummary = new VernisageOverviewDTO(vernisage);
+            //    allVernisagesViewModel.ArtistVernisageDTOs.Add(vernisageSummary);
+            //}
+
+            //return View(allVernisagesViewModel);
         }
 
         public async Task<IActionResult> Vernissage(int ID)

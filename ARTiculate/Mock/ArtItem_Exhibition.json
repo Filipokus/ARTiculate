@@ -1,0 +1,396 @@
+[
+  {
+
+    "ArtItemId": 1,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 2,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 3,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 4,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 5,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 6,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 7,
+    "ExhibitionId": 1
+  },
+
+  {
+
+    "ArtItemId": 8,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 9,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 10,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 11,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 12,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 13,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 14,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 15,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 16,
+    "ExhibitionId": 2
+  },
+  {
+
+    "ArtItemId": 17,
+    "ExhibitionId": 3
+  },
+  {
+
+    "ArtItemId": 18,
+    "ExhibitionId": 3
+  },
+  {
+
+    "ArtItemId": 19,
+    "ExhibitionId": 3
+  },
+  {
+
+    "ArtItemId": 20,
+    "ExhibitionId": 3
+  },
+  {
+
+    "ArtItemId": 21,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 22,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 23,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 24,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 25,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 26,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 27,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 28,
+    "ExhibitionId": 4
+  },
+  {
+
+    "ArtItemId": 29,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 30,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 31,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 32,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 33,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 34,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 35,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 36,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 37,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 38,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 39,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 40,
+    "ExhibitionId": 5
+  },
+  {
+
+    "ArtItemId": 41,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 42,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 43,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 44,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 45,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 46,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 47,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 48,
+    "ExhibitionId": 6
+  },
+  {
+
+    "ArtItemId": 49,
+    "ExhibitionId": 7
+  },
+  {
+
+    "ArtItemId": 50,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 51,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 52,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 53,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 54,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 55,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 56,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 57,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 58,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 59,
+    "ExhibitionId": 9
+  },
+  {
+
+    "ArtItemId": 60,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 61,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 62,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 63,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 64,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 65,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 66,
+    "ExhibitionId": 8
+  },
+  {
+
+    "ArtItemId": 67,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 68,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 69,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 70,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 71,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 72,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 73,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 74,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 75,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 76,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 77,
+    "ExhibitionId": 1
+  },
+  {
+
+    "ArtItemId": 68,
+    "ExhibitionId": 1
+  }
+
+
+
+]

@@ -13,9 +13,11 @@
 </div>
 <h2 class="diagonal-h2">Live Chat</h2>
 <div class="diagonal-box">
+    <button id="join-chat">Join chat!</button>
     <div id="chat-textbox" class="row">
         <div class="col-6">
             <ul id="messagesList"></ul>
+
         </div>
     </div>
     <div class="message-container">
@@ -23,7 +25,10 @@
         <input type="text" id="messageInput" placeholder="Write here.." />
         <input type="button" id="sendButton" value="Send Message" />
     </div>
+    
 </div>
+
+<p id="vernissage-id">@Model.Vernisage.Id</p>
 
 <script src="~/Assets/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/Assets/js/chat.js"></script>

@@ -19,64 +19,71 @@
 
 <h2 class="diagonal-h2">Next 4 Vernissages</h2>
 <div class="diagonal-box">
-    <div class="next-4-content">     
+    <div class="next-4-content">
         <div class="left4">
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { id = 2 })'">
-                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
-                </div>
-            </button>
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { id = 3 })'">
-                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
-                </div>
-            </button>
+            @for (int i = 0; i < Model.ArtistVernisageDTOs.Count; i++)
+            {
+                if (i % 2 != 0 && i < 5)
+                {
+                    <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.ArtistVernisageDTOs[i].Id})'">
+                        <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <h3>@Model.ArtistVernisageDTOs[i].Title</h3>
+                            <p>@Model.ArtistVernisageDTOs[i].DateTime</p>
+                            <p>
+                                Artist:
+                                @foreach (var artist in Model.ArtistVernisageDTOs[i].FullName)
+                                {
+                                    @artist
+                                }
+                            <p />
+                        </div>
+                    </button>
+                }
+            }
         </div>
         <div class="right4">
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { id = 4 })'">
-                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
-                </div>
-            </button>
-            <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages", new { id = 5 })'">
-                <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <h3>Vernissage Titel</h3>
-                    <p>28th January 11PM</p>
-                    <p>Artist Name</p>
-                </div>
-            </button>
+            @for (int i = 0; i < Model.ArtistVernisageDTOs.Count; i++)
+            {
+                if (i % 2 != 0 && i < 5)
+                {
+                <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.ArtistVernisageDTOs[i].Id })'">
+                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>@Model.ArtistVernisageDTOs[i].Title</h3>
+                        <p>@Model.ArtistVernisageDTOs[i].DateTime</p>
+                        <p>
+                            Artist:
+                            @foreach (var artist in Model.ArtistVernisageDTOs[i].FullName)
+                            {
+                                @artist
+                            }
+                        <p />
+                    </div>
+                </button>
+
+                }
+            }
         </div>
     </div>
 </div>
+           
 
 <h2 class="upcoming-h2">Upcoming Vernissages</h2>
-@foreach (var item in Model.ArtistVernisageDTOs)
+@foreach (var vernisage in Model.ArtistVernisageDTOs)
 {
-    <button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { item.Id })'">
+    <button class="upcoming" onclick="location.href='@Url.Action("About", "Vernissages", new { vernisage.Id })'">
         <div class="upcoming-date">
-            <p>@item.DateTime</p>
+            <p>@vernisage.DateTime</p>
             <p>Månad</p>
         </div>
         <div class="upcoming-txt">
-            <p>Titel: @item.Title</p>
-            <p>
-                Artist:
-
-                @foreach (var artist in item.FullName)
+            <p>Titel: @vernisage.Title</p>
+            <p>Artist:
+                @foreach (var artist in vernisage.FullName)
                 {
                     @artist
                 }
-
             <p />
         </div>
     </button>
