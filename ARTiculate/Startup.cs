@@ -12,9 +12,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ARTiculate.Data;
 
 using SignalRChat.Hubs;
+using ARTiculate.Models.Identity;
+using ARTiculate.Models;
 
 namespace ARTiculate
 {
@@ -30,6 +31,8 @@ namespace ARTiculate
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+                  
+            
             services.AddDbContext<ArtistContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
