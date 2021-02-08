@@ -37,12 +37,10 @@ h1 {
     padding-top: 5vw;
     padding-bottom: 10vh;
     display: flex;
-    flex-direction:  column;
+    flex-direction:  row;
 }
 
 .section_div {
-    display: flex;
-    flex-direction: row;
     justify-content: space-around;
     width: 95vw;
     margin: 2vw auto;

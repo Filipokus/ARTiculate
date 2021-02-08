@@ -40,18 +40,18 @@
     font-size: 6vw;
 }
 
-.folder{grid-area: folder;}
-
-.straight-div{
+.straight-div {
     transform: skewY(11deg);
-    display: grid;
-    grid-template-columns: 2fr;
-    grid-template-areas:
-        "folder folder";
 }
 
-.straight-div img{
-    width: 48vw;
+.studio-content {
+    padding: 20vw 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.studio-content img {
+    width: 30vw;
 }
 
 
