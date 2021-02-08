@@ -137,6 +137,7 @@ namespace ARTiculate.Data
             var vernisage = await db.Vernisages
               .Include(x => x.Artist_Vernisages).ThenInclude(y => y.Artist)
               .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+              .Include(x => x.Exhibition)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();
 
