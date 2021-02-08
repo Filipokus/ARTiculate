@@ -192,7 +192,7 @@ namespace ARTiculate.Data
         public async Task<Exhibition> GetExhibition(int id)
         {
             var exhibition = await db.Exhibitions
-              .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Artist_Exhibitions).ThenInclude(y => y.Artist)
               .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();

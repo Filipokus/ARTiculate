@@ -39,5 +39,12 @@ namespace ARTiculateDataAccessLibrary.Models
         public List<Artist_Exhibition> Artist_Exhibitions { get; set; } = new List<Artist_Exhibition>();
 
         public List<Artist_Tag> Artist_Tags { get; set; } = new List<Artist_Tag>();
+
+        public override string ToString()
+        {
+            return $"{Firstname} {Lastname}";
+        }
+
+
     }
 }
