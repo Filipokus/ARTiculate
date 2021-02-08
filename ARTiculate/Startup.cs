@@ -35,8 +35,8 @@ namespace ARTiculate
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
             services.AddControllersWithViews();
-            services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
-            //services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
+            //services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
+            services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
 
             services.AddSignalR();
 
@@ -67,7 +67,7 @@ namespace ARTiculate
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Studios}/{action=Studio}/{id?}");
         //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
                 endpoints.MapHub<ChatHub>("/chathub");
 

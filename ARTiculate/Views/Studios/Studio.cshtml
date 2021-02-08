@@ -1,5 +1,38 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+<link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
+
+<h1>Studio of ARTist Name</h1>
+<div id="artist-profile">
+    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+    <p>Description</p>
+</div>
+
+<div class="create-buttons">
+    <button class="studio-btn">
+        <p class="plus">+</p>
+        <p>Add art items</p>
+    </button>
+    <button class="studio-btn">
+        <p>Create exhibition</p>
+    </button>
+</div>
+
+<div class="diagonal-box">
+    <div class="straight-div">
+
+        <div class="folder">
+            <h2 class="exhibition-name">Pottery</h2>
+            <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+            <p>Folder name</p>
+        </div>
+
+        <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+
+        <div class="folder" id="private-folder">
+            <img class="lock" src="~/Assets/Images/padlockGray.png" alt="Lock Icon" />
+            <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+            <p>Private</p>
+        </div>
+
+    </div>
+</div>
