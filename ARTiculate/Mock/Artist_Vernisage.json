@@ -12,22 +12,22 @@
     "ArtistId": 2,
     "VernisageId": 1
   },
-  {
-    "ArtistId": 3,
-    "VernisageId": 10
-  },
-  {
-    "ArtistId": 4,
-    "VernisageId": 9
-  },
+  //{
+  //  "ArtistId": 3,
+  //  "VernisageId": 10
+  //},
+  //{
+  //  "ArtistId": 4,
+  //  "VernisageId": 9
+  //},
   {
     "ArtistId": 4,
     "VernisageId": 7
   },
-  {
-    "ArtistId": 5,
-    "VernisageId": 10
-  },
+  //{
+  //  "ArtistId": 5,
+  //  "VernisageId": 10
+  //},
   {
     "ArtistId": 6,
     "VernisageId": 6
@@ -44,10 +44,10 @@
     "ArtistId": 8,
     "VernisageId": 2
   },
-  {
-    "ArtistId": 9,
-    "VernisageId": 10
-  },
+  //{
+  //  "ArtistId": 9,
+  //  "VernisageId": 10
+  //},
   {
     "ArtistId": 10,
     "VernisageId": 5
