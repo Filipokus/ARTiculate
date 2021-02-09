@@ -14,25 +14,11 @@ namespace ARTiculate.Models
         public ExhibitionViewModel(Exhibition exhibition)
         {
             this.Exhibition = exhibition;
-            Artists = GetArtistsForSelectedExhibition(exhibition);
         }
 
         public ExhibitionViewModel()
         {
 
         }
-
-        public List<Artist> GetArtistsForSelectedExhibition(Exhibition exhibitionInput)
-        {
-            List<Artist> artists = new List<Artist>();
-
-            foreach (var exhibition in exhibitionInput.Artist_Exhibitions)
-            {
-                artists.Add(exhibition.Artist);
-            }
-
-            return artists;
-        }
-
     }
 }

@@ -15,9 +15,9 @@
     <h1>@Model.Exhibition.Title</h1>
 </div>
 
-@foreach (var artist in Model.Artists)
+@foreach (var artist in Model.Exhibition.Artist_Exhibitions)
 {
-    <h2 class="diagonal-h2">@artist</h2>
+    <h2 class="diagonal-h2">@artist.Artist</h2>
 }
 
 <div class="diagonal-box">
