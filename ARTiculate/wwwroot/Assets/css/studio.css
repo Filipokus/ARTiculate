@@ -88,10 +88,16 @@
     margin-bottom: 6vw;
 }
 
-.folder-items{
-    /*display:none;*/
+.folder-items {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    display: none;
     background-color: aqua;
-    width: 90vw;
+    width: 95vw;
+}
+
+.folder-items .open-art-item{
+    flex-direction:row;
 }
 
 .exhibition-name {
