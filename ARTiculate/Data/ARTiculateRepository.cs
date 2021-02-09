@@ -189,6 +189,51 @@ namespace ARTiculate.Data
         }
 
         /// <summary>
+        /// Returns a List containing all vernissages that is still to come
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Vernisage>> GetAllVernisagesToCome()
+        {
+            List<Vernisage> allVernisages = await GetAllVernisagesOrderedByDate();
+            List<Vernisage> commingVernisages = new List<Vernisage>();
+
+
+                var rightNow = DateTime.Now;
+            foreach (var vernisage in allVernisages)
+            {
+                if (rightNow < vernisage.DateTime)
+                {
+                    commingVernisages.Add(vernisage);
+                }
+            }
+
+            return commingVernisages;
+        }
+
+        /// <summary>
+        /// Returns a List containing all active vernisages
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Vernisage>> GetActiveVernisages()
+        {
+            var vernisagesDetails = await db.Vernisages
+               .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
+               .Where(v => v.Open == true)
+               .OrderBy(x => x.DateTime).ToListAsync();
+
+            List<Vernisage> activeVernisages = new List<Vernisage>();
+
+            foreach (var vernisage in vernisagesDetails)
+            {
+                activeVernisages.Add(vernisage);
+            }
+
+            return activeVernisages;
+        }
+
+
+        //TODO Ta bort den här metoden??
+        /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
         /// <param name="vernisage"></param>
@@ -218,6 +263,9 @@ namespace ARTiculate.Data
 
             return listOfExhibitions;
         }
+
+      
+
 
         /// <summary>
         /// Collects all exhibitions from Db ordered by date and returns them
@@ -250,6 +298,8 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
+
+        //TODO ta bort den här metoden??
         /// <summary>
         /// Method "Get" exhibition, input id and returns a exhibition.
         /// </summary>
@@ -304,14 +354,14 @@ namespace ARTiculate.Data
         #endregion
 
         #region UPDATE
-
+       
         #endregion
 
         #region DELETE
 
         #endregion
 
-          
-      
+
+
     }
 }

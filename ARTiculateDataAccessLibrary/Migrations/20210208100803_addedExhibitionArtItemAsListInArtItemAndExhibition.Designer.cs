@@ -4,14 +4,16 @@ using ARTiculateDataAccessLibrary.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ARTiculateDataAccessLibrary.Migrations
 {
     [DbContext(typeof(ArtistContext))]
-    partial class ArtistContextModelSnapshot : ModelSnapshot
+    [Migration("20210208100803_addedExhibitionArtItemAsListInArtItemAndExhibition")]
+    partial class addedExhibitionArtItemAsListInArtItemAndExhibition
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -287,9 +289,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("varchar(1024)")
                         .HasMaxLength(1024);
 
-                    b.Property<int>("ExhibitionId")
-                        .HasColumnType("int");
-
                     b.Property<string>("LiveLink")
                         .HasColumnType("varchar(1000)")
                         .HasMaxLength(1000);
@@ -303,8 +302,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ExhibitionId");
 
                     b.ToTable("Vernisages");
                 });
@@ -432,15 +429,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                     b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", "Artist")
                         .WithOne("Link")
                         .HasForeignKey("ARTiculateDataAccessLibrary.Models.Link", "ArtistId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Vernisage", b =>
-                {
-                    b.HasOne("ARTiculateDataAccessLibrary.Models.Exhibition", "exhibition")
-                        .WithMany()
-                        .HasForeignKey("ExhibitionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

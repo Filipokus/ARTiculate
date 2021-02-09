@@ -1,66 +1,92 @@
-﻿/* || VERNISSAGES || */
-
-
-/* LIVE BANNER */
-
-
-
-/* NEXT 4 */
-
-.diagonal-h2 {
-    font-family: 'HeyAugust';
-    font-size: 6vw;
-    text-align: center;
-    margin: 1vh;
-    transform: skewY(-11deg);
-    margin-top: 9vh;
-    margin-bottom: 3vh;
+﻿.diagonal-h2{
+    margin-top: 10vw;
 }
 
-.diagonal-box {
-    background-color: #242424;
-    transform: skewY(-11deg);
-    box-shadow: 0 0.3vw 3vw 2vw #362D26;
-}
-
-.next-4-content {
+.straight-div {
     transform: skewY(11deg);
-    max-width: 100vw;
-    margin: 3vh auto;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    width: 80vw;
+    padding: 5vw 0 10vw 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
 }
 
-.next-4 {
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
+/*IMAGE GALLERY*/
 
-.next4-container {
-    background-color: rgba(255,255,255, 0.3);
-    margin-top: 2vw;
+.carousel-container{
+    margin-top:21vw;
+    width: 80vw;
+}
+.wrapper {
     position: relative;
-    padding: 1vw;
+    flex-grow: 1;
+    margin: -21.1vw auto auto auto;
+    max-width: 80vw;
+    max-height: 80vw;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2vmin;
+    justify-items: center;
+    align-items: center;
+    filter: drop-shadow(5px 5px 7px #0c0c0c);
+    cursor: pointer;
+    transition: 0.25s;
 }
 
-.next-4 img {
-    width: 40vw;
-    border-radius: 8px;
-    margin-bottom: 1vh;
-    box-shadow: 0 0 3vw 2vw #0c0c0c;
+.romb {
+    z-index: 1;
+    grid-column: span 2;
+    margin-bottom: -52%;
+    transform: scale(1);
+    max-width: 100%;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.left4 {
-    width: 40vw;
-    flex-direction: column;
-    justify-content: center;
-    transform: translate3d(-11%, 10%, 0);
+.romb:nth-child(3n+1) {
+    grid-column: 2/span 2;
 }
 
+.wrapper:hover {
+    z-index: 2;
+    transform: scale(1.05);
+}
 
+.exhibition-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 98vw;
+}
 
+.arrow-left-btn, .arrow-right-btn {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin:0;
+}
+
+.arrow-left-img, .arrow-right-img {
+    width: 8vw;
+}
+
+.exhibition-info {
+    width: 98vw;
+    margin-top: 27vw;
+    text-align: center;
+    cursor: pointer;
+}
+
+.exhibition-info h3, .exhibition-info p {
+    color: #DFDDE4;
+    padding: 1vw 6vw;
+}
+
+.exhibition-info h3{
+    font-size: 4vw;
+}
+
+.exhibition-info p{
+    line-height: 4vw;
+}
 

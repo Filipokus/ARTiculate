@@ -18,9 +18,12 @@ namespace ARTiculate.Data
 
         Task<Vernisage> GetVernisage(int id);
         Task<List<Vernisage>> GetAllVernisagesOrderedByDate();
+        Task<List<Vernisage>> GetAllVernisagesToCome();
+        Task<List<Vernisage>> GetActiveVernisages();
         List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         Task<Exhibition> GetExhibition(int id);
         Task<List<Exhibition>> GetAllExhibitionsOrderedByDate();
+    
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
         Task<Artist> GetArtist(int id);
         Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID);

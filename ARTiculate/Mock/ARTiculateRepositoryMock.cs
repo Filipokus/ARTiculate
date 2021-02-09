@@ -32,37 +32,39 @@ namespace ARTiculate.Mock
             //var resultArtist = JsonConvert.DeserializeObject<IEnumerable<Artist>>(fileArtist);
             //db.AddRange(resultArtist);
             //db.SaveChanges();
-            
+
             //var fileArtItem = File.ReadAllText("Mock/ArtItem.json");
             //var resultArtItem = JsonConvert.DeserializeObject<IEnumerable<ArtItem>>(fileArtItem);
             //db.AddRange(resultArtItem);
             //db.SaveChanges();
-            
+
             //var fileExhibition = File.ReadAllText("Mock/Exhibition.json");
             //var resultExhibition = JsonConvert.DeserializeObject<IEnumerable<Exhibition>>(fileExhibition);
             //db.AddRange(resultExhibition);
             //db.SaveChanges();
-            
+
+            //var fileExhibition_ArtItems = File.ReadAllText("Mock/Exhibition_ArtItems.json");
+            //var resultExhibition_ArtItems = JsonConvert.DeserializeObject<IEnumerable<Exhibition_ArtItem>>(fileExhibition_ArtItems);
+            //db.AddRange(resultExhibition_ArtItems);
+            //db.SaveChanges();
+
             //var fileLink = File.ReadAllText("Mock/Link.json");
             //var resultLink = JsonConvert.DeserializeObject<IEnumerable<Link>>(fileLink);
             //db.AddRange(resultLink);
             //db.SaveChanges();
-            
-            //var fileStudio = File.ReadAllText("Mock/Studio.json");
-            //var resultStudio = JsonConvert.DeserializeObject<IEnumerable<Studio>>(fileStudio);
-            //db.AddRange(resultStudio);
-            //db.SaveChanges();
-            
+
+
+
             //var fileTag = File.ReadAllText("Mock/Tag.json");
             //var resultTag = JsonConvert.DeserializeObject<IEnumerable<Tag>>(fileTag);
             //db.AddRange(resultTag);
             //db.SaveChanges();
-            
+
             //var fileVernisage = File.ReadAllText("Mock/Vernisage.json");
             //var resultVernisage = JsonConvert.DeserializeObject<IEnumerable<Vernisage>>(fileVernisage);
             //db.AddRange(resultVernisage);
             //db.SaveChanges();
-            
+
             //var fileArtItem_Tag = File.ReadAllText("Mock/ArtItem_Tag.json");
             //var resultArtItem_Tag = JsonConvert.DeserializeObject<IEnumerable<ArtItem_Tag>>(fileArtItem_Tag);
             //db.AddRange(resultArtItem_Tag);
@@ -150,6 +152,21 @@ namespace ARTiculate.Mock
         }
 
         public void CreateArtist_Vernisage(int vernisageId, int artistId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetAllVernisagesToCome()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetActiveVernisages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Exhibition_ArtItem>> GetArtItemsInExhibition(int id)
         {
             throw new NotImplementedException();
         }
