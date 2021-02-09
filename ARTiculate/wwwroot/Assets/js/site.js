@@ -60,5 +60,40 @@ function makeVernissageLive(node) {
     dateLive.setAttribute("onClick", urlAction2);
 }
 
+//------ Carousel on exhibitions index page --------
+function loadNewContent(arrowBtn) {
 
+    let activeCarouselDiv = arrowBtn.parentNode.parentNode
+    let straightDiv = activeCarouselDiv.parentNode;
+    let childrenOfStraightDiv = straightDiv.getElementsByClassName('carousel-container');
+    let numberOfChildren = childrenOfStraightDiv.length;
+
+    for (let i = 0; i < numberOfChildren; i++) {
+        if (activeCarouselDiv === childrenOfStraightDiv[i]) {
+            var carouselDivNumber = i;
+            break;
+        }
+    }
+
+    if (arrowBtn.className === 'arrow-left-btn') {
+        if (carouselDivNumber !== 0) {
+            childrenOfStraightDiv[carouselDivNumber - 1].style.display = 'initial';
+        }
+        else {
+            childrenOfStraightDiv[numberOfChildren - 1].style.display = 'initial';
+        }
+    }
+
+    else {
+        if (carouselDivNumber !== numberOfChildren-1) {
+            childrenOfStraightDiv[carouselDivNumber + 1].style.display = 'initial';
+        }
+        else {
+            childrenOfStraightDiv[0].style.display = 'initial';
+        }
+
+    }
+
+    activeCarouselDiv.style.display = 'none';
+}
 
