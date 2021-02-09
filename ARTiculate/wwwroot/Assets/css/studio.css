@@ -1,4 +1,5 @@
-﻿#artist-profile{
+﻿/*PROFILE*/
+#artist-profile{
     width: 20vw;
     height: 20vw;
     overflow: hidden;
@@ -11,11 +12,16 @@
     width: 100%;
 }
 
+.description{
+    text-align: center;
+    margin: auto 5vw;
+}
+
+/*BUTTONS*/
 .create-buttons {
     display: flex;
     margin-top: 10vw;
     margin-bottom: 13vw;
-    
     justify-content: space-around;
 }
 .studio-btn {
@@ -40,18 +46,83 @@
     font-size: 6vw;
 }
 
+/*LAYOUT*/
 .straight-div {
     transform: skewY(11deg);
 }
 
 .studio-content {
-    padding: 20vw 0;
+    padding: 17vw 0 0 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 3vw;
 }
 
 .studio-content img {
-    width: 30vw;
+    width: 40vw;
+}
+.folder-img{
+    opacity: 0.3;
 }
 
+.studio-content-btn {
+    margin: auto 3vw;
+    width: 40vw;
+    height: 40vw;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84);
+    outline: none;
+}
 
+.folder, .open-art-item, #private-folder{
+    height: 40vw;
+    margin-bottom: 6vw;
+}
+
+/*.studio-content-container{
+    background-color: aliceblue;
+    height: 40vw;
+    width: 40vw;
+    z-index:2;
+}*/
+
+.exhibition-name {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    width: 40vw;
+}
+
+.lock{
+    position: absolute;
+    z-index: 1;
+    top:0;
+    right: 0;
+    max-width: 5vw;
+    margin: 2vw;
+}
+
+.divider {
+    position: relative;
+    margin-bottom: 6vw;
+    height: 1px;
+}
+
+.div-transparent:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, rgb(87, 87, 89), transparent);
+}
+#open-items{
+    padding: 0;
+}
