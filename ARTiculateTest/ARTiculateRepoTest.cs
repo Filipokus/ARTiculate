@@ -12,7 +12,7 @@ namespace ARTiculateTest
     public class ARTiculateRepoTest
     {
         //this test class do not test methods directly in contact with the database
-        ARTiculateRepository repo = new ARTiculateRepository("test");
+        ARTiculateRepositoryMock repo = new ARTiculateRepositoryMock("test");
 
         [Fact]
         public void GetListOfTagsForSelectedVernisage_ShouldRetrunListOfTags()

@@ -1,5 +1,4 @@
 using ARTiculate.Data;
-using ARTiculate.Mock;
 using ARTiculateDataAccessLibrary.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ARTiculate.Data;
 
 using SignalRChat.Hubs;
 
@@ -35,8 +33,8 @@ namespace ARTiculate
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
             services.AddControllersWithViews();
-            services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
-            //services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
+            services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
+            //services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
 
             services.AddSignalR();
 
