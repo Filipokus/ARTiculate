@@ -1,18 +1,23 @@
 ﻿<link rel="stylesheet" href="~/Assets/css/home.css?v={random string}" />
 
 
-
 <div class="diagonal-box" id="hero_div">
     <div id="hero_header">
         <h1>WELCOME TO <br /> ARTiculate</h1>
     </div>
+    
     <h2 class="diagonal-h2" id="slogan">Where artists and visitors meet</h2>
     <div id="section_divs">
+        
+         <div class="section_div">
+                <button class="section_btn" id="btn_vernissages" onclick="location.href='@Url.Action("Index", "Vernissages")'"> Vernissages </button>
+                <p class="section_info">Meet the Artists and chat in realtime</p>
+            </div>
+         
 
-        <div class="section_div">
-            <button class="section_btn" id="btn_vernissages" onclick="location.href='@Url.Action("Index", "Vernissages")'"> Vernissages </button>
-            <p class="section_info">Meet the Artists and chat in realtime</p>
-        </div>
+        
+        
+
 
         <div class="section_div">
             <p class="section_info">Enjoy well put together exhibitions during a limited time.</p>

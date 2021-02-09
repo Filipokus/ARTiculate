@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using ARTiculate.Areas.Identity.Data
+@inject SignInManager<ARTiculateUser> SignInManager
+@inject UserManager<ARTiculateUser> userManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -45,16 +49,27 @@
         <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("About", "Vernissages" ,new { id = 2 })'">
             <a asp-area="" asp-controller="Exhibitions" asp-action="Exhibition" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Home")'">
-            <a asp-area="" asp-controller="Home" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Login</a>
+        @if(SignInManager.IsSignedIn(User)){
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="" asp-controller="Home" asp-action="LogOut" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Logout</a>
+           
         </li>
+        }
+        else
+        {
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+            <a asp-area="Identity" asp-page="/Account/Login" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Login</a>
+        </li>
+        }
+        
+
     </ul>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
+    
     <footer class="footer">
         <div class="footer-container">
             &copy; 2021 - ARTiculate - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
