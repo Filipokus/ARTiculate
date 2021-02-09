@@ -17,7 +17,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\ExhibitionController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="wwwroot\Assets\css\NewFile.txt" />
+    <Content Remove="wwwroot\Assets\css\xhibitions.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Exhibitions\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +35,6 @@
 
   <ItemGroup>
     <Folder Include="UploadedImages\" />
-    <Folder Include="wwwroot\Assets\Fonts\" />
   </ItemGroup>
 
 </Project>

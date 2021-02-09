@@ -27,18 +27,59 @@ namespace ARTiculate.Data
         #endregion
 
         #region CREATE
+
         /// <summary>
         /// Adds a object of type Vernisage to db
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task<int> AddVernisageAsync(Vernisage vernisage)
+        public async Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
         {
             await db.Vernisages.AddAsync(vernisage);
             db.SaveChanges();
 
-            int id;
-            return id = vernisage.Id;
+            return vernisage;            
+        }
+
+        /// <summary>
+        /// Adds a vernisage to Db and returns the vernisageId from Db. Links the artist and vernisage together
+        /// </summary>
+        /// <param name="vernisage"></param>
+        /// <param name="artistID"></param>
+        /// <returns></returns>
+        public async Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID)
+        {
+            var vernisageFromDb = await AddVernisageAsync(vernisage);
+            CreateArtist_Vernisage(vernisageFromDb.Id, artistID);
+
+            return vernisageFromDb.Id;
+        }
+
+        /// <summary>
+        /// Creates an object of type Artist_Vernisage
+        /// </summary>
+        /// <param name="vernisageId"></param>
+        /// <param name="artistId"></param>
+        public void CreateArtist_Vernisage(int vernisageId, int artistId)
+        {
+            Artist_Vernisage artist_Vernisage = new Artist_Vernisage
+            {
+                ArtistId = artistId,
+                VernisageId = vernisageId
+            };
+
+            AddArtist_VernisageAsync(artist_Vernisage);
+
+        }
+
+        /// <summary>
+        /// Adds an object of type Artist_Vernisage to Db
+        /// </summary>
+        /// <param name="artist_Vernisage"></param>
+        public async void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage)
+        {
+            await db.Artist_Vernisages.AddAsync(artist_Vernisage);
+            db.SaveChanges();
         }
 
         /// <summary>
@@ -94,7 +135,7 @@ namespace ARTiculate.Data
         public async Task<Vernisage> GetVernisage(int id)
         {
             var vernisage = await db.Vernisages
-              .Include(x => x.Artist_Vernisages)
+              .Include(x => x.Artist_Vernisages).ThenInclude(y => y.Artist)
               .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
               .Include(x => x.Exhibition)
               .Where(x => x.Id == id)
@@ -106,25 +147,47 @@ namespace ARTiculate.Data
         /// <summary>
         /// Returns a List containing all vernissages in db, sorted by date.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List<Vernisage> vernissages ordered by date</Vernisage></returns>
         public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
         {
-            var vernisagesDetails = await db.Vernisages
-                .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
-                .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
-                .Include(x => x.Exhibition)
-                .OrderBy(x => x.DateTime).ToListAsync();
+            var vernissagesFromDb = await GetVernissagesFromDbOrderedByDate();
+            var listOfVernissagesOrderedByDate = CreateListOfVernissages(vernissagesFromDb);
 
-            List<Vernisage> vernisages = new List<Vernisage>();
+            return listOfVernissagesOrderedByDate;
+        }
 
-            foreach (var vernisage in vernisagesDetails)
+        /// <summary>
+        /// Collects all vernissages from Db ordered by date and returns them
+        /// </summary>
+        /// <returns>vernissages from Db</returns>
+        public async Task<List<Vernisage>> GetVernissagesFromDbOrderedByDate()
+        {
+            var vernissagesFromDb = await db.Vernisages
+               .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
+               .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+               .Include(x => x.Exhibition)
+               .OrderBy(x => x.DateTime).ToListAsync();
+
+            return vernissagesFromDb;
+        }
+
+        /// <summary>
+        /// Loops through input and adds items to a list that will be returned
+        /// </summary>
+        /// <param name="vernissagesFromDb"></param>
+        /// <returns>List<Vernisage> vernissages </returns>
+        public List<Vernisage> CreateListOfVernissages(List<Vernisage> vernissagesFromDb)
+        {
+            List<Vernisage> vernissages = new List<Vernisage>();
+
+            foreach (var vernissage in vernissagesFromDb)
             {
-                vernisages.Add(vernisage);
+                vernissages.Add(vernissage);
             }
 
-            return vernisages;
+            return vernissages;
         }
-        
+
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
@@ -143,6 +206,50 @@ namespace ARTiculate.Data
         }
 
         //EXHIBITIONS
+
+        /// <summary>
+        /// Returns a List containing all exhibitions in db, sorted by date.
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Exhibition>> GetAllExhibitionsOrderedByDate()
+        {
+            var exhibitionsFromDb = await GetExhibitionsFromDbOrderedByDate();
+            var listOfExhibitions = CreateListOfExhibitions(exhibitionsFromDb);
+
+            return listOfExhibitions;
+        }
+
+        /// <summary>
+        /// Collects all exhibitions from Db ordered by date and returns them
+        /// </summary>
+        /// <returns>List<Exhibition> exhibitionsFromDb </returns>        
+        public async Task<List<Exhibition>> GetExhibitionsFromDbOrderedByDate()
+        {
+            var exhibitionsFromDb = await db.Exhibitions
+              .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
+              .OrderBy(x => x.DateTime).ToListAsync();
+
+            return exhibitionsFromDb;
+        }
+
+        /// <summary>
+        /// Loops through input and adds items to a list that will be returned
+        /// </summary>
+        /// <param name="exhibitionsFromDb"></param>
+        /// <returns>List<Exhibition> exhibitions </returns>
+        public List<Exhibition> CreateListOfExhibitions(List<Exhibition> exhibitionsFromDb)
+        {
+            List<Exhibition> exhibitions = new List<Exhibition>();
+
+            foreach (var exhibition in exhibitionsFromDb)
+            {
+                exhibitions.Add(exhibition);
+            }
+
+            return exhibitions;
+        }
+
         /// <summary>
         /// Method "Get" exhibition, input id and returns a exhibition.
         /// </summary>
@@ -151,33 +258,12 @@ namespace ARTiculate.Data
         public async Task<Exhibition> GetExhibition(int id)
         {
             var exhibition = await db.Exhibitions
-              .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Artist_Exhibitions).ThenInclude(y => y.Artist)
               .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();
 
             return exhibition;
-        }
-
-        /// <summary>
-        /// Returns a List containing all exhibitions in db, sorted by date.
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<Exhibition>> GetAllExhibitionsOrderedByDate()
-        {
-            var exhibitionDetails = await db.Exhibitions
-                .Include(x => x.Artist_Exhibitions)
-                .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
-                .OrderBy(x => x.DateTime).ToListAsync();
-
-            List<Exhibition> exhibitions = new List<Exhibition>();
-
-            foreach (var exhibition in exhibitionDetails)
-            {
-                exhibitions.Add(exhibition);
-            }
-
-            return exhibitions;
         }
 
         /// <summary>
@@ -197,10 +283,6 @@ namespace ARTiculate.Data
             return tags;
         }
 
-
-
-
-
         /// <summary>
         /// Returns an artist from the db by taking the id (int) as input.
         /// </summary>
@@ -218,12 +300,6 @@ namespace ARTiculate.Data
 
             return artist;
         }
-        
-
-        
-
-
-
 
         #endregion
 

@@ -30,23 +30,23 @@
         </nav>
     </header>
     <ul id="menu">
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Home")'">
             <a asp-area="" asp-controller="Home" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Home</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Vernissages")'">
             <a asp-area="" asp-controller="Vernissages" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Vernissages</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
-            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Exhibitions</a>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Exhibitions")'">
+            <a asp-area="" asp-controller="Exhibitions" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Exhibitions</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
-            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artists</a>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+            <a asp-area="" asp-controller="Home" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artists</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
-            <a asp-area="" asp-controller="Vernissages" asp-action="Vernissage" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("About", "Vernissages" ,new { id = 2 })'">
+            <a asp-area="" asp-controller="Exhibitions" asp-action="Exhibition" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
         </li>
-        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">
-            <a asp-area="" asp-controller="Home" asp-action="Privacy" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Login</a>
+        <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Home")'">
+            <a asp-area="" asp-controller="Home" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Artist Login</a>
         </li>
     </ul>
     <div class="container">
