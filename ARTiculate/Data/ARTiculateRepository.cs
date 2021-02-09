@@ -27,18 +27,59 @@ namespace ARTiculate.Data
         #endregion
 
         #region CREATE
+
         /// <summary>
         /// Adds a object of type Vernisage to db
         /// </summary>
         /// <param name="vernisage"></param>
         /// <returns></returns>
-        public async Task<int> AddVernisageAsync(Vernisage vernisage)
+        public async Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
         {
             await db.Vernisages.AddAsync(vernisage);
             db.SaveChanges();
 
-            int id;
-            return id = vernisage.Id;
+            return vernisage;            
+        }
+
+        /// <summary>
+        /// Adds a vernisage to Db and returns the vernisageId from Db. Links the artist and vernisage together
+        /// </summary>
+        /// <param name="vernisage"></param>
+        /// <param name="artistID"></param>
+        /// <returns></returns>
+        public async Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID)
+        {
+            var vernisageFromDb = await AddVernisageAsync(vernisage);
+            CreateArtist_Vernisage(vernisageFromDb.Id, artistID);
+
+            return vernisageFromDb.Id;
+        }
+
+        /// <summary>
+        /// Creates an object of type Artist_Vernisage
+        /// </summary>
+        /// <param name="vernisageId"></param>
+        /// <param name="artistId"></param>
+        public void CreateArtist_Vernisage(int vernisageId, int artistId)
+        {
+            Artist_Vernisage artist_Vernisage = new Artist_Vernisage
+            {
+                ArtistId = artistId,
+                VernisageId = vernisageId
+            };
+
+            AddArtist_VernisageAsync(artist_Vernisage);
+
+        }
+
+        /// <summary>
+        /// Adds an object of type Artist_Vernisage to Db
+        /// </summary>
+        /// <param name="artist_Vernisage"></param>
+        public async void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage)
+        {
+            await db.Artist_Vernisages.AddAsync(artist_Vernisage);
+            db.SaveChanges();
         }
 
         /// <summary>
@@ -94,8 +135,9 @@ namespace ARTiculate.Data
         public async Task<Vernisage> GetVernisage(int id)
         {
             var vernisage = await db.Vernisages
-              .Include(x => x.Artist_Vernisages)
+              .Include(x => x.Artist_Vernisages).ThenInclude(y => y.Artist)
               .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
+              .Include(x => x.Exhibition)
               .Where(x => x.Id == id)
               .FirstOrDefaultAsync();
 

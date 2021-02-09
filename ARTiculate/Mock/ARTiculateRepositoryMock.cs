@@ -119,11 +119,6 @@ namespace ARTiculate.Mock
             throw new NotImplementedException();
         }
 
-        public Task<int> AddVernisageAsync(Vernisage vernisage)
-        {
-            throw new NotImplementedException();
-        }
-
         public Task<Exhibition> AddExhibitionAsync(Exhibition exhibition)
         {
             throw new NotImplementedException();
@@ -135,6 +130,26 @@ namespace ARTiculate.Mock
         }
 
         public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateArtist_Vernisage(int vernisageId, int artistId)
         {
             throw new NotImplementedException();
         }
