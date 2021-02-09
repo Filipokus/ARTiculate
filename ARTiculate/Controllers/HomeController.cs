@@ -23,14 +23,19 @@ namespace ARTiculate.Controllers
         private readonly ArtistContext _db;
         private IARTiculateRepository aRTiculateRepository;
         private readonly SignInManager<ARTiculateUser> _signInManager;
+        
 
-
-        public HomeController(ILogger<HomeController> logger, ArtistContext db, IARTiculateRepository aRTiculateRepository, SignInManager<ARTiculateUser> signInManager)
+        public HomeController(ILogger<HomeController> logger, 
+            ArtistContext db, 
+            IARTiculateRepository aRTiculateRepository, 
+            SignInManager<ARTiculateUser> signInManager
+           )
         {
             _logger = logger;
             _db = db;
             this.aRTiculateRepository = aRTiculateRepository;
             _signInManager = signInManager;
+            
         }
 
         public async Task<IActionResult> Index()
@@ -38,9 +43,9 @@ namespace ARTiculate.Controllers
 
             //if (_db.Artists.Count() == 0)
             //{
-            //    aRTiculateRepository.GetMockData(_db);
+            //aRTiculateRepository.GetMockData(_db);
             //}
-
+            
             return View();
         }
 

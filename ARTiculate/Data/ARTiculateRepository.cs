@@ -1,4 +1,5 @@
-﻿using ARTiculateDataAccessLibrary.DataAccess;
+﻿using ARTiculate.Areas.Identity.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -105,6 +106,25 @@ namespace ARTiculate.Data
             await db.SaveChangesAsync();
             return artist;
         }
+
+        /// <summary>
+        /// Creates an Artist object from a ArticulateUser
+        /// </summary>
+        /// <param name="artist"></param>
+        /// <returns></returns>
+        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            Artist artist = new Artist()
+            {
+                Emailadress = user.Email,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
+
+            };
+            return artist;
+
+        }
+      
 
         /// <summary>
         /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
