@@ -118,6 +118,13 @@ namespace ARTiculate.Data
             return tag;
         }
 
+        public async Task<ArtItem> AddArtItem(ArtItem artItem)
+        {
+            await db.ArtItems.AddAsync(artItem);
+            await db.SaveChangesAsync();
+            return artItem;
+        }
+
         public void GetMockData(ArtistContext db)
         {
             throw new NotImplementedException();
@@ -350,11 +357,47 @@ namespace ARTiculate.Data
 
             return artist;
         }
+        
+
+        public async Task<ArtItem> GetArtItem(int id)
+        {
+            var artItem = await db.ArtItems
+                .Include(x => x.Artist)
+                .Include(x => x.ArtItem_Tags)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            return artItem;
+        }
+
+
+
 
         #endregion
 
         #region UPDATE
-       
+
+        public async Task<ArtItem> UpdateArtItem(ArtItem artItem)
+        {
+            db.ArtItems.Update(artItem);
+            await db.SaveChangesAsync();
+            return artItem;
+        }
+
+        public async Task<Exhibition> UpdateExhibition(Exhibition exhibition)
+        {
+            db.Exhibitions.Update(exhibition);
+            await db.SaveChangesAsync();
+            return exhibition;
+        }
+
+        public async Task<Vernisage> UpdateVernissage(Vernisage vernissage)
+        {
+            db.Vernisages.Update(vernissage);
+            await db.SaveChangesAsync();
+            return vernissage;
+        }
+
         #endregion
 
         #region DELETE

@@ -170,5 +170,15 @@ namespace ARTiculate.Mock
         {
             throw new NotImplementedException();
         }
+
+        public async Task<ArtItem> AddArtItem(ArtItem artItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ArtItem> GetArtItem(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,0 +1,16 @@
+﻿@model ARTiculate.Models.ArtItemViewModel
+
+@{
+    ViewData["Title"] = "Uploaded Item";
+}
+<link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+<div class="create-title">
+    <h1>@Model.ArtItem.Name</h1>
+</div>
+
+<h2 class="diagonal-h2">Fill in</h2>
+<div class="diagonal-box">
+    <div id="bend-back">
+        <img src="@Url.Content(string.Format(@Model.ArtItem.Picture))" alt="Alternate Text" />
+    </div>
+</div>
