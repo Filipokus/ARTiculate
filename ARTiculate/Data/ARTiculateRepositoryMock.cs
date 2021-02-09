@@ -345,6 +345,7 @@ namespace ARTiculate.Data
         {
             var exhibitionsFromDb = await db.Exhibitions
               .Include(x => x.Artist_Exhibitions)
+              .Include(x => x.Exhibition_ArtItem).ThenInclude(x => x.ArtItems)
               .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
               .OrderBy(x => x.DateTime).ToListAsync();
 
