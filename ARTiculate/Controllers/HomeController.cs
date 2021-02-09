@@ -31,10 +31,8 @@ namespace ARTiculate.Controllers
         public async Task<IActionResult> Index()
         {
 
-            //if (_db.Artists.Count() == 0)
-            //{
-            //    aRTiculateRepository.GetMockData(_db);
-            //}
+            //aRTiculateRepository.GetMockData(_db);
+
 
             return View();
         }

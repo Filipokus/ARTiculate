@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ARTiculate.Data;
 
 using SignalRChat.Hubs;
 

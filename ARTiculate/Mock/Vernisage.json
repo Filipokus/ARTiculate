@@ -5,7 +5,8 @@
     //"Id": 1,
     "LiveLink": "http://dummyimage.com/194x133.bmp/ff4444/ffffff",
     "open": false,
-    "Title": "Junior"
+    "Title": "Junior",
+    "ExhibitionId": 8
   },
   {
     //"Id": 2,
@@ -13,7 +14,8 @@
     "Title": "Gross Anatomy (a.k.a. A Cut Above)",
     "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
     "open": true,
-    "LiveLink": "http://dummyimage.com/108x120.jpg/ff4444/ffffff"
+    "LiveLink": "http://dummyimage.com/108x120.jpg/ff4444/ffffff",
+    "ExhibitionId": 7
   },
   {
     //"Id": 3,
@@ -21,7 +23,8 @@
     "Title": "Stella Street",
     "Description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
     "open": true,
-    "LiveLink": "http://dummyimage.com/212x152.png/ff4444/ffffff"
+    "LiveLink": "http://dummyimage.com/212x152.png/ff4444/ffffff",
+    "ExhibitionId": 6
   },
   {
     //"Id": 4,
@@ -29,7 +32,8 @@
     "Title": "Pretty Baby",
     "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
     "open": false,
-    "LiveLink": "http://dummyimage.com/218x117.jpg/5fa2dd/ffffff"
+    "LiveLink": "http://dummyimage.com/218x117.jpg/5fa2dd/ffffff",
+    "ExhibitionId": 5
   },
   {
     // "Id": 5,
@@ -37,7 +41,8 @@
     "Title": "Great McGinty, The",
     "Description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
     "open": true,
-    "LiveLink": "http://dummyimage.com/176x245.bmp/cc0000/ffffff"
+    "LiveLink": "http://dummyimage.com/176x245.bmp/cc0000/ffffff",
+    "ExhibitionId": 4
   },
   {
     // "Id": 6,
@@ -45,7 +50,8 @@
     "Title": "My Favorite Martian",
     "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
     "open": true,
-    "LiveLink": "http://dummyimage.com/207x150.jpg/ff4444/ffffff"
+    "LiveLink": "http://dummyimage.com/207x150.jpg/ff4444/ffffff",
+    "ExhibitionId": 3
   },
   {
     //"Id": 7,
@@ -53,7 +59,8 @@
     "Title": "Mansfield Park",
     "Description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
     "open": false,
-    "LiveLink": "http://dummyimage.com/117x197.jpg/dddddd/000000"
+    "LiveLink": "http://dummyimage.com/117x197.jpg/dddddd/000000",
+    "ExhibitionId": 2
   },
   {
     //"Id": 8,
@@ -61,30 +68,32 @@
     "Title": "Side Street",
     "Description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
     "open": true,
-    "LiveLink": "http://dummyimage.com/164x202.bmp/ff4444/ffffff"
-  },
-  {
-    //"Id": 9,
-    "DateTime": "2020-08-25",
-    "Title": "Wyoming Renegades",
-    "Description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
-    "open": false,
-    "LiveLink": "http://dummyimage.com/240x236.png/cc0000/ffffff"
-  },
-  {
-    //"Id": 10,
-    "DateTime": "2020-05-28",
-    "Title": "Girl with a Pearl Earring",
-    "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
-    "open": false,
-    "LiveLink": "http://dummyimage.com/160x111.png/dddddd/000000"
-  },
-  {
-    
-    "DateTime": "2021-05-28",
-    "Title": "Girl with a Pearl Earring",
-    "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
-    "open": false,
-    "LiveLink": "http://dummyimage.com/160x111.png/dddddd/000000"
+    "LiveLink": "http://dummyimage.com/164x202.bmp/ff4444/ffffff",
+    "ExhibitionId": 1
   }
+  //,
+  //{
+  //  //"Id": 9,
+  //  "DateTime": "2020-08-25",
+  //  "Title": "Wyoming Renegades",
+  //  "Description": "Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+  //  "open": false,
+  //  "LiveLink": "http://dummyimage.com/240x236.png/cc0000/ffffff"
+  //},
+  //{
+  //  //"Id": 10,
+  //  "DateTime": "2020-05-28",
+  //  "Title": "Girl with a Pearl Earring",
+  //  "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+  //  "open": false,
+  //  "LiveLink": "http://dummyimage.com/160x111.png/dddddd/000000"
+  //},
+  //{
+
+  //  "DateTime": "2021-05-28",
+  //  "Title": "Girl with a Pearl Earring",
+  //  "Description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+  //  "open": false,
+  //  "LiveLink": "http://dummyimage.com/160x111.png/dddddd/000000"
+  //}
 ]
