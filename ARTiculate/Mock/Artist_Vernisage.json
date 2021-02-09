@@ -10,7 +10,7 @@
   },
   {
     "ArtistId": 2,
-    "VernisageId": 1
+    "VernisageId": 2
   },
   {
     "ArtistId": 3,
@@ -26,7 +26,7 @@
   },
   {
     "ArtistId": 5,
-    "VernisageId": 10
+    "VernisageId": 12
   },
   {
     "ArtistId": 6,
@@ -46,7 +46,7 @@
   },
   {
     "ArtistId": 9,
-    "VernisageId": 10
+    "VernisageId": 11
   },
   {
     "ArtistId": 10,
