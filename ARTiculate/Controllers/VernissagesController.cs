@@ -34,17 +34,19 @@ namespace ARTiculate.Controllers
             }
 
             return View(allVernisagesViewModel);
-
-
         }
 
         public async Task<IActionResult> Vernissage(int ID)
         {
-            
-            Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
+            var viewModel = await GetVernisageViewModel(ID);
 
-            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
-            
+            return View(viewModel);
+        }
+
+        public async Task<IActionResult> About(int ID)
+        {
+            var viewModel = await GetVernisageViewModel(ID);
+
             return View(viewModel);
         }
 
@@ -57,19 +59,17 @@ namespace ARTiculate.Controllers
             return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
 
-        
-
-        public async Task<IActionResult> About(int ID)
-        {
-            Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
-            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
-
-            return View(viewModel);
-        }
-
         public IActionResult Create()
         {
             return View();
+        }
+
+        private async Task<VernisageViewModel> GetVernisageViewModel(int id)
+        {
+            Vernisage vernisage = await ARTiculateRepository.GetVernisage(id);
+            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
+
+            return viewModel;
         }
     }
 }
