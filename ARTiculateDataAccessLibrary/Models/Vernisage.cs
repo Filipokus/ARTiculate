@@ -21,11 +21,17 @@ namespace ARTiculateDataAccessLibrary.Models
         [Column(TypeName = "varchar(1024)")]
         public string Description { get; set; }
 
+        [Required]
         [MaxLength(1000)]
         [Column(TypeName = "varchar(1000)")]
         public string LiveLink { get; set; }
 
         public bool Open { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        [Column(TypeName = "varchar(100)")]
+        public string Poster { get; set; }
 
         public int ExhibitionId { get; set; }
 

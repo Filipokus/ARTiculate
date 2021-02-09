@@ -1,40 +1,46 @@
 ﻿<link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
 <div class="create-title">
-   <h1>Create vernissage</h1>
+    <h1>Create vernissage</h1>
 </div>
-@model ARTiculateDataAccessLibrary.Models.Vernisage
+@model ARTiculate.Models.CreateVernissageViewModel
 <h2 class="diagonal-h2">Fill in</h2>
 <div class="diagonal-box">
     <div id="bend-back">
-        @using (Html.BeginForm("CreateVernissage", "Vernissages", FormMethod.Post))
+        @using (Html.BeginForm("CreateVernissage", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
         <form id="create-form">
             <div class="input-item" id="title">
                 <h3>Vernissage title</h3>
-                @Html.TextBoxFor(m => m.Title)
+                @Html.TextBoxFor(m => m.Vernissage.Title)
             </div>
             <div class="input-item" id="description">
                 <h3>Description</h3>
                 @*<textarea rows="3" style="font-size:4vw; font-family:Comfortaa" name="input-description" id="input-description" placeholder="Type here..."></textarea>*@
-                @Html.TextAreaFor(m => m.Description)
+                @Html.TextAreaFor(m => m.Vernissage.Description)
             </div>
             <div class="input-item" id="poster">
                 <h3>Poster</h3>
-                <input type="text" name="poster" />
+                @Html.EditorFor(m => m.ImageFile)
+                @*--visa upp bilder att välja mellan--*@
+            </div>
+            <div class="input-item" id="select-exhibition">
+                <h3>Choose Exhibition</h3>
+                @Html.DropDownListFor(x => Model.SelectedExhibitionId, new SelectList(Model.AllExhibitionsByArtistDictonary, "Key", "Value"), "Choose Exhibition")
+
                 @*--visa upp bilder att välja mellan--*@
             </div>
             <div class="input-item" id="date-time">
                 <h3>Date and time</h3>
                 @*<input type="date" name="date" value="2021-02-01" min="2021-02-01" max="2030-02-01"/>
-                <input type="time" name="time" value="00:00"/>*@
-                @Html.EditorFor(m => m.DateTime)
+            <input type="time" name="time" value="00:00"/>*@
+                @Html.EditorFor(m => m.Vernissage.DateTime)
             </div>
             <div class="input-item" id="youtube-link">
                 <h3>Youtube link</h3>
-                @Html.TextBoxFor(m => m.LiveLink)
+                @Html.TextBoxFor(m => m.Vernissage.LiveLink)
             </div>
             <div class="input-item" id="submit">
-                <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage"/>
+                <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage" />
             </div>
 
         </form>

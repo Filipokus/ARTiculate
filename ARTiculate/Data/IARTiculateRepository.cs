@@ -27,6 +27,7 @@ namespace ARTiculate.Data
     
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
         Task<Artist> GetArtist(int id);
+        public Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id);
         Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID);
         void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage);
         void CreateArtist_Vernisage(int vernisageId, int artistId);

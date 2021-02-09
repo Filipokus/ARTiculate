@@ -29,5 +29,10 @@ namespace ARTiculateDataAccessLibrary.Models
         public List<Exhibition_Tag> Exhibition_Tags { get; set; } = new List<Exhibition_Tag>();
         public List<Exhibition_ArtItem> Exhibition_ArtItem { get; set; } = new List<Exhibition_ArtItem>();
 
+        public override string ToString()
+        {
+            return Title;
+        }
+
     }
 }

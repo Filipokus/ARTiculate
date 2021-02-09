@@ -8,6 +8,6 @@ namespace ARTiculate.Data
 {
     public interface IARTiulateServerRepository
     {
-        public Task<string> UploadPictureToServer(ArtItemViewModel imageModel);
+        public Task<string> UploadPictureToServer(ImageModel imageModel);
     }
 }

@@ -180,5 +180,10 @@ namespace ARTiculate.Mock
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

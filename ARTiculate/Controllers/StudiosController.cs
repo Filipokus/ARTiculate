@@ -43,8 +43,9 @@ namespace ARTiculate.Controllers
 
         [HttpPost]
         public async Task<IActionResult> UploadArtitem(ArtItemViewModel model)
-        {            
-            string URL = await ARTiulateServerRepository.UploadPictureToServer(model);
+        {
+            ImageModel image = new ImageModel(model.ImageFile, model.ArtItem.Name);
+            string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
             model.ArtItem.Picture = URL;
 
             //TODO: Set this value from Identity / identifiering av studio
@@ -62,5 +63,62 @@ namespace ARTiculate.Controllers
 
             return View(model);
         }
+
+        public async Task<IActionResult> CreateVernissage(int id)
+        {
+            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(id);
+            Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
+
+            //TODO: Koppla den metod som hämtar enbart exhibitions som saknar vernissage
+
+            foreach (Exhibition exhibition in exhibitions)
+            {
+                allExhibitionsByArtistDictonary.Add(exhibition.Id, exhibition);
+            }
+
+            CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
+            {
+                AllExhibitionsByArtist = exhibitions,
+                AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateVernissage(CreateVernissageViewModel input)
+        {
+            ImageModel image = new ImageModel(input.ImageFile, input.Vernissage.Title);
+            string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
+            input.Vernissage.Poster = URL;
+            input.Vernissage.ExhibitionId = input.SelectedExhibitionId;
+
+            Vernisage vernissage = await ARTiculateRepository.AddVernisageAsync(input.Vernissage);
+            return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
+        }
+
+        //TODO: CreateExhibition
+
+        //public async Task<IActionResult> CreateExhibition(int id)
+        //{
+        //    List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(id);
+
+        //    CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
+        //    {
+        //        AllExhibitionsByArtist = exhibitions
+        //    };
+
+        //    return View(viewModel);
+        //}
+
+        //[HttpPost]
+        //public async Task<IActionResult> CreateExhibition(CreateVernissageViewModel input)
+        //{
+        //    //TODO: Set this value from Identity / identifiering av studio
+        //    model.ArtItem.ArtistId = 1;
+
+        //    await ARTiculateRepository.AddArtItem(model.ArtItem);
+        //    return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
+        //}
     }
 }

@@ -6,7 +6,8 @@
     "LiveLink": "http://dummyimage.com/194x133.bmp/ff4444/ffffff",
     "open": false,
     "Title": "Junior",
-    "ExhibitionId": 8
+    "ExhibitionId": 8,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     //"Id": 2,
@@ -15,7 +16,8 @@
     "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
     "open": true,
     "LiveLink": "http://dummyimage.com/108x120.jpg/ff4444/ffffff",
-    "ExhibitionId": 7
+    "ExhibitionId": 7,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     //"Id": 3,
@@ -24,7 +26,8 @@
     "Description": "Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis.",
     "open": true,
     "LiveLink": "http://dummyimage.com/212x152.png/ff4444/ffffff",
-    "ExhibitionId": 6
+    "ExhibitionId": 6,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     //"Id": 4,
@@ -33,7 +36,8 @@
     "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum.",
     "open": false,
     "LiveLink": "http://dummyimage.com/218x117.jpg/5fa2dd/ffffff",
-    "ExhibitionId": 5
+    "ExhibitionId": 5,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     // "Id": 5,
@@ -42,7 +46,8 @@
     "Description": "Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius.",
     "open": true,
     "LiveLink": "http://dummyimage.com/176x245.bmp/cc0000/ffffff",
-    "ExhibitionId": 4
+    "ExhibitionId": 4,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     // "Id": 6,
@@ -51,7 +56,8 @@
     "Description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.",
     "open": true,
     "LiveLink": "http://dummyimage.com/207x150.jpg/ff4444/ffffff",
-    "ExhibitionId": 3
+    "ExhibitionId": 3,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     //"Id": 7,
@@ -60,7 +66,8 @@
     "Description": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
     "open": false,
     "LiveLink": "http://dummyimage.com/117x197.jpg/dddddd/000000",
-    "ExhibitionId": 2
+    "ExhibitionId": 2,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   },
   {
     //"Id": 8,
@@ -69,7 +76,8 @@
     "Description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.",
     "open": true,
     "LiveLink": "http://dummyimage.com/164x202.bmp/ff4444/ffffff",
-    "ExhibitionId": 1
+    "ExhibitionId": 1,
+    "Poster": "~/UploadedImages/PlaceholderIMG.jpg"
   }
   //,
   //{
