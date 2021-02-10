@@ -154,5 +154,10 @@ namespace ARTiculate.Data
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<Vernisage>> GetLiveVernisages()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
