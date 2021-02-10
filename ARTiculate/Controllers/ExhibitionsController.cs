@@ -18,9 +18,11 @@ namespace ARTiculate.Controllers
             this.ARTiculateRepository = ARTiculateRepository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
+            ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
+            return View(exhibitionViewModel);
         }
 
         public async Task<IActionResult> Exhibition(int ID)
