@@ -46,16 +46,16 @@ namespace ARTiculate.Controllers
             return View(viewModel);
         }
 
-        public async Task<IActionResult> CreateVernissage(Vernisage x)
+        public async Task<IActionResult> CreateVernissage(Vernisage input)
         {
           
-            x.Open = true;
+            input.Open = true;
           
-            int id = await ARTiculateRepository.AddVernisageAsync(x);
-            return RedirectToAction("Vernissage", "Vernissages", new { id = id });
-
-
+            Vernisage vernissage = await ARTiculateRepository.AddVernisageAsync(input);
+            return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
+
+        
 
         public async Task<IActionResult> About(int ID)
         {

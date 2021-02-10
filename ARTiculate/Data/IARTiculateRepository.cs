@@ -1,4 +1,5 @@
-﻿using ARTiculateDataAccessLibrary.DataAccess;
+﻿using ARTiculate.Areas.Identity.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,9 @@ namespace ARTiculate.Data
     {
         void GetMockData(ArtistContext db);
 
-        Task<int> AddVernisageAsync(Vernisage vernisage);
+
+
+        Task<Vernisage> AddVernisageAsync(Vernisage vernisage);
         Task<Exhibition> AddExhibitionAsync(Exhibition exhibition);
         Task<Artist> AddArtistAsync(Artist artist);
         Task<Tag> AddTagAsync(Tag tag);
@@ -25,6 +28,10 @@ namespace ARTiculate.Data
         Task<List<Exhibition>> GetAllExhibitionsOrderedByDate();
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
         Task<Artist> GetArtist(int id);
-        
+        Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID);
+        void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage);
+        void CreateArtist_Vernisage(int vernisageId, int artistId);
+
+        Artist CreateArtistFromARTiculateUser(ARTiculateUser user);
     }
 }

@@ -27,6 +27,10 @@ namespace ARTiculateDataAccessLibrary.Models
 
         public bool Open { get; set; }
 
+        public int ExhibitionId { get; set; }
+
+        public Exhibition Exhibition { get; set; }
+
         public List<Artist_Vernisage> Artist_Vernisages { get; set; } = new List<Artist_Vernisage>();
 
         public List<Vernisage_Tag> Vernisage_Tags { get; set; } = new List<Vernisage_Tag>();

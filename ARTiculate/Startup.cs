@@ -33,12 +33,14 @@ namespace ARTiculate
             services.AddDbContext<ArtistContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                
             });
             services.AddControllersWithViews();
             services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
             //services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
 
             services.AddSignalR();
+            services.AddRazorPages();
 
             services.AddScoped<IARTiulateServerRepository, ARTiulateServerRepository>();
         }
@@ -61,6 +63,7 @@ namespace ARTiculate
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -70,6 +73,8 @@ namespace ARTiculate
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
                 endpoints.MapHub<ChatHub>("/chathub");
+
+                endpoints.MapRazorPages();
 
             });
         }
