@@ -154,5 +154,20 @@ namespace ARTiculate.Data
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateArtist_Exhibition(int exhibitionId, int artistId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

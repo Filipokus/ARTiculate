@@ -38,6 +38,7 @@
             <div class="input-item" id="youtube-link">
                 <h3>Youtube link</h3>
                 @Html.TextBoxFor(m => m.Vernissage.LiveLink)
+                @Html.HiddenFor(m => m.ArtistId, Model.ArtistId)
             </div>
             <div class="input-item" id="submit">
                 <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage" />

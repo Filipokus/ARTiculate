@@ -96,6 +96,33 @@ namespace ARTiculate.Data
         }
 
         /// <summary>
+        /// Adds an object of type Artist_Exhibition to Db
+        /// </summary>
+        /// <param name="artist_Vernisage"></param>
+        public async void AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
+        {
+            await db.Artist_Exhibitions.AddAsync(artist_Exhibition);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// Creates an object of type Artist_Exhibition
+        /// </summary>
+        /// <param name="vernisageId"></param>
+        /// <param name="artistId"></param>
+        public void CreateArtist_Exhibition(int exhibitionId, int artistId)
+        {
+            Artist_Exhibition artist_Exhibition = new Artist_Exhibition
+            {
+                ArtistId = artistId,
+                ExhibitionId = exhibitionId
+            };
+
+            AddArtist_ExhibitionAsync(artist_Exhibition);
+
+        }
+
+        /// <summary>
         /// Adds an object of type Artist to db 
         /// </summary>
         /// <param name="artist"></param>
@@ -465,21 +492,36 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
+        //TODO förenkla metoden. Eventuellt ändra i databasen för att begränsa så att en exhibition enbart kan hållas av EN artist
 
-        //TODO: Metod/Metoder som returnerar en lista av exhibitions som inte har en vernissage
+        public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
+        {
+            List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
+            List<Vernisage> vernissages = await GetVernissagesFromDbOrderedByDate();
+            List<Exhibition> exhibitionsthatsNotAvailableToCreateVernissage = new List<Exhibition>();
 
-        //public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
-        //{
-        //    List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
-        //    List<Exhibition> exhibitionsthatsAvailableToCreateVernissage = new List<Exhibition>();
+            foreach (Exhibition exhibition in allExhibitions)
+            {
+                foreach (Vernisage vernissage in vernissages)
+                {
+                    if (exhibitionsthatsNotAvailableToCreateVernissage.Contains(exhibition))
+                    {
+                        break;
+                    }
+                    else if (exhibition.Id == vernissage.ExhibitionId)
+                    {
+                        exhibitionsthatsNotAvailableToCreateVernissage.Add(exhibition);
+                    }
+                }
+            }
 
-        //    foreach (Exhibition exhibition in allExhibitions)
-        //    {
+            foreach (Exhibition exhibit in exhibitionsthatsNotAvailableToCreateVernissage)
+            {
+                allExhibitions.Remove(exhibit);
+            }
 
-        //    }
-
-        //    return exhibitionsthatsAvailableToCreateVernissage;
-        //}
+            return allExhibitions;
+        }
 
 
         #endregion

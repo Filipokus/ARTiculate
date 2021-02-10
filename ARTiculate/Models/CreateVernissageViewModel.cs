@@ -29,6 +29,8 @@ namespace ARTiculate.Models
 
         public Vernisage Vernissage { get; set; }
 
+        public int ArtistId { get; set; }
+
         public List<Exhibition> AllExhibitionsByArtist { get; set; }
 
         [DisplayName("Select an exhibition")]
