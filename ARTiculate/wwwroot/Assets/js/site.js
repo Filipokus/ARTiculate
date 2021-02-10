@@ -48,23 +48,24 @@ function artworkHoverOut(ev) {
 ////---------About Vernissage when live------
 
 
-//function makeVernissageLive() {
+function makeVernissageLive() {
 
-//    let activeOrNot = document.getElementById('activeOrNot')
-//    let open = activeOrNot.innerHTML;
+    let activeOrNot = document.getElementById('activeOrNot')
+    let open = activeOrNot.innerHTML;
 
-//    if (open == 'True') {
-//        let dateLive = document.getElementById('date-btn');
-//        dateLive.style.backgroundColor = '#D5005E';
-//        let dateText = document.getElementById('live-date');
-//        dateText.style.color = '#DFDDE4';
-//        dateText.innerHTML = 'LIVE NOW 🠮';
-//        let liveImg = document.getElementById('live-btn-img');
-//        liveImg.style.visibility = 'visible';
-//        const urlAction2 = document.getElementById("link-to-live").getAttribute("onClick")
-//        console.log(urlAction2)
-//        dateLive.setAttribute("onClick", urlAction2);
-//    }
+    if (open == 'True') {
+        let dateLive = document.getElementById('date-btn');
+        dateLive.style.backgroundColor = '#D5005E';
+        let dateText = document.getElementById('live-date');
+        dateText.style.color = '#DFDDE4';
+        dateText.innerHTML = 'LIVE NOW 🠮';
+        let liveImg = document.getElementById('live-btn-img');
+        liveImg.style.visibility = 'visible';
+        const urlAction2 = document.getElementById("link-to-live").getAttribute("onClick")
+        console.log(urlAction2)
+        dateLive.setAttribute("onClick", urlAction2);
+    }
+}
 
 //------ Carousel on exhibitions index page --------
 function loadNewContent(arrowBtn) {

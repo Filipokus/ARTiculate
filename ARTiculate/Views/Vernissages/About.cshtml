@@ -39,7 +39,11 @@
 </div>
 
 
-@*<p id="activeOrNot">@Model.Vernisage.Open</p>*@
+<button id="date-btn" onclick="makeVernissageLive()">
+    <p id="live-date">@Model.Vernisage.DateTime</p>
+</button>
+
+
 <button id="link-to-live" onclick="location.href='@Url.Action("Vernissage", "Vernissages", new { id = @Model.Vernisage.Id })'"></button>
 
 
