@@ -11,7 +11,8 @@ namespace ARTiculate.Models
         public Exhibition Exhibition { get; set; }
         public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> NewlyAddedExhibitions { get; set; } = new List<Exhibition>();
-        public List<Exhibition> ExhibitionsByTagName { get; set; } = new List<Exhibition>();
+        public List<Exhibition> ExhibitionsByTagName { get; set; }
+        public string TagName { get; set; }
 
 
         public ExhibitionViewModel()
@@ -27,11 +28,14 @@ namespace ARTiculate.Models
         public ExhibitionViewModel(List<Exhibition> exhibitions)
         {
             Exhibitions = exhibitions;
-            NewlyAddedAxhibitions();
-           // ExhibitionsByTagName = SortExhibitionsByTagName("rymden");
+            GetNewlyAddedExhibitions();
+            ExhibitionsByTagName = SortExhibitionsByTagName(TagName, exhibitions);
         }
 
-        private void NewlyAddedAxhibitions()
+        /// <summary>
+        /// Updates the list NewlyAddedExhibitions with the 6 most recent added Exhibitions.
+        /// </summary>
+        private void GetNewlyAddedExhibitions()
         {
             for (int i = 0; (i < 6) && (i < Exhibitions.Count); i++)
             {
@@ -39,23 +43,29 @@ namespace ARTiculate.Models
             }
         }
 
-        public List<Exhibition> SortExhibitionsByTagName(string tagName, List<Exhibition> testList)
+        /// <summary>
+        /// Creates a new list with all Exhibitions that is tagged with the specified name of the tag
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <param name="exhibitions"></param>
+        /// <returns>List<Exhibition> listBySearchedTagName</returns>
+        public List<Exhibition> SortExhibitionsByTagName(string tagName, List<Exhibition> exhibitions)
         {
-            List<Exhibition> list = new List<Exhibition>();
+            List<Exhibition> listBySearchedTagName = new List<Exhibition>();
 
-            foreach (var exhibition in testList)
+            foreach (var exhibition in exhibitions)
             {
                 foreach (var tag in exhibition.Exhibition_Tags)
                 {
                     if (tagName.Equals(tag.Tag.TagName))
                     {
-                        list.Add(exhibition);
+                        listBySearchedTagName.Add(exhibition);
                         break;
                     }
                 }
             }
 
-            return list;
+            return listBySearchedTagName;
         }
     }
 }

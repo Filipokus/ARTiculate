@@ -18,25 +18,10 @@ namespace ARTiculateTest
             //Arrange
             string tagName = "rymden";
 
-            Tag tagRymden = new Tag
-            {
-                TagName = "rymden"
-            };
-
-            Tag tagSpace = new Tag
-            {
-                TagName = "space"
-            };
-
-            Tag tagSkog = new Tag
-            {
-                TagName = "skog"
-            };
-
-            Tag tagPaint = new Tag
-            {
-                TagName = "paint"
-            };
+            Tag tagRymden = new Tag { TagName = "rymden"};
+            Tag tagSpace = new Tag { TagName = "space" };
+            Tag tagSkog = new Tag { TagName = "skog" };
+            Tag tagPaint = new Tag { TagName = "paint" };
 
             Exhibition_Tag exhibition_tagRymden = new Exhibition_Tag();
             Exhibition_Tag exhibition_tagSpace = new Exhibition_Tag();
@@ -48,20 +33,9 @@ namespace ARTiculateTest
             exhibition_tagSkog.Tag = tagSkog;
             exhibition_tagPaint.Tag = tagPaint;
 
-            Exhibition exhibitionRymdenSpace = new Exhibition
-            { 
-                Title = "Rymden And Space"
-            };
-
-            Exhibition exhibitionSkogPaint = new Exhibition
-            {
-                Title = "Skog And Paint"
-            };
-
-            Exhibition exhibitionAllTags = new Exhibition
-            {
-                Title = "All Test Tags"
-            };
+            Exhibition exhibitionRymdenSpace = new Exhibition { Title = "Rymden And Space" };
+            Exhibition exhibitionSkogPaint = new Exhibition { Title = "Skog And Paint" };
+            Exhibition exhibitionAllTags = new Exhibition { Title = "All Test Tags" };
 
             //Rymden and Space
             exhibitionRymdenSpace.Exhibition_Tags.Add(exhibition_tagRymden);
