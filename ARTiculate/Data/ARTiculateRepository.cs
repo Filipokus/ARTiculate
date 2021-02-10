@@ -1,4 +1,5 @@
-﻿using ARTiculateDataAccessLibrary.DataAccess;
+﻿using ARTiculate.Areas.Identity.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,23 @@ namespace ARTiculate.Data
         public Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Creates an Artist object from a ArticulateUser
+        /// </summary>
+        /// <param name="artist"></param>
+        /// <returns></returns>
+        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            Artist artist = new Artist()
+            {
+                Emailadress = user.Email,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
+
+            };
+            return artist;
         }
 
         public void CreateArtist_Vernisage(int vernisageId, int artistId)
