@@ -52,14 +52,7 @@ namespace ARTiculate.Data
         /// <returns></returns>
         public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
         {
-            Artist artist = new Artist()
-            {
-                Emailadress = user.Email,
-                Firstname = user.FirstName,
-                Lastname = user.LastName,
-
-            };
-            return artist;
+            throw new NotImplementedException();
         }
 
         public void CreateArtist_Vernisage(int vernisageId, int artistId)

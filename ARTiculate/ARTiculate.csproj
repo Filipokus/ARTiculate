@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\ExhibitionController.cs" />
+    <Compile Remove="Mock\ARTiculateRepositoryMock.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using ARTiculateDataAccessLibrary.DataAccess;
+using ARTiculate.Areas.Identity.Data;
 using ARTiculateDataAccessLibrary.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -103,6 +104,18 @@ namespace ARTiculate.Data
         {
             await db.Artists.AddAsync(artist);
             await db.SaveChangesAsync();
+            return artist;
+        }
+
+        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            Artist artist = new Artist()
+            {
+                Emailadress = user.Email,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
+
+            };
             return artist;
         }
 
