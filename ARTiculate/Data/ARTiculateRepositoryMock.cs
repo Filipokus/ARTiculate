@@ -465,21 +465,36 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
+        //TODO förenkla metoden. Eventuellt ändra i databasen för att begränsa så att en exhibition enbart kan hållas av EN artist
 
-        //TODO: Metod/Metoder som returnerar en lista av exhibitions som inte har en vernissage
+        public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
+        {
+            List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
+            List<Vernisage> vernissages = await GetVernissagesFromDbOrderedByDate();
+            List<Exhibition> exhibitionsthatsNotAvailableToCreateVernissage = new List<Exhibition>();
 
-        //public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
-        //{
-        //    List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
-        //    List<Exhibition> exhibitionsthatsAvailableToCreateVernissage = new List<Exhibition>();
+            foreach (Exhibition exhibition in allExhibitions)
+            {
+                foreach (Vernisage vernissage in vernissages)
+                {
+                    if (exhibitionsthatsNotAvailableToCreateVernissage.Contains(exhibition))
+                    {
+                        break;
+                    }
+                    else if (exhibition.Id == vernissage.ExhibitionId)
+                    {
+                        exhibitionsthatsNotAvailableToCreateVernissage.Add(exhibition);
+                    }
+                }
+            }
 
-        //    foreach (Exhibition exhibition in allExhibitions)
-        //    {
+            foreach (Exhibition exhibit in exhibitionsthatsNotAvailableToCreateVernissage)
+            {
+                allExhibitions.Remove(exhibit);
+            }
 
-        //    }
-
-        //    return exhibitionsthatsAvailableToCreateVernissage;
-        //}
+            return allExhibitions;
+        }
 
 
         #endregion

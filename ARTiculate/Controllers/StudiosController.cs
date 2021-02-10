@@ -66,10 +66,8 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> CreateVernissage(int id)
         {
-            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(id);
+            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(id);
             Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
-
-            //TODO: Koppla den metod som hämtar enbart exhibitions som saknar vernissage
 
             foreach (Exhibition exhibition in exhibitions)
             {
@@ -79,7 +77,8 @@ namespace ARTiculate.Controllers
             CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
             {
                 AllExhibitionsByArtist = exhibitions,
-                AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary
+                AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary,
+                ArtistId = id
             };
 
             return View(viewModel);
@@ -94,6 +93,16 @@ namespace ARTiculate.Controllers
             input.Vernissage.ExhibitionId = input.SelectedExhibitionId;
 
             Vernisage vernissage = await ARTiculateRepository.AddVernisageAsync(input.Vernissage);
+
+            //TODO: Se till att den registreras i mellantabellen Artist_Vernisages  - KLAR?
+
+            Artist_Vernisage vernissageWithArtist = new Artist_Vernisage()
+            {
+                ArtistId = input.ArtistId,
+                VernisageId = input.Vernissage.Id
+            };
+
+            ARTiculateRepository.AddArtist_VernisageAsync(vernissageWithArtist);
             return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
 
