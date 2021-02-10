@@ -1,8 +1,13 @@
-﻿@model ARTiculate.Models.VernisageViewModel
+﻿
+@model ARTiculate.Models.VernisageViewModel
 
 @{
     ViewData["Title"] = "Vernissage";
 }
+
+
+
+
 <link rel="stylesheet" href="~/Assets/css/aboutVernissage.css?v={random string}" />
 
 <div class="live-title">
@@ -21,7 +26,10 @@
     <img id="poster" src="~/Assets/Images/PlaceholderIMG.jpg" />
 </div>
 
-<button id="date-btn" onclick="makeVernissageLive(this)">
+<p id="activeOrNot">@Model.Vernisage.Open</p>
+
+
+<button id="date-btn" onclick="makeVernissageLive()">
     <p id="live-date">@Model.Vernisage.DateTime</p>
 </button>
 <button id="link-to-live" onclick="location.href='@Url.Action("Vernissage", "Vernissages", new { id = @Model.Vernisage.Id })'"></button>
@@ -30,3 +38,18 @@
     <button onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { id = @Model.Vernisage.Id })'"></button>
 </div>
 
+
+<button id="date-btn" onclick="makeVernissageLive()">
+    <p id="live-date">@Model.Vernisage.DateTime</p>
+</button>
+
+
+<button id="link-to-live" onclick="location.href='@Url.Action("Vernissage", "Vernissages", new { id = @Model.Vernisage.Id })'"></button>
+
+
+<script>
+    function makeVernissageLive() {
+        makeVernissageLive();
+    }
+    window.onload = makeVernissageLive;
+</script>

@@ -1,4 +1,5 @@
-﻿using ARTiculateDataAccessLibrary.DataAccess;
+﻿using ARTiculate.Areas.Identity.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace ARTiculate.Data
     public interface IARTiculateRepository
     {
         void GetMockData(ArtistContext db);
+
+
 
         Task<Vernisage> AddVernisageAsync(Vernisage vernisage);
         Task<Exhibition> AddExhibitionAsync(Exhibition exhibition);
@@ -39,5 +42,7 @@ namespace ARTiculate.Data
         Task<ArtItem> UpdateArtItem(ArtItem artItem);
         Task<Exhibition> UpdateExhibition(Exhibition exhibition);
         Task<Vernisage> UpdateVernissage(Vernisage vernissage);
+
+        Artist CreateArtistFromARTiculateUser(ARTiculateUser user);
     }
 }

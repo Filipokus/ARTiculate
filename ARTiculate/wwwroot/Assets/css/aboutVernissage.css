@@ -48,6 +48,10 @@
     box-shadow: 0 0 3vw 2vw #0c0c0c;
 }
 
+#activeOrNot {
+    display: none;
+}
+
 #date-btn {
     margin: 8vw auto auto auto;
     background-color: rgb(255,255,255, 0.7);
