@@ -13,6 +13,7 @@ namespace ARTiculate.Models
         public List<Exhibition> NewlyAddedExhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> ExhibitionsByTagName { get; set; } = new List<Exhibition>();
 
+
         public ExhibitionViewModel()
         {
 
