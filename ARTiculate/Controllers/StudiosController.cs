@@ -89,45 +89,37 @@ namespace ARTiculate.Controllers
         {
             ImageModel image = new ImageModel(input.ImageFile, input.Vernissage.Title);
             string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
+            
             input.Vernissage.Poster = URL;
             input.Vernissage.ExhibitionId = input.SelectedExhibitionId;
-
+            
             Vernisage vernissage = await ARTiculateRepository.AddVernisageAsync(input.Vernissage);
-
-            //TODO: Se till att den registreras i mellantabellen Artist_Vernisages  - KLAR?
-
-            Artist_Vernisage vernissageWithArtist = new Artist_Vernisage()
-            {
-                ArtistId = input.ArtistId,
-                VernisageId = input.Vernissage.Id
-            };
-
-            ARTiculateRepository.AddArtist_VernisageAsync(vernissageWithArtist);
+            ARTiculateRepository.CreateArtist_Vernisage(vernissage.Id, input.ArtistId);
+            
             return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
 
-        //TODO: CreateExhibition
+        public async Task<IActionResult> CreateExhibition(int id)
+        {
 
-        //public async Task<IActionResult> CreateExhibition(int id)
-        //{
-        //    List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(id);
+            //TODO Set this value from Identity / identifiering av studio
 
-        //    CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
-        //    {
-        //        AllExhibitionsByArtist = exhibitions
-        //    };
+            CreateExhibitionViewModel viewModel = new CreateExhibitionViewModel()
+            {
+                ArtistId = id
+            };
 
-        //    return View(viewModel);
-        //}
+            return View(viewModel);
+        }
 
-        //[HttpPost]
-        //public async Task<IActionResult> CreateExhibition(CreateVernissageViewModel input)
-        //{
-        //    //TODO: Set this value from Identity / identifiering av studio
-        //    model.ArtItem.ArtistId = 1;
+        [HttpPost]
+        public async Task<IActionResult> CreateExhibition(CreateExhibitionViewModel input)
+        {
 
-        //    await ARTiculateRepository.AddArtItem(model.ArtItem);
-        //    return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
-        //}
+            Exhibition exhibition = await ARTiculateRepository.AddExhibitionAsync(input.Exhibition);
+            ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
+
+            return RedirectToAction("Exhibition", "Exhibitions", new { id = exhibition.Id });
+        }
     }
 }
