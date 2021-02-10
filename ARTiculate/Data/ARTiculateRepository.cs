@@ -124,47 +124,10 @@ namespace ARTiculate.Data
             throw new NotImplementedException();
         }
 
-        public Task<ArtItem> UpdateArtItem(ArtItem artItem)
         public async Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id)
         {
-            List<Artist_Exhibition> exhibitionsRaw = await db.Artist_Exhibitions
-                .Include(x => x.Artist)
-                .Include(x => x.Exhibition)
-                .Where(x => x.ArtistId == id)
-                .ToListAsync();
-
-            List<Exhibition> exhibitions = new List<Exhibition>();
-
-            foreach (Artist_Exhibition exhibition in exhibitionsRaw)
-            {
-                exhibitions.Add(exhibition.Exhibition);
-            }
-
-            return exhibitions;
+            throw new NotImplementedException();
         }
-
-
-        //TODO: Metod/Metoder som returnerar en lista av exhibitions som inte har en vernissage
-
-        //public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
-        //{
-        //    List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
-        //    List<Exhibition> exhibitionsthatsAvailableToCreateVernissage = new List<Exhibition>();
-
-        //    foreach (Exhibition exhibition in allExhibitions)
-        //    {
-
-        //    }
-
-        //    return exhibitionsthatsAvailableToCreateVernissage;
-        //}
-
-
-
-
-        #endregion
-
-        #region UPDATE
 
         public async Task<ArtItem> UpdateArtItem(ArtItem artItem)
         {
