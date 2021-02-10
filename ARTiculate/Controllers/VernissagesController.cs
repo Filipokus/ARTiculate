@@ -43,6 +43,7 @@ namespace ARTiculate.Controllers
             return View(viewModel);
         }
 
+
         public async Task<IActionResult> About(int ID)
         {
             var viewModel = await GetVernisageViewModel(ID);
