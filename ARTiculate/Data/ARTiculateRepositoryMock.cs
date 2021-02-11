@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace ARTiculate.Data
 {
@@ -487,7 +489,25 @@ namespace ARTiculate.Data
 
             return artist;
         }
-        
+
+        /// <summary>
+        /// Returns an artist that is referenced in the ARTiculateUser
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            var artist = await db.Artists
+               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+               .Include(x => x.Artist_Vernisages)
+               .Include(x => x.Artist_Exhibitions)
+               .Include(x => x.Artist_Tags)
+               .Where(x => x.Emailadress == user.Email)
+               .FirstOrDefaultAsync();
+
+            return artist;
+        }
+
 
         public async Task<ArtItem> GetArtItem(int id)
         {
