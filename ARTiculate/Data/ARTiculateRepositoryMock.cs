@@ -278,7 +278,7 @@ namespace ARTiculate.Data
                .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
                .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
                .Include(x => x.Exhibition)
-               .OrderBy(x => x.DateTime).ToListAsync();
+               .OrderByDescending(x => x.DateTime).ToListAsync();
 
             return vernissagesFromDb;
         }
@@ -357,7 +357,7 @@ namespace ARTiculate.Data
             var vernisagesDetails = await db.Vernisages
                .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
                .Where(v => v.Open == true)
-               .OrderBy(x => x.DateTime).ToListAsync();
+               .OrderByDescending(x => x.DateTime).ToListAsync();
 
             List<Vernisage> activeVernisages = new List<Vernisage>();
 
@@ -415,7 +415,7 @@ namespace ARTiculate.Data
               .Include(x => x.Artist_Exhibitions)
               .Include(x => x.Exhibition_ArtItem).ThenInclude(x => x.ArtItems)
               .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
-              .OrderBy(x => x.DateTime).ToListAsync();
+              .OrderByDescending(x => x.DateTime).ToListAsync();
 
             return exhibitionsFromDb;
         }
