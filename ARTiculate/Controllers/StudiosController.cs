@@ -10,6 +10,7 @@ using ARTiculate.Models;
 using ARTiculateDataAccessLibrary.Models;
 using Microsoft.AspNetCore.Identity;
 using ARTiculate.Areas.Identity.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ARTiculate.Controllers
 {
@@ -34,10 +35,13 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Index()
         {
-        
-            return View();
+            List<Artist> artists = new List<Artist>();
+            artists = await ARTiculateRepository.GetAllArtists();
+            StudioOverviewViewModel viewModel = new StudioOverviewViewModel(artists);
+            return View(viewModel);
         }
 
+        [Authorize]
         public  IActionResult Studio()       
         {            
             return View(GetViewModelFromLoggedInArtist());
