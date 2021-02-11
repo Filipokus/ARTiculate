@@ -8,7 +8,6 @@ namespace ARTiculate.Models
 {
     public class ExhibitionViewModel
     {
-        public Exhibition Exhibition { get; set; }
         public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> NewlyAddedExhibitions { get; set; }
         public List<Exhibition> ExhibitionsByTagName { get; set; }
@@ -20,16 +19,11 @@ namespace ARTiculate.Models
 
         }
 
-        public ExhibitionViewModel(Exhibition exhibition)
-        {
-            Exhibition = exhibition;
-        }
-
         public ExhibitionViewModel(List<Exhibition> exhibitions)
         {
             Exhibitions = exhibitions;
             NewlyAddedExhibitions = GetNewlyAddedExhibitionsForView(exhibitions);
-            ExhibitionsByTagName = SortExhibitionsByTagName(TagName, exhibitions);
+            //ExhibitionsByTagName = SortExhibitionsByTagName(TagName, exhibitions);
         }
 
 
