@@ -165,12 +165,12 @@ namespace ARTiculate.Data
             throw new NotImplementedException();
         }
 
-        public void CreateArtist_Exhibition(int exhibitionId, int artistId)
+        public Task CreateArtist_Exhibition(int exhibitionId, int artistId)
         {
             throw new NotImplementedException();
         }
 
-        public void AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
+        public Task AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
         {
             throw new NotImplementedException();
         }
@@ -191,6 +191,11 @@ namespace ARTiculate.Data
         }
 
         public Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task CreateExhibition_ArtItemsAsync(List<ArtItem> artItems, int exhibitionId)
         {
             throw new NotImplementedException();
         }

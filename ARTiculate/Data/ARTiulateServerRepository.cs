@@ -1,4 +1,5 @@
 ﻿using ARTiculate.Models;
+using ARTiculateDataAccessLibrary.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System;
@@ -90,6 +91,18 @@ namespace ARTiculate.Data
             return duration;
         }
 
+        public List<ArtItem> GetSelectedArtItems(List<ArtItem> allArtItems, List<bool> selectedArtItems)
+        {
+            List<ArtItem> theSelectedArtItems = new List<ArtItem>();
 
+            for (int i = 0; i < selectedArtItems.Count; i++)
+            {
+                if (selectedArtItems[i])
+                {
+                    theSelectedArtItems.Add(allArtItems[i]);
+                }
+            }
+            return theSelectedArtItems;
+        }
     }
 }

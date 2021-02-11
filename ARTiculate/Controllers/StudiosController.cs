@@ -104,11 +104,12 @@ namespace ARTiculate.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> CreateVernissage(int id)
+        public async Task<IActionResult> CreateVernissage()
         {
+            ARTiculateUser user = await GetCurrentUserAsync();
+            Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
 
-            
-                List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(id);
+            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(artist.Id);
                 Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
 
                 foreach (Exhibition exhibition in exhibitions)
@@ -120,7 +121,7 @@ namespace ARTiculate.Controllers
                 {
                     AllExhibitionsByArtist = exhibitions,
                     AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary,
-                    ArtistId = id
+                    ArtistId = artist.Id
                 };
 
                 return View(viewModel);
@@ -164,11 +165,12 @@ namespace ARTiculate.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateExhibition(CreateExhibitionViewModel input)
         {
+            List<ArtItem> artItems = await ARTiculateRepository.GetArtItemsFromArtist(input.ArtistId);
+            input.SelectedArtItems = ARTiulateServerRepository.GetSelectedArtItems(artItems, input.AllArtItemsByArtistBoolList);
 
             Exhibition exhibition = await ARTiculateRepository.AddExhibitionAsync(input.Exhibition);
-            ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
-
-            //TODO binda checkboxar till nåt i vymodellen
+            await ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
+            await ARTiculateRepository.CreateExhibition_ArtItemsAsync(input.SelectedArtItems, exhibition.Id);
 
             return RedirectToAction("Exhibition", "Exhibitions", new { id = exhibition.Id });
         }

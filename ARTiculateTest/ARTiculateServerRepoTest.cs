@@ -26,8 +26,54 @@ namespace ARTiculateTest
             double actual = repo.CalculateDuration(startTime, endTime);
 
             //Assert
-            Assert.Equal(expected, actual );
+            Assert.Equal(expected, actual);
 
+        }
+
+        [Fact]
+        public void GetSelectedArtItems_ShouldReturnListOfArtItems()
+        {
+            //Arrange
+            ArtItem artPiece1 = new ArtItem 
+            {
+                Id = 1
+            };
+
+            ArtItem artPiece2 = new ArtItem
+            {
+                Id = 2
+            };
+
+            ArtItem artPiece3 = new ArtItem
+            {
+                Id = 3
+            };
+
+            List<bool> theSelectedArtItems = new List<bool>
+            {
+                true,
+                false,
+                true
+            };
+
+            List<ArtItem> allArtItems = new List<ArtItem> 
+            {
+                artPiece1,
+                artPiece2,
+                artPiece3
+            };
+
+            List<ArtItem> expected = new List<ArtItem> 
+            {
+                artPiece1,
+                artPiece3
+            };
+
+            //Act
+            List<ArtItem> actual = repo.GetSelectedArtItems(allArtItems, theSelectedArtItems);
+
+            //Assert
+            Assert.Equal(expected, actual);
         }
         //    public async void UploadPictureToServer_ShouldReturnString()
         //    {
