@@ -134,3 +134,20 @@
 #vernissage-id{
     visibility: hidden;
 }
+
+#link-to-login {
+    display: block;
+    border-radius: 2vw;
+    font-size: 70%;
+    border: 0.5vw solid #F89A1E;
+    background-color: #242424;
+    padding: 1%;
+    box-shadow: 0px 4px 10px 0px black;
+    color: #F89A1E;
+    cursor: pointer;
+    width: 60vw;
+    font-family: 'Comfortaa';
+    z-index: 3;
+    margin-top: 25vw;
+    transform: skewY(11deg);
+}

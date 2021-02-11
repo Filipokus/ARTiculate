@@ -28,15 +28,18 @@
             </div>
         </div>
         <div class="message-container">
-            <input type="text" id="userInput" value="" />
+            <input type="text" id="userInput" value="@Model.Artist" readonly />
             <input type="text" id="messageInput" placeholder="Write here.." />
             <input type="button" id="sendButton" value="Send Message" />
         </div>
     }
-    else { 
-        <button asp-area="Identity" asp-page="/Account/Login"> Log in to see chat</button> 
-        }
-    </div>
+    else
+    {
+<form>
+    <button id="link-to-login" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
+</form>
+    }
+</div>
 
 <p id="vernissage-id">@Model.Vernisage.Id</p>
 

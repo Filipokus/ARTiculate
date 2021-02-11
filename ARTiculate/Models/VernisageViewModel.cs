@@ -9,20 +9,18 @@ namespace ARTiculate.Models
     public class VernisageViewModel
     {
         public Vernisage Vernisage { get; set; }
-        public List<Artist> ListOfArtists { get; set; }  = new List<Artist>();
+        public Artist Artist { get; set; }
+
+        public VernisageViewModel(Vernisage vernisage, Artist artist)
+        {
+            this.Vernisage = vernisage;
+            this.Artist = artist;
+        }
 
         public VernisageViewModel(Vernisage vernisage)
         {
             this.Vernisage = vernisage;
-            PopulateListOfArtists(vernisage);
         }
-
-        private void PopulateListOfArtists(Vernisage vernisage)
-        {            
-            foreach (var x in vernisage.Artist_Vernisages)
-            {
-                ListOfArtists.Add(x.Artist);
-            }
-        }
+       
     } 
 }
