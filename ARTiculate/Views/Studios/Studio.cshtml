@@ -1,6 +1,7 @@
 ﻿
 <link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
 <script src="\Assets\js\exhibition.js"></script>
+<script src="\Assets\js\studio.js"></script>fol
 
 <div id="imageCloseUp-container">
     <div id="artworkInfo" class="hideInfo">
@@ -32,13 +33,14 @@
 
             <div class="folder-container">
                 <div class="folder">
-                    <button class="studio-content-btn">
+                    <button class="studio-content-btn" onclick="openFolder(this)">
                         <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
                         <div class="studio-content-container">
                             <h2 class="exhibition-name">My First Vernissage</h2>
                         </div>
                     </button>
                 </div>
+                <div class="arrow-up"></div>
                 <div class="folder-items">
                     <div class="open-art-item">
                         <button class="studio-content-btn">
