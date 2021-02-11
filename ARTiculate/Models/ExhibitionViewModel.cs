@@ -40,22 +40,34 @@ namespace ARTiculate.Models
         /// <returns></returns>
         public List<Exhibition> GetNewlyAddedExhibitionsForView(List<Exhibition> exhibitions)
         {
-            List<Exhibition> listOfNewlyAddedExhibitions = new List<Exhibition>();
+            List<Exhibition> SixNewlyAddedExhibitions = AddMaxSixExhibtionsToList(exhibitions);
 
-            for (int i = 0; (i < 6) && (i < exhibitions.Count); i++)
+            if (CheckIfExhibitionContainsFourPosters(SixNewlyAddedExhibitions))
             {
-                listOfNewlyAddedExhibitions.Add(exhibitions[i]);
-            }
-
-            if (CheckIfExhibitionContainsFourPosters(listOfNewlyAddedExhibitions))
-            {
-                return listOfNewlyAddedExhibitions;
+                return SixNewlyAddedExhibitions;
             }
             else
             {
-                var list = CreatesNewListWithFourPictures(listOfNewlyAddedExhibitions);
-                return list;
+                var exhibitionsWithFourArtItems = CreateNewListWithFourPictures(SixNewlyAddedExhibitions);
+                return exhibitionsWithFourArtItems;
             }
+        }
+
+        /// <summary>
+        /// Adds the first six Exhibitons in a List<Exhibition> to a new list
+        /// </summary>
+        /// <param name="exhibitions"></param>
+        /// <returns>List<Exhibition> with a maximum of six exhibitions</returns>
+        public List<Exhibition> AddMaxSixExhibtionsToList(List<Exhibition> exhibitions)
+        {
+            var listOfSixExhibitions = new List<Exhibition>();
+
+            for (int i = 0; (i < 6) && (i < exhibitions.Count); i++)
+            {
+                listOfSixExhibitions.Add(exhibitions[i]);
+            }
+
+            return listOfSixExhibitions;
         }
 
         /// <summary>
@@ -63,7 +75,7 @@ namespace ARTiculate.Models
         /// </summary>
         /// <param name="exhibitions"></param>
         /// <returns>List of exhibitions with four pictures</returns>
-        public List<Exhibition> CreatesNewListWithFourPictures(List<Exhibition> exhibitions)
+        public List<Exhibition> CreateNewListWithFourPictures(List<Exhibition> exhibitions)
         {
             List<Exhibition> exhibitionsWithFourPosters = new List<Exhibition>();
 
@@ -100,7 +112,6 @@ namespace ARTiculate.Models
                     return false;
                 }
             }
-
             return true;
         }
 
