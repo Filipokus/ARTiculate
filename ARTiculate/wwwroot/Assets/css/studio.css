@@ -62,9 +62,7 @@
     width: 40vw;
 }
 
-.folder{
-    width: 47%;
-}
+
 .folder-img{
     opacity: 0.3;
 }
@@ -87,9 +85,7 @@
 }
 
 .folder-items {
-    /*display: none;*/
-    display: flex;
-    flex-wrap: wrap;
+    display: none;
     justify-content: space-evenly;
     background-color: #DFDDE4;
     padding: 2vw 0 2vw 0;
@@ -121,6 +117,7 @@
 .divider {
     position: relative;
     height: 1px;
+    margin: 3vw 0;
 }
 
 .div-transparent:before {
@@ -138,12 +135,23 @@
 }
 
 .arrow-up {
+    display: none;
     width: 0;
     height: 0;
     border-left: 18px solid transparent;
     border-right: 18px solid transparent;
     border-bottom: 18px solid #DFDDE4;
     margin-left: 20vw;
+}
+.folder-open{
+    margin-bottom: 0;
+}
+.box-open {
+    display: flex;
+    flex-wrap: wrap;
+}
+.arrow-visible{
+    display: block;
 }
 
 /*IMAGE CLOSE UP*/
