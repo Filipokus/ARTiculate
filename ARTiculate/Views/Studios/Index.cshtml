@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model StudioOverviewViewModel
+
+<h2 class="diagonal-h2">Selection of artists</h2>
+<div class="diagonal-box">
+    <div class="next-4-content">
+        <div class="left4">
+            @for (int i = 0; i < 5; i++)
+            {
+               
+                    <button class="next-4" onclick="location.href='@Url.Action("Studio","Studios", new { Model.Artists[i].Id })'">
+                        <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <h3>@Model.Artists[i]</h3>
+                           
+                        </div>
+                    </button>
+                
+            }
+        </div>        
+    </div>
+</div>

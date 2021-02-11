@@ -48,5 +48,7 @@ namespace ARTiculate.Data
         Task<Vernisage> UpdateVernissage(Vernisage vernissage);
 
         Artist CreateArtistFromARTiculateUser(ARTiculateUser user);
+
+        Task<List<Artist>> GetAllArtists();
     }
 }

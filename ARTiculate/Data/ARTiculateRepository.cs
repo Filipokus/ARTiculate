@@ -95,6 +95,11 @@ namespace ARTiculate.Data
             throw new NotImplementedException();
         }
 
+        public async Task<List<Artist>> GetAllArtists()
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<ArtItem> GetArtItem(int id)
         {
             throw new NotImplementedException();

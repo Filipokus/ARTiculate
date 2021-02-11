@@ -490,12 +490,25 @@ namespace ARTiculate.Data
             return artist;
         }
 
-        /// <summary>
-        /// Returns an artist that is referenced in the ARTiculateUser
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        public async Task<List<Artist>> GetAllArtists()
+        {
+            var artists = await db.Artists
+               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+               .Include(x => x.Artist_Vernisages)
+               .Include(x => x.Artist_Exhibitions)
+               .Include(x => x.Artist_Tags).ToListAsync();
+
+
+            return artists;
+        }
+
+
+            /// <summary>
+            /// Returns an artist that is referenced in the ARTiculateUser
+            /// </summary>
+            /// <param name="id"></param>
+            /// <returns></returns>
+            public async Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
         {
             var artist = await db.Artists
                .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
