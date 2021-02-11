@@ -42,16 +42,16 @@ namespace ARTiculate.Controllers
         }
 
         [Authorize]
-        public  IActionResult Studio()       
+        public async Task<IActionResult> Studio()       
         {            
-            return View(GetViewModelFromLoggedInArtist());
+            return View( await GetViewModelFromLoggedInArtist());
         }
 
         public async Task<StudioViewModel> GetViewModelFromLoggedInArtist()
         {
             ARTiculateUser user = await GetCurrentUserAsync();
-            Artist artist = new Artist();
-            artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
+             
+            Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
             StudioViewModel viewModel = new StudioViewModel(artist);
             return viewModel;
         }
