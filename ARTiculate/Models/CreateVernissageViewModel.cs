@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,5 +38,7 @@ namespace ARTiculate.Models
         public Exhibition SelectedExhibition { get; set; }
         public Dictionary<int, Exhibition> AllExhibitionsByArtistDictonary { get; set; }
         public int SelectedExhibitionId { get; set; }
+        [UIHint("Time")]
+        public DateTime EndTime { get; set; }
     }
 }

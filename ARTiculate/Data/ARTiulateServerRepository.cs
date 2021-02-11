@@ -45,6 +45,52 @@ namespace ARTiculate.Data
             return "~" + newURL;
         }
 
+        // TODO förenkla metoden
+        /// <summary>
+        /// Takes two in data parameters as DateTime and returns the difference
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTimeRaw"></param>
+        /// <returns>double timespan</returns>
+        public double CalculateDuration(DateTime startTime, DateTime endTimeRaw)
+        {
+            var year = startTime.Year;
+            var month = startTime.Month;
+            var day = startTime.Day;
+
+            DateTime endTime = new DateTime(year, month, day, endTimeRaw.Hour, endTimeRaw.Minute, endTimeRaw.Second);
+
+            double duration = 0;
+
+            if (startTime.Hour > endTime.Hour)
+            {
+                double timeleftTo00 = 24 - startTime.Hour;
+                double timeawayfrom00 = endTime.Hour;
+                double hourdiff = timeleftTo00 + timeawayfrom00;
+
+                double mindiff = 0;
+
+                if (startTime.Minute > endTime.Minute)
+                {
+                    mindiff = (endTime.Minute - startTime.Minute) / 60;
+                }
+                else if (endTime.Minute > startTime.Minute)
+                {
+                    mindiff = (endTime.Minute + startTime.Minute) / 60;
+                }
+
+                duration = hourdiff + mindiff;
+            }
+            else
+            {
+                TimeSpan diff = endTime.Subtract(startTime);
+                duration = diff.TotalHours;
+
+            }
+
+            return duration;
+        }
+
 
     }
 }

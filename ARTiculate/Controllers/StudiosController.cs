@@ -8,6 +8,8 @@ using ARTiculate.Data;
 using Microsoft.AspNetCore.Http;
 using ARTiculate.Models;
 using ARTiculateDataAccessLibrary.Models;
+using Microsoft.AspNetCore.Identity;
+using ARTiculate.Areas.Identity.Data;
 
 namespace ARTiculate.Controllers
 {
@@ -16,25 +18,43 @@ namespace ARTiculate.Controllers
 
         private IARTiulateServerRepository ARTiulateServerRepository;
         private IARTiculateRepository ARTiculateRepository;
+        private UserManager<ARTiculateUser> userManager;
 
-
-        public StudiosController(IARTiulateServerRepository ARTiculateServerRepository, IARTiculateRepository ARTiculateRepository)
+        public StudiosController(
+            IARTiulateServerRepository ARTiculateServerRepository, 
+            IARTiculateRepository ARTiculateRepository,
+            UserManager<ARTiculateUser> userManager
+            )
         {
             this.ARTiulateServerRepository = ARTiculateServerRepository;
             this.ARTiculateRepository = ARTiculateRepository;
+            this.userManager = userManager;
+
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+        
             return View();
         }
 
-        public IActionResult Studio(/*id*/)
-        {
-            /*id<--- användas vid identifiering av studio*/
-            return View();
+        public  IActionResult Studio()       
+        {            
+            return View(GetViewModelFromLoggedInArtist());
         }
 
+        public async Task<StudioViewModel> GetViewModelFromLoggedInArtist()
+        {
+            ARTiculateUser user = await GetCurrentUserAsync();
+            Artist artist = new Artist();
+            artist = ARTiculateRepository.CreateArtistFromARTiculateUser(user);
+            StudioViewModel viewModel = new StudioViewModel(artist);
+            return viewModel;
+        }
+
+        private Task<ARTiculateUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
+
+      
         public IActionResult UploadArtItem(/*id*/)
         {
             /*id<--- användas vid identifiering av studio*/
@@ -89,7 +109,8 @@ namespace ARTiculate.Controllers
         {
             ImageModel image = new ImageModel(input.ImageFile, input.Vernissage.Title);
             string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
-            
+
+            input.Vernissage.Duration = ARTiulateServerRepository.CalculateDuration(input.Vernissage.DateTime, input.EndTime);
             input.Vernissage.Poster = URL;
             input.Vernissage.ExhibitionId = input.SelectedExhibitionId;
             

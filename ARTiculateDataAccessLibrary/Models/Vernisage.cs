@@ -12,6 +12,8 @@ namespace ARTiculateDataAccessLibrary.Models
 
         public DateTime DateTime { get; set; }
 
+        public double Duration { get; set; }
+
         [Required]
         [MaxLength(100)]
         [Column(TypeName = "varchar(100)")]

@@ -30,10 +30,14 @@
                 @*--visa upp bilder att välja mellan--*@
             </div>
             <div class="input-item" id="date-time">
-                <h3>Date and time</h3>
+                <h3>Start date and time</h3>
                 @*<input type="date" name="date" value="2021-02-01" min="2021-02-01" max="2030-02-01"/>
             <input type="time" name="time" value="00:00"/>*@
                 @Html.EditorFor(m => m.Vernissage.DateTime)
+            </div>
+            <div class="input-item" id="time">
+                <h3>End time</h3>
+                @Html.EditorFor(m => m.EndTime)
             </div>
             <div class="input-item" id="youtube-link">
                 <h3>Youtube link</h3>
@@ -45,6 +49,6 @@
             </div>
 
         </form>
-        }
+    }
     </div>
 </div>
