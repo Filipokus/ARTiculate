@@ -167,6 +167,21 @@ namespace ARTiculate.Data
             return artItem;
         }
 
+        /// <summary>
+        /// Adds an "ArtItem" to an "Exhibition"
+        /// </summary>
+        /// <param name="exhibition_ArtItem"></param>
+        /// <returns></returns>
+        public async Task<Exhibition_ArtItem> AddArtItemToExhibition(Exhibition_ArtItem exhibition_ArtItem)
+        {
+
+            await db.Exhibition_ArtItems.AddAsync(exhibition_ArtItem);
+            db.SaveChanges();
+
+
+            return exhibition_ArtItem;
+        }
+
         public void GetMockData(ArtistContext db)
         {
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
@@ -567,6 +582,16 @@ namespace ARTiculate.Data
             }
 
             return allExhibitions;
+        }
+
+        public async Task<List<ArtItem>> GetArtItemsFromArtist(int id)
+        {
+            List<ArtItem> artItems = await db.ArtItems
+            .Include(x => x.ArtItem_Tags)
+            .Where(x => x.ArtistId == id)
+            .ToListAsync();
+
+            return artItems;
         }
 
 

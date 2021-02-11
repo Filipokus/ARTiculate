@@ -85,7 +85,6 @@ namespace ARTiculate.Data
             {
                 TimeSpan diff = endTime.Subtract(startTime);
                 duration = diff.TotalHours;
-
             }
 
             return duration;

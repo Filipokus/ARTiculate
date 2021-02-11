@@ -13,7 +13,9 @@ namespace ARTiculate.Models
 
         public Exhibition Exhibition { get; set; }
 
-        public List<ArtItem> ArtItems { get; set; }
+        public List<ArtItem> AllArtItems { get; set; }
+
+        public List<ArtItem> SelectedArtItems { get; set; }
 
         public List<Tag> ExhibitionTags { get; set; }
     }

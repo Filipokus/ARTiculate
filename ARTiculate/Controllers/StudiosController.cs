@@ -47,7 +47,7 @@ namespace ARTiculate.Controllers
         {
             ARTiculateUser user = await GetCurrentUserAsync();
             Artist artist = new Artist();
-            artist = ARTiculateRepository.CreateArtistFromARTiculateUser(user);
+            artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
             StudioViewModel viewModel = new StudioViewModel(artist);
             return viewModel;
         }
@@ -55,10 +55,21 @@ namespace ARTiculate.Controllers
         private Task<ARTiculateUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
 
       
-        public IActionResult UploadArtItem(/*id*/)
+        public async Task<IActionResult> UploadArtItem()
         {
-            /*id<--- användas vid identifiering av studio*/
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                ARTiculateUser user = await GetCurrentUserAsync();
+                Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
+
+                ArtItemViewModel viewModel = new ArtItemViewModel
+                {
+                    Artist = artist
+                };
+
+                return View(viewModel);
+            }
+            return RedirectToAction("NotSignedIn", "Studios");
         }
 
         [HttpPost]
@@ -67,9 +78,7 @@ namespace ARTiculate.Controllers
             ImageModel image = new ImageModel(model.ImageFile, model.ArtItem.Name);
             string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
             model.ArtItem.Picture = URL;
-
-            //TODO: Set this value from Identity / identifiering av studio
-            model.ArtItem.ArtistId = 1;
+            model.ArtItem.ArtistId = model.Artist.Id;
             
             await ARTiculateRepository.AddArtItem(model.ArtItem);
             return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
@@ -86,22 +95,28 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> CreateVernissage(int id)
         {
-            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(id);
-            Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
 
-            foreach (Exhibition exhibition in exhibitions)
+            if (User.Identity.IsAuthenticated) 
             {
-                allExhibitionsByArtistDictonary.Add(exhibition.Id, exhibition);
+                List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(id);
+                Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
+
+                foreach (Exhibition exhibition in exhibitions)
+                {
+                    allExhibitionsByArtistDictonary.Add(exhibition.Id, exhibition);
+                }
+
+                CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
+                {
+                    AllExhibitionsByArtist = exhibitions,
+                    AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary,
+                    ArtistId = id
+                };
+
+                return View(viewModel);
             }
 
-            CreateVernissageViewModel viewModel = new CreateVernissageViewModel()
-            {
-                AllExhibitionsByArtist = exhibitions,
-                AllExhibitionsByArtistDictonary = allExhibitionsByArtistDictonary,
-                ArtistId = id
-            };
-
-            return View(viewModel);
+            return RedirectToAction("NotSignedIn", "Studios");
         }
 
         [HttpPost]
@@ -120,17 +135,25 @@ namespace ARTiculate.Controllers
             return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
 
-        public async Task<IActionResult> CreateExhibition(int id)
+        public async Task<IActionResult> CreateExhibition()
         {
 
-            //TODO Set this value from Identity / identifiering av studio
-
-            CreateExhibitionViewModel viewModel = new CreateExhibitionViewModel()
+            if(User.Identity.IsAuthenticated)
             {
-                ArtistId = id
-            };
+                ARTiculateUser user = await GetCurrentUserAsync();
+                Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
+                List<ArtItem> artItems = await ARTiculateRepository.GetArtItemsFromArtist(artist.Id);
 
-            return View(viewModel);
+                CreateExhibitionViewModel viewModel = new CreateExhibitionViewModel()
+                {
+                    ArtistId = artist.Id,
+                    AllArtItems = artItems
+                };
+
+                return View(viewModel);
+            }
+
+            return RedirectToAction("NotSignedIn", "Studios");
         }
 
         [HttpPost]
@@ -141,6 +164,11 @@ namespace ARTiculate.Controllers
             ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
 
             return RedirectToAction("Exhibition", "Exhibitions", new { id = exhibition.Id });
+        }
+
+        public IActionResult NotSignedIn()
+        {
+            return View();
         }
     }
 }

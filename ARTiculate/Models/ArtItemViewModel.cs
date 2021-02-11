@@ -27,5 +27,9 @@ namespace ARTiculate.Models
         public string FileName { get; set; }
 
         public ArtItem ArtItem { get; set; }
+
+        public Artist Artist { get; set; }
+
+        public int ArtistId { get; set; }
     }
 }

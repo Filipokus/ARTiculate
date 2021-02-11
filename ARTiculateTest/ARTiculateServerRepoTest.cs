@@ -21,11 +21,9 @@ namespace ARTiculateTest
             //Arrange
             DateTime startTime = DateTime.Parse(start);
             DateTime endTime = DateTime.Parse(end);
-            
 
             //Act
             double actual = repo.CalculateDuration(startTime, endTime);
-
 
             //Assert
             Assert.Equal(expected, actual );

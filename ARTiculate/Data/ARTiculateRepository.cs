@@ -174,5 +174,20 @@ namespace ARTiculate.Data
         {
             throw new NotImplementedException();
         }
+
+        public Task<Exhibition_ArtItem> AddArtItemToExhibition(Exhibition_ArtItem exhibition_ArtItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<ArtItem>> GetArtItemsFromArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

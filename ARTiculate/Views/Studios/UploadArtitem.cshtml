@@ -27,6 +27,9 @@
                 <h3>Description</h3>
                 @Html.TextBoxFor(m => m.ArtItem.Description)
             </div>
+            <div class="input-item" id="youtube-link">
+                @Html.HiddenFor(m => m.Artist.Id, Model.ArtistId)
+            </div>
             <div class="input-item" id="submit">
                 <input type="submit" id="submit-btn" name="input-submit" value="Upload artwork" />
             </div>
