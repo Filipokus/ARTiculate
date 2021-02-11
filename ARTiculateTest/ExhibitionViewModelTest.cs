@@ -98,13 +98,11 @@ namespace ARTiculateTest
             test[0].Exhibition_ArtItem.Add(exhibition_ArtItemStoneFace);
 
             //Act
-            List<Exhibition> actual = viewModel.FourPosters(test);
+            List<Exhibition> actual = viewModel.CreatesNewListWithFourPictures(test);
 
             //Assert
             Assert.Equal(expected, actual);
             Assert.True(actual[0].Exhibition_ArtItem.Count == expected[0].Exhibition_ArtItem.Count);
-
-            
         }
 
 
