@@ -9,5 +9,6 @@ namespace ARTiculate.Data
     public interface IARTiulateServerRepository
     {
         public Task<string> UploadPictureToServer(ImageModel imageModel);
+        public double CalculateDuration(DateTime startTime, DateTime endTime);
     }
 }

@@ -89,7 +89,8 @@ namespace ARTiculate.Controllers
         {
             ImageModel image = new ImageModel(input.ImageFile, input.Vernissage.Title);
             string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
-            
+
+            input.Vernissage.Duration = ARTiulateServerRepository.CalculateDuration(input.Vernissage.DateTime, input.EndTime);
             input.Vernissage.Poster = URL;
             input.Vernissage.ExhibitionId = input.SelectedExhibitionId;
             
