@@ -307,10 +307,11 @@ namespace ARTiculate.Data
             List<Vernisage> allVernisages = await GetAllVernisagesOrderedByDate();
             List<Vernisage> commingVernisages = new List<Vernisage>();
 
-
+            
                 var rightNow = DateTime.Now;
             foreach (var vernisage in allVernisages)
             {
+               
                 if (rightNow < vernisage.DateTime)
                 {
                     commingVernisages.Add(vernisage);
@@ -319,6 +320,31 @@ namespace ARTiculate.Data
 
             return commingVernisages;
         }
+
+
+        
+        /// <summary>
+        /// Returns a List containing all live vernisages
+        /// </summary>
+        /// <returns></returns>
+        public async Task<List<Vernisage>> GetLiveVernisages()
+        {
+            List<Vernisage> allVernisages = await GetAllVernisagesOrderedByDate();
+            List<Vernisage> liveVernisages = new List<Vernisage>();
+
+            var rightNow = DateTime.Now;
+
+            foreach (var vernisage in allVernisages)
+            {
+                if (rightNow >= vernisage.DateTime && rightNow <= vernisage.DateTime.AddHours(vernisage.Duration) )
+                {
+                    liveVernisages.Add(vernisage);
+                }
+            }
+
+            return liveVernisages;
+        }
+
 
         /// <summary>
         /// Returns a List containing all active vernisages
