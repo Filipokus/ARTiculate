@@ -41,28 +41,33 @@ namespace ARTiculate.Controllers
             return View(viewModel);
         }
 
-        [Authorize]
-        public async Task<IActionResult> Studio()       
+        
+        public async Task<IActionResult> Studio(int id)       
         {            
-            return View( await GetViewModelFromLoggedInArtist());
+            return View();
         }
 
-        public async Task<StudioViewModel> GetViewModelFromLoggedInArtist()
+        [Authorize]
+        public async Task<IActionResult> MyStudio()
+        {
+            return View(await GetViewModelFromLoggedInArtist());
+        }
+
+        public async Task<MyStudioViewModel> GetViewModelFromLoggedInArtist()
         {
             ARTiculateUser user = await GetCurrentUserAsync();
              
             Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
-            StudioViewModel viewModel = new StudioViewModel(artist);
+            MyStudioViewModel viewModel = new MyStudioViewModel(artist);
             return viewModel;
         }
 
         private Task<ARTiculateUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
 
-      
+        [Authorize]
         public async Task<IActionResult> UploadArtItem()
         {
-            if (User.Identity.IsAuthenticated)
-            {
+            
                 ARTiculateUser user = await GetCurrentUserAsync();
                 Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
 
@@ -72,10 +77,10 @@ namespace ARTiculate.Controllers
                 };
 
                 return View(viewModel);
-            }
-            return RedirectToAction("NotSignedIn", "Studios");
+          
         }
 
+        
         [HttpPost]
         public async Task<IActionResult> UploadArtitem(ArtItemViewModel model)
         {
@@ -88,6 +93,7 @@ namespace ARTiculate.Controllers
             return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
         }
 
+        [Authorize]
         public async Task<IActionResult> ArtItem(int id)
         {
             ArtItem artItem = await ARTiculateRepository.GetArtItem(id);
@@ -97,11 +103,11 @@ namespace ARTiculate.Controllers
             return View(model);
         }
 
+        [Authorize]
         public async Task<IActionResult> CreateVernissage(int id)
         {
 
-            if (User.Identity.IsAuthenticated) 
-            {
+            
                 List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(id);
                 Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
 
@@ -118,9 +124,7 @@ namespace ARTiculate.Controllers
                 };
 
                 return View(viewModel);
-            }
-
-            return RedirectToAction("NotSignedIn", "Studios");
+            
         }
 
         [HttpPost]
@@ -139,11 +143,10 @@ namespace ARTiculate.Controllers
             return RedirectToAction("Vernissage", "Vernissages", new { id = vernissage.Id });
         }
 
+        [Authorize]
         public async Task<IActionResult> CreateExhibition()
         {
-
-            if(User.Identity.IsAuthenticated)
-            {
+          
                 ARTiculateUser user = await GetCurrentUserAsync();
                 Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
                 List<ArtItem> artItems = await ARTiculateRepository.GetArtItemsFromArtist(artist.Id);
@@ -155,9 +158,7 @@ namespace ARTiculate.Controllers
                 };
 
                 return View(viewModel);
-            }
-
-            return RedirectToAction("NotSignedIn", "Studios");
+            
         }
 
         [HttpPost]
@@ -166,6 +167,8 @@ namespace ARTiculate.Controllers
 
             Exhibition exhibition = await ARTiculateRepository.AddExhibitionAsync(input.Exhibition);
             ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
+
+            //TODO binda checkboxar till nåt i vymodellen
 
             return RedirectToAction("Exhibition", "Exhibitions", new { id = exhibition.Id });
         }
