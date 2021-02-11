@@ -28,7 +28,7 @@ namespace ARTiculate.Controllers
         public async Task<IActionResult> Exhibition(int ID)
         {
             Exhibition exhibition = await ARTiculateRepository.GetExhibition(ID);
-            ExhibitionViewModel viewModel = new ExhibitionViewModel(exhibition);
+            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibition);
 
             return View(viewModel);
         }

@@ -83,14 +83,46 @@ namespace ARTiculateTest
             return listofAllTestExhibitions;
         }
 
+        [Theory]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(8)]
+        public void GetNewlyAddedExhibitionsForView_ShouldReturnList(int numberOfExhibitions)
+        {
+            // Arrange
+            var expected = 6;
+
+            List<Exhibition> exhibitions = new List<Exhibition>();
+
+            for (int i = 0; i < numberOfExhibitions; i++)
+            {
+                Exhibition exhibiton = new Exhibition { Title = $"test{i}" };
+                List<Exhibition_ArtItem> exhibition_ArtItems = new List<Exhibition_ArtItem>();
+                exhibiton.Exhibition_ArtItem = exhibition_ArtItems;
+
+                for (int j = 0; j < 4; j++)
+                {
+                    Exhibition_ArtItem artItem = new Exhibition_ArtItem { ArtItemId = j };
+                    exhibition_ArtItems.Add(artItem);
+                }
+                exhibitions.Add(exhibiton);
+            }
+
+            // Act
+            var actual = viewModel.GetNewlyAddedExhibitionsForView(exhibitions);
+
+            // Assert
+            Assert.Equal(expected, actual.Count);
+        }
+
         [Fact]
-        public void FourPosters_ShouldReturnExhibitionsWithOnlyFourPosters()
+        public void CreatesNewListWithFourPictures_ShouldReturnExhibitionsWithOnlyFourPosters()
         {
             //Arrange
             List<Exhibition> test = MockTestData();
 
-            List<Exhibition> expected = new List<Exhibition>();
-            expected.Add(listofAllTestExhibitions[0]);
+            //List<Exhibition> expected = new List<Exhibition>();
+            //expected.Add(listofAllTestExhibitions[0]);
 
             ArtItem artItemStoneFace = new ArtItem { Name = "StoneFace" };
             Exhibition_ArtItem exhibition_ArtItemStoneFace = new Exhibition_ArtItem { ArtItems = artItemStoneFace };
@@ -98,21 +130,76 @@ namespace ARTiculateTest
             test[0].Exhibition_ArtItem.Add(exhibition_ArtItemStoneFace);
 
             //Act
-            List<Exhibition> actual = viewModel.CreatesNewListWithFourPictures(test);
+            List<Exhibition> actual = viewModel.CreateNewListWithFourPictures(test);
 
             //Assert
-            Assert.Equal(expected, actual);
-            Assert.True(actual[0].Exhibition_ArtItem.Count == expected[0].Exhibition_ArtItem.Count);
+            Assert.True(actual[0].Exhibition_ArtItem.Count == 4);
         }
 
+        [Theory]
+        [InlineData(6)]
+        [InlineData(7)]
+        [InlineData(8)]
+        public void AddMaxSixExhibtionsToList_ShouldReturnSixExhibitions(int nuberOfExhibitions)
+        {
+            // Arrange
+            int expected = 6;
 
+            List<Exhibition> exhibitions = new List<Exhibition>();
+
+            for (int i = 0; i < nuberOfExhibitions; i++)
+            {
+                var newExhibition = new Exhibition { Title = $"test{i}" };
+                exhibitions.Add(newExhibition);
+            }
+
+            // Act
+            var actual = viewModel.AddMaxSixExhibtionsToList(exhibitions);
+
+            // Assert
+            Assert.True(actual.Count == expected);
+        }
+
+        [Theory]
+        [InlineData(3)]
+        [InlineData(4)]
+        [InlineData(5)]
+        public void CheckIfExhibitionContainsFourPosters_ShouldWork(int numberOfArtitems)
+        {
+            // Arrange
+            bool expected;
+
+            if (numberOfArtitems == 4)
+            {
+                expected = true;
+            }
+            else
+            {
+                expected = false;
+            }
+
+            List<Exhibition> exhibitions = new List<Exhibition> { new Exhibition { Title="test" } };
+            List<Exhibition_ArtItem> exhibition_ArtItems = new List<Exhibition_ArtItem>();
+            exhibitions[0].Exhibition_ArtItem = exhibition_ArtItems;
+
+            for (int i = 0; i < numberOfArtitems; i++)
+            {
+                Exhibition_ArtItem artItem = new Exhibition_ArtItem { ArtItemId = i};
+                exhibition_ArtItems.Add(artItem);
+            }
+
+            bool actual = viewModel.CheckIfExhibitionContainsFourPosters(exhibitions);
+
+            Assert.Equal(expected, actual);
+        }
+            
         [Fact]
         public void SortExhibitionsByTagName_ShouldReturnExhibitionsByTag()
         {
             //Arrange
             string tagName = "rymden";
 
-            Tag tagRymden = new Tag { TagName = "rymden"};
+            Tag tagRymden = new Tag { TagName = "rymden" };
             Tag tagSpace = new Tag { TagName = "space" };
             Tag tagSkog = new Tag { TagName = "skog" };
             Tag tagPaint = new Tag { TagName = "paint" };
@@ -163,25 +250,6 @@ namespace ARTiculateTest
             Assert.Equal(expected, actual);
             Assert.True(actual.Count >= 1);
             Assert.Contains<Exhibition>(exhibitionAllTags, expected);
-        }
-
-        public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
-        public List<Exhibition> NewlyAddedExhibitions { get; set; } = new List<Exhibition>();
-
-        [Fact]
-        public async void GetNewlyAddedExhibitions_ShouldWork()
-        {
-            Exhibition exhibition = new Exhibition { Title = "Test1" };
-            var exhibitions = listofAllTestExhibitions;
-
-            var mock = new Mock<IARTiculateRepository>();
-            var sut = new ARTiculateRepositoryMock("test");
-
-            mock.Setup(x => x.GetExhibitionsFromDbOrderedByDate()).Returns(Task.FromResult(exhibitions));
-            var actual = await sut.GetExhibitionsFromDbOrderedByDate();
-
-            //viewModel.GetNewlyAddedExhibitions();
-
         }
 
         //[Fact]

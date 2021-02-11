@@ -9,22 +9,40 @@
 <div class="diagonal-box">
     <div class="straight-div">
         <div class="carousel-container" id="active-carousel-content">
+            <div class="exhibition-flex">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                </button>
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.NewlyAddedExhibitions[0].Id })'">
+
+                    @for (int i = 0; i < @Model.NewlyAddedExhibitions[0].Exhibition_ArtItem.Count; i++)
+                    {
+                        <img class="romb" src="@Url.Content(string.Format(@Model.NewlyAddedExhibitions[0].Exhibition_ArtItem[i].ArtItems.Picture))" alt="">
+                    }
+                </div>
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                </button>
+            </div>
+
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { Model.NewlyAddedExhibitions[0].Id })'">
+                <h3>@Model.NewlyAddedExhibitions[0].Title</h3>
+                <p>@Model.NewlyAddedExhibitions[0].Description</p>
+            </div>
+        </div>
+
+        @for (int i = 1; i < Model.NewlyAddedExhibitions.Count; i++)
+         {
+            <div class="carousel-container">
                 <div class="exhibition-flex">
                     <button class="arrow-left-btn" onclick="loadNewContent(this)">
                         <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                     </button>
-                    <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.Exhibitions[0].Id })'">
-
-                        @for (int i = 0; i < @Model.Exhibitions[0].Exhibition_ArtItem.Count; i++)
+                    <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.NewlyAddedExhibitions[i].Id })'">
+                        @for (int j = 0; j < @Model.NewlyAddedExhibitions[i].Exhibition_ArtItem.Count; j++)
                         {
-                            <img class="romb" src="@Model.Exhibitions[0].Exhibition_ArtItem[i].ArtItems.Picture" alt="">
-                             @if(i == 3)
-
-                              {
-                                break;
-                              }
+                            <img class="romb" src="@Url.Content(string.Format(@Model.NewlyAddedExhibitions[i].Exhibition_ArtItem[j].ArtItems.Picture))" alt="">
                         }
-                      
 
                     </div>
                     <button class="arrow-right-btn" onclick="loadNewContent(this)">
@@ -32,85 +50,13 @@
                     </button>
                 </div>
 
-                <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { Model.Exhibitions[0].Id })'">
-                    <h3>@Model.Exhibitions[0].Title</h3>
-                    <p>@Model.Exhibitions[0].Description</p>
+                <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new {  @Model.NewlyAddedExhibitions[i].Id })'">
+                    <h3>@Model.NewlyAddedExhibitions[i].Title</h3>
+                    <p>@Model.NewlyAddedExhibitions[i].Description</p>
                 </div>
-        </div>
-
-        @for (int i = 1; i < Model.Exhibitions.Count; i++)
-            {
-            <div class="carousel-container">
-            <div class="exhibition-flex">
-                <button class="arrow-left-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
-                </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.Exhibitions[i].Id })'">
-                    @for (int j = 0; j < @Model.Exhibitions[i].Exhibition_ArtItem.Count; j++)
-                    {
-                        <img class="romb" src="@Model.Exhibitions[i].Exhibition_ArtItem[j].ArtItems.Picture" alt="">
-                    @if (j==3)
-	                   {
-                        break;
-	                    }
-                    }
-
-                </div>
-                <button class="arrow-right-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
-                </button>
             </div>
+         }
 
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new {  @Model.Exhibitions[i].Id })'">
-                <h3>@Model.Exhibitions[i].Title</h3>
-                <p>@Model.Exhibitions[i].Description</p>
-            </div>
-        </div>
-            }
-
-
-
-
-<div class="carousel-container">
-            <div class="exhibition-flex">
-                <button class="arrow-left-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
-                </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
-                </div>
-                <button class="arrow-right-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
-                </button>
-            </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                <h3>Exhibition Title 2</h3>
-                <p>Another completely different description about another totally different exhibition!! Click here or on the image to go there!</p>
-            </div>
-        </div>
-        <div class="carousel-container">
-            <div class="exhibition-flex">
-                <button class="arrow-left-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
-                </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
-                </div>
-                <button class="arrow-right-btn" onclick="loadNewContent(this)">
-                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
-                </button>
-            </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                <h3>Exhibition Title 3</h3>
-                <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
-            </div>
-        </div>
     </div>
 </div>
 
