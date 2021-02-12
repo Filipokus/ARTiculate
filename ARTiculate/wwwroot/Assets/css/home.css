@@ -1,8 +1,6 @@
 ﻿#hero_header {
-    /*transform: skewY(-11deg);*/
     background-color: #242424;
     height: 25vw;
-/*    margin-top: 18vw;*/
 }
 
 h1 {
@@ -37,10 +35,12 @@ h1 {
     padding-top: 5vw;
     padding-bottom: 10vh;
     display: flex;
-    flex-direction:  row;
+    flex-direction: column;
 }
 
 .section_div {
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
     width: 95vw;
     margin: 2vw auto;
@@ -156,7 +156,7 @@ h1 {
 }
 
 .next4-container {
-    background-color: rgb(255,255,255, 0.7);
+    background-color: rgba(255,255,255, 0.7);
     margin-top: -20vw;
     position: relative;
     z-index: 10;
@@ -180,8 +180,8 @@ h1 {
 .right4 {
     width: 40vw;
     flex-direction: column;
-    transform: translate3d(3%, -8%, 0);
     justify-content: center;
+    transform: translate3d(3%, -8%, 0);
 }
 
 .next4-container h3 {
@@ -192,4 +192,3 @@ h1 {
 .next4-container p {
     font-size: 2.6vw;
 }
-/* From vernissages */
