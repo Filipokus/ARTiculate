@@ -86,10 +86,13 @@ namespace ARTiculate.Controllers
         {
             ImageModel image = new ImageModel(model.ImageFile, model.ArtItem.Name);
             string URL = await ARTiulateServerRepository.UploadPictureToServer(image);
+
             model.ArtItem.Picture = URL;
             model.ArtItem.ArtistId = model.Artist.Id;
             
-            await ARTiculateRepository.AddArtItem(model.ArtItem);
+            ArtItem artItem = await ARTiculateRepository.AddArtItem(model.ArtItem);
+            await ARTiculateRepository.AddArtItem_Tags(model.Tags, artItem.Id);
+
             return RedirectToAction("ArtItem", "Studios", new { id = model.ArtItem.Id });
         }
 
