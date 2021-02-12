@@ -11,7 +11,7 @@ namespace ARTiculate.Models
         public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> NewlyAddedExhibitions { get; set; }
         public List<Exhibition> ExhibitionsByTagName { get; set; }
-        public string TagName { get; set; }
+        public string TagName { get; set; } = "Rymden";
 
 
         public ExhibitionViewModel()
@@ -23,7 +23,7 @@ namespace ARTiculate.Models
         {
             Exhibitions = exhibitions;
             NewlyAddedExhibitions = GetNewlyAddedExhibitionsForView(exhibitions);
-            //ExhibitionsByTagName = SortExhibitionsByTagName(TagName, exhibitions);
+            ExhibitionsByTagName = SortExhibitionsByTagName(TagName, exhibitions);
         }
 
 
