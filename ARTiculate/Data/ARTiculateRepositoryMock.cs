@@ -197,6 +197,63 @@ namespace ARTiculate.Data
             return exhibition_ArtItem;
         }
 
+        public async Task<List<Tag>> AddTagsAsync(string tagsRaw)
+        {
+            string [] tags = tagsRaw.Split(' ');
+            List<Tag> addedTags = new List<Tag>();
+
+            foreach (string tagRaw in tags)
+            {
+                string tagString = tagRaw.Substring(1);
+                Tag addedTag = GetTagByName(tagString);
+
+                if (addedTag.Id != 0)
+                {
+                    addedTags.Add(addedTag);
+                }
+
+                else
+                {
+                    Tag tag = new Tag
+                    {
+                        TagName = tagString
+                    };
+
+                    addedTag = await AddTagAsync(tag);
+                    addedTags.Add(addedTag);
+                }
+            }
+
+            return addedTags;
+        }
+
+        public async Task<ArtItem_Tag> AddArtItemTag(ArtItem_Tag artItem_Tag)
+        {
+            await db.ArtItem_Tags.AddAsync(artItem_Tag);
+            await db.SaveChangesAsync();
+            return artItem_Tag;
+        }
+
+        public async Task<List<ArtItem_Tag>> AddArtItem_Tags(string tagsRaw, int id)
+        {
+            List<Tag> tags = await AddTagsAsync(tagsRaw);
+
+            List<ArtItem_Tag> artItem_Tags = new List<ArtItem_Tag>();
+
+            foreach (Tag tag in tags)
+            {
+                ArtItem_Tag artItem_Tag = new ArtItem_Tag
+                {
+                    TagId = tag.Id,
+                    ArtItemId = id
+                };
+                ArtItem_Tag addedArtItem_Tag = await AddArtItemTag(artItem_Tag);
+                artItem_Tags.Add(addedArtItem_Tag);
+            }
+
+            return artItem_Tags;
+        }
+
         public void GetMockData(ArtistContext db)
         {
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
@@ -620,6 +677,24 @@ namespace ARTiculate.Data
             .ToListAsync();
 
             return artItems;
+        }
+
+        public Tag GetTagByName(string tagToSearch)
+        {
+            Tag tag = db.Tags
+                    .Where(x => x.TagName == tagToSearch)
+                    .FirstOrDefault();
+
+            if (tag == null)
+            {
+                tag = new Tag
+                {
+                    TagName = "notFound",
+                    Id = 0
+                };
+            }
+
+            return tag;
         }
 
 
