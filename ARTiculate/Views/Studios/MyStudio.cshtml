@@ -1,3 +1,173 @@
 ﻿@model MyStudioViewModel
 
-<h1>@Model.Artist</h1>
+
+<link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
+<script src="\Assets\js\studio.js"></script>
+
+<div id="imageCloseUp-container">
+    <div id="artworkInfo" class="hideInfo">
+        <h2 class="artTitle">Title</h2>
+        <p class="artDescription">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+</div>
+<div id="veil" class="veilHidden"></div>
+
+<h1>Studio of ARTist Name</h1>
+<div id="artist-profile">
+    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+</div>
+<p class="description">Description dsadf sads af dasjkfg dsfa kfls dafdk sakd sakdls adkls akflsa äfjks alfjdkslg dksl fdkslf jdklf skl fklds öfkds löfsd</p>
+
+<div class="create-buttons">
+    <button class="studio-btn" onclick="location.href='@Url.Action("UploadArtItem", "Exhibitions")'">
+        <p class="plus">+</p>
+        <p>Add art items</p>
+    </button>
+    <button class="studio-btn" onclick="location.href='@Url.Action("CreateExhibition", "Exhibitions")'">
+        <p>Create exhibition</p>
+    </button>
+</div>
+
+<div class="diagonal-box">
+    <div class="straight-div">
+        <div class="studio-content">
+
+
+            <div class="folder">
+                <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                    <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+                    <div class="studio-content-container">
+                        <h2 class="exhibition-name">My First Vernissage</h2>
+                    </div>
+                </button>
+                <div class="folder-container">
+                    <div class="arrow-up"></div>
+                    <div class="folder-items">
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="folder">
+                <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                    <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+                    <div class="studio-content-container">
+                        <h2 class="exhibition-name">My Second Vernissage</h2>
+                    </div>
+                </button>
+                <div class="folder-container">
+                    <div class="arrow-up"></div>
+                    <div class="folder-items">
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="folder">
+                <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                    <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+                    <div class="studio-content-container">
+                        <h2 class="exhibition-name">My Third Vernissage</h2>
+                    </div>
+                </button>
+                <div class="folder-container">
+                    <div class="arrow-up"></div>
+                    <div class="folder-items">
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <div id="private-folder">
+                        <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                            <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+                            <div class="studio-content-container">
+                                <h2 class="exhibition-name">Private</h2>
+                            </div>
+                            <img class="lock" src="~/Assets/Images/padlock.png" alt="Lock Icon" />
+                        </button>
+                        <div class="folder-container">
+                            <div class="arrow-up"></div>
+                            <div class="folder-items">
+                                <div class="open-art-item">
+                                    <button class="studio-content-btn">
+                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                                    </button>
+                                </div>
+                                <div class="open-art-item">
+                                    <button class="studio-content-btn">
+                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                                    </button>
+                                </div>
+                                <div class="open-art-item">
+                                    <button class="studio-content-btn">
+                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="divider div-transparent"></div>
+
+        <div class="studio-content" id="open-items">
+
+            <div class="open-art-item">
+                <button class="studio-content-btn">
+                    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                </button>
+            </div>
+            <div class="open-art-item">
+                <button class="studio-content-btn">
+                    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                </button>
+            </div>
+            <div class="open-art-item">
+                <button class="studio-content-btn">
+                    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                </button>
+            </div>
+            <div class="open-art-item">
+                <button class="studio-content-btn">
+                    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                </button>
+            </div>
+            <div class="open-art-item">
+                <button class="studio-content-btn">
+                    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
