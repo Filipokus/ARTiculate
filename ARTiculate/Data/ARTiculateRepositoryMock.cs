@@ -101,7 +101,7 @@ namespace ARTiculate.Data
         /// Adds an object of type Artist_Exhibition to Db
         /// </summary>
         /// <param name="artist_Vernisage"></param>
-        public async void AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
+        public async Task AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
         {
             await db.Artist_Exhibitions.AddAsync(artist_Exhibition);
             db.SaveChanges();
@@ -112,7 +112,7 @@ namespace ARTiculate.Data
         /// </summary>
         /// <param name="vernisageId"></param>
         /// <param name="artistId"></param>
-        public void CreateArtist_Exhibition(int exhibitionId, int artistId)
+        public async Task CreateArtist_Exhibition(int exhibitionId, int artistId)
         {
             Artist_Exhibition artist_Exhibition = new Artist_Exhibition
             {
@@ -120,7 +120,7 @@ namespace ARTiculate.Data
                 ExhibitionId = exhibitionId
             };
 
-            AddArtist_ExhibitionAsync(artist_Exhibition);
+            await AddArtist_ExhibitionAsync(artist_Exhibition);
 
         }
 
@@ -165,6 +165,21 @@ namespace ARTiculate.Data
             await db.ArtItems.AddAsync(artItem);
             await db.SaveChangesAsync();
             return artItem;
+        }
+
+        public async Task CreateExhibition_ArtItemsAsync(List<ArtItem> artItems, int exhibitionId)
+        {
+            foreach (ArtItem artItem in artItems)
+            {
+
+                Exhibition_ArtItem exhibition_ArtItem = new Exhibition_ArtItem
+                {
+                    ArtItemId = artItem.Id,
+                    ExhibitionId = exhibitionId
+                };
+
+                await AddArtItemToExhibition(exhibition_ArtItem);
+            }
         }
 
         /// <summary>

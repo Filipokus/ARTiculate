@@ -15,6 +15,8 @@ namespace ARTiculate.Models
 
         public List<ArtItem> AllArtItems { get; set; }
 
+        public List<bool> AllArtItemsByArtistBoolList { get; set; }
+
         public List<ArtItem> SelectedArtItems { get; set; }
 
         public List<Tag> ExhibitionTags { get; set; }

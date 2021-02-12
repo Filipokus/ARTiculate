@@ -38,9 +38,10 @@ namespace ARTiculate.Data
         Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID);
         void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage);
         void CreateArtist_Vernisage(int vernisageId, int artistId);
-        public void CreateArtist_Exhibition(int exhibitionId, int artistId);
-        void AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition);
+        public Task CreateArtist_Exhibition(int exhibitionId, int artistId);
+        public Task AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition);
         public Task<Exhibition_ArtItem> AddArtItemToExhibition(Exhibition_ArtItem exhibition_ArtItem);
+        public Task CreateExhibition_ArtItemsAsync(List<ArtItem> artItems, int exhibitionId);
         public Task<ArtItem> GetArtItem(int id);
         Task<List<Vernisage>> GetVernissagesFromDbOrderedByDate();
         List<Vernisage> CreateListOfVernissages(List<Vernisage> vernissagesFromDb);

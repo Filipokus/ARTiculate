@@ -26,15 +26,14 @@
 
                 <div class="input-item" id="select-exhibition">
                     <h3>Choose Art to Exhibit</h3>
-                    <p>*You don't have to add art to your exhibition if you aren't ready yet. To make this Exhibition public you'll need at least 4 art pieces. You can always add pieces later.</p>
+                    <p style="color:white;">*You don't have to add art to your exhibition if you aren't ready yet. To make this Exhibition public you'll need at least 4 art pieces. You can always add pieces later.</p>
 
-                    @foreach (var artitem in Model.AllArtItems)
+                    @for (int i = 0; i < Model.AllArtItems.Count; i++)
                     {
-                        <img src= "@Url.Content(string.Format(artitem.Picture))" />
-                        <input type="checkbox" id="@artitem.Id"/>
+                        @Html.HiddenFor(m => m.AllArtItems[i])
+                        <img src="@Url.Content(string.Format(Model.AllArtItems[i].Picture))" />
+                        @Html.CheckBoxFor(m => m.AllArtItemsByArtistBoolList[i])
                     }
-
-                    @*--visa upp bilder att välja mellan--*@
                 </div>
 
                 <div class="input-item" id="date-time">
@@ -45,7 +44,7 @@
                     @Html.HiddenFor(m => m.ArtistId, Model.ArtistId)
                 </div>
                 <div class="input-item" id="submit">
-                    <input type="submit" id="submit-btn" name="input-submit" value="Create vernissage" />
+                    <input type="submit" id="submit-btn" name="input-submit" value="Create exhibition" />
                 </div>
 
             </form>
