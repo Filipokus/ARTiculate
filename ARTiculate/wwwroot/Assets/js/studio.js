@@ -2,20 +2,36 @@
 
 function toggleOpenFolder(ev) {
 
-    let folder = ev.parentNode
-    let arrow = folder.nextElementSibling.children[0]
-    let folderItems = folder.nextElementSibling.children[1]
-
-    if (folder.classList.contains('folder-open')) {
+    let arrow = ev.nextElementSibling.children[0];
+    let folderItems = ev.nextElementSibling.children[1];
+    
+    if (folderItems.classList.contains('box-open')) {
         //Close folder
-        folder.classList.remove('folder-open')
         folderItems.classList.remove('box-open')
         arrow.classList.remove('arrow-visible')
     }
     else {
         //Open folder
-        folder.classList.add('folder-open')
+        closeAllFolders();
+
         folderItems.classList.add('box-open')
         arrow.classList.add('arrow-visible')
+    }
+}
+
+function closeAllFolders() {
+    let openFolders = document.getElementsByClassName('box-open')
+    let openArrows = document.getElementsByClassName('arrow-visible')
+
+    //console.dir(openFolders)
+
+    if (openFolders.length > 0) {
+
+        //openFolders.forEach(folder => folder.classList.remove('box-open'));
+        //openArrows.classList.remove('arrow-visible')
+        for (var i = 0; i < openFolders.length; i++) {
+            openFolders[i].classList.remove('box-open')
+            openArrows[i].classList.remove('arrow-visible')
+        }
     }
 }
