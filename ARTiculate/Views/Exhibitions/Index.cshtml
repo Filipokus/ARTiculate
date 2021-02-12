@@ -5,6 +5,9 @@
 <h1>Exhibitions</h1>
 
 
+@if(Model.NewlyAddedExhibitions.Count==0)
+{ }
+else {
 <h2 class="diagonal-h2">Newly added Exhibitions</h2>
 <div class="diagonal-box">
     <div class="straight-div">
@@ -59,6 +62,7 @@
 
     </div>
 </div>
+}
 
 <h2 class="diagonal-h2">Last chance!</h2>
 <div class="diagonal-box">
@@ -68,7 +72,7 @@
                 <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
@@ -78,7 +82,7 @@
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions",new { ID = 1 })'">
                 <h3>Exhibition Title 1</h3>
                 <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
             </div>
@@ -88,7 +92,7 @@
                 <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions",new { ID = 1 })'">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
@@ -98,7 +102,7 @@
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'">
                 <h3>Exhibition Title 2</h3>
                 <p>Another completely different description about another totally different exhibition!! Click here or on the image to go there!</p>
             </div>
@@ -108,7 +112,7 @@
                 <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
@@ -118,7 +122,7 @@
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'">
                 <h3>Exhibition Title 3</h3>
                 <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
             </div>
