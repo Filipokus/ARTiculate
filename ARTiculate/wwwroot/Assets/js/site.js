@@ -96,6 +96,8 @@ function loadNewContent(arrowBtn) {
         else {
             childrenOfStraightDiv[0].style.display = 'initial';
         }
+        activeCarouselDiv.style.display = 'none';
+    }
 
 //---------Close up of image---------
 
@@ -147,6 +149,4 @@ function hideImageCloseUp() {
 }
 
 
-    activeCarouselDiv.style.display = 'none';
-}
 
