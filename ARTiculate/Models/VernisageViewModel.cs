@@ -8,11 +8,19 @@ namespace ARTiculate.Models
 {
     public class VernisageViewModel
     {
+        public Vernisage Vernisage { get; set; }
+        public Artist Artist { get; set; }
+
+        public VernisageViewModel(Vernisage vernisage, Artist artist)
+        {
+            this.Vernisage = vernisage;
+            this.Artist = artist;
+        }
+
         public VernisageViewModel(Vernisage vernisage)
         {
             this.Vernisage = vernisage;
         }
-
-        public Vernisage Vernisage { get; set; }
-    }
+       
+    } 
 }

@@ -8,7 +8,7 @@ namespace ARTiculateDataAccessLibrary.Models
     {
         public int ExhibitionId { get; set; }
         public int ArtItemId { get; set; }
-        public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
-        public List<ArtItem> ArtItems { get; set; } = new List<ArtItem>();
+        public Exhibition Exhibitions { get; set; } 
+        public ArtItem ArtItems { get; set; } 
     }
 }

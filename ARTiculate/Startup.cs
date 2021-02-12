@@ -1,5 +1,4 @@
 using ARTiculate.Data;
-using ARTiculate.Mock;
 using ARTiculateDataAccessLibrary.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -12,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ARTiculate.Data;
 
 using SignalRChat.Hubs;
 
@@ -33,12 +31,14 @@ namespace ARTiculate
             services.AddDbContext<ArtistContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
+                
             });
             services.AddControllersWithViews();
-            //services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
             services.AddScoped<IARTiculateRepository, ARTiculateRepositoryMock>();
+            //services.AddScoped<IARTiculateRepository, ARTiculateRepository>();
 
             services.AddSignalR();
+            services.AddRazorPages();
 
             services.AddScoped<IARTiulateServerRepository, ARTiulateServerRepository>();
         }
@@ -61,15 +61,18 @@ namespace ARTiculate
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Studios}/{action=Studio}/{id?}");
-        //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //pattern: "{controller=Vernissages}/{action=Index}/{id?}");
                 endpoints.MapHub<ChatHub>("/chathub");
+
+                endpoints.MapRazorPages();
 
             });
         }

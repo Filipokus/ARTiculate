@@ -32,6 +32,7 @@
     transform: skewY(11deg);
     margin-top: 10vw;
     font-family: 'Comfortaa';
+    visibility: hidden;
 }
 
 .diagonal-box {
@@ -93,6 +94,24 @@
     cursor: pointer;
     width: 20vw;
     font-family: 'Comfortaa';
+    visibility: hidden;
+}
+
+#join-chat {
+    display: block;
+    border-radius: 2vw;
+    font-size: 70%;
+    border: 0.5vw solid #F89A1E;
+    background-color: #242424;
+    padding: 1%;
+    box-shadow: 0px 4px 10px 0px black;
+    color: #F89A1E;
+    cursor: pointer;
+    width: 60vw;
+    font-family: 'Comfortaa';
+    z-index: 3;
+    margin-top: 25vw;
+    transform: skewY(11deg);
 }
 
 #userInput {
@@ -100,6 +119,7 @@
     border-radius: 2vw;
     border: none;
     font-family: 'Comfortaa';
+    visibility: hidden;
 }
 
 #messageInput {
@@ -108,4 +128,26 @@
     border: none;
     margin: 0vw 1.5vw;
     font-family: 'Comfortaa';
+    visibility: hidden;
+}
+
+#vernissage-id{
+    visibility: hidden;
+}
+
+#link-to-login {
+    display: block;
+    border-radius: 2vw;
+    font-size: 70%;
+    border: 0.5vw solid #F89A1E;
+    background-color: #242424;
+    padding: 1%;
+    box-shadow: 0px 4px 10px 0px black;
+    color: #F89A1E;
+    cursor: pointer;
+    width: 60vw;
+    font-family: 'Comfortaa';
+    z-index: 3;
+    margin-top: 25vw;
+    transform: skewY(11deg);
 }

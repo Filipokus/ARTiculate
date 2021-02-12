@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ARTiculate.Data;
+using ARTiculate.Models;
+using ARTiculateDataAccessLibrary.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,13 +11,26 @@ namespace ARTiculate.Controllers
 {
     public class ExhibitionsController : Controller
     {
-        public IActionResult Index()
+        private IARTiculateRepository ARTiculateRepository;
+
+        public ExhibitionsController(IARTiculateRepository ARTiculateRepository)
         {
-            return View();
+            this.ARTiculateRepository = ARTiculateRepository;
         }
-        public IActionResult Exhibition(/*int id*/)
+
+        public async Task<IActionResult> Index()
         {
-            return View(/*id*/);
+            List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
+            ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
+            return View(exhibitionViewModel);
+        }
+
+        public async Task<IActionResult> Exhibition(int ID)
+        {
+            Exhibition exhibition = await ARTiculateRepository.GetExhibition(ID);
+            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibition);
+
+            return View(viewModel);
         }
     }
 }

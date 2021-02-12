@@ -6,23 +6,15 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-   
     public class ImageModel
     {
-        public ImageModel()
+        public ImageModel(IFormFile imageFile, string filename)
         {
-
-        }
-
-        public ImageModel(string title, IFormFile imageFile)
-        {
-            Title = title;
-            ImageName = title;
             ImageFile = imageFile;
-
+            FileName = filename;
         }
-        public string Title { get; set; }    
-        public string ImageName { get; set; }
         public IFormFile ImageFile { get; set; }
+
+        public string FileName { get; set; }
     }
 }

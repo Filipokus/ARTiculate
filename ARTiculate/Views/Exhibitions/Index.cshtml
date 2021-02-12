@@ -1,40 +1,71 @@
-﻿
+﻿@model ExhibitionViewModel
+
 <link rel="stylesheet" href="~/Assets/css/exhibitions.css?v={random string}" />
 <h1>Exhibitions</h1>
+
 
 
 <h2 class="diagonal-h2">Newly added Exhibitions</h2>
 <div class="diagonal-box">
     <div class="straight-div">
-        <div class="carousel-container">
+        <div class="carousel-container" id="active-carousel-content">
             <div class="exhibition-flex">
-                <button class="arrow-left-btn">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
-                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
-                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.NewlyAddedExhibitions[0].Id })'">
+
+                    @for (int i = 0; i < @Model.NewlyAddedExhibitions[0].Exhibition_ArtItem.Count; i++)
+                    {
+                        <img class="romb" src="@Url.Content(string.Format(@Model.NewlyAddedExhibitions[0].Exhibition_ArtItem[i].ArtItems.Picture))" alt="">
+                    }
                 </div>
-                <button class="arrow-right-btn">
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
-            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                <h3>Exhibition Title</h3>
-                <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
+
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { Model.NewlyAddedExhibitions[0].Id })'">
+                <h3>@Model.NewlyAddedExhibitions[0].Title</h3>
+                <p>@Model.NewlyAddedExhibitions[0].Description</p>
             </div>
         </div>
+
+        @for (int i = 1; i < Model.NewlyAddedExhibitions.Count; i++)
+         {
+            <div class="carousel-container">
+                <div class="exhibition-flex">
+                    <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                        <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                    </button>
+                    <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.NewlyAddedExhibitions[i].Id })'">
+                        @for (int j = 0; j < @Model.NewlyAddedExhibitions[i].Exhibition_ArtItem.Count; j++)
+                        {
+                            <img class="romb" src="@Url.Content(string.Format(@Model.NewlyAddedExhibitions[i].Exhibition_ArtItem[j].ArtItems.Picture))" alt="">
+                        }
+
+                    </div>
+                    <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                        <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                    </button>
+                </div>
+
+                <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new {  @Model.NewlyAddedExhibitions[i].Id })'">
+                    <h3>@Model.NewlyAddedExhibitions[i].Title</h3>
+                    <p>@Model.NewlyAddedExhibitions[i].Description</p>
+                </div>
+            </div>
+         }
+
     </div>
 </div>
 
 <h2 class="diagonal-h2">Last chance!</h2>
 <div class="diagonal-box">
     <div class="straight-div">
-        <div class="carousel-container">
+        <div class="carousel-container" id="active-carousel-content">
             <div class="exhibition-flex">
-                <button class="arrow-left-btn">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
                 <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
@@ -43,13 +74,53 @@
                     <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
                 </div>
-                <button class="arrow-right-btn">
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
             <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                <h3>Exhibition Title</h3>
-                <p>Some description About this Beautiful artwork! Click here or on the image to go there! Hadansda nha feaj fiuewan fewan fewn fnew uifn ewn ufnewu fnuewn fuewn ufn uewn fenw ufn euwnf ue.</p>
+                <h3>Exhibition Title 1</h3>
+                <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="exhibition-flex">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                </button>
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+                </div>
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                </button>
+            </div>
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <h3>Exhibition Title 2</h3>
+                <p>Another completely different description about another totally different exhibition!! Click here or on the image to go there!</p>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="exhibition-flex">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                </button>
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+                </div>
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                </button>
+            </div>
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <h3>Exhibition Title 3</h3>
+                <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
             </div>
         </div>
     </div>
@@ -58,9 +129,9 @@
 <h2 class="diagonal-h2">Exhibitions related to #Space</h2>
 <div class="diagonal-box">
     <div class="straight-div">
-        <div class="carousel-container">
+        <div class="carousel-container" id="active-carousel-content">
             <div class="exhibition-flex">
-                <button class="arrow-left-btn">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
                     <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                 </button>
                 <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
@@ -69,12 +140,52 @@
                     <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
                     <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
                 </div>
-                <button class="arrow-right-btn">
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
                     <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
                 </button>
             </div>
             <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
-                <h3>Exhibition Title</h3>
+                <h3>Exhibition Title 1</h3>
+                <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="exhibition-flex">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                </button>
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+                </div>
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                </button>
+            </div>
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <h3>Exhibition Title 2</h3>
+                <p>Another completely different description about another totally different exhibition!! Click here or on the image to go there!</p>
+            </div>
+        </div>
+        <div class="carousel-container">
+            <div class="exhibition-flex">
+                <button class="arrow-left-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
+                </button>
+                <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+                    <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+                </div>
+                <button class="arrow-right-btn" onclick="loadNewContent(this)">
+                    <img class="arrow-right-img" src="~/Assets/Images/back-light-right.png" alt="Next Exhibition" />
+                </button>
+            </div>
+            <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions")'">
+                <h3>Exhibition Title 3</h3>
                 <p>Some description About this Beautiful artwork! Click here or on the image to go there!</p>
             </div>
         </div>

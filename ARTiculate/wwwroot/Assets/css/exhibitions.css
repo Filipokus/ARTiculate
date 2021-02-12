@@ -13,9 +13,10 @@
 
 /*IMAGE GALLERY*/
 
-.carousel-container{
-    margin-top:21vw;
+.carousel-container {
+    margin-top: 21vw;
     width: 80vw;
+    display: none;
 }
 .wrapper {
     position: relative;
@@ -58,12 +59,17 @@
     width: 98vw;
 }
 
+#active-carousel-content{
+    display: initial;
+}
+
 .arrow-left-btn, .arrow-right-btn {
     background-color: transparent;
     outline: none;
     border: none;
     padding: 0;
-    margin:0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .arrow-left-img, .arrow-right-img {

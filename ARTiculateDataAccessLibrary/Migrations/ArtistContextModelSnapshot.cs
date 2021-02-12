@@ -15,7 +15,7 @@ namespace ARTiculateDataAccessLibrary.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.0")
+                .HasAnnotation("ProductVersion", "3.1.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -35,12 +35,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("varchar(1000)")
                         .HasMaxLength(1000);
-
-                    b.Property<int?>("Exhibition_ArtItemArtItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Exhibition_ArtItemExhibitionId")
-                        .HasColumnType("int");
 
                     b.Property<int>("Height")
                         .HasColumnType("int");
@@ -63,8 +57,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ArtistId");
-
-                    b.HasIndex("Exhibition_ArtItemExhibitionId", "Exhibition_ArtItemArtItemId");
 
                     b.ToTable("ArtItems");
                 });
@@ -175,12 +167,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("varchar(1024)")
                         .HasMaxLength(1024);
 
-                    b.Property<int?>("Exhibition_ArtItemArtItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Exhibition_ArtItemExhibitionId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Open")
                         .HasColumnType("bit");
 
@@ -190,8 +176,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Exhibition_ArtItemExhibitionId", "Exhibition_ArtItemArtItemId");
 
                     b.ToTable("Exhibitions");
                 });
@@ -205,6 +189,8 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ExhibitionId", "ArtItemId");
+
+                    b.HasIndex("ArtItemId");
 
                     b.ToTable("Exhibition_ArtItems");
                 });
@@ -296,12 +282,24 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasColumnType("varchar(1024)")
                         .HasMaxLength(1024);
 
+                    b.Property<double>("Duration")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ExhibitionId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LiveLink")
+                        .IsRequired()
                         .HasColumnType("varchar(1000)")
                         .HasMaxLength(1000);
 
                     b.Property<bool>("Open")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Poster")
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -309,6 +307,8 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasMaxLength(100);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ExhibitionId");
 
                     b.ToTable("Vernisages");
                 });
@@ -335,10 +335,6 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .HasForeignKey("ArtistId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ARTiculateDataAccessLibrary.Models.Exhibition_ArtItem", null)
-                        .WithMany("ArtItems")
-                        .HasForeignKey("Exhibition_ArtItemExhibitionId", "Exhibition_ArtItemArtItemId");
                 });
 
             modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.ArtItem_Tag", b =>
@@ -401,11 +397,19 @@ namespace ARTiculateDataAccessLibrary.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Exhibition", b =>
+            modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Exhibition_ArtItem", b =>
                 {
-                    b.HasOne("ARTiculateDataAccessLibrary.Models.Exhibition_ArtItem", null)
-                        .WithMany("Exhibitions")
-                        .HasForeignKey("Exhibition_ArtItemExhibitionId", "Exhibition_ArtItemArtItemId");
+                    b.HasOne("ARTiculateDataAccessLibrary.Models.ArtItem", "ArtItems")
+                        .WithMany("Exhibition_ArtItems")
+                        .HasForeignKey("ArtItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ARTiculateDataAccessLibrary.Models.Exhibition", "Exhibitions")
+                        .WithMany("Exhibition_ArtItem")
+                        .HasForeignKey("ExhibitionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Exhibition_Tag", b =>
@@ -428,6 +432,15 @@ namespace ARTiculateDataAccessLibrary.Migrations
                     b.HasOne("ARTiculateDataAccessLibrary.Models.Artist", "Artist")
                         .WithOne("Link")
                         .HasForeignKey("ARTiculateDataAccessLibrary.Models.Link", "ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ARTiculateDataAccessLibrary.Models.Vernisage", b =>
+                {
+                    b.HasOne("ARTiculateDataAccessLibrary.Models.Exhibition", "Exhibition")
+                        .WithMany()
+                        .HasForeignKey("ExhibitionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using ARTiculate.Data;
 using ARTiculateDataAccessLibrary.Models;
 using ARTiculate.Models;
-using ARTiculateDataAccessLibrary.Models.DTO;
+using Microsoft.AspNetCore.Identity;
+using ARTiculate.Areas.Identity.Data;
 
 namespace ARTiculate.Controllers
 {
@@ -14,58 +15,55 @@ namespace ARTiculate.Controllers
     {
         
         private IARTiculateRepository ARTiculateRepository;
+        private UserManager<ARTiculateUser> userManager;
 
-        public VernissagesController(IARTiculateRepository ARTiculateRepository)
+        public VernissagesController(
+            IARTiculateRepository ARTiculateRepository,
+            UserManager<ARTiculateUser> userManager)
         {
             this.ARTiculateRepository = ARTiculateRepository;
+            this.userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
         {
-            AllVernisagesViewModel allVernisagesViewModel = new AllVernisagesViewModel();
-            List<Vernisage> vernisages = await ARTiculateRepository.GetAllVernisagesOrderedByDate();
+            List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
+            List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
 
-            foreach (var vernisage in vernisages)
-            {
-                VernisageOverviewDTO vernisageSummary = new VernisageOverviewDTO(vernisage);
-                allVernisagesViewModel.ArtistVernisageDTOs.Add(vernisageSummary);
-            }
-
-            return View(allVernisagesViewModel);
+            VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
+           
+            return View(VernisagesViewModel);
         }
 
         public async Task<IActionResult> Vernissage(int ID)
         {
-            
             Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
+            VernisageViewModel viewModel;
 
-            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
-            
+            if (User.Identity.IsAuthenticated)
+            {
+                ARTiculateUser user = await GetCurrentUserAsync();
+                Artist artist = new Artist();
+                artist = ARTiculateRepository.CreateArtistFromARTiculateUser(user);
+                viewModel = new VernisageViewModel(vernisage, artist);
+            }
+            else
+            {
+                viewModel = new VernisageViewModel(vernisage);
+            }
+
             return View(viewModel);
         }
 
-        public async Task<IActionResult> CreateVernissage(Vernisage x)
-        {
-          
-            x.Open = true;
-          
-            int id = await ARTiculateRepository.AddVernisageAsync(x);
-            return RedirectToAction("Vernissage", "Vernissages", new { id = id });
+        private Task<ARTiculateUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
 
-
-        }
 
         public async Task<IActionResult> About(int ID)
         {
             Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
-            VernisageViewModel viewModel = new VernisageViewModel(vernisage);
+            AboutVernisageViewModel viewModel = new AboutVernisageViewModel(vernisage);
 
             return View(viewModel);
-        }
-
-        public IActionResult Create()
-        {
-            return View();
         }
     }
 }

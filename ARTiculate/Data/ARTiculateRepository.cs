@@ -1,239 +1,203 @@
-﻿using ARTiculateDataAccessLibrary.DataAccess;
+﻿using ARTiculate.Areas.Identity.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace ARTiculate.Data
 {
     public class ARTiculateRepository : IARTiculateRepository
     {
-        ArtistContext db;
-
-        #region CONSTRUCT
-        public ARTiculateRepository(ArtistContext context)
+        public Task<Artist> AddArtistAsync(Artist artist)
         {
-            db = context;
-        }
-        /// <summary>
-        /// Ctor for test class to avoid an empty ctor
-        /// </summary>
-        /// <param name="test"></param>
-        public ARTiculateRepository(string test) { }
-
-        #endregion
-
-        #region CREATE
-        /// <summary>
-        /// Adds a object of type Vernisage to db
-        /// </summary>
-        /// <param name="vernisage"></param>
-        /// <returns></returns>
-        public async Task<int> AddVernisageAsync(Vernisage vernisage)
-        {
-            await db.Vernisages.AddAsync(vernisage);
-            db.SaveChanges();
-
-            int id;
-            return id = vernisage.Id;
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Adds an object of type Exhibition to db 
-        /// </summary>
-        /// <param name="exhibition"></param>
-        /// <returns></returns>
-        public async Task<Exhibition> AddExhibitionAsync(Exhibition exhibition)
+        public void AddArtist_VernisageAsync(Artist_Vernisage artist_Vernisage)
         {
-            await db.Exhibitions.AddAsync(exhibition);
-            await db.SaveChangesAsync();
-            return exhibition;
+            throw new NotImplementedException();
+        }
+
+        public Task<ArtItem> AddArtItem(ArtItem artItem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Exhibition> AddExhibitionAsync(Exhibition exhibition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Tag> AddTagAsync(Tag tag)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<int> AddVernisageAndReturnID(Vernisage vernisage, int artistID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Vernisage> AddVernisageAsync(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Adds an object of type Artist to db 
+        /// Creates an Artist object from a ArticulateUser
         /// </summary>
         /// <param name="artist"></param>
         /// <returns></returns>
-        public async Task<Artist> AddArtistAsync(Artist artist)
+        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
         {
-            await db.Artists.AddAsync(artist);
-            await db.SaveChangesAsync();
-            return artist;
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
-        /// </summary>
-        /// <param name="tagname"></param>
-        /// <returns></returns>
-        public async Task<Tag> AddTagAsync(Tag tag)
+        public void CreateArtist_Vernisage(int vernisageId, int artistId)
         {
-            await db.Tags.AddAsync(tag);
-            await db.SaveChangesAsync();
-            return tag;
+            throw new NotImplementedException();
+        }
+
+        public List<Exhibition> CreateListOfExhibitions(List<Exhibition> exhibitionsFromDb)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Vernisage> CreateListOfVernissages(List<Vernisage> vernissagesFromDb)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetActiveVernisages()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Exhibition>> GetAllExhibitionsOrderedByDate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Vernisage>> GetAllVernisagesToCome()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Artist> GetArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<List<Artist>> GetAllArtists()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ArtItem> GetArtItem(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Exhibition> GetExhibition(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Exhibition>> GetExhibitionsFromDbOrderedByDate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
+        {
+            throw new NotImplementedException();
         }
 
         public void GetMockData(ArtistContext db)
         {
             throw new NotImplementedException();
         }
-        #endregion
 
-        #region READ
-
-        //VERNISSAGE
-        /// <summary>
-        /// Method "Get" vernissage, input id and returns a vernissage. 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Vernisage> GetVernisage(int id)
+        public Task<Vernisage> GetVernisage(int id)
         {
-            var vernisage = await db.Vernisages
-              .Include(x => x.Artist_Vernisages)
-              .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
-              .Where(x => x.Id == id)
-              .FirstOrDefaultAsync();
-
-            return vernisage;
-        }
-        
-        /// <summary>
-        /// Returns a List containing all vernissages in db, sorted by date.
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<Vernisage>> GetAllVernisagesOrderedByDate()
-        {
-            var vernisagesDetails = await db.Vernisages
-                .Include(x => x.Artist_Vernisages).ThenInclude(a => a.Artist)
-                .Include(x => x.Vernisage_Tags).ThenInclude(y => y.Tag)
-                .OrderBy(x => x.DateTime).ToListAsync();
-
-            List<Vernisage> vernisages = new List<Vernisage>();
-
-            foreach (var vernisage in vernisagesDetails)
-            {
-                vernisages.Add(vernisage);
-            }
-
-            return vernisages;
-        }
-        
-        /// <summary>
-        /// Returns a list with name and id of all the tags that the slected vernisage holds
-        /// </summary>
-        /// <param name="vernisage"></param>
-        /// <returns></returns>
-        public List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage)
-        {
-            List<Tag> tags = new List<Tag>();
-
-            foreach (var item in vernisage.Vernisage_Tags)
-            {
-                tags.Add(item.Tag);
-            }
-
-            return tags;
+            throw new NotImplementedException();
         }
 
-        //EXHIBITIONS
-        /// <summary>
-        /// Method "Get" exhibition, input id and returns a exhibition.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Exhibition> GetExhibition(int id)
+        public Task<List<Vernisage>> GetVernissagesFromDbOrderedByDate()
         {
-            var exhibition = await db.Exhibitions
-              .Include(x => x.Artist_Exhibitions)
-              .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
-              .Where(x => x.Id == id)
-              .FirstOrDefaultAsync();
-
-            return exhibition;
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Returns a List containing all exhibitions in db, sorted by date.
-        /// </summary>
-        /// <returns></returns>
-        public async Task<List<Exhibition>> GetAllExhibitionsOrderedByDate()
+        public async Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id)
         {
-            var exhibitionDetails = await db.Exhibitions
-                .Include(x => x.Artist_Exhibitions)
-                .Include(x => x.Exhibition_Tags).ThenInclude(y => y.Tag)
-                .OrderBy(x => x.DateTime).ToListAsync();
-
-            List<Exhibition> exhibitions = new List<Exhibition>();
-
-            foreach (var exhibition in exhibitionDetails)
-            {
-                exhibitions.Add(exhibition);
-            }
-
-            return exhibitions;
+            throw new NotImplementedException();
         }
 
-        /// <summary>
-        /// Returns a list with name and id of all the tags that the slected exhibition holds
-        /// </summary>
-        /// <param name="exhibition"></param>
-        /// <returns></returns>
-        public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
+        public async Task<ArtItem> UpdateArtItem(ArtItem artItem)
         {
-            List<Tag> tags = new List<Tag>();
-
-            foreach (var item in exhibition.Exhibition_Tags)
-            {
-                tags.Add(item.Tag);
-            }
-
-            return tags;
+            throw new NotImplementedException();
         }
 
-
-
-
-
-        /// <summary>
-        /// Returns an artist from the db by taking the id (int) as input.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Artist> GetArtist(int id)
+        public Task<Exhibition> UpdateExhibition(Exhibition exhibition)
         {
-            var artist = await db.Artists
-               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-               .Include(x => x.Artist_Vernisages)
-               .Include(x => x.Artist_Exhibitions)
-               .Include(x => x.Artist_Tags)
-               .Where(x => x.Id == id)
-               .FirstOrDefaultAsync();
-
-            return artist;
+            throw new NotImplementedException();
         }
-        
 
-        
+        public Task<Vernisage> UpdateVernissage(Vernisage vernissage)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task CreateArtist_Exhibition(int exhibitionId, int artistId)
+        {
+            throw new NotImplementedException();
+        }
 
+        public Task AddArtist_ExhibitionAsync(Artist_Exhibition artist_Exhibition)
+        {
+            throw new NotImplementedException();
+        }
 
-        #endregion
+        public Task<List<Vernisage>> GetLiveVernisages()
+        {
+            throw new NotImplementedException();
+        }
 
-        #region UPDATE
+        public Task<Exhibition_ArtItem> AddArtItemToExhibition(Exhibition_ArtItem exhibition_ArtItem)
+        {
+            throw new NotImplementedException();
+        }
 
-        #endregion
+        public Task<List<ArtItem>> GetArtItemsFromArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-        #region DELETE
+        public Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            throw new NotImplementedException();
+        }
 
-        #endregion
-
-          
-      
+        public Task CreateExhibition_ArtItemsAsync(List<ArtItem> artItems, int exhibitionId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

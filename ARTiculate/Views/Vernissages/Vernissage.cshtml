@@ -1,4 +1,8 @@
-﻿@model ARTiculate.Models.VernisageViewModel
+﻿@using Microsoft.AspNetCore.Identity
+@using ARTiculate.Areas.Identity.Data
+@inject SignInManager<ARTiculateUser> SignInManager
+@inject UserManager<ARTiculateUser> userManager
+@model ARTiculate.Models.VernisageViewModel
 
 @{
     ViewData["Title"] = "Vernissage";
@@ -12,18 +16,32 @@
     <iframe class="videostream" src="@Model.Vernisage.LiveLink" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <h2 class="diagonal-h2">Live Chat</h2>
+
 <div class="diagonal-box">
-    <div id="chat-textbox" class="row">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <button id="join-chat">Join chat!</button>
+        <div id="chat-textbox" class="row">
+            <div class="col-6">
+                <ul id="messagesList"></ul>
+
+            </div>
         </div>
-    </div>
-    <div class="message-container">
-        <input type="text" id="userInput" placeholder="User" />
-        <input type="text" id="messageInput" placeholder="Write here.." />
-        <input type="button" id="sendButton" value="Send Message" />
-    </div>
+        <div class="message-container">
+            <input type="text" id="userInput" value="@Model.Artist" readonly />
+            <input type="text" id="messageInput" placeholder="Write here.." />
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    }
+    else
+    {
+<form>
+    <button id="link-to-login" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
+</form>
+    }
 </div>
+
+<p id="vernissage-id">@Model.Vernisage.Id</p>
 
 <script src="~/Assets/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/Assets/js/chat.js"></script>

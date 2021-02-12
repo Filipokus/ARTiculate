@@ -45,18 +45,57 @@ function artworkHoverOut(ev) {
 
 //---------About Vernissage when live---------
 
-function makeVernissageLive(node) {
-    let dateLive = node;
-    dateLive.style.backgroundColor = '#D5005E';
-    let dateText = document.getElementById('live-date');
-    dateText.style.color = '#DFDDE4';
-    dateText.innerHTML = 'LIVE NOW 🠮';
-    let liveImg = document.getElementById('live-btn-img');
-    liveImg.style.visibility = 'visible';
-    const urlAction2 = document.getElementById("link-to-live").getAttribute("onClick")
-    console.log(urlAction2)
-    dateLive.setAttribute("onClick", urlAction2);
+
+function makeVernissageLive() {
+
+    let activeOrNot = document.getElementById('activeOrNot')
+    let open = activeOrNot.innerHTML;
+
+    if (open == 'True') {
+        let dateLive = document.getElementById('date-btn');
+        dateLive.style.backgroundColor = '#D5005E';
+        let dateText = document.getElementById('live-date');
+        dateText.style.color = '#DFDDE4';
+        dateText.innerHTML = 'LIVE NOW 🠮';
+        let liveImg = document.getElementById('live-btn-img');
+        liveImg.style.visibility = 'visible';
+        const urlAction2 = document.getElementById("link-to-live").getAttribute("onClick")
+        console.log(urlAction2)
+        dateLive.setAttribute("onClick", urlAction2);
+    }
 }
+
+//------ Carousel on exhibitions index page --------
+function loadNewContent(arrowBtn) {
+
+    let activeCarouselDiv = arrowBtn.parentNode.parentNode
+    let straightDiv = activeCarouselDiv.parentNode;
+    let childrenOfStraightDiv = straightDiv.getElementsByClassName('carousel-container');
+    let numberOfChildren = childrenOfStraightDiv.length;
+
+    for (let i = 0; i < numberOfChildren; i++) {
+        if (activeCarouselDiv === childrenOfStraightDiv[i]) {
+            var carouselDivNumber = i;
+            break;
+        }
+    }
+
+    if (arrowBtn.className === 'arrow-left-btn') {
+        if (carouselDivNumber !== 0) {
+            childrenOfStraightDiv[carouselDivNumber - 1].style.display = 'initial';
+        }
+        else {
+            childrenOfStraightDiv[numberOfChildren - 1].style.display = 'initial';
+        }
+    }
+
+    else {
+        if (carouselDivNumber !== numberOfChildren-1) {
+            childrenOfStraightDiv[carouselDivNumber + 1].style.display = 'initial';
+        }
+        else {
+            childrenOfStraightDiv[0].style.display = 'initial';
+        }
 
 //---------Close up of image---------
 
@@ -108,4 +147,6 @@ function hideImageCloseUp() {
 }
 
 
+    activeCarouselDiv.style.display = 'none';
+}
 
