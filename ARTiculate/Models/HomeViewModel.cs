@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class HomeViewModel
+    public class HomeViewModel:BaseViewModel
     {
         public HomeViewModel(List<Vernisage> futureVernisages=null, List<Vernisage> liveVernisages=null,List<Exhibition> exhibitions=null, List<Artist> artists=null )
         {

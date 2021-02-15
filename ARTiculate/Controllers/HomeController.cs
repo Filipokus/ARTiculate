@@ -41,13 +41,22 @@ namespace ARTiculate.Controllers
         {
             try
             {
-                List<Vernisage> futureVernisages = await aRTiculateRepository.GetAllVernisagesToCome();
+                List<Vernisage> futureVernisages =await aRTiculateRepository.GetAllVernisagesToCome();
                 List<Vernisage> liveVernisages = await aRTiculateRepository.GetLiveVernisages();
                 List<Exhibition> exhibitions = await aRTiculateRepository.GetAllExhibitionsOrderedByDate();
                 List<Artist> artists = await aRTiculateRepository.GetAllArtists();
 
                 HomeViewModel HomeViewModel = new HomeViewModel(futureVernisages, liveVernisages, exhibitions, artists);
                 return View(HomeViewModel);
+                //Task<List<Vernisage>> futureVernisages = aRTiculateRepository.GetAllVernisagesToCome();
+                //Task<List<Vernisage>> liveVernisages = aRTiculateRepository.GetLiveVernisages();
+                //Task<List<Exhibition>> exhibitions = aRTiculateRepository.GetAllExhibitionsOrderedByDate();
+                //Task<List<Artist>> artists = aRTiculateRepository.GetAllArtists();
+                //List<Task> tasks = new List<Task>() {futureVernisages,liveVernisages,exhibitions,artists };
+                //await Task.WhenAll(tasks);
+
+                //HomeViewModel HomeViewModel = new HomeViewModel(futureVernisages.Result, liveVernisages.Result, exhibitions.Result, artists.Result);
+                //return View(HomeViewModel);
             }
             catch (Exception)
             {

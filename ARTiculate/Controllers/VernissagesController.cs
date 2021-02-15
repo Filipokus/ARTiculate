@@ -26,39 +26,21 @@ namespace ARTiculate.Controllers
         }
 
         public async Task<IActionResult> Index()
-        {
-            Task<List<Vernisage>> futureVernisages = ARTiculateRepository.GetAllVernisagesToCome();
-            Task<List<Vernisage>> liveVernisages = ARTiculateRepository.GetLiveVernisages();
-            List<Task> tasks = new List<Task>() { futureVernisages, liveVernisages };
-            await Task.WhenAll(tasks);
-
+        {           
             try
             {
-                List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
-                List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
+                Task<List<Vernisage>> futureVernisages = ARTiculateRepository.GetAllVernisagesToCome();
+                Task<List<Vernisage>> liveVernisages = ARTiculateRepository.GetLiveVernisages();
+                List<Task> tasks = new List<Task>() { futureVernisages, liveVernisages };
+                await Task.WhenAll(tasks);             
 
-                VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
+                VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages.Result, liveVernisages.Result);
                 return View(VernisagesViewModel);
-
             }
             catch (Exception)
             {
                 return RedirectToAction("Error", "Home");
             }
-
-            //List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
-            //List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
-
-            //VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
-
-            //if (VernisagesViewModel.FutureVernisages.Count > 0)
-            //{
-            //    return View(VernisagesViewModel);
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Error", "Home");
-            //}
         }
 
         public async Task<IActionResult> Vernissage(int ID)
