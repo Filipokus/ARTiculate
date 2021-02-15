@@ -234,6 +234,7 @@ header img:hover {
 }
 
 .veilHidden {
+    display: none;
     opacity: 0.0;
     background-color: var(--contrast-color);
     position: fixed;

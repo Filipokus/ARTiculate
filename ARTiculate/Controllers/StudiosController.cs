@@ -42,9 +42,10 @@ namespace ARTiculate.Controllers
         }
 
         
-        public async Task<IActionResult> Studio(int id)       
+        public async Task<IActionResult> Studio(int id)              
         {
-            BaseViewModel viewModel = new BaseViewModel();
+            Artist artist = await ARTiculateRepository.GetArtist(id);
+            StudioViewModel viewModel = new StudioViewModel(artist);
 
             return View(viewModel);
         }
