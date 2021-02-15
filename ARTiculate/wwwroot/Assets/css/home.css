@@ -155,6 +155,22 @@
 
 
 /* || VERNISSAGES, EXHIBITION AND ARTIST SECTIONS || */
+.diagonal-h2{
+    position: relative;
+}
+.diagonal-h2 img{
+    /*transform: skewY(-11 deg);*/
+    height:4vw;
+    /*float: right;*/
+    position: absolute;
+    margin-top: 1vw;
+    margin-left: 2vw;
+}
+.diagonal-h2:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /* Makes content not skewed in the diagonal box*/
 .next-4-content {
     transform: skewY(11deg);
