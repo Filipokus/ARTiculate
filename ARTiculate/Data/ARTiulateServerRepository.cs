@@ -30,7 +30,7 @@ namespace ARTiculate.Data
         }
         #endregion
 
-        public async Task <string> UploadPictureToServer(ImageModel imageModel)
+        public async Task<string> UploadPictureToServer(ImageModel imageModel)
         {
             string serverPath = hostEnvironment.WebRootPath;
             string fileName = Path.GetFileNameWithoutExtension(imageModel.FileName);

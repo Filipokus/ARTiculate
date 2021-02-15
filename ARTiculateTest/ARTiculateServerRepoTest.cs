@@ -75,36 +75,32 @@ namespace ARTiculateTest
             //Assert
             Assert.Equal(expected, actual);
         }
-        //    public async void UploadPictureToServer_ShouldReturnString()
+
+        //[Fact]
+        //public async void UploadPictureToServer_ShouldReturnString()
+        //{
+        //    //Arrange
+
+        //    ArtItem artItem = new ArtItem { Name = "Test", ArtistId = 1, Description = "Hej mer test" };
+
+        //    string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "\\ARTiculate1\\ARTiculate\\wwwroot\\UploadedImages\\CarusellTest2102110329206995.png");
+
+        //    ArtItemViewModel model = new ArtItemViewModel()
         //    {
-        //        //Arrange
+        //        FileName = "TEST",
+        //        ImageFile = (Microsoft.AspNetCore.Http.IFormFile)File.OpenRead(@imgPath),
+        //        ArtItem = artItem
+        //    };
 
-        //        ArtItem artItem = new ArtItem()
-        //        {
-        //            Name = "Test",
-        //            ArtistId = 1,
-        //            Description = "hej mer test"
-        //        };
+        //    ImageModel imageModel = new ImageModel(model.ImageFile, model.ArtItem.Name);
+        //    string expected = "~/UploadedImages/Test";
 
-        //        string imgPath = Path.Combine(Directory.GetCurrentDirectory(), "\\ARTiculate\\wwwroot\\UploadedImages\\GustavFalk2102020505502649.jpg");
+        //    //Act
+        //    string actual = await repo.UploadPictureToServer(imageModel);
+        //    string now = DateTime.Now.ToString("yyMMddhhmmssffff");
 
-        //        ArtItemViewModel imageModel = new ArtItemViewModel()
-        //        {
-        //            FileName = "TEST",
-        //            ImageFile = (Microsoft.AspNetCore.Http.IFormFile)File.OpenRead(@imgPath),
-        //            ArtItem = artItem
-        //        };
-
-        //        string expected = "~/UploadedImages/Test";
-
-
-        //        //Act
-        //        string actual = await repo.UploadPictureToServer(imageModel);
-        //        string now = DateTime.Now.ToString("yyMMddhhmmssffff");
-
-        //        //Assert
-        //        Assert.Equal(actual, expected+now+"jpg");
-        //    }
-
+        //    //Assert
+        //    Assert.Equal(actual, expected + now + "jpg");
+        //}
     }
 }
