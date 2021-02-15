@@ -34,7 +34,7 @@ else
 
                 <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { Model.NewlyAddedExhibitions[0].Id })'">
                     <h3>@Model.NewlyAddedExhibitions[0].Title</h3>
-                    <p id="description">@Model.NewlyAddedExhibitions[0].Description</p>
+                    <p class="description">@Model.NewlyAddedExhibitions[0].Description</p>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@ else
 
                     <div class="exhibition-info" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new {  @Model.NewlyAddedExhibitions[i].Id })'">
                         <h3>@Model.NewlyAddedExhibitions[i].Title</h3>
-                        <p id="description">@Model.NewlyAddedExhibitions[i].Description</p>
+                        <p class="description">@Model.NewlyAddedExhibitions[i].Description</p>
                     </div>
                 </div>
             }

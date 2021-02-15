@@ -79,26 +79,47 @@ function loadNewContent(arrowBtn) {
             break;
         }
     }
+        activeCarouselDiv.style.display = 'none';
 
     if (arrowBtn.className === 'arrow-left-btn') {
         if (carouselDivNumber !== 0) {
             childrenOfStraightDiv[carouselDivNumber - 1].style.display = 'initial';
+            shortenDescription(childrenOfStraightDiv, carouselDivNumber -1)
         }
         else {
             childrenOfStraightDiv[numberOfChildren - 1].style.display = 'initial';
+            shortenDescription(childrenOfStraightDiv, numberOfChildren - 1)
         }
     }
 
     else {
         if (carouselDivNumber !== numberOfChildren - 1) {
             childrenOfStraightDiv[carouselDivNumber + 1].style.display = 'initial';
+            shortenDescription(childrenOfStraightDiv, carouselDivNumber + 1)
         }
         else {
             childrenOfStraightDiv[0].style.display = 'initial';
+            shortenDescription(childrenOfStraightDiv, 0)
         }
         activeCarouselDiv.style.display = 'none';
     }
 }
+
+function shortenDescription(childrenOfStraightDiv, carouselDivNumber) {
+
+    let description = childrenOfStraightDiv[carouselDivNumber].childNodes[3].childNodes[3].textContent
+    let fulldescription = description
+    let shortdescription = truncate(fulldescription, 100)
+
+    if (fulldescription.length > 100) {
+        childrenOfStraightDiv[carouselDivNumber].childNodes[3].childNodes[3].textContent = shortdescription
+    }
+}
+
+function truncate(str, n) {
+    return (str.length > n) ? str.substr(0, n - 1) + '...' : str;
+};
+
 
 //---------Close up of image---------//
 

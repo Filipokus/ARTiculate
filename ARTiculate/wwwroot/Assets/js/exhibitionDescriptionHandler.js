@@ -1,9 +1,9 @@
 ﻿
-const fulldescription = document.querySelector('#description').textContent
+const fulldescription = document.getElementsByClassName('description')[0].textContent 
 let shortdescription = truncate(fulldescription, 111)
 
 if (fulldescription.length > 111) {
-    document.getElementById('description').textContent = shortdescription
+    document.getElementsByClassName('description')[0].textContent = shortdescription
 }
 
 function truncate(str, n) {
