@@ -41,9 +41,9 @@ namespace ARTiculate.Controllers
         {
 
             //aRTiculateRepository.GetMockData(_db);
+            BaseViewModel viewModel = new BaseViewModel();
 
-
-            return View();
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
