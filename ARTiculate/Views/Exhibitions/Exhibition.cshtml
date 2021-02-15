@@ -15,7 +15,7 @@
 
 @foreach (var artist in Model.Exhibition.Artist_Exhibitions)
 {
-    <h2 class="diagonal-h2">@artist.Artist</h2>
+    <h2 class="diagonal-h2" onclick="location.href='@Url.Action("Studio", "Studios")'">@artist.Artist</h2>
 }
 
 <div class="diagonal-box">
