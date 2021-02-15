@@ -4,6 +4,7 @@
     }
 
     #mobile-only{
-        display: contents;
+        display: block;
+        align-self: center;
     }
 }
