@@ -40,7 +40,23 @@ namespace ARTiculate.Controllers
         public async Task<IActionResult> Index()
         {
 
-            //aRTiculateRepository.GetMockData(_db);
+            List<Vernisage> futureVernisages = await aRTiculateRepository.GetAllVernisagesToCome();
+            List<Vernisage> liveVernisages = await aRTiculateRepository.GetLiveVernisages();
+            List<Exhibition> exhibitions = await aRTiculateRepository.GetAllExhibitionsOrderedByDate();
+            List<Artist> artists = await aRTiculateRepository.GetAllArtists();
+
+
+            //TODO Förbättra (clean code)
+            if (futureVernisages.Count > 0 && liveVernisages.Count>0 && exhibitions.Count>0 && artists.Count>0)
+            {
+                HomeViewModel HomeViewModel = new HomeViewModel(futureVernisages, liveVernisages, exhibitions, artists);
+
+                return View(HomeViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Error", "Home");
+            }
 
 
             return View();
