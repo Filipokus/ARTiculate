@@ -489,7 +489,20 @@ namespace ARTiculate.Data
             return listOfExhibitions;
         }
 
-      
+        public async Task<List<ArtItem>> GetArtItemsFromExhibition(int id)
+        {
+            List<Exhibition_ArtItem> exhibition_ArtItems = await db.Exhibition_ArtItems
+            .Include(x => x.ArtItems)
+            .Where(x => x.ExhibitionId == id).ToListAsync();
+
+            List<ArtItem> artItems = new List<ArtItem>();
+            foreach (Exhibition_ArtItem x in exhibition_ArtItems)
+            {
+                artItems.Add(x.ArtItems);
+            }
+
+            return artItems;
+        }
 
 
         /// <summary>
@@ -679,20 +692,6 @@ namespace ARTiculate.Data
             return artItems;
         }
 
-        public async Task<List<ArtItem>> GetArtItemsFromExhibition(int id)
-        {
-            List<Exhibition_ArtItem> exhibition_ArtItems = await db.Exhibition_ArtItems
-            .Include(x => x.ArtItems)
-            .Where(x => x.ExhibitionId == id).ToListAsync();
-
-            List<ArtItem> artItems = new List<ArtItem>();
-            foreach(Exhibition_ArtItem x in exhibition_ArtItems)
-            {
-                artItems.Add(x.ArtItems);
-            }
-            
-            return artItems;
-        }
 
 
         public Tag GetTagByName(string tagToSearch)
