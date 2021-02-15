@@ -133,5 +133,11 @@ namespace ARTiculate.Areas.Identity.Pages.Account
             // If we got this far, something failed, redisplay form
             return Page();
         }
+
+        public string RandomizedController { get; set; } = "Exhibitions";
+
+        public string RandomizedAction { get; set; } = "Exhibition";
+
+        public int RandomizedId { get; set; } = 1;
     }
 }
