@@ -10,6 +10,10 @@
     <title>@ViewData["Title"] - ARTiculate</title>
     <link href="~/Assets/css/reset.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Assets/css/site.css?v={random string}" />
+    @RenderSection("StyleSheets", required: false)
+    <link rel="stylesheet" href="~/Assets/css/responsivity.css?v={random string}" />
+
+
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 </head>
@@ -67,6 +71,8 @@
         </nav>
     </header>
     <div class="container">
+        <h2 id="mobile-only">Only avaliable on your mobile for the moment.</h2>
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

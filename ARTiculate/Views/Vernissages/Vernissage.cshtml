@@ -7,7 +7,10 @@
 @{
     ViewData["Title"] = "Vernissage";
 }
-<link rel="stylesheet" href="~/Assets/css/vernissage.css?v={random string}" />
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/vernissage.css?v={random string}" />
+}
+
 <div class="live-title">
     <h1>@Model.Vernisage.Title</h1>
     <img class="live-btn-img" src="~/Assets/Images/Livebutton.png">
@@ -34,10 +37,10 @@
         </div>
     }
     else
-    {      
-<form>
-    <button id="link-to-login" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
-</form>
+    {
+        <form>
+            <button id="link-to-login" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
+        </form>
     }
 </div>
 

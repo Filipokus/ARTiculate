@@ -1,0 +1,9 @@
+﻿@media (min-width: 640px){
+    main{
+        display: none;
+    }
+
+    #mobile-only{
+        display: contents;
+    }
+}

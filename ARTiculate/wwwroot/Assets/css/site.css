@@ -18,6 +18,9 @@
     font-family: 'Fragmentcore';
     src: url('/Assets/Fonts/Fragmentcore.otf');
 }
+#mobile-only {
+    display: none;
+}
 
 html, body {
     height: 100%;
