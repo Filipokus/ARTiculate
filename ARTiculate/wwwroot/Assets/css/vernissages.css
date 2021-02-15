@@ -193,5 +193,7 @@
     font-size: 3vw;
     display: flex;
     flex-direction: row;
-   
-   }
+   justify-content: space-around;
+   padding-top: 2vw;
+  
+  }
