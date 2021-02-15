@@ -112,7 +112,7 @@ namespace ARTiculate.Areas.Identity.Pages.Account
 
                     Artist artist = new Artist();
                     artist = ARTiculateRepository.CreateArtistFromARTiculateUser(user);
-                    var newArtist = ARTiculateRepository.AddArtistAsync(artist);
+                    var newArtist = await ARTiculateRepository.AddArtistAsync(artist);
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {

@@ -22,7 +22,7 @@ namespace ARTiculate.Controllers
         {
             List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
             ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
-            if (exhibitionViewModel.Exhibitions.Count > 0 && exhibitionViewModel.ExhibitionsByTagName.Count > 0 && exhibitionViewModel.NewlyAddedExhibitions.Count > 0 )
+            if (exhibitionViewModel.Exhibitions.Count > 0  && exhibitionViewModel.NewlyAddedExhibitions.Count > 0) //&& exhibitionViewModel.ExhibitionsByTagName.Count > 0)
             {
                 return View(exhibitionViewModel);
             }
@@ -34,8 +34,12 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Exhibition(int ID)
         {
-            Exhibition exhibition = await ARTiculateRepository.GetExhibition(ID);
-            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibition);
+            Task<Exhibition> exhibitionTask = ARTiculateRepository.GetExhibition(ID);
+            Task<List<ArtItem>> artItemTask = ARTiculateRepository.GetArtItemsFromExhibition(ID);
+            List<Task> tasks = new List<Task>() { exhibitionTask, artItemTask };
+            await Task.WhenAll(tasks);
+
+            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibitionTask.Result, artItemTask.Result);
 
             return View(viewModel);
         }

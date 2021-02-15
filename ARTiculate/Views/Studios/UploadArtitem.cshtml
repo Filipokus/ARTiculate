@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "UploadArtitem";
 }
-<link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+}
+
 <div class="create-title">
     <h1>Create vernissage</h1>
 </div>
@@ -14,31 +18,31 @@
 
         @using (Html.BeginForm("UploadArtitem", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-        <form id="create-form">
-            <div class="input-item" id="title">
-                <h3>Name of Artwork</h3>
-                @Html.TextBoxFor(m => m.ArtItem.Name)
-            </div>
-            <div class="input-item" id="image-upload">
-                <h3>Image File</h3>
-                @Html.EditorFor(m => m.ImageFile)
-            </div>
-            <div class="input-item" id="description-box">
-                <h3>Description</h3>
-                @Html.TextAreaFor(m => m.ArtItem.Description)
-            </div>
-            <div class="input-item" id="tags">
-                <h3>Tag your artwork!</h3>
-                @Html.TextAreaFor(m => m.Tags)
-            </div>
-            <div class="input-item" id="youtube-link">
-                @Html.HiddenFor(m => m.Artist.Id, Model.ArtistId)
-            </div>
-            <div class="input-item" id="submit">
-                <input type="submit" id="submit-btn" name="input-submit" value="Upload artwork" />
-            </div>
+            <form id="create-form">
+                <div class="input-item" id="title">
+                    <h3>Name of Artwork</h3>
+                    @Html.TextBoxFor(m => m.ArtItem.Name)
+                </div>
+                <div class="input-item" id="image-upload">
+                    <h3>Image File</h3>
+                    @Html.EditorFor(m => m.ImageFile)
+                </div>
+                <div class="input-item" id="description-box">
+                    <h3>Description</h3>
+                    @Html.TextAreaFor(m => m.ArtItem.Description)
+                </div>
+                <div class="input-item" id="tags">
+                    <h3>Tag your artwork!</h3>
+                    @Html.TextAreaFor(m => m.Tags)
+                </div>
+                <div class="input-item" id="youtube-link">
+                    @Html.HiddenFor(m => m.Artist.Id, Model.ArtistId)
+                </div>
+                <div class="input-item" id="submit">
+                    <input type="submit" id="submit-btn" name="input-submit" value="Upload artwork" />
+                </div>
 
-        </form>
+            </form>
         }
     </div>
 </div>

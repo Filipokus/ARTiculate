@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class CreateVernissageViewModel
+    public class CreateVernissageViewModel: BaseViewModel
     {
         public CreateVernissageViewModel()
         {

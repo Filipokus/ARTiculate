@@ -1,7 +1,9 @@
 ﻿@model MyStudioViewModel
 
+@section StyleSheets{
+    <link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
+}
 
-<link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
 <script src="\Assets\js\studio.js"></script>
 
 <div id="imageCloseUp-container">
@@ -105,35 +107,35 @@
                 </div>
             </div>
 
-                    <div id="private-folder">
-                        <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
-                            <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
-                            <div class="studio-content-container">
-                                <h2 class="exhibition-name">Private</h2>
-                            </div>
-                            <img class="lock" src="~/Assets/Images/padlock.png" alt="Lock Icon" />
-                        </button>
-                        <div class="folder-container">
-                            <div class="arrow-up"></div>
-                            <div class="folder-items">
-                                <div class="open-art-item">
-                                    <button class="studio-content-btn">
-                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
-                                    </button>
-                                </div>
-                                <div class="open-art-item">
-                                    <button class="studio-content-btn">
-                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
-                                    </button>
-                                </div>
-                                <div class="open-art-item">
-                                    <button class="studio-content-btn">
-                                        <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
-                                    </button>
-                                </div>
-                            </div>
+            <div id="private-folder">
+                <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                    <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+                    <div class="studio-content-container">
+                        <h2 class="exhibition-name">Private</h2>
+                    </div>
+                    <img class="lock" src="~/Assets/Images/padlock.png" alt="Lock Icon" />
+                </button>
+                <div class="folder-container">
+                    <div class="arrow-up"></div>
+                    <div class="folder-items">
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
+                        </div>
+                        <div class="open-art-item">
+                            <button class="studio-content-btn">
+                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
         </div>
 
         <div class="divider div-transparent"></div>

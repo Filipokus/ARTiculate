@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class AboutVernisageViewModel
+    public class AboutVernisageViewModel: BaseViewModel
     {
         public Vernisage Vernisage { get; set; }
         public List<Artist> ListOfArtists { get; set; } = new List<Artist>();
