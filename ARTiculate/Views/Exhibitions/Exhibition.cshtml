@@ -13,6 +13,10 @@
     <h1>@Model.Exhibition.Title</h1>
 </div>
 
+<div id="description-box">
+    <p>@Model.Exhibition.Description</p>
+</div>
+
 @foreach (var artist in Model.Exhibition.Artist_Exhibitions)
 {
     <h2 class="diagonal-h2">@artist.Artist</h2>
@@ -22,7 +26,7 @@
     <div class="wrapper">
         @foreach (var artitem in Model.Artitems)
         {
-            <img class="romb" src="@Url.Content(string.Format(artitem.Picture))" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="@Url.Content(string.Format(artitem.Picture))" alt="@artitem.Description,@artitem.Name" onclick="viewImageCloseUp(this)">
         }
     </div>
 

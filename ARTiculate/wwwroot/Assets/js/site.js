@@ -114,6 +114,13 @@ function loadNewContent(arrowBtn) {
         image.classList.add('shownImage');
         imagebox.prepend(image);
 
+
+        let artDescription = document.getElementsByClassName("artDescription");
+        let artTitle = document.getElementsByClassName("artTitle");
+        let string = ev.alt.split(",");
+        artDescription[0].innerHTML = string[0];
+        artTitle[0].innerHTML = string[1];
+
         //skapar stäng-knapp
         let close = document.createElement("img");
         close.src = "/Assets/Images/close.png";

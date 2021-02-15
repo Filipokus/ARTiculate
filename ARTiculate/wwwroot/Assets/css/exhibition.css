@@ -30,6 +30,10 @@
     margin-bottom: -52%;
     transform: scale(1);
     transition: all 0.25s;
+    width: 30vw;
+    height: 30vw;
+    overflow: hidden;
+    object-fit: cover;
     max-width: 100%;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
@@ -41,6 +45,11 @@
 .romb:hover {
     z-index: 2;
     transform: scale(1.25)
+}
+
+#description-box p{
+    margin-top: 5vw;
+    text-align: center;
 }
 
  
