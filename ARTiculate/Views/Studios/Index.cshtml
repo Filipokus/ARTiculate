@@ -15,9 +15,9 @@
         <div class="left4">
             @if (SignInManager.IsSignedIn(User))
             {
-                <button onclick="location.href = '@Url.Action("MyStudio","Studios")'">TO MY STUDIO</button>
+                <button id="to-my-studio" onclick="location.href = '@Url.Action("MyStudio","Studios")'"><p>TO MY STUDIO</p></button>
             }
-            @for (int i = 0; i < 5; i++)
+            @for (int i = 0; i < 4; i++)
             {
 
                 <button class="next-4" onclick="location.href='@Url.Action("Studio","Studios", new { Model.Artists[i].Id })'">
