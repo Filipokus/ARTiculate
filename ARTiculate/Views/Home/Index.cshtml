@@ -1,44 +1,43 @@
-﻿<link rel="stylesheet" href="~/Assets/css/home.css?v={random string}" />
+﻿@model ARTiculate.Models.BaseViewModel;
+
+@section StyleSheets{
+    <link rel="stylesheet" href="~/Assets/css/home.css?v={random string}" />
+}
 
 
-<div class="diagonal-box" id="hero_div">
-    <div id="hero_header">
-        <h1>WELCOME TO <br /> ARTiculate</h1>
-    </div>
-    
+<div class="diagonal-box" @*id="hero_div"*@>
+    @*<div id="hero_header">
+            <h1>WELCOME TO <br /> ARTiculate</h1>
+        </div>*@
+
     <h2 class="diagonal-h2" id="slogan">Where artists and visitors meet</h2>
-    <div id="section_divs">
-        
-         <div class="section_div">
-                <button class="section_btn" id="btn_vernissages" onclick="location.href='@Url.Action("Index", "Vernissages")'"> Vernissages </button>
-                <p class="section_info">Meet the Artists and chat in realtime</p>
-            </div>
-         
+    <div class="straight-div">
 
-        
-        
-
-
-        <div class="section_div">
-            <p class="section_info">Enjoy well put together exhibitions during a limited time.</p>
-            <button class="section_btn" id="btn_exhibitions" onclick="location.href='@Url.Action("Index", "Exhibitions")'"> Exhibitions </button>
+        <div class="button-div">
+            <button class="section-btn" id="btn_vernissages" onclick="location.href='@Url.Action("Index", "Vernissages")'"> Vernissages </button>
+            <p class="section-info">Meet the Artists and chat in realtime</p>
         </div>
 
-        <div class="section_div">
-            <button class="section_btn" id="btn_artists" onclick="location.href='@Url.Action("Index", "Studios")'"> Studios </button>
-            <p class="section_info">A community for Artists - let the creative juices flow!</p>
+        <div class="button-div">
+            <p class="section-info">Enjoy well put together exhibitions during a limited time.</p>
+            <button class="section-btn" id="btn_exhibitions" onclick="location.href='@Url.Action("Index", "Exhibitions")'"> Exhibitions </button>
         </div>
 
-        <button id="surprise_btn" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'"> Surprise me! </button>
+        <div class="button-div">
+            <button class="section-btn" id="btn_artists" onclick="location.href='@Url.Action("Index", "Studios")'"> Studios </button>
+            <p class="section-info">A community for Artists - let the creative juices flow!</p>
+        </div>
+
+        <button class="surprise-btn" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { ID = 1 })'"> Surprise me! </button>
 
     </div>
 </div>
 
-<h2 class="diagonal-h2">Vernissages</h2>
+<h2 class="diagonal-h2" onclick="location.href='@Url.Action("Index", "Vernissages")'">Vernissages<img src="~/Assets/Images/next.png" alt="See more vernissages" /></h2>
 <div class="diagonal-box">
     <div class="next-4-content">
         <div class="left4">
-            
+
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new {Id = 1})'">
                 <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
@@ -54,12 +53,12 @@
                 <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                     <h3>VERNISSAGE</h3>
                     <p>IDAG</p>
-                           
-                        <p>Artist</p>
-                            
+
+                    <p>Artist</p>
+
                 </div>
             </button>
-                
+
         </div>
         <div class="right4">
             <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new {Id = 3})'">
@@ -86,7 +85,7 @@
     </div>
 </div>
 
-<h2 class="diagonal-h2"> Exhibitions </h2>
+<h2 class="diagonal-h2" onclick="location.href='@Url.Action("Index", "Exhibitions")'">Exhibitions<img src="~/Assets/Images/next.png" alt="See more exhibitions" /></h2>
 <div class="diagonal-box">
     <div class="next-4-content">
         <div class="left4">
@@ -128,7 +127,7 @@
     </div>
 </div>
 
-<h2 class="diagonal-h2"> Artists </h2>
+<h2 class="diagonal-h2" onclick="location.href='@Url.Action("Index", "Studios")'">Artists<img src="~/Assets/Images/next.png" alt="See more artists" /></h2>
 <div class="diagonal-box">
     <div class="next-4-content">
         <div class="left4">

@@ -1,6 +1,9 @@
 ﻿@model ARTiculate.Models.ExhibitionViewModelOverview;
 
-<link rel="stylesheet" href="~/Assets/css/exhibition.css?v={random string}" />
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/exhibition.css?v={random string}" />
+}
+
 
 <div id="imageCloseUp-container">
     <div id="artworkInfo" class="hideInfo">
@@ -15,7 +18,7 @@
 
 @foreach (var artist in Model.Exhibition.Artist_Exhibitions)
 {
-    <h2 class="diagonal-h2">@artist.Artist</h2>
+    <h2 class="diagonal-h2" onclick="location.href='@Url.Action("Studio", "Studios")'">@artist.Artist</h2>
 }
 
 <div class="diagonal-box">

@@ -1,4 +1,5 @@
-﻿//---------Menu---------
+﻿//---------Menu---------//
+
 function hideOrShowMenu() {
     let menuOptions = document.getElementById('menu');
     if (menuOptions.style.display !== 'block') {
@@ -15,7 +16,7 @@ function menuHoverIn(node) {
     if (link.tagName !== 'A') {
         link = node.firstChild.nextSibling
     }
-    link.style.color = '#F89A1E';
+    link.style.color = 'var(--main-bg-color)';
 }
 
 function menuHoverOut(node) {
@@ -23,10 +24,10 @@ function menuHoverOut(node) {
     if (link.tagName !== 'A') {
         link = node.firstChild.nextSibling
     }
-    link.style.color = '#DFDDE4';
+    link.style.color = 'var(--contrast-color)';
 }
 
-//---------Vernissages Overview page---------
+//---------Vernissages Overview page---------//
 
 function artworkHoverIn(ev) {
     let btn = ev.parentNode
@@ -42,9 +43,7 @@ function artworkHoverOut(ev) {
     btn.style.cursor = "default";
 }
 
-
-//---------About Vernissage when live---------
-
+//---------About Vernissage when live---------//
 
 function makeVernissageLive() {
 
@@ -65,7 +64,8 @@ function makeVernissageLive() {
     }
 }
 
-//------ Carousel on exhibitions index page --------
+//------ Carousel on exhibitions index page --------//
+
 function loadNewContent(arrowBtn) {
 
     let activeCarouselDiv = arrowBtn.parentNode.parentNode
@@ -99,54 +99,55 @@ function loadNewContent(arrowBtn) {
         activeCarouselDiv.style.display = 'none';
     }
 }
-    //---------Close up of image---------
 
-    function viewImageCloseUp(ev) {
-        //skapar kopia av bilden
-        let image = document.createElement("img");
-        image.src = ev.src;
+//---------Close up of image---------//
 
-        let veil = document.getElementById("veil");
-        let imagebox = document.getElementById("imageCloseUp-container");
-        let artInfo = document.getElementById("artworkInfo");
+function viewImageCloseUp(ev) {
+    //skapar kopia av bilden
+    let image = document.createElement("img");
+    image.src = ev.src;
 
-        //lägger in bilden i veil
-        image.classList.add('shownImage');
-        imagebox.prepend(image);
+    let veil = document.getElementById("veil");
+    let imagebox = document.getElementById("imageCloseUp-container");
+    let artInfo = document.getElementById("artworkInfo");
 
-        //skapar stäng-knapp
-        let close = document.createElement("img");
-        close.src = "/Assets/Images/close.png";
-        close.setAttribute("onclick", "hideImageCloseUp();");
-        close.classList.add('close');
-        imagebox.prepend(close);
+    //lägger in bilden i veil
+    image.classList.add('shownImage');
+    imagebox.prepend(image);
 
-        //Visar veil
-        veil.classList.remove('veilHidden');
-        veil.classList.add('veilShowing');
+    //skapar stäng-knapp
+    let close = document.createElement("img");
+    close.src = "/Assets/Images/close.png";
+    close.setAttribute("onclick", "hideImageCloseUp();");
+    close.classList.add('close');
+    imagebox.prepend(close);
 
-        //Visar info
-        artInfo.classList.remove('hideInfo');
-        artInfo.classList.add('showInfo');
-    }
+    //Visar veil
+    veil.classList.remove('veilHidden');
+    veil.classList.add('veilShowing');
 
-    function hideImageCloseUp() {
-        let veil = document.getElementById("veil");
-        let imagebox = document.getElementById("imageCloseUp-container");
-        let artInfo = document.getElementById("artworkInfo");
+    //Visar info
+    artInfo.classList.remove('hideInfo');
+    artInfo.classList.add('showInfo');
+}
 
-        //Tar bort bilden
-        imagebox.removeChild(imagebox.childNodes[0]);
-        imagebox.removeChild(imagebox.childNodes[0]);
+function hideImageCloseUp() {
+    let veil = document.getElementById("veil");
+    let imagebox = document.getElementById("imageCloseUp-container");
+    let artInfo = document.getElementById("artworkInfo");
 
-        //Gömmer veil
-        veil.classList.remove('veilShowing');
-        veil.classList.add('veilHidden');
+    //Tar bort bilden
+    imagebox.removeChild(imagebox.childNodes[0]);
+    imagebox.removeChild(imagebox.childNodes[0]);
 
-        //Gömmer Info
-        artInfo.classList.remove('showInfo');
-        artInfo.classList.add('hideInfo');
-    }
+    //Gömmer veil
+    veil.classList.remove('veilShowing');
+    veil.classList.add('veilHidden');
+
+    //Gömmer Info
+    artInfo.classList.remove('showInfo');
+    artInfo.classList.add('hideInfo');
+}
 
 
 

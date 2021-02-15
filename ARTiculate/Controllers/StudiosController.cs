@@ -43,8 +43,10 @@ namespace ARTiculate.Controllers
 
         
         public async Task<IActionResult> Studio(int id)       
-        {            
-            return View();
+        {
+            BaseViewModel viewModel = new BaseViewModel();
+
+            return View(viewModel);
         }
 
         [Authorize]

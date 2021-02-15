@@ -1,14 +1,27 @@
-﻿.diagonal-box {
-    background-color: #242424;
-    transform: skewY(-11deg);
-    box-shadow: 0 0.3vw 3vw 2vw #362D26;
+﻿/* || ARTIST NAMES || */
+
+.diagonal-h2{
+    margin: 3vw;
+}
+    .diagonal-h2:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+/* END OF ARTIST NAMES */
+
+/* || DIAGONAL BOX ||*/
+.diagonal-box {
+    /*background-color: #242424;
+    transform: skewY(-11deg);*/
+    /*box-shadow: 0 0.3vw 3vw 2vw #362D26;*/
     padding: 4vw;
     padding-top: 8vw;
     padding-bottom: 22vw;
     margin-bottom: 15vw;
 }
+/* END OF DIAGONAL BOX */
 
-/*IMAGE GALLERY*/
+/* || IMAGE GALLERY || */
 .wrapper {
     position: relative;
     flex-grow: 1;
@@ -42,5 +55,5 @@
     z-index: 2;
     transform: scale(1.25)
 }
-
+/* END OF IMAGE GALLERY */
  

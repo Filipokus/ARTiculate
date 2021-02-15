@@ -1,23 +1,26 @@
 ﻿@model VernisagesViewModel
 
-<link rel="stylesheet" href="~/Assets/css/vernissages.css?v={random string}" />
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/vernissages.css?v={random string}" />
+}
+
 <h1>Vernissages</h1>
 
 
 @foreach (var vernisage in Model.LiveVernisages)
 {
-<button class="live-btn" onclick="location.href='@Url.Action("Vernissage", "Vernissages", new { vernisage.Id })'">
-    <div class="live-container">
-        <img class="live-btn-img" src="Assets/Images/Livebutton.png">
-        <div class="live-txt">
-            <h2>@vernisage.Title</h2>
-            @foreach (var artist in vernisage.Artist_Vernisages)
-            {
-            <h3>@artist.Artist</h3>
-            }
+    <button class="live-btn" onclick="location.href='@Url.Action("Vernissage", "Vernissages", new { vernisage.Id })'">
+        <div class="live-container">
+            <img class="live-btn-img" src="Assets/Images/Livebutton.png">
+            <div class="live-txt">
+                <h2>@vernisage.Title</h2>
+                @foreach (var artist in vernisage.Artist_Vernisages)
+                {
+                    <h3>@artist.Artist</h3>
+                }
+            </div>
         </div>
-    </div>
-</button>
+    </button>
 
 }
 
@@ -38,10 +41,10 @@
                         <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                             <h3>@Model.FutureVernisages[i].Title</h3>
                             <p>@Model.FutureVernisages[i].DateTime</p>
-                                @foreach (var artist in Model.FutureVernisages[i].Artist_Vernisages)
-                                {
-                                  <p>@artist.Artist</p> 
-                                }
+                            @foreach (var artist in Model.FutureVernisages[i].Artist_Vernisages)
+                            {
+                                <p>@artist.Artist</p>
+                            }
                         </div>
                     </button>
                 }
@@ -52,24 +55,24 @@
             {
                 if (i % 2 != 0 && i < 5)
                 {
-                <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.FutureVernisages[i].Id })'">
-                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                        <h3>@Model.FutureVernisages[i].Title</h3>
-                        <p>@Model.FutureVernisages[i].DateTime</p>
+                    <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.FutureVernisages[i].Id })'">
+                        <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <h3>@Model.FutureVernisages[i].Title</h3>
+                            <p>@Model.FutureVernisages[i].DateTime</p>
                             @foreach (var artist in Model.FutureVernisages[i].Artist_Vernisages)
                             {
                                 <p>@artist.Artist</p>
                             }
-                    </div>
-                </button>
+                        </div>
+                    </button>
 
                 }
             }
         </div>
     </div>
 </div>
-           
+
 
 <h2 class="upcoming-h2">Upcoming Vernissages</h2>
 @foreach (var vernisage in Model.FutureVernisages)
@@ -81,10 +84,10 @@
         </div>
         <div class="upcoming-txt">
             <p>Titel: @vernisage.Title</p>
-                @foreach (var artist in vernisage.Artist_Vernisages)
-                {
-                    <p>@artist.Artist</p>                    
-                }
+            @foreach (var artist in vernisage.Artist_Vernisages)
+            {
+                <p>@artist.Artist</p>
+            }
         </div>
     </button>
 }

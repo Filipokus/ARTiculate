@@ -10,6 +10,10 @@
     <title>@ViewData["Title"] - ARTiculate</title>
     <link href="~/Assets/css/reset.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Assets/css/site.css?v={random string}" />
+    @RenderSection("StyleSheets", required: false)
+    <link rel="stylesheet" href="~/Assets/css/responsivity.css?v={random string}" />
+
+
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 </head>
@@ -44,8 +48,8 @@
                 <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Studios")'">
                     <a asp-area="" asp-controller="Studios" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Studios</a>
                 </li>
-                <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("About", "Vernissages" ,new { id = 2 })'">
-                    <a asp-area="" asp-controller="Exhibitions" asp-action="Exhibition" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
+                <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { id = @Model.RandomizedId })'">
+                    <a asp-area="" asp-controller="@Model.RandomizedController" asp-action="@Model.RandomizedAction" asp-route-id="@Model.RandomizedId" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
                 </li>
                 @if (SignInManager.IsSignedIn(User))
                 {
@@ -67,6 +71,8 @@
         </nav>
     </header>
     <div class="container">
+        <h2 id="mobile-only">Only avaliable on your mobile for the moment.</h2>
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
