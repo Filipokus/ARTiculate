@@ -14,13 +14,13 @@
     height: 25vw;
 }*/
 
-/*h1 {
+h1 {
     transform: skewY(11deg);
     color: var(--contrast-color);
     text-align: left;
     margin-left: 15%;
     padding-top: 10vw;
-}*/
+}
 
 /*.diagonal-box {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Images/AdobeStock_288149856.jpeg);
