@@ -115,12 +115,19 @@ function viewImageCloseUp(ev) {
     image.classList.add('shownImage');
     imagebox.prepend(image);
 
-    //skapar stäng-knapp
-    let close = document.createElement("img");
-    close.src = "/Assets/Images/close.png";
-    close.setAttribute("onclick", "hideImageCloseUp();");
-    close.classList.add('close');
-    imagebox.prepend(close);
+
+        let artDescription = document.getElementsByClassName("artDescription");
+        let artTitle = document.getElementsByClassName("artTitle");
+        let string = ev.alt.split(",");
+        artDescription[0].innerHTML = string[0];
+        artTitle[0].innerHTML = string[1];
+
+        //skapar stäng-knapp
+        let close = document.createElement("img");
+        close.src = "/Assets/Images/close.png";
+        close.setAttribute("onclick", "hideImageCloseUp();");
+        close.classList.add('close');
+        imagebox.prepend(close);
 
     //Visar veil
     veil.classList.remove('veilHidden');
