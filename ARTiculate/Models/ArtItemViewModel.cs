@@ -31,5 +31,6 @@ namespace ARTiculate.Models
         public Artist Artist { get; set; }
 
         public int ArtistId { get; set; }
+        public string Tags { get; set; }
     }
 }

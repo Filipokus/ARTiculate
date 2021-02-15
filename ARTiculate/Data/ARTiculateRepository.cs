@@ -199,5 +199,10 @@ namespace ARTiculate.Data
         {
             throw new NotImplementedException();
         }
+
+        public Task<List<ArtItem_Tag>> AddArtItem_Tags(string tagsRaw, int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

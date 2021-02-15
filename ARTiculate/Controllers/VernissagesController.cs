@@ -31,8 +31,15 @@ namespace ARTiculate.Controllers
             List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
 
             VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
-           
-            return View(VernisagesViewModel);
+
+            if (VernisagesViewModel.FutureVernisages.Count > 0)
+            {
+                return View(VernisagesViewModel);
+            }
+            else
+            {
+                return RedirectToAction("Error", "Home");
+            }
         }
 
         public async Task<IActionResult> Vernissage(int ID)
