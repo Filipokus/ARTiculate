@@ -15,17 +15,21 @@
         @using (Html.BeginForm("UploadArtitem", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
         <form id="create-form">
-            <div class="input-item" id="youtube-link">
+            <div class="input-item" id="title">
                 <h3>Name of Artwork</h3>
                 @Html.TextBoxFor(m => m.ArtItem.Name)
             </div>
-            <div class="input-item" id="youtube-link">
+            <div class="input-item" id="image-upload">
                 <h3>Image File</h3>
                 @Html.EditorFor(m => m.ImageFile)
             </div>
-            <div class="input-item" id="youtube-link">
+            <div class="input-item" id="description-box">
                 <h3>Description</h3>
-                @Html.TextBoxFor(m => m.ArtItem.Description)
+                @Html.TextAreaFor(m => m.ArtItem.Description)
+            </div>
+            <div class="input-item" id="tags">
+                <h3>Tag your artwork!</h3>
+                @Html.TextAreaFor(m => m.Tags)
             </div>
             <div class="input-item" id="youtube-link">
                 @Html.HiddenFor(m => m.Artist.Id, Model.ArtistId)
