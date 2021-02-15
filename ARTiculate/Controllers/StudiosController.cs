@@ -101,7 +101,7 @@ namespace ARTiculate.Controllers
         {
             ArtItem artItem = await ARTiculateRepository.GetArtItem(id);
 
-            ArtItemViewModel model = new ArtItemViewModel(artItem, null);
+            ArtItemViewModel model = new ArtItemViewModel(artItem);
 
             return View(model);
         }

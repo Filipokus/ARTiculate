@@ -14,7 +14,7 @@ namespace ARTiculate.Models
 
         }
 
-        public ArtItemViewModel(ArtItem artItem, IFormFile imageFile)
+        public ArtItemViewModel(ArtItem artItem, IFormFile imageFile=null)
         {
             ArtItem = artItem;
             ImageFile = imageFile;
