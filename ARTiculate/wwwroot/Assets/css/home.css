@@ -199,6 +199,9 @@ h1 {
 }
 
 .next-4 img {
+    overflow: hidden;
+    object-fit: cover;
+    height: 40vw;
     width: 40vw;
     border-radius: 8px;
     margin-bottom: 3.5vh;
