@@ -87,6 +87,7 @@ function loadNewContent(arrowBtn) {
         else {
             childrenOfStraightDiv[numberOfChildren - 1].style.display = 'initial';
         }
+        activeCarouselDiv.style.display = 'none';
     }
 
     else {

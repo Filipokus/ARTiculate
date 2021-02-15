@@ -27,19 +27,34 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
-            List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
 
-            VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
-
-            if (VernisagesViewModel.FutureVernisages.Count > 0)
+            try
             {
+                List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
+                List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
+
+                VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
                 return View(VernisagesViewModel);
+
             }
-            else
+            catch (Exception)
             {
                 return RedirectToAction("Error", "Home");
             }
+
+            //List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
+            //List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();
+
+            //VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
+
+            //if (VernisagesViewModel.FutureVernisages.Count > 0)
+            //{
+            //    return View(VernisagesViewModel);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Error", "Home");
+            //}
         }
 
         public async Task<IActionResult> Vernissage(int ID)

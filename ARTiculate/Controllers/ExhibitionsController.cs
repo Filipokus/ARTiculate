@@ -20,16 +20,28 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Index()
         {
-            List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
-            ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
-            if (exhibitionViewModel.Exhibitions.Count > 0  && exhibitionViewModel.NewlyAddedExhibitions.Count > 0) //&& exhibitionViewModel.ExhibitionsByTagName.Count > 0)
+            try
             {
-                return View(exhibitionViewModel);
+                List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
+                ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
+                
+                return View(exhibitionViewModel);                 
             }
-            else
+            catch (Exception)
             {
+
                 return RedirectToAction("Error", "Home");
             }
+            //List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
+            //ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
+            //if (exhibitionViewModel.Exhibitions.Count > 0  && exhibitionViewModel.NewlyAddedExhibitions.Count > 0) //&& exhibitionViewModel.ExhibitionsByTagName.Count > 0)
+            //{
+            //    return View(exhibitionViewModel);
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Error", "Home");
+            //}
         }
 
         public async Task<IActionResult> Exhibition(int ID)

@@ -74,10 +74,14 @@ p {
     border-radius: 5px;
     height: 10px;
 }
+
+.nothing-found{
+    color: var(--contrast-color);
+}
+
 /* END OF GENERAL*/
 
 /* || DIAGONAL BOX || */
-
 .diagonal-h2 {
     font-family: 'HeyAugust';
     font-size: 6vw;

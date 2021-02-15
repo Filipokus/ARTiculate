@@ -43,7 +43,10 @@ namespace ARTiculate.Controllers
 
         
         public async Task<IActionResult> Studio(int id)       
-        {            
+        {
+            Artist studio = await ARTiculateRepository.GetArtist(id);
+            // viewModel = new ExhibitionViewModelOverview(exhibition);
+
             return View();
         }
 
