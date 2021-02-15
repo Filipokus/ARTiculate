@@ -54,5 +54,6 @@ namespace ARTiculate.Data
         Artist CreateArtistFromARTiculateUser(ARTiculateUser user);
 
         Task<List<Artist>> GetAllArtists();
+        Task<List<ArtItem>> GetArtItemsFromExhibition(int id);
     }
 }

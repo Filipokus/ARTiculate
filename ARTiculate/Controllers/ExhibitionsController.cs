@@ -46,8 +46,12 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Exhibition(int ID)
         {
-            Exhibition exhibition = await ARTiculateRepository.GetExhibition(ID);
-            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibition);
+            Task<Exhibition> exhibitionTask = ARTiculateRepository.GetExhibition(ID);
+            Task<List<ArtItem>> artItemTask = ARTiculateRepository.GetArtItemsFromExhibition(ID);
+            List<Task> tasks = new List<Task>() { exhibitionTask, artItemTask };
+            await Task.WhenAll(tasks);
+
+            ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibitionTask.Result, artItemTask.Result);
 
             return View(viewModel);
         }

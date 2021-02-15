@@ -44,10 +44,9 @@ namespace ARTiculate.Controllers
         
         public async Task<IActionResult> Studio(int id)       
         {
-            Artist studio = await ARTiculateRepository.GetArtist(id);
-            // viewModel = new ExhibitionViewModelOverview(exhibition);
+            BaseViewModel viewModel = new BaseViewModel();
 
-            return View();
+            return View(viewModel);
         }
 
         [Authorize]
@@ -59,7 +58,6 @@ namespace ARTiculate.Controllers
         public async Task<MyStudioViewModel> GetViewModelFromLoggedInArtist()
         {
             ARTiculateUser user = await GetCurrentUserAsync();
-             
             Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
             MyStudioViewModel viewModel = new MyStudioViewModel(artist);
             return viewModel;
@@ -116,7 +114,7 @@ namespace ARTiculate.Controllers
             Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
 
             List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsWithOutVernissageFromArtist(artist.Id);
-                Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
+            Dictionary<int, Exhibition> allExhibitionsByArtistDictonary = new Dictionary<int, Exhibition>();
 
                 foreach (Exhibition exhibition in exhibitions)
                 {
@@ -175,8 +173,11 @@ namespace ARTiculate.Controllers
             input.SelectedArtItems = ARTiulateServerRepository.GetSelectedArtItems(artItems, input.AllArtItemsByArtistBoolList);
 
             Exhibition exhibition = await ARTiculateRepository.AddExhibitionAsync(input.Exhibition);
-            await ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
-            await ARTiculateRepository.CreateExhibition_ArtItemsAsync(input.SelectedArtItems, exhibition.Id);
+
+            Task artist_ExhibitionTask = ARTiculateRepository.CreateArtist_Exhibition(exhibition.Id, input.ArtistId);
+            Task exhibition_ArtItemTask = ARTiculateRepository.CreateExhibition_ArtItemsAsync(input.SelectedArtItems, exhibition.Id);
+            List<Task> tasks = new List<Task>() { artist_ExhibitionTask, exhibition_ArtItemTask };
+            await Task.WhenAll(tasks);
 
             return RedirectToAction("Exhibition", "Exhibitions", new { id = exhibition.Id });
         }

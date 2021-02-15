@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class ExhibitionViewModelOverview
+    public class ExhibitionViewModelOverview: BaseViewModel
     {
         public Exhibition Exhibition { get; set; }
+        public List<ArtItem> Artitems { get; set; }
 
-        public ExhibitionViewModelOverview(Exhibition exhibition)
+        public ExhibitionViewModelOverview(Exhibition exhibition, List<ArtItem> artItems)
         {
             Exhibition = exhibition;
+            Artitems = artItems;
         }
+
+        
+       
     }
 }

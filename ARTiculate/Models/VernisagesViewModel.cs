@@ -6,7 +6,7 @@ using ARTiculateDataAccessLibrary.Models;
 
 namespace ARTiculate.Models
 {
-    public class VernisagesViewModel
+    public class VernisagesViewModel : BaseViewModel
     {
         public VernisagesViewModel()
         {

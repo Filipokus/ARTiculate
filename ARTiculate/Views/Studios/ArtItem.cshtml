@@ -3,7 +3,11 @@
 @{
     ViewData["Title"] = "Uploaded Item";
 }
-<link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+}
+
 <div class="create-title">
     <h1>@Model.ArtItem.Name</h1>
 </div>

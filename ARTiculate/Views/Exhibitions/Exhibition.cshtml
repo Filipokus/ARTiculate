@@ -1,6 +1,9 @@
 ﻿@model ARTiculate.Models.ExhibitionViewModelOverview;
 
-<link rel="stylesheet" href="~/Assets/css/exhibition.css?v={random string}" />
+@section StyleSheets{ 
+    <link rel="stylesheet" href="~/Assets/css/exhibition.css?v={random string}" />
+}
+
 
 <div id="imageCloseUp-container">
     <div id="artworkInfo" class="hideInfo">
@@ -13,40 +16,50 @@
     <h1>@Model.Exhibition.Title</h1>
 </div>
 
+<div id="description-box">
+    <p>@Model.Exhibition.Description</p>
+</div>
+
 @foreach (var artist in Model.Exhibition.Artist_Exhibitions)
 {
     <h2 class="diagonal-h2" onclick="location.href='@Url.Action("Studio", "Studios")'">@artist.Artist</h2>
 }
 
 <div class="diagonal-box">
-
     <div class="wrapper">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?water" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?summer" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?plants" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?snow" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?roses" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?sky" alt="" onclick="viewImageCloseUp(this)">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?water" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?summer" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?plants" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?snow" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?roses" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?sky" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
-        <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+        @foreach (var artitem in Model.Artitems)
+        {
+            <img class="romb" src="@Url.Content(string.Format(artitem.Picture))" alt="@artitem.Description,@artitem.Name" onclick="viewImageCloseUp(this)">
+        }
     </div>
+
+    @*<div class="wrapper">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?water" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?summer" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?plants" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?snow" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?roses" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?sky" alt="" onclick="viewImageCloseUp(this)">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?water" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?summer" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?plants" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?snow" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?roses" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?sky" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?nature" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?blossom" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?ice" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+            <img class="romb" src="https://source.unsplash.com/random/600x600?spring" alt="">
+        </div>*@
 </div>

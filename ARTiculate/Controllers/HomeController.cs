@@ -55,18 +55,7 @@ namespace ARTiculate.Controllers
             }
 
 
-            ////TODO Förbättra (clean code)
-            //if (futureVernisages.Count > 0 && exhibitions.Count>0 && artists.Count>0)
-            //{
-            //    HomeViewModel HomeViewModel = new HomeViewModel(futureVernisages, liveVernisages, exhibitions, artists);
-
-            //    return View(HomeViewModel);
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Error", "Home");
-            //}
-
+            //aRTiculateRepository.GetMockData(_db);
 
             
         }
