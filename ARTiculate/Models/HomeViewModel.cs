@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class HomeViewModel:BaseViewModel
+    public class HomeViewModel
     {
         Random random = new Random();
-        public HomeViewModel(List<Vernisage> futureVernisages=null, List<Vernisage> liveVernisages=null,List<Exhibition> exhibitions=null, List<Artist> artists=null )
+        public HomeViewModel(int randomId, List<Vernisage> futureVernisages=null, List<Vernisage> liveVernisages=null,List<Exhibition> exhibitions=null, List<Artist> artists=null )
         {
+            RandomizedId = randomId;
             FutureVernisages = futureVernisages;
             LiveVernisages = liveVernisages;
             Exhibitions = exhibitions;
@@ -30,5 +31,7 @@ namespace ARTiculate.Models
         public List<Artist> Artists { get; set; } = new List<Artist>();
         public string LoggedInArtist { get; set; } = "";
         public List<int> ArtItemsToDisplay { get; set; } = new List<int>();
+        public int RandomizedId { get; set; }
+
     }
 }

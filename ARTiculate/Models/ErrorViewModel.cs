@@ -2,7 +2,7 @@ using System;
 
 namespace ARTiculate.Models
 {
-    public class ErrorViewModel: BaseViewModel
+    public class ErrorViewModel
     {
         public string RequestId { get; set; }
 
