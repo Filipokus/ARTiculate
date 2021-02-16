@@ -36,27 +36,38 @@
     <div class="straight-div">
         <div class="studio-content">
 
-
-            <div class="folder">
-                <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
-                    <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
-                    <div class="studio-content-container">
-                        <h2 class="exhibition-name">My First Vernissage</h2>
-                    </div>
-                </button>
-                <div class="folder-container">
-                    <div class="arrow-up"></div>
-                    <div class="folder-items">
-                        <div class="open-art-item">
-                            <button class="studio-content-btn">
-                                <img src="~/Assets/Images/exempelbild.png" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
-                            </button>
+            @{ 
+                for (int i = 0; i<Model.Exhibitions.Count; i++)
+                {
+                    <div class="folder">
+                        <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
+                            <img class="folder-img" src="@Url.Content(string.Format(Model.ExhibitionArtItems[i][0].Picture))" alt="Alternate Text" />
+                            <div class="studio-content-container">
+                                <h2 class="exhibition-name">@Model.Exhibitions[i]</h2>
+                            </div>
+                        </button>
+                        <div class="folder-container">
+                            <div class="arrow-up"></div>
+                            <div class="folder-items">
+                                @foreach (var artItem in Model.ExhibitionArtItems[i])
+                                {
+                                    <div class="open-art-item">
+                                        <button class="studio-content-btn">
+                                            <img src="@Url.Content(string.Format(artItem.Picture))" alt="@artItem.Description,@artItem.Name" onclick="viewImageCloseUp(this)" />
+                                        </button>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="folder">
+                }
+
+
+            }
+
+
+            @*<div class="folder">
                 <button class="studio-content-btn" onclick="toggleOpenFolder(this)">
                     <img class="folder-img" src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
                     <div class="studio-content-container">
@@ -107,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
 
             <div id="private-folder">
                 <button class="studio-content-btn" onclick="toggleOpenFolder(this)">

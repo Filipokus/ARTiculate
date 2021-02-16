@@ -135,7 +135,7 @@
     visibility: hidden;
 }
 
-#link-to-login {
+.live-vernissage-btn {
     display: block;
     border-radius: 2vw;
     font-size: 70%;
@@ -150,4 +150,9 @@
     z-index: 3;
     margin-top: 25vw;
     transform: skewY(11deg);
+}
+
+#to-exhibition-btn {
+    transform: none;
+    margin: 15vw auto;
 }

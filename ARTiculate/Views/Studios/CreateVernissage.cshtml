@@ -7,8 +7,8 @@
 </div>
 @model ARTiculate.Models.CreateVernissageViewModel
 <h2 class="diagonal-h2">Fill in</h2>
-<div class="diagonal-box">
-    <div id="bend-back">
+@*<div class="diagonal-box">
+    <div id="bend-back">*@
         @using (Html.BeginForm("CreateVernissage", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <form id="create-form">
@@ -53,5 +53,5 @@
 
             </form>
         }
-    </div>
-</div>
+    @*</div>
+</div>*@
