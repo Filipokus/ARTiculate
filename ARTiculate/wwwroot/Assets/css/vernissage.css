@@ -151,3 +151,8 @@
     margin-top: 25vw;
     transform: skewY(11deg);
 }
+
+#to-exhibition-btn {
+    transform: none;
+    margin: 15vw auto;
+}

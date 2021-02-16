@@ -15,12 +15,15 @@
     <h1>@Model.Vernisage.Title</h1>
     <img class="live-btn-img" src="~/Assets/Images/Livebutton.png">
 </div>
+
 <div class="streamcontainer">
     <iframe class="videostream" src="@Model.Vernisage.LiveLink" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <h2 class="diagonal-h2">Live Chat</h2>
 
 <div class="diagonal-box">
+    
+
     @if (SignInManager.IsSignedIn(User))
     {
         <button id="join-chat">Join chat!</button>
@@ -42,12 +45,12 @@
             <button class="live-vernissage-btn" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
         </form>
     }
-    <form>
-        <button class="live-vernissage-btn" asp-controller="Exhibitions" asp-action="Exhibition" asp-route-ID="@Model.Vernisage.ExhibitionId">Go to Exhibition</button>
-    </form>
 
 </div>
 
+<form>
+    <button class="live-vernissage-btn" id="to-exhibition-btn" asp-controller="Exhibitions" asp-action="Exhibition" asp-route-ID="@Model.Vernisage.ExhibitionId">Go to Exhibition</button>
+</form>
 <p id="vernissage-id">@Model.Vernisage.Id</p>
 
 <script src="~/Assets/js/signalr/dist/browser/signalr.js"></script>
