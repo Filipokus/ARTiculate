@@ -322,7 +322,7 @@ namespace ARTiculate.Data
             //db.SaveChanges();
         }
         #endregion
-        #endregion
+        
 
         #region READ
 
@@ -564,23 +564,23 @@ namespace ARTiculate.Data
             return tags;
         }
 
-        /// <summary>
-        /// Returns an artist from the db by taking the id (int) as input.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public async Task<Artist> GetArtist(int id)
-        {
-            var artist = await db.Artists
-               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-               .Include(x => x.Artist_Vernisages)
-               .Include(x => x.Artist_Exhibitions)
-               .Include(x => x.Artist_Tags)
-               .Where(x => x.Id == id)
-               .FirstOrDefaultAsync();
+        ///// <summary>
+        ///// Returns an artist from the db by taking the id (int) as input.
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //public async Task<Artist> GetArtist(int id)
+        //{
+        //    var artist = await db.Artists
+        //       .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+        //       .Include(x => x.Artist_Vernisages)
+        //       .Include(x => x.Artist_Exhibitions)
+        //       .Include(x => x.Artist_Tags)
+        //       .Where(x => x.Id == id)
+        //       .FirstOrDefaultAsync();
 
-            return artist;
-        }
+        //    return artist;
+        //}
 
         public async Task<List<Artist>> GetAllArtists()
         {

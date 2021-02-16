@@ -56,7 +56,7 @@ namespace ARTiculate.Controllers
             return View(await GetViewModelFromLoggedInArtist());
         }
 
-        public async Task<MyStudioViewModel> GetViewModelFromLoggedInArtist()
+        private async Task<MyStudioViewModel> GetViewModelFromLoggedInArtist()
         {
             ARTiculateUser user = await GetCurrentUserAsync();
             Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);

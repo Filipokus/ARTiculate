@@ -4,9 +4,9 @@
 
 
 <div class="diagonal-box" @*id="hero_div"*@>
-    @*<div id="hero_header">
-            <h1>WELCOME TO <br /> ARTiculate</h1>
-        </div>*@
+    <div id="hero_header">
+            <h1>WELCOME @Model.LoggedInArtist @*TO <br /> ARTiculate bind Inloggad artist*@</h1>
+        </div>
 
     <h2 class="diagonal-h2" id="slogan">Where artists and visitors meet</h2>
     <div class="straight-div">
@@ -41,17 +41,17 @@
                 {
                     if (i % 2 != 0)
                     {
-                        <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.FutureVernisages[i].Id})'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                            <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                                <h3>@Model.FutureVernisages[i].Title</h3>
-                                <p>@Model.FutureVernisages[i].DateTime</p>
-                                @foreach (var artist in Model.FutureVernisages[i].Artist_Vernisages)
-                                {
-                                    <p>@artist.Artist</p>
-                                }
-                            </div>
-                        </button>
+                <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.FutureVernisages[i].Id})'">
+                    <img src="@Url.Content(string.Format(@Model.FutureVernisages[i].Poster))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>@Model.FutureVernisages[i].Title</h3>
+                        <p>@Model.FutureVernisages[i].DateTime</p>
+                        @foreach (var artist in Model.FutureVernisages[i].Artist_Vernisages)
+                        {
+                            <p>@artist.Artist</p>
+                        }
+                    </div>
+                </button>
                     }
                 }
             </div>
@@ -61,7 +61,7 @@
                     if (i % 2 == 0)
                     {
                         <button class="next-4" onclick="location.href='@Url.Action("About", "Vernissages",new { Model.FutureVernisages[i].Id })'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <img src="@Url.Content(string.Format(@Model.FutureVernisages[i].Poster))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                             <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                                 <h3>@Model.FutureVernisages[i].Title</h3>
                                 <p>@Model.FutureVernisages[i].DateTime</p>
@@ -101,7 +101,7 @@
                     if (i % 2 != 0)
                     {
                         <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions",new { Model.Exhibitions[i].Id })'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <img src="@Url.Content(string.Format(@Model.Exhibitions[i].Exhibition_ArtItem[@Model.ArtItemsToDisplay[i]].ArtItems.Picture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                             <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                                 <h3>@Model.Exhibitions[i].Title</h3>
                                 <p>@Model.Exhibitions[i].DateTime</p>
@@ -119,17 +119,17 @@
                 {
                     if (i % 2 == 0)
                     {
-                        <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions",new { Model.Exhibitions[i].Id })'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                            <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
-                                <h3>@Model.Exhibitions[i].Title</h3>
-                                <p>@Model.Exhibitions[i].DateTime</p>
-                                @foreach (var artist in Model.Exhibitions[i].Artist_Exhibitions)
-                                {
-                                    <p>@artist.Artist</p>
-                                }
-                            </div>
-                        </button>
+                <button class="next-4" onclick="location.href='@Url.Action("Exhibition", "Exhibitions",new { Model.Exhibitions[i].Id })'">
+                    <img src="@Url.Content(string.Format(@Model.Exhibitions[i].Exhibition_ArtItem[@Model.ArtItemsToDisplay[i]].ArtItems.Picture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>@Model.Exhibitions[i].Title</h3>
+                        <p>@Model.Exhibitions[i].DateTime</p>
+                        @foreach (var artist in Model.Exhibitions[i].Artist_Exhibitions)
+                        {
+                            <p>@artist.Artist</p>
+                        }
+                    </div>
+                </button>
 
                     }
                 }
@@ -180,7 +180,7 @@
             <div class="right4">
                 @for (int i = 0; i < Model.Artists.Count && i < 4; i++)
                 {
-                    if (i % 2 != 0)
+                    if (i % 2 == 0)
                     {
                         <button class="next-4" onclick="location.href='@Url.Action("Index", "Studios",new { Model.Artists[i].Id })'">
                             <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">

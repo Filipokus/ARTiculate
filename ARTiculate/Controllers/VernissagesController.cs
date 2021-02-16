@@ -29,12 +29,11 @@ namespace ARTiculate.Controllers
         {           
             try
             {
-                Task<List<Vernisage>> futureVernisages = ARTiculateRepository.GetAllVernisagesToCome();
-                Task<List<Vernisage>> liveVernisages = ARTiculateRepository.GetLiveVernisages();
-                List<Task> tasks = new List<Task>() { futureVernisages, liveVernisages };
-                await Task.WhenAll(tasks);             
+                List<Vernisage> futureVernisages = await ARTiculateRepository.GetAllVernisagesToCome();
+                List<Vernisage> liveVernisages = await ARTiculateRepository.GetLiveVernisages();            
+                            
 
-                VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages.Result, liveVernisages.Result);
+                VernisagesViewModel VernisagesViewModel = new VernisagesViewModel(futureVernisages, liveVernisages);
                 return View(VernisagesViewModel);
             }
             catch (Exception)
