@@ -94,6 +94,7 @@
 
 .next-4 img {
     width: 40vw;
+    height: 40vw;
     border-radius: 8px;
     margin-bottom: 3.5vh;
     box-shadow: 0 0 3vw 2vw #0c0c0c;
@@ -107,6 +108,7 @@
 }
 
 .right4 {
+    margin-top: 30vw;
     width: 40vw;
     flex-direction: column;
     transform: translate3d(3%, -8%, 0);

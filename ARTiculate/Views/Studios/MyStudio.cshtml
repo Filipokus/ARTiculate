@@ -16,7 +16,7 @@
 
 <h1>@Model.Artist</h1>
 <div id="artist-profile">
-    <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
+    <img src="@Url.Content(string.Format(Model.Artist.ProfilePicture))" alt="Alternate Text" />
 </div>
 
 <div class="create-buttons">

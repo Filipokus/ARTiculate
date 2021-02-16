@@ -17,11 +17,25 @@
             {
                 <button id="to-my-studio" onclick="location.href = '@Url.Action("MyStudio","Studios")'"><p>TO MY STUDIO</p></button>
             }
-            @for (int i = 0; i < 4; i++)
+            @for (int i = 0; i < Model.Artists.Count/2; i++)
             {
 
                 <button class="next-4" onclick="location.href='@Url.Action("Studio","Studios", new { Model.Artists[i].Id })'">
-                    <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <img src="@Url.Content(string.Format(Model.Artists[i].ProfilePicture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                    <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                        <h3>@Model.Artists[i]</h3>
+
+                    </div>
+                </button>
+
+            }
+        </div>
+        <div class="right4">
+            @for (int i = Model.Artists.Count/2; i < Model.Artists.Count; i++)
+            {
+
+                <button class="next-4" onclick="location.href='@Url.Action("Studio","Studios", new { Model.Artists[i].Id })'">
+                    <img src="@Url.Content(string.Format(Model.Artists[i].ProfilePicture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                     <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                         <h3>@Model.Artists[i]</h3>
 

@@ -96,6 +96,9 @@
 
 .next-4 img {
     width: 40vw;
+    height: 40vw;
+    overflow: hidden;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 3.5vh;
     box-shadow: 0 0 3vw 2vw #0c0c0c;

@@ -144,6 +144,7 @@ namespace ARTiculate.Data
                 Emailadress = user.Email,
                 Firstname = user.FirstName,
                 Lastname = user.LastName,
+                ProfilePicture = "~/UploadedImages/profilepicture.png"
 
             };
             return artist;
