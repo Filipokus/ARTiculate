@@ -1,4 +1,7 @@
-﻿
+﻿h3 {
+    
+}
+
 .back {
     outline: none;
     border: none;
@@ -17,9 +20,7 @@
     margin-top: 0vw;
 }
 
-h3 {
-    color: #DFDDE4;
-}
+
 
 .diagonal-box {
     margin: 3vw 0 15vw 0;
@@ -32,7 +33,8 @@ h3 {
 }
 
 #bend-back {
-    transform: skewY(11deg);   
+    transform: skewY(11deg); 
+    justify-content:center;
 }
 #create-form {
     padding-left: 4vw;
@@ -45,7 +47,32 @@ h3 {
 
 .input-item {
     padding: 2vw;
+    text-align: center;
+    margin-top: 2vw;
+    flex: 1;
 }
+
+    .input-item input, .input-item textarea  {
+        width: 70vw;
+        height: 6vw;
+        background-color: #fdffb6;
+        border-color: #a7a894;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font-family: 'Comfortaa';
+        font-size: 4vw;
+        text-align: center;
+        outline: none;
+    }
+
+    .input-item textarea {
+        height: 15vw;
+        text-align: left;
+    }
+
+
+
 
 .diagonal-h2 {
     transform: skewY(-12deg);
@@ -54,51 +81,20 @@ h3 {
 }
 
 #submit-btn {
+    width: 35vw;
+    height: 8vw;
     border-radius: 2vw;
-    font-size: 70%;
-    border: 0.5vw solid #F89A1E;
-    background-color: #242424;
-    padding: 1%;
-    box-shadow: 0px 4px 10px 0px black;
-    color: #F89A1E;
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84);
     cursor: pointer;
-    width: 40vw;
+    outline: none;
+    border: none;
     font-family: 'Comfortaa';
-   
-}
-
-.uploaded-image {
-    
-    overflow: hidden;
-    object-fit: cover;
-    max-width: 70%;
-    max-height: 70%;
-}
-
-#image-selector {
-    display: flex;
-    flex-direction: initial;
-    width: 95%;
-    border: 1px solid #242424;
-    border-radius: 10px;
-    background-color: none;
-    color: white;
-    height: 35%;
-    position: absolute;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.image-container {
-    
-    width: 40vw;
-    height: 40vw;
-}
-
-#testar{
-    display: flex;
+    font-size: 3vw;
+    background-color: #EFEFEF;
 }
 
 #date-time{
-    margin-top: 40vw;
+    margin-top: 5vw;
 }
+
+
