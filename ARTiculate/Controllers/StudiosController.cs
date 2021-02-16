@@ -60,8 +60,23 @@ namespace ARTiculate.Controllers
         {
             ARTiculateUser user = await GetCurrentUserAsync();
             Artist artist = await ARTiculateRepository.GetArtistFromARTiculateUser(user);
-            MyStudioViewModel viewModel = new MyStudioViewModel(artist);
-            return viewModel;
+            List<List<ArtItem>> ex = new List<List<ArtItem>>();
+            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(artist.Id);
+            if (exhibitions != null)
+            {
+                foreach (var exhibition in exhibitions)
+                {
+                    List<ArtItem> artItems = await ARTiculateRepository.GetArtItemsFromExhibition(exhibition.Id);
+                    ex.Add(artItems);
+                }
+                MyStudioViewModel viewModel = new MyStudioViewModel(artist, exhibitions, ex);
+                return viewModel;
+            }
+            else
+            {
+                MyStudioViewModel viewModel = new MyStudioViewModel(artist);
+                return viewModel;
+            }
         }
 
         private Task<ARTiculateUser> GetCurrentUserAsync() => userManager.GetUserAsync(HttpContext.User);
