@@ -35,7 +35,14 @@
                             </div>
                         </button>
                         <div class="folder-container">
-                            <div class="arrow-up"></div>
+                            @if (i % 2 == 0)
+                            {
+                                <div class="arrow-up left"></div>
+                            }
+                            else
+                            {
+                                <div class="arrow-up right"></div>
+                            }
                             <div class="folder-items">
                                 @foreach (var artItem in Model.ListOfArtItemList[i])
                                 {
