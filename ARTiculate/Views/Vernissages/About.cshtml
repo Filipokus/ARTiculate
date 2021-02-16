@@ -16,7 +16,7 @@
 </div>
 
 
-<h2 class="diagonal-h2">@Model.ListOfArtists[0].Firstname</h2>
+<h2 class="diagonal-h2" onclick="location.href='@Url.Action("Studio", "Studios", new {id = @Model.ListOfArtists[0].Id})'">@Model.ListOfArtists[0].Firstname</h2>
 
 <div class="diagonal-box">
     <div id="description-box">

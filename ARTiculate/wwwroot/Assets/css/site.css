@@ -81,7 +81,6 @@ p {
 .nothing-found{
     color: var(--contrast-color);
 }
-
 /* END OF GENERAL*/
 
 /* || DIAGONAL BOX || */
@@ -93,6 +92,9 @@ p {
     transform: skewY(-11deg);
     margin-top: 9vh;
     margin-bottom: 3vh;
+}
+.next-arrow{
+    float:right;
 }
 
 .diagonal-box {

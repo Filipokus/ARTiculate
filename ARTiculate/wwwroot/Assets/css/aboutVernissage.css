@@ -13,6 +13,10 @@
 .diagonal-h2 {
     margin-top: 7vw;
 }
+    .diagonal-h2:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
 
 .diagonal-box {
     align-items: center;
