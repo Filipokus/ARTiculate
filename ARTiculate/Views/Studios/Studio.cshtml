@@ -1,4 +1,4 @@
-﻿@model ARTiculate.Models.BaseViewModel;
+﻿@model ARTiculate.Models.StudioViewModel;
 @section StyleSheets{
     <link rel="stylesheet" href="~/Assets/css/studio.css?v={random string}" />
 }
@@ -13,13 +13,13 @@
 </div>
 <div id="veil" class="veilHidden"></div>
 
-<h1>Studio of ARTist Name</h1>
+<h1>@Model.Artist</h1>
 <div id="artist-profile">
     <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" />
 </div>
-<p class="description">Description dsadf sads af dasjkfg dsfa kfls dafdk sakd sakdls adkls akflsa äfjks alfjdkslg dksl fdkslf jdklf skl fklds öfkds löfsd</p>
 
-<div class="create-buttons">
+
+@*<div class="create-buttons">
     <button class="studio-btn">
         <p class="plus">+</p>
         <p>Add art items</p>
@@ -27,7 +27,7 @@
     <button class="studio-btn">
         <p>Create exhibition</p>
     </button>
-</div>
+</div>*@
 
 <div class="diagonal-box">
     <div class="straight-div">
@@ -141,7 +141,15 @@
 
         <div class="studio-content" id="open-items">
 
-            <div class="open-art-item">
+            @foreach (var image in Model.Artist.ArtItems)
+            {
+                <div class="open-art-item">
+                    <button class="studio-content-btn">
+                        <img src="@Url.Content(string.Format(image.Picture))" alt="@image.Description,@image.Name" onclick="viewImageCloseUp(this)" />
+                    </button>
+                </div>
+            }
+            @*<div class="open-art-item">
                 <button class="studio-content-btn">
                     <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
                 </button>
@@ -165,7 +173,7 @@
                 <button class="studio-content-btn">
                     <img src="~/Assets/Images/PlaceholderIMG.jpg" alt="Alternate Text" onclick="viewImageCloseUp(this)" />
                 </button>
-            </div>
+            </div>*@
 
         </div>
 

@@ -23,6 +23,7 @@
     margin-top: 10vw;
     margin-bottom: 13vw;
     justify-content: space-around;
+    z-index: 10;
 }
 .studio-btn {
     width: 35vw;

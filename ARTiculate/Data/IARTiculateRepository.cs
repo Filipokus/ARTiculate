@@ -30,6 +30,7 @@ namespace ARTiculate.Data
         Task<List<Exhibition>> GetAllExhibitionsOrderedByDate();
     
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
+        Task<List<ArtItem>> GetArtItemsFromExhibition(int id);
         Task<Artist> GetArtist(int id);
         Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user);
         public Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id);
@@ -54,6 +55,5 @@ namespace ARTiculate.Data
         Artist CreateArtistFromARTiculateUser(ARTiculateUser user);
 
         Task<List<Artist>> GetAllArtists();
-        Task<List<ArtItem>> GetArtItemsFromExhibition(int id);
     }
 }

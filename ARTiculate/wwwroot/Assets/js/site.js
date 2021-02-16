@@ -90,6 +90,7 @@ function loadNewContent(arrowBtn) {
             childrenOfStraightDiv[numberOfChildren - 1].style.display = 'initial';
             shortenDescription(childrenOfStraightDiv, numberOfChildren - 1)
         }
+        activeCarouselDiv.style.display = 'none';
     }
 
     else {

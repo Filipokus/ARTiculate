@@ -30,13 +30,18 @@
                 <div class="input-item" id="select-exhibition">
                     <h3>Choose Art to Exhibit</h3>
                     <p style="color:white;">*You don't have to add art to your exhibition if you aren't ready yet. To make this Exhibition public you'll need at least 4 art pieces. You can always add pieces later.</p>
-
-                    @for (int i = 0; i < Model.AllArtItems.Count; i++)
-                    {
-                        @Html.HiddenFor(m => m.AllArtItems[i])
-                        <img src="@Url.Content(string.Format(Model.AllArtItems[i].Picture))" />
-                        @Html.CheckBoxFor(m => m.AllArtItemsByArtistBoolList[i])
-                    }
+                    <div id="image-selector">
+                        <div id="testar">
+                            @for (int i = 0; i < Model.AllArtItems.Count; i++)
+                            {
+                                <div class="image-container">
+                                    @Html.HiddenFor(m => m.AllArtItems[i])
+                                    <img class="uploaded-image" src="@Url.Content(string.Format(Model.AllArtItems[i].Picture))" />
+                                    @Html.CheckBoxFor(m => m.AllArtItemsByArtistBoolList[i])
+                                </div>
+                            }
+                        </div>
+                    </div>
                 </div>
 
                 <div class="input-item" id="date-time">
