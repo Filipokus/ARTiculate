@@ -1,69 +1,52 @@
-﻿h3 {
-    
+﻿
+h3 {
+    color: #242424;
+    text-align: center;
+    margin-top: 5vw;
+    font-size: 4vw;
 }
 
-.back {
-    outline: none;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    font-family: 'Comfortaa', cursive;
-}
-.back:hover{
-    text-decoration: underline;
+p {
+    line-height: 4vw;
 }
 
-.back img{
-    height: 3vw;
-    margin: 1vw;
-    float: left;
-    margin-top: 0vw;
-}
-
-
-
-.diagonal-box {
-    margin: 3vw 0 15vw 0;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 9vw 0 15vw 0; 
-    
-}
-
-#bend-back {
-    transform: skewY(11deg); 
-    justify-content:center;
-}
 #create-form {
     padding-left: 4vw;
-}
-
-#create-form input {
-    font-size: 4vw;
-    font-family: Comfortaa;
 }
 
 .input-item {
     padding: 2vw;
     text-align: center;
     margin-top: 2vw;
-    flex: 1;
+    font-size: 5vw;
 }
 
-    .input-item input, .input-item textarea  {
-        width: 70vw;
-        height: 6vw;
+.input-item input[type="file"] {
+    font-family: 'Comfortaa';
+    cursor: pointer;
+    justify-content: center;
+}
+
+button{
+    width: 100px;
+    background-color: pink;
+}
+
+.input-item button {
+    cursor: pointer;
+}
+
+    .input-item input, .input-item textarea {
+        width: 80vw;
+        height: 8vw;
         background-color: #fdffb6;
         border-color: #a7a894;
         border-top: none;
         border-left: none;
         border-right: none;
         font-family: 'Comfortaa';
-        font-size: 4vw;
+        font-size: 5vw;
         text-align: center;
-        outline: none;
     }
 
     .input-item textarea {
@@ -71,30 +54,38 @@
         text-align: left;
     }
 
-
-
-
-.diagonal-h2 {
-    transform: skewY(-12deg);
-    margin-top: 3vh;
-    margin-bottom: 1vh;
-}
+    .input-item input, .input-item textarea {
+        outline: none;
+    }
 
 #submit-btn {
-    width: 35vw;
-    height: 8vw;
-    border-radius: 2vw;
-    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84);
-    cursor: pointer;
-    outline: none;
+    width: 70vw;
+    height: 12vw;
+    color: #242424;
     border: none;
+    border-radius: 2vw;
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84); /*<-------------------svart färg*/
+    cursor: pointer;
     font-family: 'Comfortaa';
-    font-size: 3vw;
+    font-size: 4.5vw;
     background-color: #EFEFEF;
 }
 
-#date-time{
-    margin-top: 5vw;
+#dropdownlist {
+    margin-top: 2vw;
+    width: 80vw;
+    background-color: #fdffb6;
+    font-family: 'Comfortaa';
+    font-size: 5vw;
+    text-align: center;
+    text-align-last: center;
+    border-color: #a7a894;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
 }
 
-
+#poster-upload {
+    align-self: center;
+}

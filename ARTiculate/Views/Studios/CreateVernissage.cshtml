@@ -6,9 +6,6 @@
     <h1>Create vernissage</h1>
 </div>
 @model ARTiculate.Models.CreateVernissageViewModel
-<h2 class="diagonal-h2">Fill in</h2>
-@*<div class="diagonal-box">
-    <div id="bend-back">*@
         @using (Html.BeginForm("CreateVernissage", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             <form id="create-form">
@@ -18,24 +15,18 @@
                 </div>
                 <div class="input-item" id="description">
                     <h3>Description</h3>
-                    @*<textarea rows="3" style="font-size:4vw; font-family:Comfortaa" name="input-description" id="input-description" placeholder="Type here..."></textarea>*@
                     @Html.TextAreaFor(m => m.Vernissage.Description)
                 </div>
                 <div class="input-item" id="poster">
                     <h3>Poster</h3>
-                    @Html.EditorFor(m => m.ImageFile)
-                    @*--visa upp bilder att välja mellan--*@
+                    @Html.EditorFor(m => m.ImageFile, new { @id = "poster-upload" })
                 </div>
                 <div class="input-item" id="select-exhibition">
                     <h3>Choose Exhibition</h3>
-                    @Html.DropDownListFor(x => Model.SelectedExhibitionId, new SelectList(Model.AllExhibitionsByArtistDictonary, "Key", "Value"), "Choose Exhibition")
-
-                    @*--visa upp bilder att välja mellan--*@
+                    @Html.DropDownListFor(x => Model.SelectedExhibitionId, new SelectList(Model.AllExhibitionsByArtistDictonary, "Key", "Value"), "Choose Exhibition", new { @id = "dropdownlist" })
                 </div>
                 <div class="input-item" id="date-time">
                     <h3>Start date and time</h3>
-                    @*<input type="date" name="date" value="2021-02-01" min="2021-02-01" max="2030-02-01"/>
-                        <input type="time" name="time" value="00:00"/>*@
                     @Html.EditorFor(m => m.Vernissage.DateTime)
                 </div>
                 <div class="input-item" id="time">
@@ -53,5 +44,3 @@
 
             </form>
         }
-    @*</div>
-</div>*@

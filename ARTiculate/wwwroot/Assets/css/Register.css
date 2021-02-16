@@ -1,17 +1,17 @@
-﻿.form-group{
-    margin-top: 12vw;
+﻿.form-group {
+    margin-top: 8vw;
     text-align: center;
 }
 
-h4{
-    margin-top: 3vw;
+h4 {
+    margin-top: 2vw;
     text-align: center;
     font-size: 4vw;
 }
 
-label{
+label {
     font-family: 'Comfortaa';
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 input {
@@ -25,37 +25,18 @@ input {
     font-family: 'Comfortaa';
     font-size: 5vw;
     text-align: center;
+    align-self: center;
 }
 
     input:focus {
         outline: none;
     }
 
-#email-input{
+#email-input {
     margin-top: 3vw;
 }
 
-#remember-me {
-    font-size: 3vw;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center;
-    text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
-.checkbox input{
-    width: 5vw;
-}
-
-.checkbox {
-    justify-content: center;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: center;
-    text-align: center;
-}
 
 .btn-primary {
     width: 70vw;
@@ -68,4 +49,20 @@ input {
     font-family: 'Comfortaa';
     font-size: 3vw;
     background-color: #82A174;
+    margin-top: 8vw;
 }
+
+#form, .col-md-4, .row {
+    justify-content: center;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+   
