@@ -175,7 +175,7 @@
                     if (i % 2 != 0)
                     {
                         <button class="next-4" onclick="location.href='@Url.Action("Index", "Studios",new { Model.Artists[i].Id })'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <img src="@Url.Content(string.Format(Model.Artists[i].ProfilePicture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                             <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                                 <h3>@Model.Artists[i]</h3>
 
@@ -198,7 +198,7 @@
                     if (i % 2 == 0)
                     {
                         <button class="next-4" onclick="location.href='@Url.Action("Index", "Studios",new { Model.Artists[i].Id })'">
-                            <img src="Assets/Images/PlaceholderIMG.jpg" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
+                            <img src="@Url.Content(string.Format(Model.Artists[i].ProfilePicture))" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                             <div class="next4-container" onmouseover="artworkHoverIn(this)" onmouseout="artworkHoverOut(this)">
                                 <h3>@Model.Artists[i]</h3>
 
