@@ -56,7 +56,7 @@ namespace ARTiculate.Controllers
                 {
                     ARTiculateUser user = await userManager.GetUserAsync(HttpContext.User);
                     Artist loggedInArtist = await aRTiculateRepository.GetArtistFromARTiculateUser(user);
-                    homeViewModel.LoggedInArtist = loggedInArtist.ToString();
+                    homeViewModel.LoggedInArtist = "Welcome " + loggedInArtist.ToString();
                 }
 
                 //homeViewModel.posterstrings = await aRTiculateRepository.GetRandomPosters(exhibitions);

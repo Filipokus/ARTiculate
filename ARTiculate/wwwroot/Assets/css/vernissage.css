@@ -36,9 +36,9 @@
 }
 
 .diagonal-box {
-    background-color: #242424;
+    background-color: #ff0000;
     transform: skewY(-11deg);
-    box-shadow: 0 0.3vw 3vw 2vw #362D26;
+   /* box-shadow: 0 0.3vw 3vw 2vw #362D26;*/
     margin-top: 3vh;
     height: 50vh;
     display: flex;
