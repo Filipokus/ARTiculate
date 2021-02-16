@@ -22,6 +22,55 @@ h1 {
     padding-top: 10vw;
 }
 
+/* LIVE BANNER */
+.live-btn {
+    width: 100%;
+    margin-top: 3vh;
+    background-image: url(../Images/PlaceholderIMG.jpg);
+    background-position: center;
+    border: none;
+    outline: none;
+    padding: 0;
+    box-shadow: 0 0 3vw 1vw #362D26;
+}
+
+.live-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0, 0.3);
+}
+
+    .live-container:hover {
+        background-color: rgba(213, 0, 94, 0.3);
+        cursor: pointer;
+    }
+
+.live-btn-img {
+    height: 7vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 1vw;
+}
+
+.live-txt h2 {
+    font-size: 4vw;
+}
+
+.live-txt h3 {
+    font-size: 2vw;
+}
+
+.live-txt {
+    background: rgba(255,255,255, 0.7);
+    border-radius: 10px;
+    margin: 1vh;
+    padding: 1vh;
+}
+
+    .live-txt h2 {
+        font-family: 'Comfortaa';
+    }
 
 /* || FIRST BLACK SECTION || */
 #slogan {
