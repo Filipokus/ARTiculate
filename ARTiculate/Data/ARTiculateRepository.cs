@@ -209,5 +209,10 @@ namespace ARTiculate.Data
         {
             throw new NotImplementedException();
         }
+
+        public Task<int> RandomizedExhibitionId()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

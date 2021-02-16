@@ -39,9 +39,9 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> Index()
         {
-
+            int id = await aRTiculateRepository.RandomizedExhibitionId();
             //aRTiculateRepository.GetMockData(_db);
-            BaseViewModel viewModel = new BaseViewModel();
+            BaseViewModel viewModel = new BaseViewModel(id);
 
             return View(viewModel);
         }
