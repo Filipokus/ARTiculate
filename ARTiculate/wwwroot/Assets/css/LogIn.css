@@ -1,0 +1,71 @@
+﻿.form-group{
+    margin-top: 12vw;
+    text-align: center;
+}
+
+h4{
+    margin-top: 3vw;
+    text-align: center;
+    font-size: 3vw;
+}
+
+label{
+    font-family: 'Comfortaa';
+    font-size: 5vw;
+}
+
+input {
+    width: 80vw;
+    height: 8vw;
+    background-color: #fdffb6;
+    border-color: #a7a894;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Comfortaa';
+    font-size: 4vw;
+    text-align: center;
+}
+
+    input:focus {
+        outline: none;
+    }
+
+#email-input{
+    margin-top: 3vw;
+}
+
+#remember-me {
+    font-size: 3vw;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.checkbox input{
+    width: 5vw;
+}
+
+.checkbox {
+    justify-content: center;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-primary {
+    width: 70vw;
+    height: 12vw;
+    color: var(--contrast-color);
+    border: none;
+    border-radius: 2vw;
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84); /*<-------------------svart färg*/
+    cursor: pointer;
+    font-family: 'Comfortaa';
+    font-size: 3vw;
+    background-color: #82A174;
+}
