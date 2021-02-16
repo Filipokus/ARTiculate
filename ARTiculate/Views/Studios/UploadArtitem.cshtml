@@ -9,12 +9,10 @@
 }
 
 <div class="create-title">
-    <h1>Create vernissage</h1>
+    <h1>Upload Artitem</h1>
 </div>
 
-<h2 class="diagonal-h2">Fill in</h2>
-<div class="diagonal-box">
-    <div id="bend-back">
+
 
         @using (Html.BeginForm("UploadArtitem", "Studios", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
@@ -44,5 +42,3 @@
 
             </form>
         }
-    </div>
-</div>

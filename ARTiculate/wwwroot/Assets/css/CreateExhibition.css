@@ -3,6 +3,7 @@ h3 {
     color: #242424;
     text-align: center;
     margin-top: 5vw;
+    font-size: 4vw;
 }
 
 p{
@@ -32,7 +33,7 @@ p{
         border-left: none;
         border-right: none;
         font-family: 'Comfortaa';
-        font-size: 4vw;
+        font-size: 5vw;
         text-align: center;
     }
 
