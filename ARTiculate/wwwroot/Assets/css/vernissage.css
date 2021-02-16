@@ -135,7 +135,7 @@
     visibility: hidden;
 }
 
-#link-to-login {
+.live-vernissage-btn {
     display: block;
     border-radius: 2vw;
     font-size: 70%;

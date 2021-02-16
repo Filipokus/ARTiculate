@@ -39,9 +39,13 @@
     else
     {
         <form>
-            <button id="link-to-login" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
+            <button class="live-vernissage-btn" asp-area="Identity" asp-page="/Account/Login">Log in to see chat</button>
         </form>
     }
+    <form>
+        <button class="live-vernissage-btn" asp-controller="Exhibitions" asp-action="Exhibition" asp-route-ID="@Model.Vernisage.ExhibitionId">Go to Exhibition</button>
+    </form>
+
 </div>
 
 <p id="vernissage-id">@Model.Vernisage.Id</p>
