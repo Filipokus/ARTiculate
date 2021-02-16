@@ -46,7 +46,7 @@ else
                             <img class="arrow-left-img" src="~/Assets/Images/back-light-left.png" alt="Previous Exhibition" />
                         </button>
                         <div class="wrapper" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { @Model.NewlyAddedExhibitions[i].Id })'">
-                            @for (int j = 0; j < @Model.NewlyAddedExhibitions[i].Exhibition_ArtItem.Count; j++)
+                            @for (int j = 0; (j < 4) && (j < @Model.NewlyAddedExhibitions[i].Exhibition_ArtItem.Count); j++)
                             {
                                 <img class="romb" src="@Url.Content(string.Format(@Model.NewlyAddedExhibitions[i].Exhibition_ArtItem[j].ArtItems.Picture))" alt="">
                             }
