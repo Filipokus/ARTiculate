@@ -28,7 +28,9 @@ namespace ARTiculate.Data
         List<Tag> GetListOfTagsForSelectedVernisage(Vernisage vernisage);
         Task<Exhibition> GetExhibition(int id);
         Task<List<Exhibition>> GetAllExhibitionsOrderedByDate();
-    
+        Task<int> RandomizedExhibitionId();
+
+
         List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition);
         Task<List<ArtItem>> GetArtItemsFromExhibition(int id);
         Task<Artist> GetArtist(int id);

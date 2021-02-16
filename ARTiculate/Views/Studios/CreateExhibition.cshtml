@@ -1,5 +1,5 @@
 ﻿@section StyleSheets{
-    <link rel="stylesheet" href="~/Assets/css/CreateVernissage.css?v={random string}" />
+    <link rel="stylesheet" href="~/Assets/css/CreateExhibition.css?v={random string}" />
 }
 
 <div class="create-title">
@@ -36,7 +36,7 @@
                             {
                                 <div class="image-container">
                                     @Html.HiddenFor(m => m.AllArtItems[i])
-                                    <img class="uploaded-image" src="@Url.Content(string.Format(Model.AllArtItems[i].Picture))" />
+                                    <img class="uploaded-image" src="@Url.Content(string.Format(Model.AllArtItems[i].Picture))" onclick="markCheckBox(this)"/>
                                     @Html.CheckBoxFor(m => m.AllArtItemsByArtistBoolList[i])
                                 </div>
                             }

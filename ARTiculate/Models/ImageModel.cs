@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class ImageModel: BaseViewModel
+    public class ImageModel
     {
         public ImageModel(IFormFile imageFile, string filename)
         {

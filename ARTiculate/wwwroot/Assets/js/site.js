@@ -178,5 +178,17 @@ function hideImageCloseUp() {
     artInfo.classList.add('hideInfo');
 }
 
+//------------Create Exhibition ----------------
+function markCheckBox(pictureNode) {
+    let imageContainer = pictureNode.parentNode;
+    let checkbox = imageContainer.children[2];
+
+    if (checkbox.checked === true) {
+        imageContainer.children[2].checked = false;
+    }
+    else {
+        imageContainer.children[2].checked = true;
+    }
+}
 
 
