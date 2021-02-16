@@ -1,16 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using ARTiculate.Data;
+using ARTiculateDataAccessLibrary.DataAccess;
 
 namespace ARTiculate.Models
 {
     public class BaseViewModel
     {
-        public string RandomizedController { get; set; } = "Exhibitions";
+        public int RandomizedId { get; set; }
 
-        public string RandomizedAction { get; set; } = "Exhibition";
+        public BaseViewModel(int id)
+        {
+            RandomizedId = id;
+        }
 
-        public int RandomizedId { get; set; } = 1;
+        public BaseViewModel()
+        {
+
+        }
     }
 }

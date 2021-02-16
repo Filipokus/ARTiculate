@@ -81,8 +81,9 @@ namespace ARTiculate.Controllers
 
 
             //aRTiculateRepository.GetMockData(_db);
+            BaseViewModel viewModel = new BaseViewModel(id);
 
-            
+            return View(viewModel);
         }
 
 
