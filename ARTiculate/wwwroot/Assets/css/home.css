@@ -24,17 +24,22 @@ h1 {
 
 
 /* || FIRST BLACK SECTION || */
-#slogan{
+#slogan {
     color: var(--contrast-color);
     font-size: 5vw;
     margin-top: 15vw;
     padding-top: 3vw;
-    padding-bottom: 2vw;
-    transform: skewY(0.5deg);
+    padding-bottom: 2vw;  
     color: var(--contrast-color);
     font-family: 'Fragmentcore', cursive;
-    font-weight: bold;
+    font-weight: bold;     
+   
 }
+
+    #slogan :hover {
+        cursor: default;
+        text-decoration:none;
+    }
 
     /* || BUTTONS || */
     .straight-div {

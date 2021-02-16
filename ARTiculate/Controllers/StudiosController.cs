@@ -48,7 +48,7 @@ namespace ARTiculate.Controllers
             StudioViewModel viewModel = new StudioViewModel(artist);
 
             return View(viewModel);
-        }
+        }        
 
         [Authorize]
         public async Task<IActionResult> MyStudio()

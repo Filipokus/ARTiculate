@@ -36,7 +36,7 @@
     <div class="straight-div">
         <div class="studio-content">
 
-            @{ 
+            @if(Model.Exhibitions != null){ 
                 for (int i = 0; i<Model.Exhibitions.Count; i++)
                 {
                     <div class="folder">
