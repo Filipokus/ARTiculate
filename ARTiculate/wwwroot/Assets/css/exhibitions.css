@@ -5,6 +5,7 @@
 .straight-div {
     transform: skewY(11deg);
     width: 80vw;
+    height: 110vw;
     padding: 5vw 0 10vw 0;
     display: flex;
     flex-direction: row;
@@ -39,7 +40,11 @@
     grid-column: span 2;
     margin-bottom: -52%;
     transform: scale(1);
-    max-width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    height: 40vw;
+    width: 40vw;
+/*    max-width: 100%;*/
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 

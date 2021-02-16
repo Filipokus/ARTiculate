@@ -11,7 +11,7 @@ namespace ARTiculate.Models
         public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> NewlyAddedExhibitions { get; set; }
         public List<Exhibition> ExhibitionsByTagName { get; set; }
-        public string TagName { get; set; } = "Rymden";
+        public string TagName { get; set; } = "keramik";
 
 
         public ExhibitionViewModel()
@@ -56,9 +56,13 @@ namespace ARTiculate.Models
         {
             var listOfSixExhibitions = new List<Exhibition>();
 
-            for (int i = 0; (i < 6) && (i < exhibitions.Count); i++)
+            for (int i = exhibitions.Count - 1; i > 0; i--)
             {
                 listOfSixExhibitions.Add(exhibitions[i]);
+                if (listOfSixExhibitions.Count == 6)
+                {
+                    break;
+                }
             }
 
             return listOfSixExhibitions;

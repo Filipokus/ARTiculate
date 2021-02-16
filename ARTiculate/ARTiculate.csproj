@@ -32,17 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="wwwroot\UploadedImages\testar2102080253073702.png" />
     <None Remove="Views\Exhibitions\NewFile.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\UploadedImages\GustavFalk2102020505502649.jpg" />
-    <None Include="wwwroot\UploadedImages\tomato2102020511115169.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="wwwroot\UploadedImages\testar2102080253073702.png" />
     <Resource Include="wwwroot\Assets\Fonts\HeyAugust.otf" />
   </ItemGroup>
 
