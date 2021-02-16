@@ -23,7 +23,7 @@
         <h2>About this Vernissage</h2>
         <p>@Model.Vernisage.Description</p>
     </div>
-    <img id="poster" src="~/Assets/Images/PlaceholderIMG.jpg" />
+    <img id="poster" src="@Url.Content(string.Format(Model.Vernisage.Poster))" />
 </div>
 
 <p id="activeOrNot">@Model.Vernisage.Open</p>
