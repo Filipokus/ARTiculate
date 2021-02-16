@@ -6,9 +6,6 @@
     <h1>Create exhibition</h1>
 </div>
 @model ARTiculate.Models.CreateExhibitionViewModel
-<h2 class="diagonal-h2">Fill in</h2>
-<div class="diagonal-box">
-    <div id="bend-back">
         @using (Html.BeginForm("CreateExhibition", "Studios", FormMethod.Post))
         {
             <form id="create-form">
@@ -22,14 +19,13 @@
                     @Html.TextAreaFor(m => m.Exhibition.Description)
                 </div>
 
-                <div class="input-item" id="poster">
+                @*<div class="input-item" id="poster">
                     <h3>Tags</h3>
                     @Html.EditorFor(m => m.ExhibitionTags)
-                </div>
+                </div>*@
 
-                <div class="input-item" id="select-exhibition">
                     <h3>Choose Art to Exhibit</h3>
-                    <p style="color:white;">*You don't have to add art to your exhibition if you aren't ready yet. To make this Exhibition public you'll need at least 4 art pieces. You can always add pieces later.</p>
+                    <p id="instructions">*You don't have to add art to your exhibition if you aren't ready yet. To make this Exhibition public you'll need at least 4 art pieces. You can always add pieces later.</p>
                     <div id="image-selector">
                         <div id="testar">
                             @for (int i = 0; i < Model.AllArtItems.Count; i++)
@@ -42,7 +38,6 @@
                             }
                         </div>
                     </div>
-                </div>
 
                 <div class="input-item" id="date-time">
                     <h3>Date and time</h3>
@@ -57,5 +52,3 @@
 
             </form>
         }
-    </div>
-</div>
