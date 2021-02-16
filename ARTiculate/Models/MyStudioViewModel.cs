@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class MyStudioViewModel : BaseViewModel
+    public class MyStudioViewModel
     {
         public MyStudioViewModel(Artist artist)
         {

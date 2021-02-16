@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class ExhibitionViewModel: BaseViewModel
+    public class ExhibitionViewModel
     {
         public List<Exhibition> Exhibitions { get; set; } = new List<Exhibition>();
         public List<Exhibition> NewlyAddedExhibitions { get; set; }

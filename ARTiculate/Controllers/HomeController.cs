@@ -44,12 +44,13 @@ namespace ARTiculate.Controllers
         {
             try
             {
+                int randomId = await aRTiculateRepository.RandomizedExhibitionId();
                 List<Vernisage> futureVernisages =await aRTiculateRepository.GetAllVernisagesToCome();
                 List<Vernisage> liveVernisages = await aRTiculateRepository.GetLiveVernisages();
                 List<Exhibition> exhibitions = await aRTiculateRepository.GetAllExhibitionsOrderedByDate();
                 List<Artist> artists = await aRTiculateRepository.GetAllArtists();
 
-                HomeViewModel homeViewModel = new HomeViewModel(futureVernisages, liveVernisages, exhibitions, artists);
+                HomeViewModel homeViewModel = new HomeViewModel(randomId, futureVernisages, liveVernisages, exhibitions, artists);
 
                 if (User.Identity.IsAuthenticated)
                 {
@@ -81,8 +82,9 @@ namespace ARTiculate.Controllers
 
 
             //aRTiculateRepository.GetMockData(_db);
+            //BaseViewModel viewModel = new BaseViewModel(id);
 
-            
+            //return View(viewModel);
         }
 
 

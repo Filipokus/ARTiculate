@@ -21,6 +21,7 @@ namespace ARTiculate.Data
         {
             db = context;
         }
+
         /// <summary>
         /// Ctor for test class to avoid an empty ctor
         /// </summary>
@@ -512,6 +513,20 @@ namespace ARTiculate.Data
               .OrderByDescending(x => x.DateTime).ToListAsync();
 
             return exhibitionsFromDb;
+        }
+
+        /// <summary>
+        /// Get randomized Id for SurpriseMe-button on Home Index.
+        /// </summary>
+        /// <returns> Returns a random ExhibitionId from exhibitions in db</returns>
+        public async Task<int> RandomizedExhibitionId()
+        {
+            var exhibitionList = await GetAllExhibitionsOrderedByDate();
+            int max = exhibitionList.Count();
+            Random random = new Random();
+            int randomInt = random.Next(max);
+
+            return exhibitionList[randomInt].Id;
         }
 
         /// <summary>

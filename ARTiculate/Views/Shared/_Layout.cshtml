@@ -2,6 +2,7 @@
 @using ARTiculate.Areas.Identity.Data
 @inject SignInManager<ARTiculateUser> SignInManager
 @inject UserManager<ARTiculateUser> userManager
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +48,6 @@
                 </li>
                 <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Index", "Studios")'">
                     <a asp-area="" asp-controller="Studios" asp-action="Index" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Studios</a>
-                </li>
-                <li onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)" onclick="location.href='@Url.Action("Exhibition", "Exhibitions", new { id = @Model.RandomizedId })'">
-                    <a asp-area="" asp-controller="@Model.RandomizedController" asp-action="@Model.RandomizedAction" asp-route-id="@Model.RandomizedId" onmouseover="menuHoverIn(this)" onmouseout="menuHoverOut(this)">Take me somewhere new!</a>
                 </li>
                 @if (SignInManager.IsSignedIn(User))
                 {

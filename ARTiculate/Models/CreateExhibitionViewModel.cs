@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ARTiculate.Models
 {
-    public class CreateExhibitionViewModel: BaseViewModel
+    public class CreateExhibitionViewModel
     {
         public int ArtistId { get; set; }
 
