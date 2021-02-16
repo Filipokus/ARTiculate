@@ -1,4 +1,22 @@
 ﻿
+.back {
+    outline: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Comfortaa', cursive;
+}
+.back:hover{
+    text-decoration: underline;
+}
+
+.back img{
+    height: 3vw;
+    margin: 1vw;
+    float: left;
+    margin-top: 0vw;
+}
+
 h3 {
     color: #DFDDE4;
 }
