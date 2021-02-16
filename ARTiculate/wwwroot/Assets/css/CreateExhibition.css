@@ -1,18 +1,12 @@
 ﻿
 h3 {
-    color: #DFDDE4;
+    color: #242424;
+    text-align: center;
+    margin-top: 5vw;
 }
 
-.diagonal-box {
-    margin: 3vw 0 15vw 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 9vw 0 15vw 0;
-}
-
-#bend-back {
-    transform: skewY(11deg);
+p{
+    line-height: 4vw;
 }
 
 #create-form {
@@ -21,17 +15,38 @@ h3 {
 
     #create-form input {
         font-size: 4vw;
-        font-family: Comfortaa;
     }
 
 .input-item {
     padding: 2vw;
+    text-align: center;
+    margin-top: 2vw;
 }
 
-.diagonal-h2 {
-    transform: skewY(-12deg);
-    margin-top: 3vh;
-    margin-bottom: 1vh;
+    .input-item input, .input-item textarea {
+        width: 80vw;
+        height: 8vw;
+        background-color: #fdffb6;
+        border-color: #a7a894;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        font-family: 'Comfortaa';
+        font-size: 4vw;
+        text-align: center;
+    }
+
+        .input-item textarea{
+            height: 15vw;
+            text-align: left;
+        }
+
+        .input-item input, .input-item textarea {
+            outline: none;
+        }
+
+        #instructions{
+    margin: 2vw;
 }
 
 #submit-btn {
@@ -44,9 +59,7 @@ h3 {
     border: none;
     font-family: 'Comfortaa';
     font-size: 3vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    background-color: #EFEFEF;
 }
 
 .uploaded-image {
@@ -59,12 +72,10 @@ h3 {
 #image-selector {
     display: flex;
     flex-direction: initial;
-    width: 95%;
-    border: 1px solid #242424;
-    border-radius: 10px;
-    background-color: none;
+    width: 100%;
+    background-color: #242424;
     color: white;
-    height: 28%;
+    height: 18%;
     position: absolute;
     overflow-x: auto;
     overflow-y: hidden;
