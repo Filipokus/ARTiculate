@@ -47,6 +47,20 @@ namespace ARTiculate.Controllers
             Artist artist = await ARTiculateRepository.GetArtist(id);
             StudioViewModel viewModel = new StudioViewModel(artist);
 
+            List<List<ArtItem>> listOfArtitemList = new List<List<ArtItem>>();
+            List<Exhibition> exhibitions = await ARTiculateRepository.GetAllExhibitionsFromArtistAsync(artist.Id);
+            if (exhibitions != null)
+            {
+                foreach (var exhibition in exhibitions)
+                {
+                    List<ArtItem> artItems = await ARTiculateRepository.GetArtItemsFromExhibition(exhibition.Id);
+                    listOfArtitemList.Add(artItems);
+                }
+
+                viewModel.Exhibitions = exhibitions;
+                viewModel.ListOfArtItemList = listOfArtitemList;
+            }
+
             return View(viewModel);
         }        
 

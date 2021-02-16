@@ -10,6 +10,10 @@ namespace ARTiculate.Models
     {
         public Artist Artist { get; set; }
 
+        public List<Exhibition> Exhibitions { get; set; }
+
+        public List<List<ArtItem>> ListOfArtItemList { get; set; }
+
         public StudioViewModel(Artist artist)
         {
             Artist = artist;
