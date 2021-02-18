@@ -29,13 +29,13 @@ p {
     font-size: 5vw;
 }
 
-.input-item input[type="file"] {
-    font-family: 'Comfortaa';
-    cursor: pointer;
-    justify-content: center;
-}
+    .input-item input[type="file"] {
+        font-family: 'Comfortaa';
+        cursor: pointer;
+        justify-content: center;
+    }
 
-button{
+button {
     width: 100px;
     background-color: pink;
 }
