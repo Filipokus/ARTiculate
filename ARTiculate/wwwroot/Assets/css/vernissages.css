@@ -1,7 +1,13 @@
-﻿/* || VERNISSAGES || */
+﻿/* || VARIABLES || */
+:root {
+    --header-and-text-color: #242424;
+    --calendar-blue: #4BFFFF;
+    --shadow-color: #0c0c0c;
+}
+/* END OF VARIABLES */
 
 
-/* LIVE BANNER */
+/* || LIVE BANNER || */
 .live-btn {
     width: 100%;
     margin-top: 3vh;
@@ -10,7 +16,7 @@
     border: none;
     outline: none;
     padding: 0;
-    box-shadow: 0 0 3vw 1vw #362D26;
+    box-shadow: 0 0 3vw 1vw var(--shadow-color);
 }
 
 .live-container {
@@ -47,12 +53,12 @@
     padding: 1vh;
 }
 
-    .live-txt h2 {
-        font-family: 'Comfortaa';
-    }
+.live-txt h2 {
+    font-family: 'Comfortaa';
+}
+/* END OF LIVE BANNER */
 
-/* NEXT 4 */
-
+/* || NEXT 4 || */
 .diagonal-h2 {
     font-family: 'HeyAugust';
     font-size: 6vw;
@@ -64,9 +70,8 @@
 }
 
 .diagonal-box {
-    background-color: #242424;
+    background-color: var(--header-and-text-color);
     transform: skewY(-11deg);
-/**/    /*box-shadow: 0 0.3vw 3vw 2vw #362D26;*/
 }
 
 .next-4-content {
@@ -101,7 +106,7 @@
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 3.5vh;
-    box-shadow: 0 0 3vw 2vw #0c0c0c;
+    box-shadow: 0 0 3vw 2vw var(--shadow-color);
 }
 
 .left4 {
@@ -126,8 +131,9 @@
 .next4-container p {
     font-size: 2.6vw;
 }
+/* END OF NEXT 4 */
 
-/* UPCOMING */
+/* || UPCOMING || */
 .upcoming-h2 {
     font-family: 'HeyAugust';
     font-size: 6vw;
@@ -152,14 +158,14 @@
 .upcoming-date {
     height: 10vw;
     width: 12vw;
-    background-color: #4BFFFF;
+    background-color: var(--calendar-blue);
     border-radius: 2vw 0vw 0vw 2vw;
 }
 
-    .upcoming-date p {
-        margin-top: 1vw;
-        margin-bottom: 1vw;
-    }
+.upcoming-date p {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
 
 .upcoming-txt {
     background-color: rgba(255,255,255, 0.5);
@@ -169,20 +175,21 @@
     text-align: left;
 }
 
-    .upcoming-txt p {
-        margin-top: 1vw;
-        margin-bottom: 1vw;
-        margin-left: 2vw;
-    }
-
-.upcoming:hover {
-    box-shadow: 3vw 0 3vw 0.06vw #362D26;
-    cursor: pointer;
+.upcoming-txt p {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    margin-left: 2vw;
 }
+
+    .upcoming:hover {
+        box-shadow: 3vw 0 3vw 0.06vw var(--shadow-color);
+        cursor: pointer;
+    }
 
     .upcoming:hover p {
         font-weight: bolder;
     }
+/* END OF UPCOMING */
 
 #to-my-studio {
     width: 40vw;
@@ -200,4 +207,4 @@
     padding-top: 2vw;
     margin-bottom: 3.5vh;
   
-  }
+ }

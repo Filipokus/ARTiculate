@@ -46,7 +46,7 @@ namespace ARTiculate.Data
             return "~" + newURL;
         }
 
-        // TODO förenkla metoden
+        
         /// <summary>
         /// Takes two in data parameters as DateTime and returns the difference
         /// </summary>

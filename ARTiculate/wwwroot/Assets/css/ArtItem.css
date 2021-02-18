@@ -1,4 +1,12 @@
-﻿.back {
+﻿/* || VARIABLES || */
+:root {
+    --main-bg-color: #fdffb6;
+    --header-and-text-color: #242424;
+    --contrast-color: #DFDDE4;
+}
+/* END OF VARIABLES */
+
+.back {
     outline: none;
     border: none;
     background: transparent;
@@ -18,7 +26,7 @@
     }
 
 h3 {
-    color: #DFDDE4;
+    color: var(--contrast-color);
 }
 
 .diagonal-box {

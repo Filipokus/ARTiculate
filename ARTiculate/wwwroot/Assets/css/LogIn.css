@@ -1,4 +1,11 @@
-﻿.form-group{
+﻿/* || VARIABLES || */
+:root {
+    --main-bg-color: #fdffb6;
+    --input-border-color: #a7a894;
+}
+/* END OF VARIABLES */
+
+.form-group{
     margin-top: 12vw;
     text-align: center;
 }
@@ -17,8 +24,8 @@ label{
 input {
     width: 80vw;
     height: 8vw;
-    background-color: #fdffb6;
-    border-color: #a7a894;
+    background-color: var(--main-bg-color);
+    border-color: var(--input-border-color);
     border-top: none;
     border-left: none;
     border-right: none;
@@ -63,7 +70,7 @@ input {
     color: var(--contrast-color);
     border: none;
     border-radius: 2vw;
-    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84); /*<-------------------svart färg*/
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84);
     cursor: pointer;
     font-family: 'Comfortaa';
     font-size: 3vw;

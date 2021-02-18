@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using ARTiculate.Data;
 using ARTiculateDataAccessLibrary.Models;
@@ -47,6 +46,7 @@ namespace ARTiculate.Controllers
             Vernisage vernisage = await ARTiculateRepository.GetVernisage(ID);
             VernisageViewModel viewModel;
 
+            //creates a viewmodel with the logged in user to use the chat
             if (User.Identity.IsAuthenticated)
             {
                 ARTiculateUser user = await GetCurrentUserAsync();

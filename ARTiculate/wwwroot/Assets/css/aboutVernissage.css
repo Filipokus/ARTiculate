@@ -1,4 +1,13 @@
-﻿.live-title {
+﻿/* || VARIABLES || */
+:root {
+    --header-and-text-color: #242424;
+    --contrast-color: #DFDDE4;
+    --shadow-color: #0c0c0c;
+}
+/* END OF VARIABLES */
+
+
+.live-title {
     height: 6vh;
     margin-top: -1vh;
 }
@@ -36,11 +45,11 @@
 #description-box h2 {
     line-height: 8vw;
     font-size: 5vw;
-    color: #DFDDE4;
+    color: var(--contrast-color);
 }
 
 #description-box p {
-    color: #DFDDE4;
+    color: var(--contrast-color);
     line-height: 3.7vw;
 }
 
@@ -49,12 +58,12 @@
     transform: skewY(11deg);
     margin: 10vw;
     border-radius: 8px;
-    box-shadow: 0 0 3vw 2vw #0c0c0c;
+    box-shadow: 0 0 3vw 2vw var(--shadow-color);
 }
 
 #live-date {
     font-size: 4vw;
-    color: #242424;
+    color: var(--header-and-text-color);
     text-align:center;
     margin-top: 15vw;
 }
