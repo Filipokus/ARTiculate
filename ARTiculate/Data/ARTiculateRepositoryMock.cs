@@ -32,6 +32,8 @@ namespace ARTiculate.Data
 
         #region CREATE
 
+        #region Vernissage
+
         /// <summary>
         /// Adds a object of type Vernisage to db
         /// </summary>
@@ -42,7 +44,7 @@ namespace ARTiculate.Data
             await db.Vernisages.AddAsync(vernisage);
             db.SaveChanges();
 
-            return vernisage;            
+            return vernisage;
         }
 
         /// <summary>
@@ -86,6 +88,10 @@ namespace ARTiculate.Data
             db.SaveChanges();
         }
 
+        #endregion
+
+        #region Exhibition
+
         /// <summary>
         /// Adds an object of type Exhibition to db 
         /// </summary>
@@ -126,49 +132,11 @@ namespace ARTiculate.Data
         }
 
         /// <summary>
-        /// Adds an object of type Artist to db 
+        /// Creates an Exhibition_ArtItem foreach List<ArtItem> object
         /// </summary>
-        /// <param name="artist"></param>
+        /// <param name="artItems"></param>
+        /// <param name="exhibitionId"></param>
         /// <returns></returns>
-        public async Task<Artist> AddArtistAsync(Artist artist)
-        {
-            await db.Artists.AddAsync(artist);
-            await db.SaveChangesAsync();
-            return artist;
-        }
-
-        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
-        {
-            Artist artist = new Artist()
-            {
-                Emailadress = user.Email,
-                Firstname = user.FirstName,
-                Lastname = user.LastName,
-                ProfilePicture = "~/UploadedImages/profilepicture.png"
-
-            };
-            return artist;
-        }
-
-        /// <summary>
-        /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
-        /// </summary>
-        /// <param name="tagname"></param>
-        /// <returns></returns>
-        public async Task<Tag> AddTagAsync(Tag tag)
-        {
-            await db.Tags.AddAsync(tag);
-            await db.SaveChangesAsync();
-            return tag;
-        }
-
-        public async Task<ArtItem> AddArtItem(ArtItem artItem)
-        {
-            await db.ArtItems.AddAsync(artItem);
-            await db.SaveChangesAsync();
-            return artItem;
-        }
-
         public async Task CreateExhibition_ArtItemsAsync(List<ArtItem> artItems, int exhibitionId)
         {
             foreach (ArtItem artItem in artItems)
@@ -182,6 +150,22 @@ namespace ARTiculate.Data
 
                 await AddArtItemToExhibition(exhibition_ArtItem);
             }
+        }
+
+        #endregion
+
+        #region ArtItem
+
+        /// <summary>
+        /// Adds an ArtItem into db
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns> ArtItem </returns>
+        public async Task<ArtItem> AddArtItem(ArtItem artItem)
+        {
+            await db.ArtItems.AddAsync(artItem);
+            await db.SaveChangesAsync();
+            return artItem;
         }
 
         /// <summary>
@@ -199,9 +183,76 @@ namespace ARTiculate.Data
             return exhibition_ArtItem;
         }
 
+        #endregion
+
+        #region Artist
+
+        /// <summary>
+        /// Adds an object of type Artist to db 
+        /// </summary>
+        /// <param name="artist"></param>
+        /// <returns></returns>
+        public async Task<Artist> AddArtistAsync(Artist artist)
+        {
+            await db.Artists.AddAsync(artist);
+            await db.SaveChangesAsync();
+            return artist;
+        }
+
+        /// <summary>
+        /// Creates an Artist from an ARTiculateUser
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns> Artist </returns>
+        public Artist CreateArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            Artist artist = new Artist()
+            {
+                Emailadress = user.Email,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
+                ProfilePicture = "~/UploadedImages/profilepicture.png"
+
+            };
+            return artist;
+        }
+
+        #endregion
+
+        #region Tags
+
+        /// <summary>
+        /// Method for creating new tag. Takes string with the name of the tag as input. Returns tag as object.
+        /// </summary>
+        /// <param name="tagname"></param>
+        /// <returns></returns>
+        public async Task<Tag> AddTagAsync(Tag tag)
+        {
+            await db.Tags.AddAsync(tag);
+            await db.SaveChangesAsync();
+            return tag;
+        }
+
+        /// <summary>
+        /// Adds an object of type <ArtItem_Tag> into Db
+        /// </summary>
+        /// <param name="artItem_Tag"></param>
+        /// <returns name="artItem_Tag"></returns>
+        public async Task<ArtItem_Tag> AddArtItemTag(ArtItem_Tag artItem_Tag)
+        {
+            await db.ArtItem_Tags.AddAsync(artItem_Tag);
+            await db.SaveChangesAsync();
+            return artItem_Tag;
+        }
+
+        /// <summary>
+        /// Takes a string with tags (#tag1, #tag2) and returns List<Tag> with added Tags in Db
+        /// </summary>
+        /// <param name="tagsRaw"></param>
+        /// <returns name="addedTags"></returns>
         public async Task<List<Tag>> AddTagsAsync(string tagsRaw)
         {
-            string [] tags = tagsRaw.Split(' ');
+            string[] tags = tagsRaw.Split(' ');
             List<Tag> addedTags = new List<Tag>();
 
             foreach (string tagRaw in tags)
@@ -229,13 +280,12 @@ namespace ARTiculate.Data
             return addedTags;
         }
 
-        public async Task<ArtItem_Tag> AddArtItemTag(ArtItem_Tag artItem_Tag)
-        {
-            await db.ArtItem_Tags.AddAsync(artItem_Tag);
-            await db.SaveChangesAsync();
-            return artItem_Tag;
-        }
-
+        /// <summary>
+        /// Takes a string of tags (#tag1, #tag2) and an ArtItem id to create ArtItem_Tags into Db
+        /// </summary>
+        /// <param name="tagsRaw"></param>
+        /// <param name="id"></param>
+        /// <returns name="artItem_Tags"></returns>
         public async Task<List<ArtItem_Tag>> AddArtItem_Tags(string tagsRaw, int id)
         {
             List<Tag> tags = await AddTagsAsync(tagsRaw);
@@ -256,6 +306,12 @@ namespace ARTiculate.Data
             return artItem_Tags;
         }
 
+        #endregion
+
+        #region Mockdata
+        /// <summary>
+        /// Reads files with mockdata and saves it do Db.
+        /// </summary>
         public void GetMockData(ArtistContext db)
         {
             //var fileArtist = File.ReadAllText("Mock/Artist.json");
@@ -324,11 +380,13 @@ namespace ARTiculate.Data
             //db.SaveChanges();
         }
         #endregion
-        
+
+        #endregion
 
         #region READ
 
-        //VERNISSAGE
+        #region Vernissage
+
         /// <summary>
         /// Method "Get" vernissage, input id and returns a vernissage. 
         /// </summary>
@@ -408,8 +466,6 @@ namespace ARTiculate.Data
             }
             return commingVernisages;
         }
-
-
         
         /// <summary>
         /// Returns a List containing all live vernisages
@@ -432,7 +488,6 @@ namespace ARTiculate.Data
             return liveVernisages;
         }
 
-
         /// <summary>
         /// Returns a List containing all active vernisages
         /// </summary>
@@ -453,8 +508,6 @@ namespace ARTiculate.Data
             return activeVernisages;
         }
 
-
-        //TODO Ta bort den här metoden??
         /// <summary>
         /// Returns a list with name and id of all the tags that the slected vernisage holds
         /// </summary>
@@ -470,8 +523,7 @@ namespace ARTiculate.Data
             }
             return tags;
         }
-
-        //EXHIBITIONS
+        #endregion
 
         #region Exhibition
         /// <summary>
@@ -483,23 +535,7 @@ namespace ARTiculate.Data
             var exhibitionsFromDb = await GetExhibitionsFromDbOrderedByDate();
             var listOfExhibitions = CreateListOfExhibitions(exhibitionsFromDb);
             return listOfExhibitions;
-        }
-
-        public async Task<List<ArtItem>> GetArtItemsFromExhibition(int id)
-        {
-            List<Exhibition_ArtItem> exhibition_ArtItems = await db.Exhibition_ArtItems
-            .Include(x => x.ArtItems)
-            .Where(x => x.ExhibitionId == id).ToListAsync();
-
-            List<ArtItem> artItems = new List<ArtItem>();
-            foreach (Exhibition_ArtItem x in exhibition_ArtItems)
-            {
-                artItems.Add(x.ArtItems);
-            }
-
-            return artItems;
-        }
-
+        }       
 
         /// <summary>
         /// Collects all exhibitions from Db ordered by date and returns them
@@ -546,8 +582,6 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
-
-        //TODO ta bort den här metoden??
         /// <summary>
         /// Method "Get" exhibition, input id and returns a exhibition.
         /// </summary>
@@ -562,85 +596,13 @@ namespace ARTiculate.Data
               .FirstOrDefaultAsync();
 
             return exhibition;
-        }
-
+        }     
+      
         /// <summary>
-        /// Returns a list with name and id of all the tags that the slected exhibition holds
+        /// Takes an Artist id and returns that artist's Exhibitions from Db (List<Exhibition>)
         /// </summary>
-        /// <param name="exhibition"></param>
-        /// <returns></returns>
-        public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
-        {
-            List<Tag> tags = new List<Tag>();
-
-            foreach (var item in exhibition.Exhibition_Tags)
-            {
-                tags.Add(item.Tag);
-            }
-            return tags;
-        }
-
-        ///// <summary>
-        ///// Returns an artist from the db by taking the id (int) as input.
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        //public async Task<Artist> GetArtist(int id)
-        //{
-        //    var artist = await db.Artists
-        //       .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-        //       .Include(x => x.Artist_Vernisages)
-        //       .Include(x => x.Artist_Exhibitions)
-        //       .Include(x => x.Artist_Tags)
-        //       .Where(x => x.Id == id)
-        //       .FirstOrDefaultAsync();
-
-        //    return artist;
-        //}
-
-        public async Task<List<Artist>> GetAllArtists()
-        {
-            var artists = await db.Artists
-               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-               .Include(x => x.Artist_Vernisages)
-               .Include(x => x.Artist_Exhibitions)
-               .Include(x => x.Artist_Tags).ToListAsync();
-
-
-            return artists;
-        }
-
-
-            /// <summary>
-            /// Returns an artist that is referenced in the ARTiculateUser
-            /// </summary>
-            /// <param name="id"></param>
-            /// <returns></returns>
-            public async Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
-        {
-            var artist = await db.Artists
-               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
-               .Include(x => x.Artist_Vernisages)
-               .Include(x => x.Artist_Exhibitions)
-               .Include(x => x.Artist_Tags)
-               .Where(x => x.Emailadress == user.Email)
-               .FirstOrDefaultAsync();
-
-            return artist;
-        }
-
-
-        public async Task<ArtItem> GetArtItem(int id)
-        {
-            var artItem = await db.ArtItems
-                .Include(x => x.Artist)
-                .Include(x => x.ArtItem_Tags)
-                .Where(x => x.Id == id)
-                .FirstOrDefaultAsync();
-
-            return artItem;
-        }
-
+        /// <param name="id"></param>
+        /// <returns name="exhibitions"></returns>
         public async Task<List<Exhibition>> GetAllExhibitionsFromArtistAsync(int id)
         {
             List<Artist_Exhibition> exhibitionsRaw = await db.Artist_Exhibitions
@@ -659,8 +621,12 @@ namespace ARTiculate.Data
             return exhibitions;
         }
 
-        //TODO förenkla metoden. Eventuellt ändra i databasen för att begränsa så att en exhibition enbart kan hållas av EN artist
-
+       /// <summary>
+       /// Gets all Exhibitions from artist id that hasnt got an vernissage yet
+       /// </summary>
+       /// <param name="id"></param>
+       /// <returns></returns>
+        
         public async Task<List<Exhibition>> GetAllExhibitionsWithOutVernissageFromArtist(int id)
         {
             List<Exhibition> allExhibitions = await GetAllExhibitionsFromArtistAsync(id);
@@ -692,6 +658,7 @@ namespace ARTiculate.Data
         #endregion
 
         #region Artist
+
         /// <summary>
         /// Returns an artist from the db by taking the id (int) as input.
         /// </summary>
@@ -710,6 +677,11 @@ namespace ARTiculate.Data
             return artist;
         }
 
+        /// <summary>
+        /// Get artitems that is connected to an Artist
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns></returns>
         public async Task<List<ArtItem>> GetArtItemsFromArtist(int id)
         {
             List<ArtItem> artItems = await db.ArtItems
@@ -719,9 +691,48 @@ namespace ARTiculate.Data
 
             return artItems;
         }
+        /// <summary>
+        /// Returns a List <Artis> of all artists in Db
+        /// </summary>
+        /// <returns name="artists"></returns>
+        public async Task<List<Artist>> GetAllArtists()
+        {
+            var artists = await db.Artists
+               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+               .Include(x => x.Artist_Vernisages)
+               .Include(x => x.Artist_Exhibitions)
+               .Include(x => x.Artist_Tags).ToListAsync();
+            return artists;
+        }
 
 
+        /// <summary>
+        /// Returns an artist that is referenced in the ARTiculateUser
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns name="artist"></returns>
+        public async Task<Artist> GetArtistFromARTiculateUser(ARTiculateUser user)
+        {
+            var artist = await db.Artists
+               .Include(x => x.ArtItems).ThenInclude(y => y.ArtItem_Tags)
+               .Include(x => x.Artist_Vernisages)
+               .Include(x => x.Artist_Exhibitions)
+               .Include(x => x.Artist_Tags)
+               .Where(x => x.Emailadress == user.Email)
+               .FirstOrDefaultAsync();
 
+            return artist;
+        }
+
+        #endregion
+
+        #region Tag
+
+        /// <summary>
+        /// Gets a tag from the database using a string
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns></returns>
         public Tag GetTagByName(string tagToSearch)
         {
             Tag tag = db.Tags
@@ -739,19 +750,83 @@ namespace ARTiculate.Data
 
             return tag;
         }
+        /// <summary>
+        /// Returns a list with name and id of all the tags that the slected exhibition holds
+        /// </summary>
+        /// <param name="exhibition"></param>
+        /// <returns></returns>
+        public List<Tag> GetListOfTagsForSelectedExhibition(Exhibition exhibition)
+        {
+            List<Tag> tags = new List<Tag>();
+
+            foreach (var item in exhibition.Exhibition_Tags)
+            {
+                tags.Add(item.Tag);
+            }
+            return tags;
+        }
+
         #endregion
 
+        #region ArtItem
+        /// <summary>
+        /// Takes id of Exhibition and returns List <ArtItem> of ArtItems related to Exhibition
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns name="artItems"></returns>
+        public async Task<List<ArtItem>> GetArtItemsFromExhibition(int id)
+        {
+            List<Exhibition_ArtItem> exhibition_ArtItems = await db.Exhibition_ArtItems
+            .Include(x => x.ArtItems)
+            .Where(x => x.ExhibitionId == id).ToListAsync();
+
+            List<ArtItem> artItems = new List<ArtItem>();
+            foreach (Exhibition_ArtItem x in exhibition_ArtItems)
+            {
+                artItems.Add(x.ArtItems);
+            }
+
+            return artItems;
+        }
+        /// <summary>
+        /// Gets an ArtItem by Id from Db
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns name="artItem"></returns>
+        public async Task<ArtItem> GetArtItem(int id)
+        {
+            var artItem = await db.ArtItems
+                .Include(x => x.Artist)
+                .Include(x => x.ArtItem_Tags)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
+
+            return artItem;
+        }
+
+        #endregion
 
         #endregion
 
         #region UPDATE
 
+        /// <summary>
+        /// Updates object of type Artitem in the database
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns></returns>
         public async Task<ArtItem> UpdateArtItem(ArtItem artItem)
         {
             db.ArtItems.Update(artItem);
             await db.SaveChangesAsync();
             return artItem;
         }
+
+        /// <summary>
+        /// Updates object of type Exhibition in the database
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns></returns>
 
         public async Task<Exhibition> UpdateExhibition(Exhibition exhibition)
         {
@@ -760,6 +835,11 @@ namespace ARTiculate.Data
             return exhibition;
         }
 
+        /// <summary>
+        /// Updates object of type Vernissage in the database
+        /// </summary>
+        /// <param name="artItem"></param>
+        /// <returns></returns>
         public async Task<Vernisage> UpdateVernissage(Vernisage vernissage)
         {
             db.Vernisages.Update(vernissage);

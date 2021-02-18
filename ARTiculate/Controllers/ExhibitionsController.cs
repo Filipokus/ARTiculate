@@ -4,7 +4,6 @@ using ARTiculateDataAccessLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace ARTiculate.Controllers
@@ -22,6 +21,7 @@ namespace ARTiculate.Controllers
         {
             try
             {
+               
                 List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
                 ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
                 
@@ -32,23 +32,14 @@ namespace ARTiculate.Controllers
 
                 return RedirectToAction("Error", "Home");
             }
-            //List<Exhibition> exhibition = await ARTiculateRepository.GetExhibitionsFromDbOrderedByDate();
-            //ExhibitionViewModel exhibitionViewModel = new ExhibitionViewModel(exhibition);
-            //if (exhibitionViewModel.Exhibitions.Count > 0  && exhibitionViewModel.NewlyAddedExhibitions.Count > 0) //&& exhibitionViewModel.ExhibitionsByTagName.Count > 0)
-            //{
-            //    return View(exhibitionViewModel);
-            //}
-            //else
-            //{
-            //    return RedirectToAction("Error", "Home");
-            //}
+   
         }
 
         public async Task<IActionResult> Exhibition(int ID)
         {
+            
             Exhibition exhibitionTask = await ARTiculateRepository.GetExhibition(ID);
-            List<ArtItem> artItemTask = await ARTiculateRepository.GetArtItemsFromExhibition(ID);
-                      
+            List<ArtItem> artItemTask = await ARTiculateRepository.GetArtItemsFromExhibition(ID);            
             ExhibitionViewModelOverview viewModel = new ExhibitionViewModelOverview(exhibitionTask, artItemTask);
 
             return View(viewModel);

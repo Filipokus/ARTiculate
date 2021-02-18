@@ -3,14 +3,11 @@ using ARTiculateDataAccessLibrary.DataAccess;
 using ARTiculateDataAccessLibrary.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using ARTiculate.Data;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using ARTiculate.Areas.Identity.Data;
 
@@ -50,44 +47,26 @@ namespace ARTiculate.Controllers
                 List<Exhibition> exhibitions = await aRTiculateRepository.GetAllExhibitionsOrderedByDate();
                 List<Artist> artists = await aRTiculateRepository.GetAllArtists();
 
+                //There should be a tasklist here, but it wont work with the repo
                 HomeViewModel homeViewModel = new HomeViewModel(randomId, futureVernisages, liveVernisages, exhibitions, artists);
 
+                //checks if user is logged in, if that is the case. Creates a welcome message for the logged in artist.
                 if (User.Identity.IsAuthenticated)
                 {
                     ARTiculateUser user = await userManager.GetUserAsync(HttpContext.User);
                     Artist loggedInArtist = await aRTiculateRepository.GetArtistFromARTiculateUser(user);
                     homeViewModel.LoggedInArtist = "Welcome " + loggedInArtist.ToString();
                 }
-
-                //homeViewModel.posterstrings = await aRTiculateRepository.GetRandomPosters(exhibitions);
-
-                //ta emot list<exhibitions>
-                //return list<string> med posterURLs
+                             
 
                 return View(homeViewModel);
-                //Task<List<Vernisage>> futureVernisages = aRTiculateRepository.GetAllVernisagesToCome();
-                //Task<List<Vernisage>> liveVernisages = aRTiculateRepository.GetLiveVernisages();
-                //Task<List<Exhibition>> exhibitions = aRTiculateRepository.GetAllExhibitionsOrderedByDate();
-                //Task<List<Artist>> artists = aRTiculateRepository.GetAllArtists();
-                //List<Task> tasks = new List<Task>() {futureVernisages,liveVernisages,exhibitions,artists };
-                //await Task.WhenAll(tasks);
-
-                //HomeViewModel HomeViewModel = new HomeViewModel(futureVernisages.Result, liveVernisages.Result, exhibitions.Result, artists.Result);
-                //return View(HomeViewModel);
+           
             }
             catch (Exception)
             {
                 return RedirectToAction("Error", "Home");
-            }
-
-
-            //aRTiculateRepository.GetMockData(_db);
-            //BaseViewModel viewModel = new BaseViewModel(id);
-
-            //return View(viewModel);
+            }      
         }
-
-
 
         public IActionResult Privacy()
         {
@@ -102,12 +81,7 @@ namespace ARTiculate.Controllers
 
         public async Task<IActionResult> LogOut()
         {
-            await _signInManager.SignOutAsync();
-
-            //Session.Clear();
-
-
-
+            await _signInManager.SignOutAsync();        
             return RedirectToAction("Index");
         }
     }
