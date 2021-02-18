@@ -13,11 +13,11 @@
     src: url('/Assets/Fonts/HeyAugust.otf');
 }
 
-
 @font-face {
     font-family: 'Fragmentcore';
     src: url('/Assets/Fonts/Fragmentcore.otf');
 }
+
 #mobile-only {
     display: none;
 }
@@ -38,12 +38,15 @@ body {
 
 h1, h2, h3, h4, p {
     color: var(--header-and-text-color);
-    font-family: 'Comfortaa', cursive;
 }
 
 h1, h2 {
     font-family: 'HeyAugust';
     text-align: center;
+}
+
+h1, h2, h3, h4, p, #menu li a, #menu li, .footer-container, .footer-container a, .footer-container p {
+    font-family: 'Comfortaa', cursive;
 }
 
 h1 {
@@ -55,7 +58,7 @@ h2 {
     font-size: 6vw;
 }
 
-p {
+p, .footer-container, .footer-container a {
     font-size: 3vw;
 }
 
@@ -63,14 +66,12 @@ p {
     width: 10px;
 }
 
-
 ::-webkit-scrollbar-track {
     box-shadow: 0;
     border-radius: 0;
     opacity: 1;
     background: var(--header-and-text-color);
 }
-
 
 ::-webkit-scrollbar-thumb {
     background: var(--main-bg-color);
@@ -85,13 +86,8 @@ p {
 
 /* || DIAGONAL BOX || */
 .diagonal-h2 {
-    font-family: 'HeyAugust';
-    font-size: 6vw;
-    text-align: center;
-    margin: 1vw;
+    margin: 9vw 1vw 3vw 1vw;
     transform: skewY(-11deg);
-    margin-top: 9vh;
-    margin-bottom: 3vh;
 }
 .next-arrow{
     float:right;
@@ -100,7 +96,6 @@ p {
 .diagonal-box {
     background-color: var(--header-and-text-color);
     transform: skewY(-11deg);
-    /*box-shadow: 0 0.3vw 3vw 2vw var(--header-and-text-color);*/
 }
 /*END OF DIAGONAL BOX*/
 
@@ -109,123 +104,111 @@ header {
     background: var(--header-and-text-color);
     width: 100%;
     position: fixed;
-    top: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: -1vh;
     z-index: 1;
     box-shadow: 0 0 3vw 1vw var(--header-and-text-color);
 }
 
 header img {
 width: 30vw;
-margin: 1vh 3vw;
+margin: 0.8vw 3vw;
 }
 
-header img:hover {
+header img:hover, /*.searchButton:hover,*/ #menu li:hover {
     cursor: pointer;
 }
     
-    /* || SEARCH || */
-    .search {
-        display: flex;
-        flex-direction: row-reverse;
-        margin-right: -25vw;
-    }
+/* || SEARCH || */
+/*.search {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: -25vw;
+}
 
-    .searchTerm {
-        width: 0vw;
-        height: 1.5vh;
-        padding: 1vh 2vw 1vh;
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-right: 2vw;
-        margin-left: -50vw;
-        background: var(--contrast-color);
-        visibility: hidden;
-        border: hidden;
-        outline: none;
-        border-radius: 30px;
-        transition: 0.3s 3s;
-    }
+.searchTerm {
+    width: 0vw;
+    height: 1.5vh;
+    padding: 1vh 2vw 1vh;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2vw;
+    margin-left: -50vw;
+    background: var(--contrast-color);
+    visibility: hidden;
+    border: hidden;
+    outline: none;
+    border-radius: 30px;
+    transition: 0.3s 3s;
+}
 
-    .searchButton {
-        width: 5vw;
-        padding: 1.3vh 1vw 1vh;
-        background: transparent;
-        border: none;
-        outline: none;
-        margin-right: 1vw;
-    }
+.searchButton {
+    width: 5vw;
+    padding: 1.3vh 1vw 1vh;
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-right: 1vw;
+}
 
-        .searchButton:hover ~ .searchTerm {
-            visibility: visible;
-            width: 30vw;
-            transition: 0.3s;
-        }
-
-        .searchButton:hover {
-            cursor: pointer;
-        }
-
-    .searchIcon {
-        width: 5vw;
-        margin-left: -1vw;
-    }
-
-    .searchTerm:focus-within {
+    .searchButton:hover ~ .searchTerm {
         visibility: visible;
         width: 30vw;
+        transition: 0.3s;
     }
-    /* END OF SEARCH */
 
-    /* || MENU || */
-    nav img {
+.searchIcon {
+    width: 5vw;
+    margin-left: -1vw;
+}
+
+.searchTerm:focus-within {
+    visibility: visible;
+    width: 30vw;
+}*/
+/* END OF SEARCH */
+
+/* || MENU || */
+nav img {
     width: 6vw;
-    margin: 1vh 1vw;
-    padding: 1vh 2vw;
-    margin-top: 1.5vh;
-    }
+    padding: 1vw 2vw;
+    margin-top: 2vw;
+}
 
-    #menu {
+#menu {
     display: none;
     width: 102%;
     background-color: var(--header-and-text-color);
     position: absolute;
     left: 0;
     z-index: 1;
-    }
+}
 
-    #menu li a, #menu li {
-        font-family: 'Comfortaa';
-        text-align: center;
-        line-height: 6vh;
-        margin-right: 2vw;
-        color: var(--contrast-color);
-        text-decoration: none;
-    }
+#menu li a, #menu li {
+    text-align: center;
+    line-height: 8.5vw;
+    color: var(--contrast-color);
+    text-decoration: none;
+}
 
-        #menu li:last-child {
-            margin-bottom: 2vw;
-        }
+#menu li:last-child {
+    margin-bottom: 2vw;
+}
 
-        #menu li:hover {
-            /*color: var(--main-bg-color);*/
-            box-shadow: 0 0 3vw 1vw var(--header-and-text-color);
-            cursor: pointer;
-            font-weight: bolder;
-        }
+#menu li:hover {
+    box-shadow: 0 0 3vw 1vw var(--header-and-text-color);
+    font-weight: bolder;
+}
 
-    .hidden {
-    font-size: 0;
+.hidden {
     display: none;
-    }
+}
 
-    .container {
+.container {
     margin-top: 15%;
-    }
-    /* END OF MENU */
+}
+/* END OF MENU */
 /*END OF HEADER */
 
 
@@ -283,22 +266,18 @@ header img:hover {
 
 .artDescription {
     text-align: center;
-    margin-top: 4vw;
-    margin-left: 8vw;
-    margin-right: 8vw;
+    margin: 4vw 8vw auto 8vw;
     background-color: rgba(228, 223, 221, 0.7); /*<-------------------kontrastfärg (ljusgrå)*/
     padding: 15px;
     border-radius: 15px;
 }
         
     /* || CLOSE BUTTON || */
-    .close {
-        max-width: 6vw;
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        margin-bottom: 6vw;
-    }
+.close {
+    max-width: 6vw;
+    display: block;
+    margin: 0 auto 6vw auto;
+}
     /* END OF CLOSE BUTTON*/
 /* END OF IMAGE CLOSE UP */
 
@@ -314,16 +293,12 @@ header img:hover {
 }
 
 .footer-container {
-    font-size: 3vw;
     color: var(--contrast-color);
-    font-family: 'Comfortaa', cursive;
     text-align: right;
     padding: 5vw 2vw 0 0;
 }
 
-    .footer-container a, .footer-container p {
-        color: var(--contrast-color);
-        font-family: 'Comfortaa', cursive;
-        font-size: 3vw;
-    }
+.footer-container a, .footer-container p {
+    color: var(--contrast-color);
+}
 /* END OF FOOTER */
