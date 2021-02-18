@@ -1,5 +1,10 @@
-﻿/* || ARTIST NAMES || */
+﻿/* || VARIABLES || */
+:root {
+    --shadow-color: #0c0c0c;
+}
+/* END OF VARIABLES */
 
+/* || ARTIST NAMES || */
 .diagonal-h2{
     margin: 3vw;
 }
@@ -11,9 +16,6 @@
 
 /* || DIAGONAL BOX ||*/
 .diagonal-box {
-    /*background-color: #242424;
-    transform: skewY(-11deg);*/
-    /*box-shadow: 0 0.3vw 3vw 2vw #362D26;*/
     padding: 4vw;
     padding-top: 8vw;
     padding-bottom: 22vw;
@@ -34,7 +36,7 @@
     justify-items: center;
     align-items: center;
     transform: skewY(11deg);
-    filter: drop-shadow(5px 5px 7px #0c0c0c)
+    filter: drop-shadow(5px 5px 7px var(--shadow-color));
 }
 
 .romb {
@@ -51,14 +53,14 @@
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-.romb:nth-child(5n+1) {
-    grid-column: 2/span 2;
-}
+    .romb:nth-child(5n+1) {
+        grid-column: 2/span 2;
+    }
 
-.romb:hover {
-    z-index: 2;
-    transform: scale(1.25)
-}
+    .romb:hover {
+        z-index: 2;
+        transform: scale(1.25)
+    }
 
 #description-box p{
     margin-top: 5vw;

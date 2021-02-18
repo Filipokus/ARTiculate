@@ -3,6 +3,7 @@
     --main-bg-color: #fdffb6;
     --header-and-text-color: #242424;
     --contrast-color: #DFDDE4;
+    --shadow-color: #0c0c0c;
 }
 /* END OF VARIABLES */
 
@@ -116,7 +117,7 @@ width: 30vw;
 margin: 0.8vw 3vw;
 }
 
-header img:hover, /*.searchButton:hover,*/ #menu li:hover {
+header img:hover, #menu li:hover {
     cursor: pointer;
 }
     
@@ -218,8 +219,8 @@ nav img {
     z-index: 2000;
     display: block;
     margin: auto;
-    box-shadow: 0 0 3vw 2vw #0c0c0c; /*<-------------------svart färg*/
-    border: 1px solid #0c0c0c; /*<-------------------svart färg*/
+    box-shadow: 0 0 3vw 2vw var(--shadow-color);
+    border: 1px solid var(--shadow-color);
 }
 
 .veilHidden {
@@ -267,17 +268,17 @@ nav img {
 .artDescription {
     text-align: center;
     margin: 4vw 8vw auto 8vw;
-    background-color: rgba(228, 223, 221, 0.7); /*<-------------------kontrastfärg (ljusgrå)*/
+    background-color: rgba(228, 223, 221, 0.7);
     padding: 15px;
     border-radius: 15px;
 }
         
     /* || CLOSE BUTTON || */
-.close {
-    max-width: 6vw;
-    display: block;
-    margin: 0 auto 6vw auto;
-}
+    .close {
+        max-width: 6vw;
+        display: block;
+        margin: 0 auto 6vw auto;
+    }
     /* END OF CLOSE BUTTON*/
 /* END OF IMAGE CLOSE UP */
 

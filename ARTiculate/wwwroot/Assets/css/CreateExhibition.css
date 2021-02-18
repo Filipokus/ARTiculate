@@ -1,6 +1,13 @@
-﻿
+﻿/* || VARIABLES || */
+:root {
+    --main-bg-color: #fdffb6;
+    --header-and-text-color: #242424;
+    --input-border-color: #a7a894;
+}
+/* END OF VARIABLES */
+
 h3 {
-    color: #242424;
+    color: var(--header-and-text-color);
     text-align: center;
     margin-top: 5vw;
     font-size: 4vw;
@@ -10,13 +17,14 @@ p{
     line-height: 4vw;
 }
 
+/* || FORM || */
 #create-form {
     padding-left: 4vw;
 }
 
-    #create-form input {
-        font-size: 4vw;
-    }
+#create-form input {
+    font-size: 4vw;
+}
 
 .input-item {
     padding: 2vw;
@@ -24,29 +32,29 @@ p{
     margin-top: 2vw;
 }
 
-    .input-item input, .input-item textarea {
-        width: 80vw;
-        height: 8vw;
-        background-color: #fdffb6;
-        border-color: #a7a894;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        font-family: 'Comfortaa';
-        font-size: 5vw;
-        text-align: center;
-    }
+.input-item input, .input-item textarea {
+    width: 80vw;
+    height: 8vw;
+    background-color: var(--main-bg-color);
+    border-color: var(--input-border-color);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Comfortaa';
+    font-size: 5vw;
+    text-align: center;
+}
 
-        .input-item textarea{
-            height: 15vw;
-            text-align: left;
-        }
+.input-item textarea{
+    height: 15vw;
+    text-align: left;
+}
 
-        .input-item input, .input-item textarea {
-            outline: none;
-        }
+.input-item input, .input-item textarea {
+    outline: none;
+}
 
-        #instructions{
+#instructions{
     margin: 2vw;
 }
 
@@ -74,7 +82,7 @@ p{
     display: flex;
     flex-direction: initial;
     width: 100%;
-    background-color: #242424;
+    background-color: var(--header-and-text-color);
     color: white;
     height: 18%;
     position: absolute;
@@ -94,3 +102,4 @@ p{
 #date-time {
     margin-top: 40vw;
 }
+/* END OF FORM */

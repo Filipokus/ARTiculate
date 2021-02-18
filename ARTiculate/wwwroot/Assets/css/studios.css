@@ -1,6 +1,6 @@
 ﻿/* || STUDIOS || */
 
-
+/* || LIVE BUTTON || */
 .live-btn {
     width: 100%;
     margin-top: 3vh;
@@ -49,8 +49,9 @@
     .live-txt h2 {
         font-family: 'Comfortaa';
     }
+/* END OF LIVE BUTTON */
 
-/* NEXT 4 */
+/* || ARTISTS || */
 
 .diagonal-h2 {
     font-family: 'HeyAugust';
@@ -65,7 +66,6 @@
 .diagonal-box {
     background-color: #242424;
     transform: skewY(-11deg);
-    /**/ /*box-shadow: 0 0.3vw 3vw 2vw #362D26;*/
 }
 
 .next-4-content {
@@ -124,8 +124,10 @@
     font-size: 2.6vw;
 }
 
-/* UPCOMING */
-.upcoming-h2 {
+/*END OF ARTISTS*/
+
+/* || UPCOMING || */
+/*.upcoming-h2 {
     font-family: 'HeyAugust';
     font-size: 6vw;
     text-align: center;
@@ -179,7 +181,8 @@
 
     .upcoming:hover p {
         font-weight: bolder;
-    }
+    }*/
+/* END OF UPCOMING*/
 
 #to-my-studio {
     width: 42vw;

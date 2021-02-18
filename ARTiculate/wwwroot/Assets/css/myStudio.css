@@ -1,5 +1,5 @@
 ﻿/* || PROFILE || */
-#artist-profile{
+#artist-profile {
     width: 20vw;
     height: 20vw;
     overflow: hidden;
@@ -7,17 +7,48 @@
     margin: 2vw auto;
 }
 
-#artist-profile img{
-    height: auto;
-    width: 100%;
-}
+    #artist-profile img {
+        height: auto;
+        width: 100%;
+    }
 
-.description{
+.description {
     text-align: center;
     margin: auto 5vw;
 }
 /* END OF PROFILE */
 
+/* || BUTTONS || */
+.create-buttons {
+    display: flex;
+    margin-top: 10vw;
+    margin-bottom: 13vw;
+    justify-content: space-around;
+    z-index: 10;
+}
+
+.studio-btn {
+    width: 25vw;
+    height: 8vw;
+    border-radius: 2vw;
+    box-shadow: 0 0 2vw 1vw rgba(12, 12, 12, 0.84);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: 'Comfortaa';
+    font-size: 3vw;
+    display: flex;
+    flex-direction: row;
+}
+
+    .studio-btn p {
+        margin: auto;
+    }
+
+.plus {
+    font-size: 6vw;
+}
+/* BUTTONS */
 
 /* || LAYOUT || */
 .straight-div {
@@ -59,7 +90,7 @@
     outline: none;
 }
 
-.folder, .open-art-item, #private-folder{
+.folder, .open-art-item, #private-folder {
     height: 40vw;
     margin: 3vw;
 }
@@ -73,9 +104,9 @@
     margin-bottom: 3vw;
 }
 
-.folder-items .open-art-item{
-    flex-direction:row;
-}
+    .folder-items .open-art-item {
+        flex-direction: row;
+    }
 
 .exhibition-name {
     position: absolute;
@@ -84,10 +115,10 @@
     width: 40vw;
 }
 
-.lock{
+.lock {
     position: absolute;
     z-index: 1;
-    top:0;
+    top: 0;
     right: 0;
     max-width: 5vw;
     max-height: 5vw;
@@ -110,11 +141,12 @@
     height: 2px;
     background-image: linear-gradient(to right, transparent, rgb(87, 87, 89), transparent);
 }
-#open-items{
+
+#open-items {
     padding: 0;
 }
 
-.arrow-up{
+.arrow-up {
     display: none;
     width: 0;
     height: 0;
@@ -123,10 +155,12 @@
     border-bottom: 18px solid #DFDDE4;
     margin-top: 10vw;
 }
+
 .left {
     margin-left: 20vw;
 }
-.right{
+
+.right {
     margin-left: 65vw;
 }
 
@@ -134,9 +168,11 @@
     display: flex;
     flex-wrap: wrap;
 }
-.arrow-visible{
+
+.arrow-visible {
     display: block;
 }
+
 .folder-container {
     position: absolute;
     margin: -9vw auto 0 1.2vw;
